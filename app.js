@@ -158,10 +158,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 5. Skills Category Filter
+  // 5. Skills Category Filter (Abu Said Cards)
   // ==========================================
   const skillFilterBtns = document.querySelectorAll(".skill-filter-btn");
-  const skillCards = document.querySelectorAll(".skill-card");
+  const skillCards = document.querySelectorAll("#skillsGrid .skill-box-card, .skill-card");
 
   skillFilterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -190,10 +190,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ==========================================
-  // 6. Projects Filter Tabs
+  // 6. Projects Filter Tabs (Abu Said IDE Windows)
   // ==========================================
   const projectFilterBtns = document.querySelectorAll(".project-filter-btn");
-  const projectCards = document.querySelectorAll(".project-card");
+  const projectCards = document.querySelectorAll("#projectsGrid .abusaid-project-card, .project-card");
 
   projectFilterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {

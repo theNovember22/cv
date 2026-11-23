@@ -1042,60 +1042,113 @@ body.light-theme .nav-link.active {
 }
 
 /* ==========================================================================
-   Skills Section (Infinite Marquee + Interactive Category Grid)
+   Skills Section (Abu Said Style with Web SVG Logos & Infinite Marquee)
    ========================================================================== */
 .skills-marquee-wrapper {
   overflow: hidden;
-  padding: 24px 0;
+  padding: 16px 0 24px;
   position: relative;
   width: 100%;
-  margin-bottom: 48px;
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
 .skills-marquee-track {
   display: flex;
-  gap: 20px;
+  gap: 22px;
   width: max-content;
-  animation: marquee-scroll 32s linear infinite;
+  animation: marquee-scroll-left 34s linear infinite;
 }
 
-.skills-marquee-track:hover {
+.skills-marquee-track.reverse {
+  animation: marquee-scroll-right 34s linear infinite;
+  margin-top: 18px;
+}
+
+.skills-marquee-wrapper:hover .skills-marquee-track {
   animation-play-state: paused;
 }
 
-@keyframes marquee-scroll {
+@keyframes marquee-scroll-left {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
-.marquee-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  border-radius: var(--radius-full);
+@keyframes marquee-scroll-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* Abu Said Signature Skill Card */
+.skill-box-card {
+  width: 140px;
+  height: 135px;
+  padding: 16px 12px;
+  border-radius: var(--radius-md);
   background: var(--bg-card);
   backdrop-filter: var(--blur-glass);
+  -webkit-backdrop-filter: var(--blur-glass);
   border: 1px solid var(--border-glass);
-  color: var(--text-primary);
-  font-size: 0.92rem;
-  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
   box-shadow: var(--shadow-sm);
-  white-space: nowrap;
-  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  user-select: none;
 }
 
-.marquee-chip:hover {
-  border-color: var(--apple-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 18px rgba(10, 132, 255, 0.25);
+/* Glowing Bottom Line (Abu Said Signature with Apple HIG Gradient) */
+.skill-box-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--apple-cyan), var(--apple-blue), transparent);
+  opacity: 0.6;
+  transition: all 0.3s ease;
 }
 
-.marquee-chip i {
-  font-size: 1.15rem;
-  color: var(--apple-cyan);
+.skill-box-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: var(--border-active);
+  background: rgba(30, 30, 42, 0.85);
+  box-shadow: var(--shadow-md), 0 0 24px rgba(10, 132, 255, 0.35);
+}
+
+.skill-box-card:hover::after {
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  opacity: 1;
+  box-shadow: 0 0 12px var(--apple-cyan);
+}
+
+.skill-box-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+}
+
+.skill-box-card:hover .skill-box-img {
+  transform: scale(1.18);
+  filter: drop-shadow(0 6px 12px rgba(10, 132, 255, 0.45));
+}
+
+.skill-box-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
 /* Skills Category Filter */
@@ -1104,7 +1157,7 @@ body.light-theme .nav-link.active {
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 36px;
+  margin: 36px 0 28px;
 }
 
 .skill-filter-btn {
@@ -1132,63 +1185,13 @@ body.light-theme .nav-link.active {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 18px;
-}
-
-.skill-card {
-  padding: 22px 18px;
-  border-radius: var(--radius-lg);
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 12px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--border-active);
-  box-shadow: var(--shadow-md), 0 0 20px rgba(10, 132, 255, 0.15);
-}
-
-.skill-card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.05);
-  display: grid;
-  place-items: center;
-  font-size: 1.6rem;
-  color: var(--apple-cyan);
-  transition: transform 0.25s ease;
-}
-
-.skill-card:hover .skill-card-icon {
-  transform: scale(1.12);
-  color: var(--apple-blue);
-}
-
-.skill-card-name {
-  font-weight: 700;
-  font-size: 0.98rem;
-  color: var(--text-primary);
-}
-
-.skill-card-tag {
-  font-size: 0.76rem;
-  color: var(--text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  justify-items: center;
 }
 
 /* ==========================================================================
-   Projects Section (Abu Said Rich Card Showcase)
+   Projects Section (Abu Said IDE Window Cards with Apple HIG)
    ========================================================================== */
 .projects-filter-nav {
   display: flex;
@@ -1223,14 +1226,16 @@ body.light-theme .nav-link.active {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 32px;
 }
 
-.project-card {
-  border-radius: var(--radius-xl);
-  background: var(--bg-card);
+/* Abu Said Signature Project Code Card */
+.abusaid-project-card {
+  border-radius: var(--radius-lg);
+  background: var(--bg-code);
   backdrop-filter: var(--blur-glass);
+  -webkit-backdrop-filter: var(--blur-glass);
   border: 1px solid var(--border-glass);
   overflow: hidden;
   display: flex;
@@ -1240,125 +1245,140 @@ body.light-theme .nav-link.active {
   position: relative;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
+.abusaid-project-card:hover {
+  transform: translateY(-8px);
   border-color: var(--border-active);
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(10, 132, 255, 0.18);
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(10, 132, 255, 0.22);
 }
 
-.project-card-header {
-  padding: 26px 28px 14px;
+/* Window Chrome Header */
+.project-window-top {
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
 }
 
-.project-badge-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(10, 132, 255, 0.15), rgba(94, 92, 230, 0.25));
-  border: 1px solid rgba(10, 132, 255, 0.3);
-  display: grid;
-  place-items: center;
-  color: var(--apple-cyan);
-  font-size: 1.35rem;
-}
-
-.project-card-links {
+.project-window-title {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.card-icon-link {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  display: grid;
-  place-items: center;
-  font-size: 0.92rem;
-  transition: all 0.2s ease;
 }
 
-.card-icon-link:hover {
-  background: var(--apple-blue);
-  color: #FFFFFF;
-  border-color: var(--apple-blue);
-  transform: scale(1.1);
+.project-num-badge {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--apple-cyan);
+  background: rgba(100, 210, 255, 0.1);
+  border: 1px solid rgba(100, 210, 255, 0.25);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
 }
 
-.project-card-body {
-  padding: 0 28px 20px;
+/* Window Code Snippet Area */
+.project-code-area {
+  padding: 22px 24px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.7;
   flex: 1;
+  overflow-x: auto;
+}
+
+.project-code-line {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  align-items: flex-start;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
-.project-tag-pill {
-  font-size: 0.74rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--apple-cyan);
+.project-code-line .line-no {
+  min-width: 26px;
+  margin-right: 14px;
 }
 
-.project-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.25;
+.project-desc-text {
+  color: var(--apple-mint);
+  display: inline;
 }
 
-.project-desc {
-  font-size: 0.94rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-}
-
-.project-highlights-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 4px;
-}
-
-.project-highlights-list li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 0.86rem;
-  color: var(--text-secondary);
-}
-
-.project-highlights-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--apple-cyan);
-}
-
-.project-card-footer {
-  padding: 16px 28px 24px;
+/* Window Action Footer */
+.project-window-footer {
+  padding: 14px 22px 18px;
+  background: rgba(255, 255, 255, 0.02);
   border-top: 1px solid var(--border-subtle);
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
 }
 
-.tech-chip {
-  padding: 4px 10px;
+.project-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-project-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-project-cta.demo {
+  background: var(--grad-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(10, 132, 255, 0.3);
+}
+
+.btn-project-cta.demo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 132, 255, 0.45);
+}
+
+.btn-project-cta.code {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+}
+
+.btn-project-cta.code:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--apple-blue);
+  transform: translateY(-2px);
+}
+
+.project-tools-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tool-tag {
+  padding: 3px 9px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  font-size: 0.76rem;
+  background: rgba(10, 132, 255, 0.08);
+  border: 1px solid rgba(10, 132, 255, 0.2);
+  color: var(--apple-cyan);
+  font-size: 0.72rem;
   font-family: var(--font-mono);
+  font-weight: 600;
 }
 
 /* ==========================================================================
