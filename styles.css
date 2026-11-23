@@ -1353,16 +1353,40 @@ body.light-theme .abusaid-project-card {
 }
 
 .btn-project-cta.code {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+}
+
+.btn-project-cta.code:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--apple-blue);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-project-cta.demo {
   background: var(--grad-primary);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 16px rgba(10, 132, 255, 0.3);
 }
 
-.btn-project-cta.code:hover {
+.btn-project-cta.demo:hover {
   background: var(--apple-blue);
   box-shadow: 0 6px 22px rgba(10, 132, 255, 0.45);
   transform: translateY(-2px);
+}
+
+body.light-theme .btn-project-cta.code {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+}
+
+body.light-theme .btn-project-cta.code:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: var(--apple-blue);
 }
 
 .project-tools-wrap {
