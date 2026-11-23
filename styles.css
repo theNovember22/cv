@@ -1191,15 +1191,47 @@ body.light-theme .nav-link.active {
 }
 
 /* ==========================================================================
-   Projects Section (Abu Said One-After-Another Vertical Stack)
+   Projects Section (Abu Said Sticky Stacking Cards)
+   Reference: https://abusaid.netlify.app/
    ========================================================================== */
 .projects-stack {
   display: flex;
   flex-direction: column;
   gap: 36px;
-  max-width: 960px;
+  max-width: 920px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
+  padding-bottom: 90px;
+  transform: none !important;
+}
+
+/* Sticky Stacking Track (Abu Said Signature Behavior) */
+#sticky-card-1 { --index: 1; z-index: 10; }
+#sticky-card-2 { --index: 2; z-index: 11; }
+#sticky-card-3 { --index: 3; z-index: 12; }
+#sticky-card-4 { --index: 4; z-index: 13; }
+#sticky-card-5 { --index: 5; z-index: 14; }
+#sticky-card-6 { --index: 6; z-index: 15; }
+#sticky-card-7 { --index: 7; z-index: 16; }
+
+.sticky-card {
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc(85px + (var(--index) - 1) * 32px);
+  width: 100%;
+  transition: top 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .projects-stack {
+    gap: 24px;
+    padding-bottom: 60px;
+  }
+  
+  .sticky-card {
+    top: calc(75px + (var(--index) - 1) * 16px);
+  }
 }
 
 /* Abu Said Signature Project Code Card */
@@ -1213,15 +1245,19 @@ body.light-theme .nav-link.active {
   display: flex;
   flex-direction: column;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 25px rgba(10, 132, 255, 0.12);
   position: relative;
   width: 100%;
 }
 
+body.light-theme .abusaid-project-card {
+  box-shadow: 0 -3px 14px rgba(0, 0, 0, 0.08), 0 10px 28px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 113, 227, 0.12);
+}
+
 .abusaid-project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--border-active);
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(10, 132, 255, 0.22);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45), 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(10, 132, 255, 0.25);
 }
 
 /* Window Chrome Header */
