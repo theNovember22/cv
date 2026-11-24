@@ -495,4 +495,216 @@ Sent from Battula Bhargav Portfolio`
   );
 
   revealElements.forEach((el) => revealObserver.observe(el));
+
+  // ==========================================
+  // 14. Career Flight Path Engine (Scroll-Controlled Supersonic Trajectory)
+  // ==========================================
+  const flightSection = document.getElementById("experience");
+  const flightGuidePath = document.getElementById("flightGuidePath");
+  const flightActiveTrail = document.getElementById("flightActiveTrail");
+  const flightAircraft = document.getElementById("flightAircraft");
+  const hudHeading = document.getElementById("hudHeading");
+  const hudSpeed = document.getElementById("hudSpeed");
+  const hudWaypoint = document.getElementById("hudWaypoint");
+  const hudProgress = document.getElementById("hudProgress");
+
+  const waypoints = [
+    document.getElementById("waypoint-1"),
+    document.getElementById("waypoint-2"),
+    document.getElementById("waypoint-3"),
+    document.getElementById("waypoint-4")
+  ];
+
+  const milestones = [
+    document.getElementById("milestone-1"),
+    document.getElementById("milestone-2"),
+    document.getElementById("milestone-3"),
+    document.getElementById("milestone-4")
+  ];
+
+  if (flightSection && flightGuidePath && flightActiveTrail && flightAircraft) {
+    let totalPathLength = 0;
+
+    function initFlightPath() {
+      try {
+        totalPathLength = flightGuidePath.getTotalLength();
+        flightActiveTrail.style.strokeDasharray = `${totalPathLength} ${totalPathLength}`;
+        flightActiveTrail.style.strokeDashoffset = `${totalPathLength}`;
+      } catch (err) {
+        console.warn("SVG Path length calculation error:", err);
+      }
+    }
+
+    initFlightPath();
+    window.addEventListener("resize", initFlightPath);
+
+    const waypointRatios = [0.132, 0.383, 0.645, 0.913];
+    const legNames = [
+      "LEG 01: INFOSYS",
+      "LEG 02: NIT GOA COORDINATOR",
+      "LEG 03: AMAZON MLSS",
+      "LEG 04: NIT GOA TA (CURRENT)"
+    ];
+    const revealThresholds = [0.01, 0.22, 0.48, 0.72];
+
+    let ticking = false;
+
+    function updateFlightController() {
+      ticking = false;
+
+      // On mobile / tablet, layout switches to vertical log
+      if (window.innerWidth <= 1024) {
+        milestones.forEach((panel) => {
+          if (panel) {
+            panel.classList.add("revealed");
+            panel.classList.remove("focused", "passed");
+          }
+        });
+        return;
+      }
+
+      if (!totalPathLength) {
+        initFlightPath();
+        if (!totalPathLength) return;
+      }
+
+      const rect = flightSection.getBoundingClientRect();
+      const sectionHeight = flightSection.offsetHeight;
+      const viewportHeight = window.innerHeight;
+      const maxScroll = sectionHeight - viewportHeight;
+
+      if (maxScroll <= 0) return;
+
+      const scrollDist = -rect.top;
+      let rawProgress = scrollDist / maxScroll;
+      let progress = Math.max(0, Math.min(1, rawProgress));
+
+      // 1. Update Active Flight Trail
+      const strokeOffset = totalPathLength * (1 - progress);
+      flightActiveTrail.style.strokeDashoffset = `${strokeOffset}`;
+
+      // 2. Calculate Aircraft Position and Tangent Banking
+      const currentLength = progress * totalPathLength;
+      const pt = flightGuidePath.getPointAtLength(currentLength);
+      const delta = 3;
+      const ptAhead = flightGuidePath.getPointAtLength(Math.min(totalPathLength, currentLength + delta));
+      const ptBehind = flightGuidePath.getPointAtLength(Math.max(0, currentLength - delta));
+      const angleRad = Math.atan2(ptAhead.y - ptBehind.y, ptAhead.x - ptBehind.x);
+      const angleDeg = angleRad * (180 / Math.PI);
+
+      flightAircraft.setAttribute("transform", `translate(${pt.x}, ${pt.y}) rotate(${angleDeg})`);
+
+      // 3. Update Avionics Cockpit HUD
+      if (hudProgress) {
+        hudProgress.textContent = `${Math.round(progress * 100)}%`;
+      }
+
+      if (hudSpeed) {
+        const mach = (0.82 + progress * 0.54).toFixed(2);
+        hudSpeed.textContent = `MACH ${mach}`;
+      }
+
+      if (hudHeading) {
+        const compassHeading = Math.round((angleDeg + 360) % 360);
+        let cardinal = "ENE";
+        if (compassHeading >= 337.5 || compassHeading < 22.5) cardinal = "N";
+        else if (compassHeading < 67.5) cardinal = "NE";
+        else if (compassHeading < 112.5) cardinal = "E";
+        else if (compassHeading < 157.5) cardinal = "SE";
+        else if (compassHeading < 202.5) cardinal = "S";
+        else if (compassHeading < 247.5) cardinal = "SW";
+        else if (compassHeading < 292.5) cardinal = "W";
+        else cardinal = "NW";
+        hudHeading.innerHTML = `${String(compassHeading).padStart(3, "0")}&deg; ${cardinal}`;
+      }
+
+      // Determine active flight leg
+      let activeLegIndex = 0;
+      if (progress < 0.25) {
+        activeLegIndex = 0;
+      } else if (progress < 0.51) {
+        activeLegIndex = 1;
+      } else if (progress < 0.78) {
+        activeLegIndex = 2;
+      } else {
+        activeLegIndex = 3;
+      }
+
+      if (hudWaypoint) {
+        hudWaypoint.textContent = legNames[activeLegIndex];
+      }
+
+      // 4. Update Milestone Glass Panels
+      milestones.forEach((panel, idx) => {
+        if (!panel) return;
+        const isRevealed = progress >= revealThresholds[idx];
+        const isFocused = (activeLegIndex === idx);
+        const isPassed = (progress > waypointRatios[idx] + 0.05 && activeLegIndex !== idx);
+
+        if (isFocused) {
+          panel.classList.add("revealed", "focused");
+          panel.classList.remove("passed");
+        } else if (isRevealed) {
+          panel.classList.add("revealed");
+          panel.classList.remove("focused");
+          if (isPassed) {
+            panel.classList.add("passed");
+          } else {
+            panel.classList.remove("passed");
+          }
+        } else {
+          panel.classList.remove("revealed", "focused", "passed");
+        }
+      });
+
+      // 5. Update Waypoint Pins in SVG
+      waypoints.forEach((wp, idx) => {
+        if (!wp) return;
+        const reached = progress >= (waypointRatios[idx] - 0.03);
+        const isCurrent = (activeLegIndex === idx);
+        if (isCurrent) {
+          wp.classList.add("active");
+        } else {
+          wp.classList.remove("active");
+        }
+        if (reached) {
+          wp.classList.add("passed");
+        } else {
+          wp.classList.remove("passed");
+        }
+      });
+    }
+
+    function onFlightScroll() {
+      if (!ticking) {
+        requestAnimationFrame(updateFlightController);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", onFlightScroll, { passive: true });
+    updateFlightController();
+
+    // Interactive Waypoint Navigation (Click Waypoint / Milestone to fly to it)
+    waypoints.forEach((wp, idx) => {
+      if (!wp) return;
+      wp.addEventListener("click", () => {
+        const sectionTop = flightSection.offsetTop;
+        const maxScroll = flightSection.offsetHeight - window.innerHeight;
+        const targetScroll = sectionTop + (waypointRatios[idx] * maxScroll);
+        window.scrollTo({ top: targetScroll, behavior: "smooth" });
+      });
+    });
+
+    milestones.forEach((panel, idx) => {
+      if (!panel) return;
+      panel.addEventListener("click", (e) => {
+        if (e.target.closest("a")) return;
+        const sectionTop = flightSection.offsetTop;
+        const maxScroll = flightSection.offsetHeight - window.innerHeight;
+        const targetScroll = sectionTop + (waypointRatios[idx] * maxScroll);
+        window.scrollTo({ top: targetScroll, behavior: "smooth" });
+      });
+    });
+  }
 });

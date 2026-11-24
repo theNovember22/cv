@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Apple HIG Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=lightmode1">
+  <link rel="stylesheet" href="styles.css?v=flightpath1">
 </head>
 <body>
   <!-- Apple Subtle Ambient Glow Lights -->
@@ -972,78 +972,256 @@
     </div>
   </section>
 
-<section class="section" id="experience">
-    <div class="container">
-      <div class="section-header-center reveal">
-        <div class="section-pill">&lt; Experience &gt;</div>
-        <h2 class="section-title">Work &amp; Leadership</h2>
-        <p class="section-subtitle">A track record of engineering delivery, enterprise reliability, and academic leadership.</p>
+  <!-- ==========================================================================
+       Career Flight Path (Scroll-Controlled Aircraft Experience)
+       ========================================================================== -->
+  <section class="flight-section" id="experience">
+    <div class="flight-sticky-viewport">
+      <!-- Ambient Atmospheric Lighting -->
+      <div class="flight-ambient-glow"></div>
+
+      <!-- Flight Control HUD & Section Header -->
+      <div class="flight-header-wrap">
+        <div class="section-pill">
+          <i class="fa-solid fa-plane-departure"></i>
+          <span>Flight Path &bull; Career Milestones</span>
+        </div>
+        <h2 class="section-title">Career Flight Path</h2>
+        <p class="section-subtitle">Scroll to navigate the supersonic trajectory connecting four career destinations.</p>
+        
+        <!-- Apple Cockpit Avionics HUD -->
+        <div class="flight-avionics-hud">
+          <div class="hud-pill">
+            <i class="fa-solid fa-compass"></i>
+            <span class="hud-label">HEADING:</span>
+            <span class="hud-value" id="hudHeading">078&deg; ENE</span>
+          </div>
+          <div class="hud-pill">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span class="hud-label">VELOCITY:</span>
+            <span class="hud-value" id="hudSpeed">MACH 0.82</span>
+          </div>
+          <div class="hud-pill active-leg">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <span class="hud-label">WAYPOINT:</span>
+            <span class="hud-value" id="hudWaypoint">LEG 01: INFOSYS</span>
+          </div>
+          <div class="hud-pill progress-leg">
+            <i class="fa-solid fa-route"></i>
+            <span class="hud-label">PROGRESS:</span>
+            <span class="hud-value" id="hudProgress">0%</span>
+          </div>
+        </div>
       </div>
 
-      <div class="timeline-container">
-        <!-- Infosys Limited -->
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Systems Engineer — SAP BW/4HANA</h3>
-                <div class="timeline-company">
-                  <i class="fa-solid fa-building"></i>
-                  <span>Infosys Limited • Hyderabad, India</span>
-                </div>
-              </div>
-              <span class="timeline-badge">July 2022 – Oct 2023</span>
-            </div>
-            <ul class="timeline-bullets">
-              <li>Monitored, troubleshot, and debugged mission-critical enterprise ETL data pipelines to maintain 99.9% system availability.</li>
-              <li>Engineered interactive reporting dashboards in SAP Analytics Cloud (SAC) for cross-functional business stakeholders.</li>
-              <li>Collaborated in fast-paced Agile sprint delivery, rigorous code reviews, automated batch-job monitoring, and SLA incident management.</li>
-            </ul>
-          </div>
-        </div>
+      <!-- Main Flight Path Stage -->
+      <div class="flight-stage" id="flightStage">
+        <!-- SVG Canvas for Curving Flight Trajectory & Supersonic Jet -->
+        <svg class="flight-svg" id="flightSvg" viewBox="0 0 1440 760" fill="none" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <!-- Glowing Flight Trail Gradient (Dark Mode) -->
+            <linearGradient id="flightTrailGradDark" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0A84FF" stop-opacity="0.9" />
+              <stop offset="35%" stop-color="#5E5CE6" stop-opacity="0.95" />
+              <stop offset="70%" stop-color="#BF5AF2" stop-opacity="0.95" />
+              <stop offset="100%" stop-color="#30D158" stop-opacity="1" />
+            </linearGradient>
 
-        <!-- NIT Goa Placement Coordinator -->
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Placement Coordinator (M.Tech CSE)</h3>
-                <div class="timeline-company">
-                  <i class="fa-solid fa-graduation-cap"></i>
-                  <span>National Institute of Technology Goa</span>
-                </div>
-              </div>
-              <span class="timeline-badge">Aug 2026 – Present</span>
-            </div>
-            <ul class="timeline-bullets">
-              <li>Elected to represent the M.Tech Computer Science &amp; Engineering cohort for campus recruitment and industry relations.</li>
-              <li>Coordinating recruitment drives, technical preparation workshops, and resume review sessions with Tier-1 tech recruiters.</li>
-              <li>Liaising between Department of CSE faculty, Dean of Student Affairs, and visiting enterprise hiring teams.</li>
-            </ul>
-          </div>
-        </div>
+            <!-- Flight Trail Gradient (Light Mode) -->
+            <linearGradient id="flightTrailGradLight" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0071E3" stop-opacity="0.95" />
+              <stop offset="45%" stop-color="#5E5CE6" stop-opacity="0.95" />
+              <stop offset="80%" stop-color="#30D158" stop-opacity="0.95" />
+              <stop offset="100%" stop-color="#047857" stop-opacity="1" />
+            </linearGradient>
 
-        <!-- Amazon ML Summer School -->
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Amazon ML Summer School 2026 Participant</h3>
-                <div class="timeline-company">
-                  <i class="fa-brands fa-amazon"></i>
-                  <span>Amazon India Machine Learning Team</span>
+            <!-- Afterburner Plume Gradient -->
+            <linearGradient id="jetAfterburnerGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+              <stop offset="0%" stop-color="#0A84FF" stop-opacity="0" />
+              <stop offset="40%" stop-color="#64D2FF" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
+            </linearGradient>
+
+            <!-- Glow Filters -->
+            <filter id="flightPathGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+
+          <!-- Faint Guide Trajectory (Future Course) -->
+          <path class="flight-guide-path" id="flightGuidePath" 
+            d="M 40 680 C 120 660, 170 590, 240 540 C 350 460, 450 250, 580 230 C 700 210, 800 520, 930 550 C 1050 580, 1150 250, 1280 220 C 1330 210, 1390 200, 1440 190" />
+
+          <!-- Active Illuminated Flight Trail (Extends on Scroll) -->
+          <path class="flight-active-trail" id="flightActiveTrail" 
+            d="M 40 680 C 120 660, 170 590, 240 540 C 350 460, 450 250, 580 230 C 700 210, 800 520, 930 550 C 1050 580, 1150 250, 1280 220 C 1330 210, 1390 200, 1440 190" />
+
+          <!-- Waypoint 1: Infosys Limited (x=240, y=540) -->
+          <g class="flight-waypoint" id="waypoint-1" data-waypoint="1" transform="translate(240, 540)">
+            <circle class="waypoint-pulse" r="16" />
+            <circle class="waypoint-core" r="7" />
+          </g>
+
+          <!-- Waypoint 2: NIT Goa Placement Coordinator (x=580, y=230) -->
+          <g class="flight-waypoint" id="waypoint-2" data-waypoint="2" transform="translate(580, 230)">
+            <circle class="waypoint-pulse" r="16" />
+            <circle class="waypoint-core" r="7" />
+          </g>
+
+          <!-- Waypoint 3: Amazon ML Summer School (x=930, y=550) -->
+          <g class="flight-waypoint" id="waypoint-3" data-waypoint="3" transform="translate(930, 550)">
+            <circle class="waypoint-pulse" r="16" />
+            <circle class="waypoint-core" r="7" />
+          </g>
+
+          <!-- Waypoint 4: NIT Goa Teaching Assistant - Current/Latest (x=1280, y=220) -->
+          <g class="flight-waypoint latest-waypoint" id="waypoint-4" data-waypoint="4" transform="translate(1280, 220)">
+            <circle class="waypoint-pulse current-pulse" r="22" />
+            <circle class="waypoint-core current-core" r="9" />
+          </g>
+
+          <!-- Supersonic Aircraft Group (Controlled by Scroll) -->
+          <g class="flight-aircraft" id="flightAircraft">
+            <!-- Afterburner Thruster Plume -->
+            <polygon points="-24,-4 -36,0 -24,4" fill="url(#jetAfterburnerGrad)" class="aircraft-plume" />
+            <circle cx="-24" cy="0" r="5" fill="#0A84FF" filter="url(#flightPathGlow)" />
+            
+            <!-- Swept Delta Wings -->
+            <path d="M 6 -5 L -16 -24 C -19 -24 -20 -22 -18 -18 L -9 -4 L -9 4 L -18 18 C -20 22 -19 24 -16 24 L 6 5 Z" class="aircraft-body-wing" />
+            
+            <!-- Precision Fuselage -->
+            <path d="M 28 0 C 20 -4 10 -5 -6 -5 L -22 -4 C -24 -4 -24 4 -22 4 L -6 5 C 10 5 20 4 28 0 Z" class="aircraft-body-fuselage" />
+            
+            <!-- Cockpit Glass Canopy -->
+            <path d="M 16 0 C 12 -2 4 -2 -2 -2 C 3 -1 8 0 16 0 Z" class="aircraft-body-canopy" />
+            
+            <!-- Twin Vertical Stabilizers -->
+            <path d="M -16 -4 L -23 -11 L -21 -11 L -13 -4 Z" class="aircraft-body-tail" />
+            <path d="M -16 4 L -23 11 L -21 11 L -13 4 Z" class="aircraft-body-tail" />
+
+            <!-- Wingtip Lights -->
+            <circle cx="-16" cy="-22" r="1.5" fill="#FF453A" />
+            <circle cx="-16" cy="22" r="1.5" fill="#30D158" />
+          </g>
+        </svg>
+
+        <!-- Floating Liquid-Glass Milestone Panels -->
+        <div class="flight-milestones-container">
+          <!-- MILESTONE 01: Infosys Limited -->
+          <div class="flight-milestone-panel" id="milestone-1" data-index="1">
+            <div class="milestone-glass-card">
+              <div class="milestone-flight-tag">
+                <span class="flight-callsign"><i class="fa-solid fa-plane"></i> LEG 01 &bull; HYDERABAD</span>
+                <span class="flight-date-badge">July 2022 – Oct 2023</span>
+              </div>
+              <div class="milestone-header">
+                <div class="milestone-org-avatar"><i class="fa-solid fa-building"></i></div>
+                <div>
+                  <h3 class="milestone-role">Systems Engineer — SAP BW/4HANA</h3>
+                  <div class="milestone-company">Infosys Limited &bull; Hyderabad, India</div>
                 </div>
               </div>
-              <span class="timeline-badge">Jul – Aug 2026</span>
+              <div class="milestone-divider"></div>
+              <ul class="milestone-bullets">
+                <li>Monitored, troubleshot, and debugged mission-critical enterprise ETL data pipelines to maintain 99.9% system availability.</li>
+                <li>Engineered interactive reporting dashboards in SAP Analytics Cloud (SAC) for cross-functional business stakeholders.</li>
+                <li>Collaborated in fast-paced Agile sprint delivery, rigorous code reviews, automated batch-job monitoring, and SLA incident management.</li>
+              </ul>
+              <div class="milestone-tags">
+                <span class="milestone-chip">SAP BW/4HANA</span>
+                <span class="milestone-chip">ETL Pipelines</span>
+                <span class="milestone-chip">SAP Analytics Cloud</span>
+                <span class="milestone-chip">Incident Management</span>
+              </div>
             </div>
-            <ul class="timeline-bullets">
-              <li>Competitively selected participant for the prestigious Amazon ML Summer School (MLSS) 2026.</li>
-              <li>Underwent deep technical immersion in Deep Neural Networks, Large Language Models (LLMs), Probabilistic Graphical Models, and production ML pipelines.</li>
-              <li>Mentored directly by Amazon Principal Scientists on state-of-the-art architectures and enterprise AI scaling.</li>
-            </ul>
+          </div>
+
+          <!-- MILESTONE 02: Placement Coordinator (NIT Goa) -->
+          <div class="flight-milestone-panel" id="milestone-2" data-index="2">
+            <div class="milestone-glass-card">
+              <div class="milestone-flight-tag">
+                <span class="flight-callsign"><i class="fa-solid fa-plane"></i> LEG 02 &bull; NIT GOA</span>
+                <span class="flight-date-badge">Aug 2026 – Present</span>
+              </div>
+              <div class="milestone-header">
+                <div class="milestone-org-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div>
+                  <h3 class="milestone-role">Placement Coordinator (M.Tech CSE)</h3>
+                  <div class="milestone-company">National Institute of Technology Goa</div>
+                </div>
+              </div>
+              <div class="milestone-divider"></div>
+              <ul class="milestone-bullets">
+                <li>Elected to represent the M.Tech Computer Science &amp; Engineering cohort for campus recruitment and industry relations.</li>
+                <li>Coordinating recruitment drives, technical preparation workshops, and resume review sessions with Tier-1 tech recruiters.</li>
+                <li>Liaising between Department of CSE faculty, Dean of Student Affairs, and visiting enterprise hiring teams.</li>
+              </ul>
+              <div class="milestone-tags">
+                <span class="milestone-chip">Cohort Leadership</span>
+                <span class="milestone-chip">Industry Relations</span>
+                <span class="milestone-chip">Technical Prep</span>
+                <span class="milestone-chip">Recruitment Strategy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MILESTONE 03: Amazon ML Summer School -->
+          <div class="flight-milestone-panel" id="milestone-3" data-index="3">
+            <div class="milestone-glass-card">
+              <div class="milestone-flight-tag">
+                <span class="flight-callsign"><i class="fa-solid fa-plane"></i> LEG 03 &bull; AMAZON MLSS</span>
+                <span class="flight-date-badge">Jul – Aug 2026</span>
+              </div>
+              <div class="milestone-header">
+                <div class="milestone-org-avatar amazon-icon"><i class="fa-brands fa-amazon"></i></div>
+                <div>
+                  <h3 class="milestone-role">Amazon ML Summer School 2026 Participant</h3>
+                  <div class="milestone-company">Amazon India Machine Learning Team</div>
+                </div>
+              </div>
+              <div class="milestone-divider"></div>
+              <ul class="milestone-bullets">
+                <li>Competitively selected participant for the prestigious Amazon ML Summer School (MLSS) 2026.</li>
+                <li>Underwent deep technical immersion in Deep Neural Networks, Large Language Models (LLMs), Probabilistic Graphical Models, and production ML pipelines.</li>
+                <li>Mentored directly by Amazon Principal Scientists on state-of-the-art architectures and enterprise AI scaling.</li>
+              </ul>
+              <div class="milestone-tags">
+                <span class="milestone-chip">Deep Neural Networks</span>
+                <span class="milestone-chip">LLMs</span>
+                <span class="milestone-chip">Probabilistic Models</span>
+                <span class="milestone-chip">Amazon Scientists</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MILESTONE 04: Teaching Assistant — NIT Goa (CURRENT / LATEST EXPERIENCE) -->
+          <div class="flight-milestone-panel current-destination" id="milestone-4" data-index="4">
+            <div class="milestone-glass-card latest-card">
+              <div class="milestone-flight-tag">
+                <span class="flight-callsign current-callsign"><i class="fa-solid fa-plane-arrival"></i> CURRENT &bull; FINAL DESTINATION</span>
+                <span class="flight-date-badge current-badge">During M.Tech CSE &bull; Present</span>
+              </div>
+              <div class="milestone-header">
+                <div class="milestone-org-avatar current-avatar"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <div>
+                  <h3 class="milestone-role current-title">Teaching Assistant — NIT Goa</h3>
+                  <div class="milestone-company current-company">National Institute of Technology Goa (NIT Goa)</div>
+                </div>
+              </div>
+              <div class="milestone-divider current-divider"></div>
+              <ul class="milestone-bullets">
+                <li>Appointed as Graduate Teaching Assistant for core Computer Science &amp; Engineering undergraduate laboratory courses.</li>
+                <li>Conducting hands-on programming labs, problem-solving tutorials, and assignment evaluations in C/C++, Python, and Data Structures.</li>
+                <li>Mentoring junior engineering students on algorithmic efficiency, object-oriented software design, and rigorous debugging practices.</li>
+              </ul>
+              <div class="milestone-tags">
+                <span class="milestone-chip current-chip">Data Structures &amp; Algorithms</span>
+                <span class="milestone-chip current-chip">C/C++ &amp; Python</span>
+                <span class="milestone-chip current-chip">Lab Instruction</span>
+                <span class="milestone-chip current-chip">Academic Mentorship</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1332,6 +1510,6 @@
   </div>
 
   <!-- Vanilla JavaScript App Logic -->
-  <script src="app.js?v=lightmode1"></script>
+  <script src="app.js?v=flightpath1"></script>
 </body>
 </html>

@@ -1095,128 +1095,683 @@ body.light-theme .nav-link.active {
 
 
 /* ==========================================================================
-   Experience Section (Apple Interactive Timeline)
+   Career Flight Path (Scroll-Controlled Supersonic Trajectory)
    ========================================================================== */
-.timeline-container {
-  max-width: 920px;
-  margin: 0 auto;
+.flight-section {
   position: relative;
+  width: 100%;
+  height: 380vh;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.flight-sticky-viewport {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  justify-content: flex-start;
+  z-index: 5;
 }
 
-.timeline-container::before {
-  content: "";
+/* Atmospheric Ambient Lighting */
+.flight-ambient-glow {
   position: absolute;
-  top: 20px;
-  bottom: 20px;
-  left: 31px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--apple-cyan) 0%, var(--apple-blue) 45%, var(--apple-purple) 90%, transparent 100%);
+  top: 25%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(10, 132, 255, 0.08) 0%, rgba(94, 92, 230, 0.04) 45%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(60px);
 }
 
-.timeline-item {
+body.light-theme .flight-ambient-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 113, 227, 0.06) 0%, rgba(94, 92, 230, 0.03) 45%, transparent 75%);
+}
+
+/* Header & Avionics HUD */
+.flight-header-wrap {
   position: relative;
-  padding-left: 80px;
+  z-index: 10;
+  text-align: center;
+  padding: 24px 20px 8px;
+  flex-shrink: 0;
 }
 
-.timeline-marker {
+.flight-header-wrap .section-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.flight-header-wrap .section-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+
+.flight-header-wrap .section-subtitle {
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin: 0 auto 12px;
+}
+
+/* Cockpit HUD Bar */
+.flight-avionics-hud {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 4px;
+}
+
+.hud-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.74rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #E5E5EA;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hud-pill i {
+  color: var(--apple-cyan);
+  font-size: 0.72rem;
+}
+
+.hud-label {
+  opacity: 0.65;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.hud-value {
+  font-weight: 700;
+  color: #64D2FF;
+  letter-spacing: 0.02em;
+}
+
+.hud-pill.active-leg .hud-value {
+  color: #30D158;
+}
+
+body.light-theme .hud-pill {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1C1C1E;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .hud-pill i {
+  color: #0071E3;
+}
+
+body.light-theme .hud-value {
+  color: #0071E3;
+}
+
+body.light-theme .hud-pill.active-leg .hud-value {
+  color: #047857;
+}
+
+/* Flight Stage (Canvas for SVG & Milestone Cards) */
+.flight-stage {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  height: calc(100vh - 160px);
+  min-height: 480px;
+}
+
+/* Flight Path SVG */
+.flight-svg {
   position: absolute;
-  top: 24px;
-  left: 18px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--bg-surface-elevated);
-  border: 3px solid var(--apple-blue);
-  box-shadow: 0 0 16px rgba(10, 132, 255, 0.5);
-  display: grid;
-  place-items: center;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
   z-index: 2;
+  overflow: visible;
 }
 
-.timeline-marker::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #FFFFFF;
+.flight-guide-path {
+  stroke: rgba(255, 255, 255, 0.13);
+  stroke-width: 3;
+  stroke-dasharray: 6 8;
+  stroke-linecap: round;
+  fill: none;
 }
 
-.timeline-card {
-  padding: 28px 32px;
-  border-radius: var(--radius-lg);
-  background: var(--bg-card);
-  backdrop-filter: var(--blur-glass);
-  border: 1px solid var(--border-glass);
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+body.light-theme .flight-guide-path {
+  stroke: rgba(0, 0, 0, 0.13);
 }
 
-.timeline-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-active);
-  box-shadow: var(--shadow-lg), 0 0 25px rgba(10, 132, 255, 0.15);
+.flight-active-trail {
+  stroke: url(#flightTrailGradDark);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  fill: none;
+  filter: drop-shadow(0 0 10px rgba(10, 132, 255, 0.7));
+  transition: stroke 0.3s ease;
 }
 
-.timeline-header {
+body.light-theme .flight-active-trail {
+  stroke: url(#flightTrailGradLight);
+  filter: drop-shadow(0 0 8px rgba(0, 113, 227, 0.5));
+}
+
+/* Waypoint Beacons */
+.flight-waypoint {
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0.5;
+}
+
+.flight-waypoint:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.waypoint-pulse {
+  fill: none;
+  stroke: rgba(10, 132, 255, 0.45);
+  stroke-width: 2;
+  animation: wpPulse 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  transform-origin: center;
+}
+
+.waypoint-core {
+  fill: #0A84FF;
+  stroke: #FFFFFF;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px rgba(10, 132, 255, 0.85));
+}
+
+.flight-waypoint.active {
+  opacity: 1;
+}
+
+.flight-waypoint.active .waypoint-core {
+  fill: #FFFFFF;
+  stroke: #0A84FF;
+  stroke-width: 3.5;
+  filter: drop-shadow(0 0 14px rgba(10, 132, 255, 1));
+}
+
+.flight-waypoint.passed {
+  opacity: 0.85;
+}
+
+/* Latest Waypoint: NIT Goa Teaching Assistant (Apex/Current) */
+.latest-waypoint .current-pulse {
+  stroke: rgba(48, 209, 88, 0.55);
+}
+
+.latest-waypoint .current-core {
+  fill: #30D158;
+  stroke: #FFFFFF;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 10px rgba(48, 209, 88, 0.9));
+}
+
+.latest-waypoint.active .current-core {
+  fill: #FFFFFF;
+  stroke: #30D158;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 16px rgba(48, 209, 88, 1));
+}
+
+body.light-theme .waypoint-core {
+  fill: #0071E3;
+  stroke: #FFFFFF;
+}
+
+body.light-theme .latest-waypoint .current-core {
+  fill: #047857;
+  stroke: #FFFFFF;
+}
+
+/* Supersonic Jet Aircraft */
+.flight-aircraft {
+  filter: drop-shadow(0 0 14px rgba(10, 132, 255, 0.65));
+  pointer-events: auto;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.aircraft-plume {
+  animation: plumeFlicker 0.15s infinite alternate ease-in-out;
+}
+
+.aircraft-body-wing {
+  fill: #F2F2F7;
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 0.8;
+}
+
+.aircraft-body-fuselage {
+  fill: #FFFFFF;
+  stroke: #E5E5EA;
+  stroke-width: 0.6;
+}
+
+.aircraft-body-canopy {
+  fill: #64D2FF;
+  opacity: 0.95;
+}
+
+.aircraft-body-tail {
+  fill: #D1D1D6;
+}
+
+body.light-theme .aircraft-body-wing {
+  fill: #1C1C1E;
+  stroke: rgba(0, 0, 0, 0.6);
+}
+
+body.light-theme .aircraft-body-fuselage {
+  fill: #000000;
+  stroke: #3A3A3C;
+}
+
+body.light-theme .aircraft-body-tail {
+  fill: #2C2C2E;
+}
+
+/* Floating Liquid-Glass Milestone Panels */
+.flight-milestones-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.flight-milestone-panel {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Diagonal Staggering Across the 1440 Stage to Prevent Any Overlap */
+#milestone-1 {
+  left: 2%;
+  bottom: 5%;
+  width: clamp(290px, 23vw, 360px);
+}
+
+#milestone-2 {
+  left: 26%;
+  top: 2%;
+  width: clamp(290px, 23vw, 360px);
+}
+
+#milestone-3 {
+  left: 49%;
+  bottom: 5%;
+  width: clamp(290px, 23vw, 360px);
+}
+
+#milestone-4 {
+  right: 2%;
+  top: 2%;
+  width: clamp(310px, 25vw, 400px);
+}
+
+/* Milestone States Driven by Scroll Progress */
+.flight-milestone-panel.revealed {
+  opacity: 0.82;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.flight-milestone-panel.focused {
+  opacity: 1;
+  transform: translateY(-6px) scale(1.02);
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.flight-milestone-panel.passed {
+  opacity: 0.8;
+  transform: translateY(0) scale(0.98);
+  pointer-events: auto;
+}
+
+/* Liquid-Glass Card Styling */
+.milestone-glass-card {
+  background: rgba(18, 18, 24, 0.74);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.flight-milestone-panel:hover .milestone-glass-card {
+  border-color: rgba(10, 132, 255, 0.55);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.55), 0 0 28px rgba(10, 132, 255, 0.22);
+}
+
+.flight-milestone-panel.focused .milestone-glass-card {
+  border-color: rgba(10, 132, 255, 0.7);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.65), 0 0 36px rgba(10, 132, 255, 0.28);
+}
+
+/* Current / Latest Milestone Card (NIT Goa TA) */
+.milestone-glass-card.latest-card {
+  background: rgba(15, 26, 20, 0.8);
+  border: 1px solid rgba(48, 209, 88, 0.4);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.5), 0 0 28px rgba(48, 209, 88, 0.18);
+}
+
+.flight-milestone-panel.focused .milestone-glass-card.latest-card,
+.flight-milestone-panel:hover .milestone-glass-card.latest-card {
+  border-color: #30D158;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.65), 0 0 42px rgba(48, 209, 88, 0.35);
+}
+
+/* Card Internal Typography & Elements */
+.milestone-flight-tag {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.flight-callsign {
+  color: var(--apple-cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flight-callsign.current-callsign {
+  color: #30D158;
+}
+
+.flight-date-badge {
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #E5E5EA;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.flight-date-badge.current-badge {
+  background: rgba(48, 209, 88, 0.14);
+  border-color: rgba(48, 209, 88, 0.32);
+  color: #30D158;
+}
+
+.milestone-header {
+  display: flex;
+  align-items: center;
   gap: 12px;
   margin-bottom: 12px;
 }
 
-.timeline-role {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-}
-
-.timeline-company {
+.milestone-org-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
   font-size: 1.05rem;
+  flex-shrink: 0;
+  background: rgba(10, 132, 255, 0.14);
+  border: 1px solid rgba(10, 132, 255, 0.28);
   color: var(--apple-cyan);
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-.timeline-badge {
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  background: rgba(10, 132, 255, 0.12);
-  border: 1px solid rgba(10, 132, 255, 0.25);
-  color: var(--apple-cyan);
-  font-size: 0.82rem;
-  font-weight: 600;
+.milestone-org-avatar.amazon-icon {
+  color: #FF9900;
+  background: rgba(255, 153, 0, 0.12);
+  border-color: rgba(255, 153, 0, 0.28);
 }
 
-.timeline-bullets {
+.milestone-org-avatar.current-avatar {
+  color: #30D158;
+  background: rgba(48, 209, 88, 0.14);
+  border-color: rgba(48, 209, 88, 0.3);
+}
+
+.milestone-role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.milestone-company {
+  font-size: 0.84rem;
+  color: #98989D;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.milestone-company.current-company {
+  color: #64D2FF;
+}
+
+.milestone-divider {
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 10px 0 12px;
+}
+
+.milestone-divider.current-divider {
+  background: rgba(48, 209, 88, 0.22);
+}
+
+.milestone-bullets {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 7px;
+  margin: 0 0 12px;
+  padding: 0;
 }
 
-.timeline-bullets li {
+.milestone-bullets li {
   position: relative;
-  padding-left: 22px;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.65;
+  padding-left: 16px;
+  color: #D1D1D6;
+  font-size: 0.82rem;
+  line-height: 1.5;
 }
 
-.timeline-bullets li::before {
+.milestone-bullets li::before {
   content: "▹";
   position: absolute;
   left: 0;
-  color: var(--apple-blue);
-  font-size: 1rem;
+  color: var(--apple-cyan);
+  font-size: 0.85rem;
+}
+
+.latest-card .milestone-bullets li::before {
+  color: #30D158;
+}
+
+.milestone-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.milestone-chip {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #E5E5EA;
+}
+
+.milestone-chip.current-chip {
+  background: rgba(48, 209, 88, 0.12);
+  border-color: rgba(48, 209, 88, 0.26);
+  color: #30D158;
+}
+
+/* Light Theme Overrides for Milestone Cards */
+body.light-theme .milestone-glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .milestone-glass-card.latest-card {
+  background: rgba(240, 253, 244, 0.94);
+  border: 1px solid rgba(4, 120, 87, 0.3);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06), 0 0 25px rgba(4, 120, 87, 0.12);
+}
+
+body.light-theme .flight-milestone-panel.focused .milestone-glass-card {
+  border-color: #0071E3;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12), 0 0 32px rgba(0, 113, 227, 0.2);
+}
+
+body.light-theme .flight-milestone-panel.focused .milestone-glass-card.latest-card {
+  border-color: #047857;
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.14), 0 0 36px rgba(4, 120, 87, 0.22);
+}
+
+body.light-theme .milestone-role {
+  color: #111113;
+}
+
+body.light-theme .milestone-company {
+  color: #636366;
+}
+
+body.light-theme .milestone-company.current-company {
+  color: #047857;
+}
+
+body.light-theme .milestone-bullets li {
+  color: #3A3A3C;
+}
+
+body.light-theme .milestone-bullets li::before {
+  color: #0071E3;
+}
+
+body.light-theme .latest-card .milestone-bullets li::before {
+  color: #047857;
+}
+
+body.light-theme .flight-callsign {
+  color: #0071E3;
+}
+
+body.light-theme .flight-callsign.current-callsign {
+  color: #047857;
+}
+
+body.light-theme .flight-date-badge {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #3A3A3C;
+}
+
+body.light-theme .flight-date-badge.current-badge {
+  background: rgba(4, 120, 87, 0.1);
+  border-color: rgba(4, 120, 87, 0.25);
+  color: #047857;
+}
+
+body.light-theme .milestone-org-avatar {
+  background: rgba(0, 113, 227, 0.1);
+  border-color: rgba(0, 113, 227, 0.24);
+  color: #0071E3;
+}
+
+body.light-theme .milestone-org-avatar.amazon-icon {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #B45309;
+}
+
+body.light-theme .milestone-org-avatar.current-avatar {
+  background: rgba(4, 120, 87, 0.12);
+  border-color: rgba(4, 120, 87, 0.25);
+  color: #047857;
+}
+
+body.light-theme .milestone-divider {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .milestone-divider.current-divider {
+  background: rgba(4, 120, 87, 0.2);
+}
+
+body.light-theme .milestone-chip {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.09);
+  color: #1C1C1E;
+}
+
+body.light-theme .milestone-chip.current-chip {
+  background: rgba(4, 120, 87, 0.08);
+  border-color: rgba(4, 120, 87, 0.2);
+  color: #047857;
+}
+
+/* Animations */
+@keyframes wpPulse {
+  0% { r: 12px; opacity: 0.85; stroke-width: 2.5px; }
+  50% { r: 26px; opacity: 0; stroke-width: 1px; }
+  100% { r: 12px; opacity: 0; stroke-width: 0px; }
+}
+
+@keyframes plumeFlicker {
+  0% { transform: scaleX(0.85); opacity: 0.75; }
+  100% { transform: scaleX(1.2); opacity: 1; }
+}
+
+/* Backward Compatibility Fallback for Any Legacy Timeline Selectors */
+.timeline-container, .timeline-item, .timeline-card {
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -2486,6 +3041,103 @@ body.light-theme .bento-card:hover {
     grid-template-columns: 1fr;
     gap: 36px;
   }
+
+  /* Career Flight Path Responsive Layout */
+  .flight-section {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 60px 0 80px;
+  }
+
+  .flight-sticky-viewport {
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .flight-stage {
+    height: auto !important;
+    min-height: auto !important;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+  }
+
+  .flight-svg {
+    display: none !important;
+  }
+
+  .flight-milestones-container {
+    position: relative !important;
+    inset: auto !important;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 24px 16px;
+    pointer-events: auto !important;
+    max-width: 780px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .flight-milestones-container::before {
+    content: "";
+    position: absolute;
+    left: 35px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: linear-gradient(180deg, #0A84FF 0%, #5E5CE6 40%, #BF5AF2 70%, #30D158 100%);
+    z-index: 1;
+  }
+
+  body.light-theme .flight-milestones-container::before {
+    background: linear-gradient(180deg, #0071E3 0%, #5E5CE6 40%, #047857 100%);
+  }
+
+  .flight-milestone-panel {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    padding-left: 48px;
+  }
+
+  .flight-milestone-panel::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 28px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #0A84FF;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 0 12px rgba(10, 132, 255, 0.7);
+    z-index: 2;
+  }
+
+  .flight-milestone-panel.current-destination::before {
+    background: #30D158;
+    box-shadow: 0 0 14px rgba(48, 209, 88, 0.85);
+  }
+
+  body.light-theme .flight-milestone-panel::before {
+    background: #0071E3;
+    border-color: #FFFFFF;
+  }
+
+  body.light-theme .flight-milestone-panel.current-destination::before {
+    background: #047857;
+    border-color: #FFFFFF;
+  }
 }
 
 @media (max-width: 860px) {
@@ -3631,51 +4283,13 @@ body.light-theme .tree-hairline {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.02) 100%) !important;
 }
 
-/* 9. Experience Timeline in Light Mode */
-body.light-theme .timeline-card {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-
-body.light-theme .timeline-card:hover {
-  border-color: #0071E3;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08), 0 0 25px rgba(0, 113, 227, 0.15);
-}
-
-body.light-theme .timeline-role {
+/* 9. Experience Flight Path in Light Mode */
+body.light-theme .flight-header-wrap .section-title {
   color: #111113;
 }
 
-body.light-theme .timeline-company {
-  color: #0071E3;
-}
-
-body.light-theme .timeline-badge {
-  background: rgba(0, 113, 227, 0.08);
-  border-color: rgba(0, 113, 227, 0.25);
-  color: #0071E3;
-}
-
-body.light-theme .timeline-bullets li {
+body.light-theme .flight-header-wrap .section-subtitle {
   color: #4B4B52;
-}
-
-body.light-theme .timeline-bullets li::before {
-  color: #0071E3;
-}
-
-body.light-theme .timeline-marker {
-  background: #FFFFFF;
-  border-color: #0071E3;
-}
-
-body.light-theme .timeline-marker::after {
-  background: #0071E3;
-}
-
-body.light-theme .timeline-container::before {
-  background: linear-gradient(180deg, #0071E3 0%, rgba(0, 113, 227, 0.4) 70%, transparent 100%) !important;
 }
 
 /* 10. Achievements Bento Grid in Light Mode */
