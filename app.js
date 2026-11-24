@@ -433,49 +433,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 12. Contact Form Handler (Direct Mailto)
-  // ==========================================
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const name = document.getElementById("contactName").value.trim();
-      const email = document.getElementById("contactEmail").value.trim();
-      const subject = document.getElementById("contactSubject").value.trim();
-      const message = document.getElementById("contactMessage").value.trim();
-
-      if (!name || !email || !message) {
-        showToast("Please fill in all required fields", "fa-triangle-exclamation");
-        return;
-      }
-
-      const recipient = "battulabhargav222@gmail.com";
-      const fullSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} - from ${name}`);
-      const bodyContent = encodeURIComponent(
-        `Name: ${name}
-Email: ${email}
-
-Message:
-${message}
-
----
-Sent from Battula Bhargav Portfolio`
-      );
-
-      const mailtoUrl = `mailto:${recipient}?subject=${fullSubject}&body=${bodyContent}`;
-
-      showToast("Opening email client...", "fa-paper-plane");
-
-      setTimeout(() => {
-        window.location.href = mailtoUrl;
-      }, 500);
-
-      contactForm.reset();
-    });
-  }
-
-  // ==========================================
   // 13. Reveal Elements Observer
   // ==========================================
   const revealElements = document.querySelectorAll(".reveal");
