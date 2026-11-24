@@ -271,8 +271,8 @@ document.addEventListener("DOMContentLoaded", () => {
     treePaths.forEach((path, idx) => {
       try {
         const length = path.getTotalLength ? path.getTotalLength() : 800;
-        path.style.strokeDasharray = ;
-        path.style.strokeDashoffset = ;
+        path.style.strokeDasharray = length + " " + length;
+        path.style.strokeDashoffset = length;
         path.style.transition = "stroke-dashoffset 1.8s cubic-bezier(0.16, 1, 0.3, 1)";
         setTimeout(() => {
           path.style.strokeDashoffset = "0";
