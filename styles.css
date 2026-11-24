@@ -44,19 +44,19 @@
   --grad-github-emerald: linear-gradient(135deg, #064E3B 0%, #059669 45%, #30D158 100%);
   --shadow-github-glow: 0 4px 20px rgba(48, 209, 88, 0.35);
 
-  /* Surfaces & Deep Liquid Glass */
+  /* Surfaces & Apple Control Center Frosted Glass (Dark Mode) */
   --bg-base: #000000;
   --bg-deep: #050507;
-  --bg-surface: rgba(18, 18, 24, 0.72);
-  --bg-surface-elevated: rgba(26, 26, 34, 0.88);
-  --bg-surface-glass: rgba(255, 255, 255, 0.05);
-  --bg-card: rgba(22, 22, 28, 0.65);
-  --bg-code: #0a0a0e;
+  --bg-surface: rgba(20, 24, 32, 0.62);
+  --bg-surface-elevated: rgba(26, 32, 42, 0.72);
+  --bg-surface-glass: rgba(255, 255, 255, 0.06);
+  --bg-card: rgba(22, 26, 36, 0.60);
+  --bg-code: rgba(14, 18, 24, 0.75);
   
   /* Hairline Specular Borders */
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glass: rgba(255, 255, 255, 0.14);
-  --border-active: rgba(10, 132, 255, 0.5);
+  --border-glass: rgba(255, 255, 255, 0.16);
+  --border-active: rgba(10, 132, 255, 0.6);
   --border-glow: rgba(10, 132, 255, 0.3);
 
   /* Typography / Labels */
@@ -72,13 +72,13 @@
   --grad-sunset: linear-gradient(135deg, var(--apple-orange) 0%, var(--apple-pink) 100%);
   --grad-apple-glow: radial-gradient(circle at 50% 0%, rgba(10, 132, 255, 0.18), transparent 70%);
 
-  /* Liquid Glass Elevation Shadows & Filters */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.75);
-  --shadow-glow: 0 0 40px rgba(255, 255, 255, 0.12);
-  --blur-glass: blur(28px) saturate(180%);
-  --blur-header: blur(24px) saturate(190%);
+  /* Liquid Glass Elevation Shadows & Filters (Apple Control Center Specular Depth) */
+  --shadow-sm: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-md: inset 0 1px 1px rgba(255, 255, 255, 0.22), 0 12px 34px rgba(0, 0, 0, 0.5);
+  --shadow-lg: inset 0 1px 1px rgba(255, 255, 255, 0.28), 0 24px 64px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 40px rgba(10, 132, 255, 0.18);
+  --blur-glass: blur(36px) saturate(200%);
+  --blur-header: blur(36px) saturate(200%);
 
   /* Radii */
   --radius-sm: 8px;
@@ -93,19 +93,19 @@
   --font-mono: "JetBrains Mono", "SF Mono", Menlo, Monaco, Consolas, monospace;
 }
 
-/* Light Theme (Apple Liquid Frosted Glass) */
+/* Light Theme (Apple Control Center Frosted Glass) */
 body.light-theme {
-  --bg-base: #F8F9FA;
-  --bg-deep: #EEF0F3;
-  --bg-surface: rgba(255, 255, 255, 0.84);
-  --bg-surface-elevated: rgba(255, 255, 255, 0.96);
+  --bg-base: #F5F5F7;
+  --bg-deep: #E8E8ED;
+  --bg-surface: rgba(255, 255, 255, 0.60);
+  --bg-surface-elevated: rgba(255, 255, 255, 0.72);
   --bg-surface-glass: rgba(0, 0, 0, 0.03);
-  --bg-card: rgba(255, 255, 255, 0.88);
-  --bg-code: #FFFFFF;
+  --bg-card: rgba(255, 255, 255, 0.58);
+  --bg-code: rgba(255, 255, 255, 0.65);
   
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-glass: rgba(0, 0, 0, 0.12);
-  --border-active: rgba(0, 113, 227, 0.5);
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-glass: rgba(255, 255, 255, 0.75);
+  --border-active: rgba(0, 113, 227, 0.6);
   --border-glow: rgba(0, 113, 227, 0.25);
 
   --text-primary: #111113;
@@ -119,10 +119,10 @@ body.light-theme {
   --apple-purple: #8928BA;
   --apple-mint: #047857;
 
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 40px rgba(0, 0, 0, 0.06);
+  --shadow-sm: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 4px 14px rgba(0, 0, 0, 0.05);
+  --shadow-md: inset 0 1px 1px rgba(255, 255, 255, 0.95), inset 0 0 0 1px rgba(255, 255, 255, 0.35), 0 10px 30px rgba(0, 0, 0, 0.07);
+  --shadow-lg: inset 0 1px 1px rgba(255, 255, 255, 1), 0 20px 50px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 40px rgba(0, 113, 227, 0.12);
 
   --grad-primary: linear-gradient(135deg, #111113 0%, #3A3A3C 50%, #111113 100%);
   --grad-accent: linear-gradient(135deg, #111113 0%, #6E6E73 100%);
@@ -1174,19 +1174,19 @@ body.light-theme .airport-ambient-light {
   gap: 8px;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 5px 16px;
+  padding: 6px 18px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  background: rgba(20, 24, 32, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 body.light-theme .airport-transit-bar {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.60);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95), 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .transit-pill {
@@ -1452,40 +1452,53 @@ body.light-theme .aircraft-shape {
   top: 52%;
 }
 
-/* Sleek Compact Permanent Airport Stop Marker (Never clipped, fixed size) */
+/* Sleek Compact Permanent Airport Stop Marker (Apple Control Center Glass Tile) */
 .airport-stop-marker {
   width: clamp(260px, 20.5vw, 305px);
   padding: 16px 18px;
-  background: rgba(18, 22, 28, 0.78);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(22, 26, 36, 0.60);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 12px 32px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   cursor: pointer;
 }
 
 .airport-stop-container:hover .airport-stop-marker,
 .airport-stop-container.terminal-open .airport-stop-marker {
   transform: translateY(-3px);
+  background: rgba(28, 34, 46, 0.72);
   border-color: rgba(10, 132, 255, 0.65);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55), 0 0 20px rgba(10, 132, 255, 0.2);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.32),
+    0 16px 40px rgba(0, 0, 0, 0.55), 
+    0 0 24px rgba(10, 132, 255, 0.22);
 }
 
 .airport-stop-container.active-dest .airport-stop-marker {
   border-color: rgba(10, 132, 255, 0.55);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.48), 0 0 18px rgba(10, 132, 255, 0.16);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.25),
+    0 14px 34px rgba(0, 0, 0, 0.48), 
+    0 0 20px rgba(10, 132, 255, 0.18);
 }
 
 .airport-stop-container.latest-dest .airport-stop-marker {
-  border-color: rgba(48, 209, 88, 0.32);
+  border-color: rgba(48, 209, 88, 0.35);
 }
 
 .airport-stop-container.latest-dest:hover .airport-stop-marker,
 .airport-stop-container.latest-dest.active-dest .airport-stop-marker {
   border-color: #30D158;
-  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.55), 0 0 24px rgba(48, 209, 88, 0.22);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.32),
+    0 16px 40px rgba(0, 0, 0, 0.55), 
+    0 0 24px rgba(48, 209, 88, 0.22);
 }
 
 /* Stop Marker Internal Typography */
@@ -1506,6 +1519,10 @@ body.light-theme .aircraft-shape {
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  padding: 2px 7px;
+  background: rgba(10, 132, 255, 0.12);
+  border: 1px solid rgba(10, 132, 255, 0.22);
+  border-radius: var(--radius-full);
 }
 
 .gate-status {
@@ -1590,6 +1607,10 @@ body.light-theme .aircraft-shape {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  padding: 2px 7px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
 }
 
 /* ==========================================================================
@@ -1603,16 +1624,17 @@ body.light-theme .aircraft-shape {
   visibility: hidden;
   transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s ease;
   z-index: 60;
-  background: rgba(14, 18, 24, 0.65);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  background: rgba(18, 22, 30, 0.72);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 18px 22px;
   box-shadow: 
-    0 20px 48px rgba(0, 0, 0, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    0 0 28px rgba(10, 132, 255, 0.12);
+    inset 0 1px 1px rgba(255, 255, 255, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 60px rgba(0, 0, 0, 0.65),
+    0 0 30px rgba(10, 132, 255, 0.14);
 }
 
 /* Directional Flyouts */
@@ -1620,6 +1642,11 @@ body.light-theme .aircraft-shape {
   left: calc(100% + 14px);
   top: 0;
   transform: translateX(-8px) scale(0.97);
+}
+
+/* Specific vertical offset for Gate 02 right flyout to stay centered and clear header */
+#airport-term-2 .airport-glass-panel.panel-dir-right {
+  top: -30px;
 }
 
 .panel-dir-up {
@@ -1777,24 +1804,37 @@ body.light-theme .aircraft-shape {
 
 /* Light Theme Overrides for Airport Stops & Liquid-Glass Flyouts */
 body.light-theme .airport-stop-marker {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+    0 8px 26px 0 rgba(0, 0, 0, 0.07),
+    0 2px 6px 0 rgba(0, 0, 0, 0.03);
 }
 
 body.light-theme .airport-stop-container:hover .airport-stop-marker,
 body.light-theme .airport-stop-container.terminal-open .airport-stop-marker {
-  border-color: #0071E3;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 113, 227, 0.15);
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(0, 113, 227, 0.6);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    0 14px 34px 0 rgba(0, 0, 0, 0.1),
+    0 0 20px 0 rgba(0, 113, 227, 0.18);
 }
 
 body.light-theme .airport-glass-panel {
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   box-shadow: 
-    0 18px 42px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 0 20px rgba(0, 113, 227, 0.08);
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4),
+    0 22px 55px 0 rgba(0, 0, 0, 0.11),
+    0 0 24px 0 rgba(0, 113, 227, 0.1);
 }
 
 body.light-theme .terminal-org-name {
@@ -2591,15 +2631,24 @@ body.light-theme .tree-stem-node {
 
 /* Light Theme Overrides for Education Leaves */
 body.light-theme .yggdrasil-leaf-pod {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), 0 0 20px rgba(4, 120, 87, 0.06);
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+    0 12px 32px 0 rgba(0, 0, 0, 0.07), 
+    0 0 20px 0 rgba(4, 120, 87, 0.06);
 }
 
 body.light-theme .yggdrasil-leaf-pod:hover {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.76);
   border-color: #047857;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1), 0 0 30px rgba(4, 120, 87, 0.2);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    0 20px 45px 0 rgba(0, 0, 0, 0.1), 
+    0 0 30px 0 rgba(4, 120, 87, 0.2);
 }
 
 body.light-theme .leaf-degree-title {
@@ -2897,11 +2946,23 @@ body.light-theme .bento-hero-stat.purple {
 }
 
 body.light-theme .bento-card {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+    0 10px 30px 0 rgba(0, 0, 0, 0.07);
 }
 
 body.light-theme .bento-card:hover {
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1), 0 0 25px rgba(0, 113, 227, 0.15);
+  background: rgba(255, 255, 255, 0.74);
+  border-color: rgba(0, 113, 227, 0.5);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    0 18px 45px 0 rgba(0, 0, 0, 0.1), 
+    0 0 25px 0 rgba(0, 113, 227, 0.15);
 }
 
 /* Responsive Breakpoints */
@@ -4011,9 +4072,11 @@ body.light-theme .mobile-menu-btn {
 }
 
 body.light-theme .nav-menu {
-  background: rgba(255, 255, 255, 0.96);
-  border-color: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95), 0 16px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* 3. Hero Section in Light Mode */
@@ -4075,10 +4138,12 @@ body.light-theme .btn-glass:hover {
 }
 
 body.light-theme .social-icon-btn {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   color: #4B4B52;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 body.light-theme .social-icon-btn:hover {
@@ -4112,9 +4177,14 @@ body.light-theme .social-icon-btn.email:hover {
 /* 4. Code Cards & Terminals in Light Mode */
 body.light-theme .code-window,
 body.light-theme .abusaid-project-card {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+    0 16px 40px 0 rgba(0, 0, 0, 0.08);
 }
 
 body.light-theme .code-window-header,
@@ -4265,9 +4335,11 @@ body.light-theme .section-pill {
 
 /* 6. Digital Identity & Personal Photo Reveal */
 body.light-theme .photo-liquid-frame {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(0, 0, 0, 0.14);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95), 0 24px 60px rgba(0, 0, 0, 0.12);
 }
 
 body.light-theme .photo-reveal-veil {
@@ -4353,15 +4425,22 @@ body.light-theme .skills-marquee-wrapper {
 }
 
 body.light-theme .skill-box-card {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+    0 6px 18px 0 rgba(0, 0, 0, 0.05);
 }
 
 body.light-theme .skill-box-card:hover {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.76);
   border-color: #0071E3;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 113, 227, 0.2);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    0 12px 32px 0 rgba(0, 0, 0, 0.1), 
+    0 0 20px 0 rgba(0, 113, 227, 0.2);
 }
 
 body.light-theme .skill-box-name {
@@ -4486,14 +4565,21 @@ body.light-theme .airport-header-wrap .section-subtitle {
 
 /* 10. Achievements Bento Grid in Light Mode */
 body.light-theme .bento-card {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+    0 10px 30px 0 rgba(0, 0, 0, 0.07);
 }
 
 body.light-theme .bento-card:hover {
-  border-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.74);
+  border-color: rgba(0, 113, 227, 0.5);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    0 18px 45px 0 rgba(0, 0, 0, 0.1), 
+    0 0 25px 0 rgba(0, 113, 227, 0.15);
 }
 
 body.light-theme .bento-card-title {
@@ -4586,9 +4672,13 @@ body.light-theme .bento-hero-stat.purple {
 
 /* 11. Contact Section & Contact Form in Light Mode */
 body.light-theme .contact-card-item {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+    0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
 body.light-theme .contact-card-icon {
@@ -4605,9 +4695,13 @@ body.light-theme .contact-card-text strong {
 }
 
 body.light-theme .contact-form-card {
-  background: rgba(255, 255, 255, 0.94);
-  border-color: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+    0 16px 40px 0 rgba(0, 0, 0, 0.08);
 }
 
 body.light-theme .form-title {
@@ -4675,10 +4769,12 @@ body.light-theme .footer-links a[href*="linkedin"]:hover {
 
 /* 13. Back to Top Button in Light Mode */
 body.light-theme .back-to-top {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(0, 0, 0, 0.14);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   color: #111113;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95), 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 body.light-theme .back-to-top:hover {
@@ -4689,8 +4785,10 @@ body.light-theme .back-to-top:hover {
 
 /* 14. Toast in Light Mode */
 body.light-theme .apple-toast {
-  background: rgba(255, 255, 255, 0.96);
-  border-color: rgba(0, 0, 0, 0.14);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   color: #111113;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95), 0 12px 36px rgba(0, 0, 0, 0.12);
 }
