@@ -5,7 +5,7 @@
  *  - Cinematic Scroll Reveal for Personal Portrait
  *  - 3D Perspective Tilt, Specular Glare & Magnetic "HIRE ME" CTA
  *  - Yggdrasil World Tree of Knowledge Interactive SVG Engine & Node Focus
- *  - Abu Said Sticky Stacking Card System & IDE Windows
+ *  - Bespoke Sticky Stacking Card System & IDE Windows
  *  - Infinite Monochrome Skills Marquee
  *  - Dynamic Typing Engine, Toast System & Scrollspy
  */

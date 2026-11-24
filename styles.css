@@ -417,7 +417,7 @@ body.light-theme .nav-link.active {
 }
 
 /* ==========================================================================
-   Hero Section (Abu Said Style with Apple Code Card)
+   Hero Section (Bespoke Apple Code Card Architecture)
    ========================================================================== */
 .hero-section {
   padding: 60px 0 80px;
@@ -598,7 +598,7 @@ body.light-theme .nav-link.active {
 .social-icon-btn.phone:hover { border-color: var(--apple-green); color: var(--apple-green); }
 
 /* ==========================================================================
-   macOS Interactive Code Card (Abu Said Signature Component)
+   macOS Interactive Code Card (Interactive Developer Component)
    ========================================================================== */
 .code-window {
   background: var(--bg-code);
@@ -1924,7 +1924,7 @@ body.light-theme .terminal-chip {
 }
 
 /* ==========================================================================
-   Skills Section (Abu Said Style with Web SVG Logos & Infinite Marquee)
+   Skills Section (Bespoke Skills Card System & Infinite Marquee)
    ========================================================================== */
 .skills-marquee-wrapper {
   overflow: hidden;
@@ -1961,7 +1961,7 @@ body.light-theme .terminal-chip {
   to { transform: translateX(0); }
 }
 
-/* Abu Said Signature Skill Card */
+/* Bespoke Liquid Glass Skill Card */
 .skill-box-card {
   width: 140px;
   height: 135px;
@@ -1985,7 +1985,7 @@ body.light-theme .terminal-chip {
   user-select: none;
 }
 
-/* Glowing Bottom Line (Abu Said Signature with Apple HIG Gradient) */
+/* Glowing Bottom Line (Bespoke Glass Highlight Gradient) */
 .skill-box-card::after {
   content: "";
   position: absolute;
@@ -2073,7 +2073,7 @@ body.light-theme .terminal-chip {
 }
 
 /* ==========================================================================
-   Projects Section (Abu Said Sticky Stacking Cards)
+   Projects Section (Sticky Stacking Project Cards)
    Reference: https://abusaid.netlify.app/
    ========================================================================== */
 .projects-stack {
@@ -2088,7 +2088,7 @@ body.light-theme .terminal-chip {
   transform: none !important;
 }
 
-/* Sticky Stacking Track (Abu Said Signature Behavior) */
+/* Sticky Stacking Track (Smooth Sticky Cascade Behavior) */
 .sticky-card {
   position: -webkit-sticky;
   position: sticky;
@@ -2119,7 +2119,7 @@ body.light-theme .terminal-chip {
   #sticky-card-7 { top: 177px; }
 }
 
-/* Abu Said Signature Project Code Card */
+/* Bespoke Project Code Card */
 .abusaid-project-card {
   border-radius: var(--radius-lg);
   background: var(--bg-code);
