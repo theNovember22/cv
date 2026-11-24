@@ -265,39 +265,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // A. SVG Branch Drawing on Scroll Entry
   let treeDrawn = false;
-  function setupTreeSVGAnimation() {
-    treePaths.forEach((path) => {
+  function triggerTreeAnimation() {
+    if (treeDrawn) return;
+    treeDrawn = true;
+    treePaths.forEach((path, idx) => {
       try {
         const length = path.getTotalLength ? path.getTotalLength() : 800;
         path.style.strokeDasharray = `${length}`;
         path.style.strokeDashoffset = `${length}`;
-        path.style.transition = "stroke-dashoffset 1.8s cubic-bezier(0.16, 1, 0.3, 1)";
+        path.style.transition = "stroke-dashoffset 1.6s cubic-bezier(0.16, 1, 0.3, 1)";
+        setTimeout(() => {
+          path.style.strokeDashoffset = "0";
+        }, idx * 80);
       } catch (err) {
-        // fallback
+        path.style.strokeDashoffset = "0";
       }
     });
   }
-  setupTreeSVGAnimation();
 
   const treeScrollObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && !treeDrawn) {
-          treeDrawn = true;
-          treePaths.forEach((path, idx) => {
-            setTimeout(() => {
-              path.style.strokeDashoffset = "0";
-            }, idx * 110);
-          });
+        if (entry.isIntersecting) {
+          triggerTreeAnimation();
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.05, rootMargin: "150px 0px" }
   );
 
   if (treeSection) {
     treeScrollObserver.observe(treeSection);
   }
+  // Safe fallback to guarantee branches are drawn even on rapid navigation
+  setTimeout(triggerTreeAnimation, 1800);
 
   // B. Interactive Branch & Node Focus on Hover
   treeNodeWrappers.forEach((wrapper) => {
