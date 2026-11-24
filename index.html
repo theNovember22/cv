@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Apple HIG Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=controlcenter1">
+  <link rel="stylesheet" href="styles.css?v=cinematic1">
 </head>
 <body>
   <!-- Apple Subtle Ambient Glow Lights -->
@@ -987,46 +987,19 @@
       <!-- Ambient Airport Atmosphere -->
       <div class="airport-ambient-light"></div>
 
-      <!-- Departure Board Header & Minimal Transit Bar -->
+      <!-- Career Journey Header -->
       <div class="airport-header-wrap">
         <div class="section-pill">
-          <i class="fa-solid fa-plane-departure"></i>
-          <span>Career Airport Journey</span>
+          <i class="fa-solid fa-route"></i>
+          <span>Career Journey</span>
         </div>
         <h2 class="section-title">Work &amp; Leadership</h2>
-        <p class="section-subtitle">Scroll to trace my professional transit across four airport gates. Hover any terminal to enter and inspect details.</p>
-        
-        <!-- Minimal Departure-Board Transit Bar -->
-        <div class="airport-transit-bar">
-          <div class="transit-pill active" id="transit-step-1" data-gate="1">
-            <i class="fa-solid fa-plane"></i>
-            <span class="transit-code">HYD</span>
-            <span class="transit-label">GATE 01 &bull; INFOSYS</span>
-          </div>
-          <span class="transit-arrow">&rarr;</span>
-          <div class="transit-pill" id="transit-step-2" data-gate="2">
-            <i class="fa-solid fa-plane"></i>
-            <span class="transit-code">GOA</span>
-            <span class="transit-label">GATE 02 &bull; TEACHING ASSISTANT</span>
-          </div>
-          <span class="transit-arrow">&rarr;</span>
-          <div class="transit-pill" id="transit-step-3" data-gate="3">
-            <i class="fa-solid fa-plane"></i>
-            <span class="transit-code">GOA</span>
-            <span class="transit-label">GATE 03 &bull; PLACEMENT COORD</span>
-          </div>
-          <span class="transit-arrow">&rarr;</span>
-          <div class="transit-pill" id="transit-step-4" data-gate="4">
-            <i class="fa-solid fa-plane"></i>
-            <span class="transit-code">AMZ</span>
-            <span class="transit-label">GATE 04 &bull; ML SUMMER SCHOOL</span>
-          </div>
-        </div>
+        <p class="section-subtitle">Scroll to trace my professional transit across four career milestones. Hover any milestone to inspect detailed responsibilities.</p>
       </div>
 
-      <!-- Main Airport Stage (Curved Runway & 4 Terminals) -->
+      <!-- Main Airport Stage (Curved Runway & 4 Career Stops) -->
       <div class="airport-stage" id="airportStage">
-        <!-- SVG Curved Flight Runway connecting Gates 01 -> 02 -> 03 -> 04 -->
+        <!-- SVG Curved Flight Runway connecting Milestones 1 -> 2 -> 3 -> 4 -->
         <svg class="airport-svg" id="airportSvg" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="xMidYMid meet">
           <defs>
             <linearGradient id="runwayTrailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -1049,7 +1022,7 @@
           <path class="airport-active-trail" id="airportActiveTrail" 
             d="M 180 200 C 320 200, 420 440, 560 440 C 700 440, 800 200, 940 200 C 1080 200, 1180 440, 1320 440" />
 
-          <!-- Gate Waypoint Beacons -->
+          <!-- Milestone Waypoint Beacons -->
           <g class="airport-beacon active" id="airportBeacon1" transform="translate(180, 200)">
             <circle class="beacon-pulse" r="14" />
             <circle class="beacon-dot" r="6" />
@@ -1074,25 +1047,17 @@
           </g>
         </svg>
 
-        <!-- 4 Airport Gate Terminals (Sleek Stops with Floating Liquid-Glass Flyouts) -->
+        <!-- 4 Career Milestones (Sleek Stops with Floating Liquid-Glass Flyouts) -->
         <div class="airport-terminals-container">
-          <!-- GATE 01: Infosys Limited -->
+          <!-- MILESTONE 01: Infosys Limited -->
           <div class="airport-stop-container active-dest" id="airport-term-1" data-gate="1">
-            <!-- Compact Airport Stop Marker -->
+            <!-- Compact Career Stop Marker (Only Org, Role, Duration, Location) -->
             <div class="airport-stop-marker">
-              <div class="gate-callsign">
-                <span class="gate-tag"><i class="fa-solid fa-door-open"></i> GATE 01 &bull; HYD</span>
-                <span class="gate-status status-departed">DEPARTED</span>
-              </div>
               <h3 class="terminal-org-name">Infosys Limited</h3>
               <div class="terminal-role-title">Systems Engineer — Software &amp; Data Engineering</div>
               <div class="terminal-meta-line">
                 <span><i class="fa-regular fa-calendar"></i> July 2022 – Oct 2023</span>
                 <span><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
-              </div>
-              <div class="terminal-enter-hint">
-                <span class="hint-beacon"><i class="fa-solid fa-circle-dot"></i> Terminal 01</span>
-                <span class="hint-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</span>
               </div>
             </div>
 
@@ -1100,10 +1065,10 @@
             <div class="airport-glass-panel panel-dir-right">
               <div class="glass-panel-header">
                 <div class="panel-callout">
-                  <i class="fa-solid fa-plane-departure"></i>
-                  <span>TERMINAL 01 &bull; FLIGHT LOG</span>
+                  <i class="fa-solid fa-database"></i>
+                  <span>ENTERPRISE DATA PLATFORMS</span>
                 </div>
-                <span class="panel-badge">ENTERPRISE DELIVERY</span>
+                <span class="panel-badge">PRODUCTION ETL</span>
               </div>
               <div class="glass-panel-divider"></div>
               <ul class="terminal-bullets">
@@ -1120,23 +1085,15 @@
             </div>
           </div>
 
-          <!-- GATE 02: Teaching Assistant — NIT Goa -->
+          <!-- MILESTONE 02: Teaching Assistant — NIT Goa -->
           <div class="airport-stop-container" id="airport-term-2" data-gate="2">
-            <!-- Compact Airport Stop Marker -->
+            <!-- Compact Career Stop Marker (Only Org, Role, Duration, Location) -->
             <div class="airport-stop-marker">
-              <div class="gate-callsign">
-                <span class="gate-tag"><i class="fa-solid fa-chalkboard-user"></i> GATE 02 &bull; GOA</span>
-                <span class="gate-status status-active">ACTIVE TRANSIT</span>
-              </div>
               <h3 class="terminal-org-name">National Institute of Technology Goa</h3>
               <div class="terminal-role-title">Teaching Assistant (M.Tech CSE)</div>
               <div class="terminal-meta-line">
                 <span><i class="fa-regular fa-calendar"></i> Aug 2024 – Present</span>
                 <span><i class="fa-solid fa-location-dot"></i> Goa, India</span>
-              </div>
-              <div class="terminal-enter-hint">
-                <span class="hint-beacon"><i class="fa-solid fa-circle-dot"></i> Terminal 02</span>
-                <span class="hint-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</span>
               </div>
             </div>
 
@@ -1145,7 +1102,7 @@
               <div class="glass-panel-header">
                 <div class="panel-callout">
                   <i class="fa-solid fa-chalkboard-user"></i>
-                  <span>TERMINAL 02 &bull; ACADEMIC INSTRUCTION</span>
+                  <span>ACADEMIC INSTRUCTION &amp; LABS</span>
                 </div>
                 <span class="panel-badge">GRADUATE TA</span>
               </div>
@@ -1164,23 +1121,15 @@
             </div>
           </div>
 
-          <!-- GATE 03: Placement Coordinator — NIT Goa -->
+          <!-- MILESTONE 03: Placement Coordinator — NIT Goa -->
           <div class="airport-stop-container" id="airport-term-3" data-gate="3">
-            <!-- Compact Airport Stop Marker -->
+            <!-- Compact Career Stop Marker (Only Org, Role, Duration, Location) -->
             <div class="airport-stop-marker">
-              <div class="gate-callsign">
-                <span class="gate-tag"><i class="fa-solid fa-users"></i> GATE 03 &bull; GOA</span>
-                <span class="gate-status status-active">ACTIVE TRANSIT</span>
-              </div>
               <h3 class="terminal-org-name">National Institute of Technology Goa</h3>
               <div class="terminal-role-title">Placement Coordinator (M.Tech CSE)</div>
               <div class="terminal-meta-line">
                 <span><i class="fa-regular fa-calendar"></i> Aug 2024 – Present</span>
                 <span><i class="fa-solid fa-location-dot"></i> Goa, India</span>
-              </div>
-              <div class="terminal-enter-hint">
-                <span class="hint-beacon"><i class="fa-solid fa-circle-dot"></i> Terminal 03</span>
-                <span class="hint-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</span>
               </div>
             </div>
 
@@ -1188,10 +1137,10 @@
             <div class="airport-glass-panel panel-dir-down">
               <div class="glass-panel-header">
                 <div class="panel-callout">
-                  <i class="fa-solid fa-users"></i>
-                  <span>TERMINAL 03 &bull; COHORT LEADERSHIP</span>
+                  <i class="fa-solid fa-handshake"></i>
+                  <span>INDUSTRY &amp; PLACEMENT RELATIONS</span>
                 </div>
-                <span class="panel-badge">PLACEMENT LIAISON</span>
+                <span class="panel-badge">COHORT LIAISON</span>
               </div>
               <div class="glass-panel-divider"></div>
               <ul class="terminal-bullets">
@@ -1208,23 +1157,15 @@
             </div>
           </div>
 
-          <!-- GATE 04: Amazon ML Summer School -->
+          <!-- MILESTONE 04: Amazon ML Summer School -->
           <div class="airport-stop-container latest-dest" id="airport-term-4" data-gate="4">
-            <!-- Compact Airport Stop Marker -->
+            <!-- Compact Career Stop Marker (Only Org, Role, Duration, Location) -->
             <div class="airport-stop-marker">
-              <div class="gate-callsign">
-                <span class="gate-tag"><i class="fa-brands fa-amazon"></i> GATE 04 &bull; AMZ</span>
-                <span class="gate-status status-fellowship">COMPLETED</span>
-              </div>
               <h3 class="terminal-org-name">Amazon India Machine Learning Team</h3>
               <div class="terminal-role-title">Amazon ML Summer School 2024 Participant</div>
               <div class="terminal-meta-line">
                 <span><i class="fa-regular fa-calendar"></i> Jul – Aug 2024</span>
                 <span><i class="fa-solid fa-location-dot"></i> India</span>
-              </div>
-              <div class="terminal-enter-hint">
-                <span class="hint-beacon"><i class="fa-solid fa-circle-dot"></i> Terminal 04</span>
-                <span class="hint-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</span>
               </div>
             </div>
 
@@ -1233,9 +1174,9 @@
               <div class="glass-panel-header">
                 <div class="panel-callout">
                   <i class="fa-brands fa-amazon"></i>
-                  <span>TERMINAL 04 &bull; ADVANCED AI RESEARCH</span>
+                  <span>ADVANCED AI &amp; MACHINE LEARNING</span>
                 </div>
-                <span class="panel-badge">COMPETITIVE FELLOWSHIP</span>
+                <span class="panel-badge">FELLOWSHIP</span>
               </div>
               <div class="glass-panel-divider"></div>
               <ul class="terminal-bullets">
@@ -1252,259 +1193,470 @@
             </div>
           </div>
         </div>
-            </div>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="achievements">
+  <!-- ==========================================================================
+       Achievements & Certifications: Playing Cards on a Table
+       ========================================================================== -->
+  <section class="section achievements-table-section" id="achievements">
     <div class="container">
       <div class="section-header-center reveal">
         <div class="section-pill">&lt; Honors &amp; Credentials &gt;</div>
-        <h2 class="section-title">Achievements &amp; Certifications</h2>
-        <p class="section-subtitle">National competitive exam rankings, corporate certifications, and competitive honors.</p>
+        <h2 class="section-title">Achievements &amp; Accreditations</h2>
+        <p class="section-subtitle">National competitive rankings, corporate certifications, and military leadership credentials spread across the table.</p>
       </div>
 
-      <!-- Apple Bento Grid (1/3rd & Golden Ratio Showcase) -->
-      <div class="apple-bento-grid reveal">
-
-        <!-- 1. Row 1 Lead (2/3 Span - Golden Ratio Hero): GATE National Qualifications -->
-        <div class="bento-card bento-span-2">
-          <div>
-            <div class="bento-pill-badge gate">
-              <i class="fa-solid fa-award"></i> National Benchmark
-            </div>
-            <div class="bento-hero-stat">AIR 10,139</div>
-            <h3 class="bento-card-title">GATE CSE &amp; GATE DA National Qualifications</h3>
-            <p class="bento-card-desc">
-              Demonstrated competitive engineering mastery by qualifying in the top ~6% nationally among 170,825 examinees in Computer Science &amp; IT. Concurrently qualified the inaugural GATE Data Science &amp; Artificial Intelligence paper among 57,000+ national candidates.
-            </p>
-            <div class="bento-dual-metrics">
-              <div class="bento-metric-col">
-                <h5>GATE CSE 2025 &bull; AIR 10,139</h5>
-                <p>Top ~6% nationally (170,825 examinees) &bull; Core CS, Algorithms, OS, DBMS</p>
+      <!-- Playing Cards Table Surface & Fan Spread -->
+      <div class="cards-table-container reveal">
+        <div class="cards-table-surface">
+          <!-- Ambient Table Lighting Vignette -->
+          <div class="table-ambient-spotlight"></div>
+          
+          <div class="cards-fan-spread" id="cardsFanSpread">
+            
+            <!-- CARD 1: GATE National Qualifications (Leftmost) -->
+            <div class="playing-card fan-card-1" data-card="1">
+              <div class="card-corner-index top-left">
+                <span class="corner-rank">GATE</span>
+                <i class="fa-solid fa-award corner-suit"></i>
               </div>
-              <div class="bento-metric-col">
-                <h5>GATE DA 2025 &bull; AIR 9,572</h5>
-                <p>Top ~17% nationally (57,054 examinees) &bull; Machine Learning, AI &amp; Statistics</p>
+
+              <div class="card-face-body">
+                <div class="card-face-watermark">
+                  <i class="fa-solid fa-award"></i>
+                </div>
+                <div class="card-hero-badge">AIR 10,139</div>
+                <h3 class="card-title">GATE CSE &amp; DA 2025</h3>
+                <div class="card-org">National Benchmark &bull; IIT Roorkee</div>
+                <div class="card-divider"></div>
+                <p class="card-desc">
+                  Ranked in top ~6% nationally (170,825 examinees) in Computer Science &amp; IT. Concurrently qualified the inaugural Data Science &amp; AI national paper.
+                </p>
+                <div class="card-metrics-pill">
+                  <span>AIR 10,139 (CSE)</span>
+                  <span>AIR 9,572 (DA)</span>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="bento-footer">
-            <span class="bento-date-tag">Examination Year 2025</span>
-            <span class="bento-action-link"><i class="fa-solid fa-circle-check"></i> Dual National Qualifications</span>
-          </div>
-        </div>
 
-        <!-- 2. Row 1 Complement (1/3 Span): Amazon ML Summer School -->
-        <div class="bento-card bento-span-1">
-          <div>
-            <div class="bento-pill-badge amazon">
-              <i class="fa-brands fa-amazon"></i> Machine Learning
-            </div>
-            <div class="bento-hero-stat orange">Selected</div>
-            <h3 class="bento-card-title">Amazon ML Summer School</h3>
-            <p class="bento-card-desc">
-              Competitively selected for Amazon's flagship engineering cohort covering deep neural networks, generative modeling, and production-scale AI architectures directly with Amazon scientists.
-            </p>
-          </div>
-          <div class="bento-footer">
-            <span class="bento-date-tag">Jul – Aug 2026</span>
-            <span class="bento-action-link"><i class="fa-solid fa-brain"></i> Amazon Cohort</span>
-          </div>
-        </div>
-
-        <!-- 3. Row 2 Lead (1/3 Span): LeetCode Problem Solving -->
-        <div class="bento-card bento-span-1">
-          <div>
-            <div class="bento-pill-badge leetcode">
-              <i class="fa-solid fa-code"></i> Competitive Coding
-            </div>
-            <div class="bento-hero-stat yellow">300+</div>
-            <h3 class="bento-card-title">LeetCode Solved</h3>
-            <p class="bento-card-desc">
-              Consistent algorithmic problem solver with verified proficiency in Dynamic Programming, Graph Theory, Trees, Arrays, Strings, and Recursive Backtracking.
-            </p>
-          </div>
-          <div class="bento-footer">
-            <span class="bento-date-tag">Active Problem Solver</span>
-            <a href="https://leetcode.com/u/theNovember22/" target="_blank" rel="noopener noreferrer" class="bento-action-link">
-              View LeetCode <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- 4. Row 2 Complement (2/3 Span - Golden Ratio Hero): Infosys Corporate Credentials -->
-        <div class="bento-card bento-span-2">
-          <div>
-            <div class="bento-pill-badge infosys">
-              <i class="fa-solid fa-building"></i> Enterprise Accreditations
-            </div>
-            <div class="bento-hero-stat green">Certified</div>
-            <h3 class="bento-card-title">Infosys Technical Accreditations</h3>
-            <p class="bento-card-desc">
-              Professional corporate engineering certifications earned during tenure as Systems Engineer at Infosys Limited, demonstrating certified competency in production Python development and database architecture.
-            </p>
-            <div class="bento-dual-metrics">
-              <div class="bento-metric-col">
-                <h5>Certified Python Associate</h5>
-                <p>Advanced algorithmic scripting, OOP design patterns &amp; test-driven development &bull; May 2023</p>
-              </div>
-              <div class="bento-metric-col">
-                <h5>Certified Database &amp; SQL</h5>
-                <p>Relational query execution plans, normalization, indexing strategies &amp; storage &bull; Mar 2023</p>
+              <div class="card-corner-index bottom-right">
+                <span class="corner-rank">GATE</span>
+                <i class="fa-solid fa-award corner-suit"></i>
               </div>
             </div>
-          </div>
-          <div class="bento-footer">
-            <span class="bento-date-tag">Infosys Limited</span>
-            <span class="bento-action-link"><i class="fa-solid fa-certificate"></i> Verified Industry Credentials</span>
-          </div>
-        </div>
 
-        <!-- 5. Row 3 Lead (1/3 Span): National Cadet Corps Leadership -->
-        <div class="bento-card bento-span-1">
-          <div>
-            <div class="bento-pill-badge ncc">
-              <i class="fa-solid fa-shield-halved"></i> Leadership &amp; Service
-            </div>
-            <div class="bento-hero-stat purple">'C' Cert</div>
-            <h3 class="bento-card-title">National Cadet Corps</h3>
-            <p class="bento-card-desc">
-              Awarded the prestigious NCC 'C' Certificate while serving as Corporal in 17A BN, demonstrating military drill leadership, crisis response, and discipline.
-            </p>
-          </div>
-          <div class="bento-footer">
-            <span class="bento-date-tag">Year 2020</span>
-            <span class="bento-action-link"><i class="fa-solid fa-medal"></i> Corporal &bull; 17A BN</span>
-          </div>
-        </div>
-
-        <!-- 6. Row 3 Complement (2/3 Span): State & Academic Honors -->
-        <div class="bento-card bento-span-2">
-          <div>
-            <div class="bento-pill-badge">
-              <i class="fa-solid fa-trophy"></i> Academic Accolades
-            </div>
-            <div class="bento-hero-stat">Honors</div>
-            <h3 class="bento-card-title">State &amp; National Merit Awards</h3>
-            <p class="bento-card-desc">
-              Long-standing history of competitive and academic distinction across state board examinations and premier technical symposiums.
-            </p>
-            <div class="bento-dual-metrics">
-              <div class="bento-metric-col">
-                <h5>Academic Excellence Mandal Topper</h5>
-                <p>Ranked #1 in Class 10 Board Examinations across the Mandal with a perfect 10.0 GPA in Mathematics &amp; Sciences &bull; Year 2016</p>
+            <!-- CARD 2: Amazon ML Summer School (Mid-Left) -->
+            <div class="playing-card fan-card-2" data-card="2">
+              <div class="card-corner-index top-left">
+                <span class="corner-rank">AMZ</span>
+                <i class="fa-brands fa-amazon corner-suit"></i>
               </div>
-              <div class="bento-metric-col">
-                <h5>Second Prize &bull; National Technical Quiz</h5>
-                <p>Awarded 2nd Prize at the IICHE ARC &amp; RGUKTN National Engineering Technical Quiz competition &bull; Year 2019</p>
+
+              <div class="card-face-body">
+                <div class="card-face-watermark">
+                  <i class="fa-brands fa-amazon"></i>
+                </div>
+                <div class="card-hero-badge orange-badge">SELECTED</div>
+                <h3 class="card-title">Amazon ML Summer School</h3>
+                <div class="card-org">Amazon India ML &bull; Fellowship</div>
+                <div class="card-divider"></div>
+                <p class="card-desc">
+                  Competitively selected for Amazon's flagship engineering cohort. Mentored directly by Amazon Principal Scientists on LLMs, Deep Neural Nets &amp; Production ML.
+                </p>
+                <div class="card-metrics-pill">
+                  <span>MLSS 2024</span>
+                  <span>Deep Learning &bull; LLMs</span>
+                </div>
+              </div>
+
+              <div class="card-corner-index bottom-right">
+                <span class="corner-rank">AMZ</span>
+                <i class="fa-brands fa-amazon corner-suit"></i>
               </div>
             </div>
-          </div>
-          <div class="bento-footer">
-            <span class="bento-date-tag">Merit Honors</span>
-            <span class="bento-action-link"><i class="fa-solid fa-star"></i> State &amp; National Laurels</span>
+
+            <!-- CARD 3: NCC — Corporal "C" Certificate (CENTER FEATURED HERO) -->
+            <div class="playing-card fan-card-3 featured-ncc-card" data-card="3">
+              <div class="card-corner-index top-left">
+                <span class="corner-rank">NCC</span>
+                <i class="fa-solid fa-shield-halved corner-suit"></i>
+              </div>
+
+              <div class="card-face-body">
+                <div class="card-face-watermark">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="card-hero-badge ncc-badge">
+                  <i class="fa-solid fa-medal"></i> 'C' CERTIFICATE
+                </div>
+                <h3 class="card-title">National Cadet Corps</h3>
+                <div class="card-org">Corporal &bull; 17A BN NCC</div>
+                <div class="card-divider"></div>
+                <p class="card-desc">
+                  Conferred the prestigious NCC <strong>'C' Certificate</strong> holding the rank of <strong>Corporal</strong> in 17A BN. Commended for military drill leadership, crisis response, national service, and discipline.
+                </p>
+                <div class="card-metrics-pill ncc-pill">
+                  <span>Corporal Rank</span>
+                  <span>'C' Certificate &bull; 2020</span>
+                </div>
+              </div>
+
+              <div class="card-corner-index bottom-right">
+                <span class="corner-rank">NCC</span>
+                <i class="fa-solid fa-shield-halved corner-suit"></i>
+              </div>
+            </div>
+
+            <!-- CARD 4: LeetCode Problem Solving (Mid-Right) -->
+            <div class="playing-card fan-card-4" data-card="4">
+              <div class="card-corner-index top-left">
+                <span class="corner-rank">LC</span>
+                <i class="fa-solid fa-code corner-suit"></i>
+              </div>
+
+              <div class="card-face-body">
+                <div class="card-face-watermark">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="card-hero-badge yellow-badge">300+ SOLVED</div>
+                <h3 class="card-title">LeetCode Algorithmic Mastery</h3>
+                <div class="card-org">Competitive Programming &bull; C++</div>
+                <div class="card-divider"></div>
+                <p class="card-desc">
+                  Consistent problem solver in Dynamic Programming, Graph Theory, Trees, Arrays, and Recursive Backtracking. Demonstrating daily algorithmic discipline.
+                </p>
+                <div class="card-metrics-pill">
+                  <a href="https://leetcode.com/u/theNovember22/" target="_blank" rel="noopener noreferrer" class="card-link">
+                    leetcode.com/theNovember22 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="card-corner-index bottom-right">
+                <span class="corner-rank">LC</span>
+                <i class="fa-solid fa-code corner-suit"></i>
+              </div>
+            </div>
+
+            <!-- CARD 5: Infosys Technical Accreditations (Rightmost) -->
+            <div class="playing-card fan-card-5" data-card="5">
+              <div class="card-corner-index top-left">
+                <span class="corner-rank">INFY</span>
+                <i class="fa-solid fa-certificate corner-suit"></i>
+              </div>
+
+              <div class="card-face-body">
+                <div class="card-face-watermark">
+                  <i class="fa-solid fa-certificate"></i>
+                </div>
+                <div class="card-hero-badge green-badge">DUAL CERTIFIED</div>
+                <h3 class="card-title">Infosys Technical Accreditations</h3>
+                <div class="card-org">Infosys Limited &bull; Industry Certifications</div>
+                <div class="card-divider"></div>
+                <p class="card-desc">
+                  Corporate engineering certifications earned during tenure as Systems Engineer: Certified Python Associate &amp; Certified Database &amp; SQL Specialist.
+                </p>
+                <div class="card-metrics-pill">
+                  <span>Certified Python</span>
+                  <span>Database &amp; SQL &bull; 2023</span>
+                </div>
+              </div>
+
+              <div class="card-corner-index bottom-right">
+                <span class="corner-rank">INFY</span>
+                <i class="fa-solid fa-certificate corner-suit"></i>
+              </div>
+            </div>
+
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-<section class="section" id="contact">
+  <!-- ==========================================================================
+       Get In Touch: Cinematic House + Vintage Mailbox Interaction
+       ========================================================================== -->
+  <section class="section contact-scene-section" id="contact">
     <div class="container">
       <div class="section-header-center reveal">
-        <div class="section-pill">&lt; Let's Connect &gt;</div>
+        <div class="section-pill">&lt; My Digital Residence &gt;</div>
         <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Interested in collaborating, hiring for full-time/internship roles, or discussing AI research? Send a message!</p>
+        <p class="section-subtitle">Welcome to my personal home. Click the vintage mailbox below to open my letter and slip a direct note.</p>
       </div>
 
-      <div class="contact-grid">
-        <!-- Left: Direct Info Cards -->
-        <div class="contact-info-panel reveal">
-          <a href="mailto:battulabhargav222@gmail.com" class="contact-card-item">
-            <div class="contact-card-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="contact-card-text">
-              <span>Personal Email</span>
-              <strong>battulabhargav222@gmail.com</strong>
-            </div>
-          </a>
+      <!-- Cinematic House + Mailbox Landscape Scene -->
+      <div class="contact-cinematic-stage reveal">
+        
+        <!-- Ambient Atmospheric Sky & Star Backdrop -->
+        <div class="scene-sky-glow"></div>
 
-          <a href="mailto:25cse2006@nitgoa.ac.in" class="contact-card-item">
-            <div class="contact-card-icon" style="background:var(--grad-accent);">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div class="contact-card-text">
-              <span>Academic Email</span>
-              <strong>25cse2006@nitgoa.ac.in</strong>
-            </div>
-          </a>
+        <!-- 1. The Stylized Personal House (Background Environment Anchor) -->
+        <div class="cinematic-house-container">
+          <svg class="house-svg" viewBox="0 0 680 460" fill="none" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <radialGradient id="houseWindowGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFD60A" stop-opacity="0.9" />
+                <stop offset="60%" stop-color="#FF9F0A" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#FF9F0A" stop-opacity="0" />
+              </radialGradient>
+              <radialGradient id="lanternGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFEAA7" stop-opacity="1" />
+                <stop offset="50%" stop-color="#FDBB2D" stop-opacity="0.6" />
+                <stop offset="100%" stop-color="#FDBB2D" stop-opacity="0" />
+              </radialGradient>
+            </defs>
 
-          <a href="tel:+917286066067" class="contact-card-item">
-            <div class="contact-card-icon" style="background:var(--grad-mint-green);">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="contact-card-text">
-              <span>Phone</span>
-              <strong>+91 7286066067</strong>
-            </div>
-          </a>
+            <!-- Rolling Landscape Ground -->
+            <path d="M 0 410 Q 220 390, 440 400 T 680 390 L 680 460 L 0 460 Z" class="house-ground" />
+            
+            <!-- Chimney with Soft Ambient Smoke Puffs -->
+            <rect x="420" y="80" width="34" height="110" rx="3" class="house-chimney" />
+            <rect x="414" y="70" width="46" height="12" rx="3" class="house-chimney-cap" />
+            <circle cx="437" cy="55" r="7" class="chimney-smoke smoke-1" />
+            <circle cx="442" cy="38" r="11" class="chimney-smoke smoke-2" />
+            <circle cx="448" cy="18" r="15" class="chimney-smoke smoke-3" />
 
-          <div class="contact-card-item">
-            <div class="contact-card-icon" style="background:var(--grad-sunset);">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <div class="contact-card-text">
-              <span>Location</span>
-              <strong>Goa / Hyderabad, India</strong>
-            </div>
+            <!-- Main House Silhouette (Liquid Glass Architectural Structure) -->
+            <path d="M 160 210 L 360 70 L 560 210 L 540 420 L 180 420 Z" class="house-main-walls" />
+            <!-- Pitched Roof with Overhang -->
+            <path d="M 130 215 L 360 55 L 590 215 L 570 230 L 360 80 L 150 230 Z" class="house-roof" />
+            <!-- Gable Trim -->
+            <polygon points="360,100 200,215 520,215" class="house-gable-trim" />
+
+            <!-- Round Attic Window -->
+            <circle cx="360" cy="165" r="22" class="house-window-frame" />
+            <circle cx="360" cy="165" r="18" fill="url(#houseWindowGlow)" class="house-window-glass" />
+            <line x1="360" y1="147" x2="360" y2="183" class="window-muntin" />
+            <line x1="342" y1="165" x2="378" y2="165" class="window-muntin" />
+
+            <!-- Ground Floor Left Window (Warm Glowing Ambient Light) -->
+            <rect x="210" y="260" width="65" height="80" rx="6" class="house-window-frame" />
+            <rect x="215" y="265" width="55" height="70" rx="4" fill="url(#houseWindowGlow)" class="house-window-glass" />
+            <line x1="242.5" y1="265" x2="242.5" y2="335" class="window-muntin" />
+            <line x1="215" y1="300" x2="270" y2="300" class="window-muntin" />
+
+            <!-- Ground Floor Right Window (Warm Glowing Ambient Light) -->
+            <rect x="445" y="260" width="65" height="80" rx="6" class="house-window-frame" />
+            <rect x="450" y="265" width="55" height="70" rx="4" fill="url(#houseWindowGlow)" class="house-window-glass" />
+            <line x1="477.5" y1="265" x2="477.5" y2="335" class="window-muntin" />
+            <line x1="450" y1="300" x2="505" y2="300" class="window-muntin" />
+
+            <!-- Front Porch & Welcoming Doorway -->
+            <path d="M 305 260 L 360 230 L 415 260 L 415 420 L 305 420 Z" class="house-porch-trim" />
+            <rect x="325" y="285" width="70" height="135" rx="6" class="house-door" />
+            <rect x="333" y="295" width="22" height="40" rx="3" class="door-panel" />
+            <rect x="365" y="295" width="22" height="40" rx="3" class="door-panel" />
+            <circle cx="386" cy="355" r="3.5" class="door-knob" />
+
+            <!-- Address Plaque -->
+            <rect x="330" y="258" width="60" height="15" rx="3" class="house-address-plate" />
+            <text x="360" y="269" text-anchor="middle" class="house-address-text">BHARGAV &bull; 22</text>
+
+            <!-- Welcoming Porch Lantern -->
+            <circle cx="360" cy="236" r="16" fill="url(#lanternGlow)" />
+            <path d="M 354 231 L 366 231 L 364 243 L 356 243 Z" class="porch-lantern" />
+            <circle cx="360" cy="237" r="3" fill="#FFEAA7" />
+
+            <!-- Pathway toward Foreground -->
+            <path d="M 330 420 Q 290 440, 240 460 L 480 460 Q 430 440, 390 420 Z" class="house-stone-path" />
+          </svg>
+
+          <!-- House Address Capsule -->
+          <div class="house-id-capsule">
+            <span class="house-id-dot"></span>
+            <span>Battula Bhargav's Residence &bull; Goa &amp; Hyderabad</span>
+          </div>
+        </div>
+
+        <!-- 2. The Vintage Standalone Mailbox (Interactive Foreground Centerpiece) -->
+        <div class="vintage-mailbox-station" id="mailboxStation">
+          
+          <!-- Interactive Prompt Pill -->
+          <div class="mailbox-prompt-pill" id="mailboxPromptPill">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span>Click Mailbox to Open Letter</span>
           </div>
 
-          <a href="Battula_Bhargav_Resume.pdf" target="_blank" download class="contact-card-item" style="border-color:var(--apple-blue);">
-            <div class="contact-card-icon">
-              <i class="fa-solid fa-file-pdf"></i>
+          <!-- Mailbox 3D Assembly -->
+          <div class="mailbox-assembly" id="mailboxAssembly" role="button" tabindex="0" aria-label="Open Vintage Mailbox">
+            
+            <!-- Wooden/Iron Post Stand -->
+            <div class="mailbox-post-stand">
+              <div class="post-texture"></div>
+              <div class="post-ground-mound"></div>
             </div>
-            <div class="contact-card-text">
-              <span>Curriculum Vitae</span>
-              <strong>Download Resume (PDF)</strong>
+
+            <!-- Mailbox Chamber Tunnel -->
+            <div class="mailbox-body-tunnel">
+              <!-- Interior Slot Cavity -->
+              <div class="mailbox-interior-slot">
+                <!-- Glimpse of the letter slip waiting inside -->
+                <div class="letter-peeking-slip">
+                  <i class="fa-solid fa-stamp"></i>
+                  <span>AIR MAIL</span>
+                </div>
+              </div>
+
+              <!-- Hinged Front Door (Swings down when opened) -->
+              <div class="mailbox-hinged-door" id="mailboxDoor">
+                <div class="door-emboss-bezel"></div>
+                <div class="door-vintage-latch">
+                  <div class="latch-handle"></div>
+                </div>
+                <div class="door-mail-slot-decorative">
+                  <span>POST</span>
+                </div>
+              </div>
+
+              <!-- Red Postal Flag (Flips up when opened) -->
+              <div class="mailbox-red-flag" id="mailboxFlag">
+                <div class="flag-staff"></div>
+                <div class="flag-blade"></div>
+              </div>
             </div>
-          </a>
+
+          </div>
+
         </div>
 
-        <!-- Right: Interactive Apple-styled Contact Form -->
-        <div class="contact-form-card reveal">
-          <h3 class="form-title">Send a Direct Note</h3>
-          <p class="form-subtitle">Fill in the fields below to initiate a conversation directly via email.</p>
+        <!-- 3. The Cinematic Vintage Unfolding Letter (Emerges from Mailbox) -->
+        <div class="vintage-letter-container" id="vintageLetterContainer" aria-hidden="true">
+          <div class="vintage-letter-envelope" id="vintageLetterEnvelope">
+            
+            <!-- Letter Stationery Header -->
+            <div class="stationery-header">
+              <div class="airmail-strip-border"></div>
+              <div class="stationery-top-row">
+                <div class="stationery-postmark">
+                  <div class="postmark-circle">
+                    <span>AIR MAIL</span>
+                    <strong>NIT GOA</strong>
+                    <small>2026</small>
+                  </div>
+                  <div class="postmark-wavy-lines">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
 
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <label for="contactName" class="form-label">Your Name</label>
-              <input type="text" id="contactName" class="form-input" placeholder="e.g. Satya Nadella" required>
+                <!-- Vintage Stamp -->
+                <div class="stationery-stamp">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>22&cent;</span>
+                </div>
+
+                <button type="button" class="stationery-close-btn" id="closeLetterBtn" aria-label="Close Letter">
+                  <i class="fa-solid fa-xmark"></i>
+                  <span>Close Mailbox</span>
+                </button>
+              </div>
+
+              <div class="stationery-salutation">
+                <h4>A Personal Letter From Battula Bhargav</h4>
+                <p>M.Tech Computer Science &amp; Engineering &bull; NIT Goa &bull; Systems &amp; AI</p>
+              </div>
+              <div class="stationery-divider"></div>
             </div>
 
-            <div class="form-group">
-              <label for="contactEmail" class="form-label">Your Email</label>
-              <input type="email" id="contactEmail" class="form-input" placeholder="e.g. satya@microsoft.com" required>
+            <!-- Letter Message Body -->
+            <div class="stationery-body-text">
+              <p>
+                <em>Dear Visitor / Recruiter,</em>
+              </p>
+              <p>
+                Thank you for stopping by my digital residence. Whether you are exploring software engineering opportunities, discussing distributed systems &amp; AI research, or simply wishing to connect — my mailbox is always open.
+              </p>
             </div>
 
-            <div class="form-group">
-              <label for="contactSubject" class="form-label">Subject</label>
-              <input type="text" id="contactSubject" class="form-input" placeholder="Software Engineering Opportunity / AI Research" required>
+            <!-- Contact Capsules Grid inside the Letter -->
+            <div class="stationery-contact-grid">
+              <a href="mailto:battulabhargav222@gmail.com" class="letter-contact-pill">
+                <div class="pill-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="pill-info">
+                  <span class="pill-label">Personal Email</span>
+                  <strong class="pill-val">battulabhargav222@gmail.com</strong>
+                </div>
+                <button type="button" class="pill-copy-btn" data-copy="battulabhargav222@gmail.com" title="Copy Email">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </a>
+
+              <a href="mailto:25cse2006@nitgoa.ac.in" class="letter-contact-pill">
+                <div class="pill-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="pill-info">
+                  <span class="pill-label">Academic Email</span>
+                  <strong class="pill-val">25cse2006@nitgoa.ac.in</strong>
+                </div>
+              </a>
+
+              <a href="tel:+917286066067" class="letter-contact-pill">
+                <div class="pill-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="pill-info">
+                  <span class="pill-label">Phone &bull; WhatsApp</span>
+                  <strong class="pill-val">+91 7286066067</strong>
+                </div>
+              </a>
+
+              <a href="https://www.linkedin.com/in/b22in" target="_blank" rel="noopener noreferrer" class="letter-contact-pill">
+                <div class="pill-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="pill-info">
+                  <span class="pill-label">LinkedIn</span>
+                  <strong class="pill-val">linkedin.com/in/b22in</strong>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square pill-ext"></i>
+              </a>
+
+              <a href="https://github.com/theNovember22" target="_blank" rel="noopener noreferrer" class="letter-contact-pill">
+                <div class="pill-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="pill-info">
+                  <span class="pill-label">GitHub</span>
+                  <strong class="pill-val">github.com/theNovember22</strong>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square pill-ext"></i>
+              </a>
+
+              <a href="Battula_Bhargav_Resume.pdf" target="_blank" download class="letter-contact-pill resume-pill">
+                <div class="pill-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                <div class="pill-info">
+                  <span class="pill-label">Curriculum Vitae</span>
+                  <strong class="pill-val">Download Resume (PDF)</strong>
+                </div>
+                <i class="fa-solid fa-download pill-ext"></i>
+              </a>
             </div>
 
-            <div class="form-group">
-              <label for="contactMessage" class="form-label">Message</label>
-              <textarea id="contactMessage" class="form-textarea" placeholder="Hello Bhargav, I came across your portfolio and would love to connect regarding..." required></textarea>
+            <!-- Quick "Drop a Reply Note" Section embedded in the letter -->
+            <div class="letter-reply-card">
+              <h5 class="reply-title"><i class="fa-solid fa-pen-fancy"></i> Drop a Note into the Mailbox</h5>
+              <form class="mailbox-quick-form" id="contactForm">
+                <div class="form-row-dual">
+                  <input type="text" id="contactName" class="letter-input" placeholder="Your Name" required>
+                  <input type="email" id="contactEmail" class="letter-input" placeholder="Your Email" required>
+                </div>
+                <input type="text" id="contactSubject" class="letter-input" placeholder="Subject (Engineering Role, AI Research, Collaboration)" required style="margin-bottom:10px;">
+                <textarea id="contactMessage" class="letter-textarea" placeholder="Hello Bhargav, I came across your portfolio and would love to connect..." rows="3" required></textarea>
+                <button type="submit" class="letter-submit-btn">
+                  <span>Send Direct Note</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
             </div>
 
-            <button type="submit" class="btn-primary" style="justify-content:center;margin-top:6px;">
-              <span>Send Message</span>
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
-          </form>
+            <!-- Bottom Wax Seal & Stamp -->
+            <div class="stationery-footer">
+              <div class="wax-seal">
+                <span>BB</span>
+              </div>
+              <div class="stationery-closing">
+                <em>Warm regards,</em>
+                <strong>Battula Bhargav</strong>
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1538,6 +1690,6 @@
   </div>
 
   <!-- Vanilla JavaScript App Logic -->
-  <script src="app.js?v=controlcenter1"></script>
+  <script src="app.js?v=cinematic1"></script>
 </body>
 </html>

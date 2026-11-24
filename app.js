@@ -648,14 +648,13 @@ Sent from Battula Bhargav Portfolio`
     window.addEventListener("scroll", onAirportScroll, { passive: true });
     updateAirportJourney();
 
-    // Click transit pill to smoothly navigate to that airport gate
-    transitSteps.forEach((pill, idx) => {
-      if (!pill) return;
-      pill.addEventListener("click", () => {
-        const sectionTop = airportSection.offsetTop;
-        const maxScroll = airportSection.offsetHeight - window.innerHeight;
-        const targetScroll = sectionTop + (gateRatios[idx] * maxScroll);
-        window.scrollTo({ top: targetScroll, behavior: "smooth" });
+    // Click airport stop on mobile/tablet to toggle flyout
+    airportTerminals.forEach((card, idx) => {
+      if (!card) return;
+      card.addEventListener("click", () => {
+        if (window.innerWidth <= 1024) {
+          card.classList.toggle("terminal-open");
+        }
       });
     });
 
@@ -669,5 +668,122 @@ Sent from Battula Bhargav Portfolio`
       });
     });
   }
+
+
+  // ==========================================
+  // 15. Vintage Mailbox & Airmail Letter Controller
+  // ==========================================
+  const mailboxStation = document.getElementById("mailboxStation");
+  const mailboxAssembly = document.getElementById("mailboxAssembly");
+  const mailboxPromptPill = document.getElementById("mailboxPromptPill");
+  const vintageLetterContainer = document.getElementById("vintageLetterContainer");
+  const vintageLetterEnvelope = document.getElementById("vintageLetterEnvelope");
+  const closeLetterBtn = document.getElementById("closeLetterBtn");
+  const contactForm = document.getElementById("contactForm");
+
+  function openMailboxLetter() {
+    if (!vintageLetterContainer) return;
+    vintageLetterContainer.classList.add("active");
+    if (mailboxStation) mailboxStation.classList.add("mailbox-open");
+    document.body.classList.add("letter-modal-open");
+    vintageLetterContainer.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMailboxLetter() {
+    if (!vintageLetterContainer) return;
+    vintageLetterContainer.classList.remove("active");
+    if (mailboxStation) mailboxStation.classList.remove("mailbox-open");
+    document.body.classList.remove("letter-modal-open");
+    vintageLetterContainer.setAttribute("aria-hidden", "true");
+  }
+
+  if (mailboxAssembly) {
+    mailboxAssembly.addEventListener("click", openMailboxLetter);
+    mailboxAssembly.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openMailboxLetter();
+      }
+    });
+  }
+
+  if (mailboxPromptPill) {
+    mailboxPromptPill.addEventListener("click", openMailboxLetter);
+  }
+
+  if (closeLetterBtn) {
+    closeLetterBtn.addEventListener("click", closeMailboxLetter);
+  }
+
+  if (vintageLetterContainer) {
+    // Clicking backdrop closes modal
+    vintageLetterContainer.addEventListener("click", (e) => {
+      if (e.target === vintageLetterContainer) {
+        closeMailboxLetter();
+      }
+    });
+
+    // Escape key closes modal
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && vintageLetterContainer.classList.contains("active")) {
+        closeMailboxLetter();
+      }
+    });
+  }
+
+  // Copy-to-clipboard for email/phone pills
+  const copyButtons = document.querySelectorAll(".pill-copy-btn");
+  copyButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const textToCopy = btn.getAttribute("data-copy");
+      if (textToCopy && navigator.clipboard) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          const originalHTML = btn.innerHTML;
+          btn.innerHTML = '<i class="fa-solid fa-check" style="color:#30D158;"></i>';
+          showToast("Copied to clipboard: " + textToCopy);
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+          }, 2000);
+        }).catch((err) => {
+          console.error("Clipboard copy failed:", err);
+        });
+      }
+    });
+  });
+
+  // Handle Note Submission
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("contactName")?.value || "";
+      showToast("Thank you, " + (name ? name : "friend") + "! Note dropped into mailbox.");
+      contactForm.reset();
+      setTimeout(() => {
+        closeMailboxLetter();
+      }, 1500);
+    });
+  }
+
+  // ==========================================
+  // 16. Playing Cards Fan Interactive Lift
+  // ==========================================
+  const playingCards = document.querySelectorAll(".playing-card");
+  playingCards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      const isLifted = card.classList.contains("card-lifted");
+      playingCards.forEach((c) => c.classList.remove("card-lifted"));
+      if (!isLifted) {
+        card.classList.add("card-lifted");
+      }
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".playing-card")) {
+      playingCards.forEach((c) => c.classList.remove("card-lifted"));
+    }
+  });
 
 });
