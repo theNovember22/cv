@@ -1,89 +1,91 @@
-# Battula Bhargav — Engineering Portfolio
+# Battula Bhargav — Developer Portfolio
 
 [![Live Portfolio](https://img.shields.io/badge/Live-thenovember22.github.io%2Fcv-0A84FF.svg)](https://thenovember22.github.io/cv/)
 [![Design](https://img.shields.io/badge/Design-Custom%20%26%20Original%20by%20Battula%20Bhargav-30D158.svg)](https://thenovember22.github.io/cv/)
 [![Tech Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-BF5AF2.svg)](https://developer.mozilla.org/)
 [![License](https://img.shields.io/badge/License-MIT-FF9F0A.svg)](LICENSE)
 
-An editorial, interactive engineering portfolio for **Battula Bhargav** (M.Tech Computer Science student at NIT Goa, Former Systems Engineer at Infosys, GATE CSE 2025 Qualified AIR 10,139, Amazon ML Summer School 2024 Fellowship).
+An ultra-sleek, cinematic developer portfolio for **Battula Bhargav** (M.Tech CSE at NIT Goa, Former Systems Engineer at Infosys, GATE CSE 2025 AIR 10,139, Amazon ML Summer School Fellowship).
 
-> **Original Architecture & Design Attribution**: Every system architecture, visual design language, interactive feature, and implementation detail in this portfolio was **designed, conceived, and engineered completely from scratch by Battula Bhargav**. From the interactive in-browser neural forward pass and developer terminal to the scroll-driven career flight path, Yggdrasil knowledge tree, and playing-card credentials fan, all UI/UX components and CSS systems are bespoke creations engineered with pure vanilla web standards.
+> **Note on Original Design**: Every component, visual concept, interactive mechanism, and layout in this portfolio was **designed, conceived, and engineered completely from scratch by Battula Bhargav** on his own. From the scroll-driven flight path and the Yggdrasil leaf pods to the playing-card achievement fan and the personal developer contact desk, all UI/UX flows and CSS animation systems are custom, bespoke creations built with pure vanilla web technologies.
 
 ---
 
-## 🔬 Core Engineering Innovations
+## 🎨 Original Design Architecture & Highlights
 
-### 1. Interactive Developer Terminal (`#hero`)
-- **Interactive Engineering Shell**: A macOS terminal (`bhargav@engineering:~`) built into the hero section with traffic lights, command history navigation (`ArrowUp`/`ArrowDown`), and suggestion chips (`help`, `about`, `projects`, `research`, `skills`, `contact`, `resume`, `clear`).
-- **Real-Time Parser**: Fully accessible command line providing immediate technical context on academic background, production systems, and research methodology.
-
-### 2. Proof-of-Work: Interactive CNN Digit Recognition Lab (`#lab`)
-- **In-Browser Neural Forward Pass**: Real-time client-side neural network running mathematical forward passes directly in JavaScript with zero external runtime dependencies.
-- **280×280 Canvas Drawing**: Smooth stroke capture with real-time bounding box extraction, aspect-ratio-preserving scaling to 20×20, and Center-of-Mass centering on a 28×28 tensor grid (exact standard MNIST pre-processing protocol).
-- **Mathematical Pipeline**: Vectorized feed-forward inference ($784 \to 64 \text{ ReLU} \to 32 \text{ ReLU} \to 10 \text{ Softmax}$) computing calibrated probabilities ($P(y = k) = \frac{e^{z_k}}{\sum e^{z_j}}$) in $<1\text{ ms}$ with live horizontal probability distribution bars.
-
-### 3. Rigorous Architectural Case Studies (`#projects`)
-- **National EV Energy Network Optimizer (AURA)**:
-  - Formulated a 24-hour joint LP/MILP mathematical dispatch model managing 1,200 MW capacity across 5 Indian metro clusters (Delhi NCR, Mumbai MMR, Bengaluru, Hyderabad, Chennai) with 600 MWh battery storage.
-  - Solved with Python and SciPy HiGHS simplex/interior-point solver, delivering 98.6% simulated reliability and reducing cyclic storage loss by 7.8% under volatile Day-Ahead Market (DAM) electricity tariffs.
-- **Reliability-Aware Active Learning (M.Tech CSE Research)**:
-  - Extended the ActiveHAI framework with Monte Carlo Dropout test-time Bayesian inference on the Diabetic Retinopathy (DR-5) benchmark.
-  - Distinguishes epistemic model ignorance from aleatoric noise, establishing calibrated rejection thresholds that route borderline cases to medical experts while auto-labeling high-confidence samples to maximize AUROC/AUPRC.
-- **Production Systems Grid**: Varied product cards covering the Personal AI Voice Assistant (Groq LLM), MovieGo+ (Concurrent full-stack ticketing with Clerk Auth & MongoDB), CNN Digit Recognizer (LeNet-5 on Render), Interactive Sudoku Solver (Recursive backtracking DSA), and BayGrid Smart Parking (C++ OOP architecture).
-
-### 4. Categorized Skills & Project Cross-Highlighting (`#skills`)
-- **Categorized Competencies**: Five distinct engineering domains: *Programming Languages*, *AI & Machine Learning*, *Backend & Systems*, *Data Engineering & Databases*, and *Tools, Cloud & DevOps*.
-- **Interactive Project Highlighting**: Hovering or clicking any skill dynamically highlights all corresponding case studies and projects with a glowing blue border while subtly dimming unrelated projects.
-
-### 5. Career Flight Path & Apple Control Center Glass (`#experience`)
-- **Scroll-Controlled Aircraft**: An interactive SVG flight path where scrolling propels a minimal aircraft across career milestones:
+### 1. Career Flight Path (`#experience`)
+- **Scroll-Controlled Aircraft**: An interactive SVG flight path where scrolling propels a minimal aircraft across career destinations:
   - **Infosys Limited** (Systems Engineer — Software & Data Engineering, Hyderabad)
   - **National Institute of Technology Goa** (Graduate Teaching Assistant — C/C++, Python & Data Structures)
   - **National Institute of Technology Goa** (Placement Coordinator — M.Tech CSE)
   - **Amazon India Machine Learning Team** (Amazon ML Summer School 2024 Participant)
-- **Apple Control Center Liquid Glass**: Clean frosted glass tiles (`backdrop-filter: blur(40px) saturate(190%)`, `border-radius: 20px`, crisp hairline specular borders) with non-overlapping directional flyouts that expand cleanly without ever colliding with section headings.
+- **Zero-Jargon Milestones**: Clean destination stops displaying only essential organizational and role metadata, with secondary frosted liquid-glass flyouts expanding smoothly on hover without colliding with section headings.
 
-### 6. Yggdrasil Tree of Knowledge (`#education`)
-- Organic leaf pods growing from the branches of the Tree of Knowledge (Yggdrasil), connecting degree milestones at NIT Goa and B.Tech with pulsating SVG vein animations.
+### 2. Yggdrasil Tree of Knowledge (`#education`)
+- **Organic Leaf Pods**: Education milestones are represented as stylized leaves growing organically from the branches of the Tree of Knowledge (Yggdrasil).
+- **Interactive Veins & Highlights**: Hovering over a leaf pod triggers an SVG pulsating glow tracing through the central vein, connecting degrees and coursework at NIT Goa and B.Tech.
 
-### 7. Achievements & Accreditations Playing Card Fan (`#achievements`)
-- Five physical playing cards arranged in a smooth semicircular fan spread:
-  - **Card 1 (-10°)**: GATE CSE & DA 2025 National Qualifications (AIR 10,139 in CSE, AIR 9,572 in DA)
-  - **Card 2 (-5°)**: Amazon ML Summer School (MLSS 2024 Fellowship)
-  - **Card 3 (Hero, 0°)**: **National Cadet Corps (NCC) — Corporal 'C' Certificate** (17A BN NCC)
-  - **Card 4 (+5°)**: LeetCode Algorithmic Mastery (300+ Solved)
-  - **Card 5 (+10°)**: Infosys Technical Accreditations (Certified Python & Certified Database/SQL)
-- Jitter-free hardware-accelerated 3D transforms (`translateY(-26px) scale(1.04)`) with zero layout reflow.
+### 3. Achievements & Accreditations Fan (`#achievements`)
+- **Physical Playing Cards on a Luxury Surface**: Replaces standard bento grids with 5 physical playing cards fanned out in a smooth semicircular spread:
+  - **Card 1 (Leftmost, -10°)**: GATE CSE & DA 2025 National Qualifications (AIR 10,139 in CSE, AIR 9,572 in DA)
+  - **Card 2 (Mid-Left, -5°)**: Amazon ML Summer School (MLSS 2024 Fellowship)
+  - **Card 3 (Centerpiece Hero, 0°)**: **National Cadet Corps (NCC) — Corporal 'C' Certificate** (17A BN NCC)
+  - **Card 4 (Mid-Right, +5°)**: LeetCode Algorithmic Mastery (300+ Solved, DP & Graph Theory)
+  - **Card 5 (Rightmost, +10°)**: Infosys Technical Accreditations (Certified Python & Certified Database/SQL)
+- **Jitter-Free 3D Hover Lift**: Hardware-accelerated CSS transforms using individual custom properties (`--card-x`) so hovered cards elevate upward (`translateY(-26px) scale(1.04)`) and come forward (`z-index: 50`) with zero horizontal displacement or layout reflow.
+- **Responsive Stack**: Automatically transitions to a clean single-column vertical card arrangement on mobile devices with zero horizontal overflow.
 
-### 8. Personal Developer Contact Desk (`#contact`)
-- Stationery letter canvas with direct contact capsules (Email, GitHub, LinkedIn, Phone, Resume) and an expandable compose form.
+### 4. Personal Developer Contact Desk (`#contact`)
+- **Authentic Stationery Aesthetic**: Designed as a personal developer letter desk:
+  - Greeting: *"Dear future collaborator,"*
+  - Message: *"I'm currently open to software engineering, AI/ML, and research opportunities. Let's build something useful."*
+  - Direct communication capsules: Email, GitHub (with subtle emerald identity accent), LinkedIn, Phone/WhatsApp, and downloadable Resume.
+- **Initially Hidden Expandable Form**: Clicking **`WRITE TO BHARGAV →`** smoothly unfolds a direct compose slip (Name, Email, Subject, Message) directly on the desk canvas.
+
+### 5. Liquid Glass & Dual Theme System
+- **Obsidian Dark Mode**: Deep black base with ambient radial illumination, frosted glass panels (`backdrop-filter: blur(36px) saturate(200%)`), and specular hairline borders.
+- **Frost Light Mode**: 1-click switcher to crisp frosted glass with high-contrast typography and subtle reflections.
+- **Pure Vanilla Stack**: 100% handcrafted HTML5, modern CSS3 (Custom Properties, Flexbox, Grid, 3D Transforms), and lightweight Vanilla JavaScript without external framework overhead.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Pure Semantic HTML5, Vanilla JavaScript (ES6+), Modern CSS3 (Custom Properties, Flexbox, CSS Grid, 3D Transforms, `backdrop-filter`)
-- **Machine Learning**: Custom client-side feed-forward neural forward pass, PyTorch, Scikit-Learn, SciPy HiGHS MILP, Monte Carlo Dropout
-- **Typography & Icons**: Apple SF Pro / Inter font stack, JetBrains Mono, FontAwesome 6.5.2
-- **Zero Framework Bloat**: 100% handcrafted vanilla code delivering instant $<1\text{ ms}$ interactions and 60 FPS scroll performance.
+- **Markup**: Semantic HTML5 (Custom SVG illustrations, semantic containers)
+- **Styles**: Pure CSS3 (Hardware-accelerated 3D transforms, CSS Custom Properties, Liquid-Glass Frosted Glassmorphism, Responsive Media Queries)
+- **Logic**: Vanilla JavaScript (Scroll observer, interactive theme switcher, custom desk & card controllers, clipboard copy utility)
+- **Icons**: FontAwesome 6.5.2
+- **Typography**: Apple SF Pro / Inter font stack with monospace accenting
 
 ---
 
-## 🚀 Local Development
+## 🚀 Local Development & Preview
+
+You can open `index.html` directly in any web browser, or launch a lightweight local server:
 
 ```bash
-# Clone the repository
-git clone https://github.com/theNovember22/cv.git
-cd cv
-
-# Start a local HTTP server
+# Using Python 3
 python3 -m http.server 8000
+
+# Using Node.js npx
+npx serve .
 ```
 
-Open `http://localhost:8000` in your web browser.
+Then visit `http://localhost:8000` in your browser.
+
+---
+
+## 📦 Deployment to GitHub Pages
+
+To update live GitHub Pages at `https://thenovember22.github.io/cv/`:
+
+```bash
+git add .
+git commit -m "docs: update README with original design attribution by Battula Bhargav"
+git push origin main
+```
 
 ---
 
 ## 📄 License
-
 MIT © 2026 [Battula Bhargav](https://github.com/theNovember22)

@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Battula Bhargav | Software Engineer & AI Researcher</title>
-  <meta name="description" content="Portfolio of Battula Bhargav — M.Tech CSE at NIT Goa, Ex-Systems Engineer at Infosys, GATE CSE 2025 Qualified (AIR 10139), Amazon ML Summer School 2024.">
+  <meta name="description" content="Portfolio of Battula Bhargav — M.Tech CSE at NIT Goa, Ex-Systems Engineer at Infosys, GATE CSE 2025 Qualified (AIR 10139), Amazon ML Summer School 2026.">
   <meta name="keywords" content="Battula Bhargav, Software Engineer, AI Researcher, NIT Goa, Infosys, Machine Learning, Python, C++, React.js, Deep Learning">
   <meta name="author" content="Battula Bhargav">
 
   <!-- OpenGraph / Social Meta -->
   <meta property="og:title" content="Battula Bhargav | Software Engineer & AI Researcher">
-  <meta property="og:description" content="M.Tech CSE @ NIT Goa | Ex-Infosys Systems Engineer | Reliable AI, Active Learning & Scalable Systems">
-  <meta property="og:image" content="assets/og-preview.png">
+  <meta property="og:description" content="M.Tech CSE @ NIT Goa | Ex-Infosys Systems Engineer | GATE CSE AIR 10139 | 300+ LeetCode">
+  <meta property="og:image" content="profile.jpg">
   <meta property="og:url" content="https://thenovember22.github.io/cv/">
   <meta property="og:type" content="website">
 
@@ -45,7 +45,6 @@
 
       <ul class="nav-menu" id="navMenu">
         <li><a href="#identity" class="nav-link">Identity</a></li>
-        <li><a href="#lab" class="nav-link">AI Lab</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
@@ -69,7 +68,7 @@
     </nav>
   </header>
 
-  <!-- Hero Section (Editorial Engineering Headline & Interactive Terminal) -->
+  <!-- Hero Section (Bespoke Developer Code Window Layout) -->
   <section class="hero-section" id="hero">
     <div class="container">
       <div class="hero-grid">
@@ -77,25 +76,33 @@
         <div class="hero-content reveal">
           <div class="hero-pill">
             <span class="pulse-dot"></span>
-            <span>Available for Full-Time &amp; Research Roles &bull; 2026</span>
+            <span>Available for Full-Time & Research Roles</span>
           </div>
 
-          <h1 class="hero-title editorial-headline">
-            I build intelligent systems that know <span class="gradient-text">when not to trust themselves.</span>
+          <h1 class="hero-title">
+            Hello, This is <br>
+            <span class="gradient-text">Battula Bhargav</span>
           </h1>
 
+          <div class="hero-typing-wrapper">
+            <span>I'm a</span>
+            <span class="typing-target" id="typingText">Software Engineer</span>
+          </div>
+
           <p class="hero-desc">
-            M.Tech Computer Science student at <strong>NIT Goa</strong>, previously a Systems Engineer at <strong>Infosys</strong>, exploring reliable AI, active learning and software engineering.
+            M.Tech Computer Science scholar at <strong>NIT Goa</strong> with a strong foundation in C/C++, Python, and OOP. 
+            Ex-Systems Engineer at <strong>Infosys</strong> with 1+ year debugging mission-critical enterprise ETL pipelines, 
+            GATE CSE 2025 qualified (<strong>AIR 10139</strong>), and researcher in Human-AI collaborative active learning.
           </p>
 
           <div class="hero-actions">
-            <a href="#projects" class="btn-primary">
-              <span>Explore My Work</span>
-              <i class="fa-solid fa-arrow-down"></i>
+            <a href="#contact" class="btn-primary">
+              <span>Contact Me</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
             <a href="Battula_Bhargav_Resume.pdf" target="_blank" download class="btn-glass">
               <i class="fa-solid fa-file-arrow-down"></i>
-              <span>Download Résumé</span>
+              <span>Get Resume</span>
             </a>
           </div>
 
@@ -119,56 +126,58 @@
           </div>
         </div>
 
-        <!-- Right Hero: Interactive Engineering Terminal -->
-        <div class="interactive-terminal reveal" id="heroTerminal">
-          <div class="terminal-header">
+        <!-- Right Hero: macOS Interactive Code Window -->
+        <div class="code-window reveal">
+          <div class="code-window-header">
             <div class="mac-traffic-lights">
               <span class="mac-dot red" title="Close"></span>
               <span class="mac-dot yellow" title="Minimize"></span>
               <span class="mac-dot green" title="Maximize"></span>
             </div>
-            <div class="terminal-title">
-              <i class="fa-solid fa-terminal"></i>
-              <span>bhargav@engineering:~</span>
+            <div class="code-tab">
+              <i class="fa-brands fa-js"></i>
+              <span>developer.js</span>
             </div>
-            <div class="terminal-badge">zsh (interactive)</div>
-          </div>
-
-          <div class="terminal-body" id="terminalOutput">
-            <div class="term-line term-dim">
-              <span class="term-comment">// Battula Bhargav &mdash; Interactive Engineering Shell v2.4</span>
-            </div>
-            <div class="term-line">
-              <span class="term-prompt">bhargav@nitgoa:~$</span> <span class="term-cmd">whoami</span>
-            </div>
-            <div class="term-output">
-              M.Tech CSE @ NIT Goa &bull; Ex-Systems Engineer @ Infosys &bull; GATE AIR 10139 &bull; AI/ML Researcher
-            </div>
-            <div class="term-line">
-              <span class="term-prompt">bhargav@nitgoa:~$</span> <span class="term-dim">Click a quick chip below or type a command:</span>
+            <div class="code-actions">
+              <button class="btn-code-action run-btn" id="runCodeBtn" title="Execute coder evaluation">
+                <i class="fa-solid fa-play"></i> Run
+              </button>
+              <button class="btn-code-action" id="copyCodeBtn" title="Copy code snippet">
+                <i class="fa-regular fa-copy"></i> Copy
+              </button>
             </div>
           </div>
 
-          <!-- Quick Suggestion Chips -->
-          <div class="terminal-chips">
-            <span class="chips-hint">Commands:</span>
-            <button type="button" class="term-chip" data-cmd="help">help</button>
-            <button type="button" class="term-chip" data-cmd="about">about</button>
-            <button type="button" class="term-chip" data-cmd="projects">projects</button>
-            <button type="button" class="term-chip" data-cmd="research">research</button>
-            <button type="button" class="term-chip" data-cmd="skills">skills</button>
-            <button type="button" class="term-chip" data-cmd="contact">contact</button>
-            <button type="button" class="term-chip" data-cmd="clear">clear</button>
+          <div class="code-body" id="codeContent">
+            <div class="code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">developer</span> = {</div>
+            <div class="code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Battula Bhargav'</span>,</div>
+            <div class="code-line"><span class="line-no">03</span>  <span class="c-prop">title</span>: <span class="c-string">'Software Engineer &amp; AI Researcher'</span>,</div>
+            <div class="code-line"><span class="line-no">04</span>  <span class="c-prop">institution</span>: <span class="c-string">'NIT Goa (M.Tech CSE)'</span>,</div>
+            <div class="code-line"><span class="line-no">05</span>  <span class="c-prop">experience</span>: <span class="c-string">'Ex-Systems Engineer @ Infosys'</span>,</div>
+            <div class="code-line"><span class="line-no">06</span>  <span class="c-prop">coreSkills</span>: [</div>
+            <div class="code-line"><span class="line-no">07</span>    <span class="c-string">'C/C++'</span>, <span class="c-string">'Python'</span>, <span class="c-string">'React.js'</span>,</div>
+            <div class="code-line"><span class="line-no">08</span>    <span class="c-string">'PyTorch'</span>, <span class="c-string">'MongoDB'</span>, <span class="c-string">'SQL'</span>, <span class="c-string">'DSA'</span></div>
+            <div class="code-line"><span class="line-no">09</span>  ],</div>
+            <div class="code-line"><span class="line-no">10</span>  <span class="c-prop">leetCodeProblems</span>: <span class="c-string">'300+ Solved'</span>,</div>
+            <div class="code-line"><span class="line-no">11</span>  <span class="c-prop">gateCSE</span>: <span class="c-string">'AIR 10139 (Top ~6%)'</span>,</div>
+            <div class="code-line"><span class="line-no">12</span>  <span class="c-prop">amazonMLSS</span>: <span class="c-string">'Selected Participant 2026'</span>,</div>
+            <div class="code-line"><span class="line-no">13</span>  <span class="c-prop">hardWorker</span>: <span class="c-bool">true</span>,</div>
+            <div class="code-line"><span class="line-no">14</span>  <span class="c-prop">problemSolver</span>: <span class="c-bool">true</span>,</div>
+            <div class="code-line"><span class="line-no">15</span>  <span class="c-prop">hireable</span>: <span class="c-keyword">function</span>() {</div>
+            <div class="code-line"><span class="line-no">16</span>    <span class="c-keyword">return</span> (</div>
+            <div class="code-line"><span class="line-no">17</span>      <span class="c-keyword">this</span>.hardWorker &amp;&amp;</div>
+            <div class="code-line"><span class="line-no">18</span>      <span class="c-keyword">this</span>.problemSolver &amp;&amp;</div>
+            <div class="code-line"><span class="line-no">19</span>      <span class="c-keyword">this</span>.coreSkills.length &gt;= <span class="c-num">5</span></div>
+            <div class="code-line"><span class="line-no">20</span>    );</div>
+            <div class="code-line"><span class="line-no">21</span>  }</div>
+            <div class="code-line"><span class="line-no">22</span>};</div>
           </div>
 
-          <!-- Live Command Prompt Form -->
-          <form class="terminal-input-bar" id="terminalForm">
-            <span class="term-prompt">bhargav@nitgoa:~$</span>
-            <input type="text" id="terminalInput" class="term-input" placeholder="Type 'help', 'projects', 'research'..." autocomplete="off" spellcheck="false">
-            <button type="submit" class="term-submit-btn" aria-label="Execute Command">
-              <i class="fa-solid fa-arrow-turn-down"></i>
-            </button>
-          </form>
+          <!-- Interactive Code Output -->
+          <div class="code-output-tray" id="codeOutputTray">
+            <i class="fa-solid fa-check-circle" style="color:var(--apple-green);margin-right:6px;"></i>
+            <span>&gt; developer.hireable() =&gt; <strong>true</strong> | Candidate verified: High performance engineering &amp; research aptitude!</span>
+          </div>
         </div>
       </div>
     </div>
@@ -244,142 +253,14 @@
           </div>
 
           <div class="identity-actions">
-            <a href="#lab" class="btn-primary">
-              <span>Interactive AI Lab</span>
+            <a href="#projects" class="btn-primary">
+              <span>Explore My Work</span>
               <i class="fa-solid fa-arrow-down"></i>
             </a>
-            <a href="#projects" class="btn-glass">
-              <span>Explore Projects</span>
-              <i class="fa-solid fa-layer-group"></i>
+            <a href="Battula_Bhargav_Resume.pdf" target="_blank" download class="btn-glass">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>Download Curriculum Vitae</span>
             </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       3. Proof-of-Work: Interactive CNN Digit Recognition Demo (Live Client-Side Inference)
-       ======================================================================== -->
-  <section class="section lab-section" id="lab">
-    <div class="container">
-      <div class="section-header-center reveal">
-        <div class="section-pill">&lt; Proof-of-Work &bull; Client-Side Neural Inference &gt;</div>
-        <h2 class="section-title">Interactive CNN Digit Recognition</h2>
-        <p class="section-subtitle">Mathematical forward pass evaluated in real-time inside your browser using trained neural network weights. Draw any digit (0–9) on the canvas below.</p>
-      </div>
-
-      <div class="lab-stage reveal">
-        <!-- 1. Interactive Drawing Canvas -->
-        <div class="lab-card lab-canvas-card">
-          <div class="lab-card-header">
-            <div class="lab-card-title">
-              <i class="fa-solid fa-pen-nib"></i>
-              <span>Drawing Board (280 &times; 280)</span>
-            </div>
-            <span class="lab-status-badge ready" id="labStatusBadge">
-              <span class="status-pulse-dot"></span> Ready
-            </span>
-          </div>
-
-          <div class="canvas-wrapper">
-            <canvas id="digitCanvas" width="280" height="280" class="digit-canvas" aria-label="Interactive digit drawing board"></canvas>
-            <div class="canvas-placeholder-hint" id="canvasHint">
-              <i class="fa-solid fa-hand-pointer"></i>
-              <span>Draw any digit 0–9</span>
-            </div>
-          </div>
-
-          <div class="lab-canvas-controls">
-            <button type="button" class="btn-lab-action" id="clearCanvasBtn" title="Clear Canvas">
-              <i class="fa-solid fa-rotate-left"></i> Clear
-            </button>
-            <button type="button" class="btn-lab-action btn-infer" id="predictCanvasBtn" title="Run Mathematical Inference">
-              <i class="fa-solid fa-brain"></i> Infer Digit
-            </button>
-            <label class="realtime-toggle" title="Toggle automatic inference on stroke end">
-              <input type="checkbox" id="realtimeToggle" checked>
-              <span class="slider-round"></span>
-              <span class="toggle-caption">Real-Time</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- 2. Softmax Output Probabilities & Top Prediction -->
-        <div class="lab-card lab-inference-card">
-          <div class="lab-card-header">
-            <div class="lab-card-title">
-              <i class="fa-solid fa-chart-simple"></i>
-              <span>Softmax Distribution</span>
-            </div>
-            <div class="tensor-preview-wrap" title="Processed 28x28 MNIST-normalized input tensor centered by Center of Mass">
-              <canvas id="previewCanvas" width="28" height="28" class="tensor-canvas"></canvas>
-              <span class="tensor-label">28&times;28 Tensor</span>
-            </div>
-          </div>
-
-          <div class="top-prediction-pod">
-            <div class="pod-label">PREDICTED DIGIT</div>
-            <div class="pod-core">
-              <div class="digit-display" id="predictedDigit">—</div>
-              <div class="digit-confidence-box">
-                <div class="conf-pill" id="predictedConfidence">0.0% Confidence</div>
-                <div class="latency-pill" id="inferenceLatency">Latency: &lt;1 ms (Browser Forward Pass)</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 10 Horizontal Distribution Bars -->
-          <div class="softmax-bars-container" id="distributionBars">
-            <!-- Dynamically populated or static fallback bars for digits 0-9 -->
-          </div>
-        </div>
-
-        <!-- 3. Mathematical Architecture & Pipeline Explainer -->
-        <div class="lab-card lab-architecture-card">
-          <div class="lab-card-header">
-            <div class="lab-card-title">
-              <i class="fa-solid fa-network-wired"></i>
-              <span>Pipeline &amp; Mathematical Engine</span>
-            </div>
-            <a href="https://lenet-5-cnn-handwritten-recognition.onrender.com/" target="_blank" rel="noopener noreferrer" class="backend-api-pill" title="Live Render LeNet-5 Backend API">
-              <span>Render API</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-
-          <div class="architecture-steps">
-            <div class="arch-step">
-              <div class="step-badge">01</div>
-              <div class="step-text">
-                <div class="step-heading">Continuous Stroke Rasterization</div>
-                <div class="step-desc">280&times;280 HTML5 canvas with smooth anti-aliased Gaussian brush interpolation.</div>
-              </div>
-            </div>
-
-            <div class="arch-step">
-              <div class="step-badge">02</div>
-              <div class="step-text">
-                <div class="step-heading">Bounding-Box &amp; Center-of-Mass Centering</div>
-                <div class="step-desc">Extracts non-zero bounding box, scales to 20&times;20 preserving aspect ratio, and centers by Center of Mass on a 28&times;28 grid (standard MNIST).</div>
-              </div>
-            </div>
-
-            <div class="arch-step">
-              <div class="step-badge">03</div>
-              <div class="step-text">
-                <div class="step-heading">Vectorized Feed-Forward Pass</div>
-                <div class="step-desc">784-D normalized vector &rarr; Dense 64 (ReLU) &rarr; Dense 32 (ReLU) &rarr; Dense 10 (Linear Logits). Zero external dependencies.</div>
-              </div>
-            </div>
-
-            <div class="arch-step">
-              <div class="step-badge">04</div>
-              <div class="step-text">
-                <div class="step-heading">Softmax Calibration</div>
-                <div class="step-desc">Normalized probability distribution \(P(y = k) = \frac{e^{z_k}}{\sum_{j=0}^{9} e^{z_j}}\) matching scikit-learn holdout benchmark.</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -389,603 +270,509 @@
 <section class="section" id="projects">
     <div class="container">
       <div class="section-header-center reveal">
-        <div class="section-pill">&lt; Featured Engineering Work &bull; Case Studies &gt;</div>
-        <h2 class="section-title">Projects &amp; Architectural Case Studies</h2>
-        <p class="section-subtitle">Deep architectural analyses into mathematical grid optimization, reliability-aware AI research, and production software systems.</p>
+        <div class="section-pill">&lt; Portfolio Showcase &gt;</div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Real-world applications, AI/ML research engines, and algorithmic systems formatted as developer window cards.</p>
       </div>
 
-      <!-- Deep-Dive Case Studies Stack -->
-      <div class="case-studies-container">
+      <!-- Project Cards Stack (Sticky Stacking Project Cards) -->
+      <div class="projects-stack" id="projectsStack">
 
-        <!-- CASE STUDY 1: National EV Energy Network Optimizer (AURA) -->
-        <article class="case-study-card reveal" id="cs-aura" data-skills="python scipy-milp linear-programming energy-modeling grid-dispatch">
-          <div class="cs-badge-row">
-            <span class="cs-badge flagship"><i class="fa-solid fa-bolt"></i> FLAGSHIP OPTIMIZATION SYSTEM</span>
-            <span class="cs-badge-meta">1,200 MW Grid &bull; 5 Indian Metro Clusters</span>
+        <div id="sticky-card-1" class="sticky-card">
+        <!-- 1. Personal AI Voice Assistant -->
+        <div class="abusaid-project-card" data-filter="ai">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-brands fa-python" style="color:var(--apple-cyan);"></i>
+              <span>voice_assistant.py</span>
+            </div>
+            <span class="project-num-badge">01 / 07</span>
           </div>
 
-          <div class="cs-grid">
-            <!-- Left: High-Res Diagram & Key Metrics -->
-            <div class="cs-visual-column">
-              <div class="cs-image-frame" title="National EV Energy Network Optimizer Architecture Model">
-                <img src="assets/energy-network-model.png" alt="National EV Energy Network Optimizer Architecture Diagram" class="cs-diagram-img" loading="lazy">
-                <div class="cs-image-overlay">
-                  <span class="cs-zoom-hint"><i class="fa-solid fa-diagram-project"></i> 24-Hour Dispatch LP/MILP Formulation</span>
-                </div>
-              </div>
-
-              <div class="cs-metrics-grid">
-                <div class="cs-metric-pod">
-                  <div class="cs-metric-number">1,200 MW</div>
-                  <div class="cs-metric-desc">720 MW DCFC + 480 MW Swapping</div>
-                </div>
-                <div class="cs-metric-pod">
-                  <div class="cs-metric-number">98.6%</div>
-                  <div class="cs-metric-desc">Dispatch Reliability (vs 78% baseline)</div>
-                </div>
-                <div class="cs-metric-pod">
-                  <div class="cs-metric-number">600 MWh</div>
-                  <div class="cs-metric-desc">BESS Distributed Storage Capacity</div>
-                </div>
-                <div class="cs-metric-pod">
-                  <div class="cs-metric-number">&minus;7.8%</div>
-                  <div class="cs-metric-desc">Storage Cyclic Loss Reduction</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right: Rigorous Engineering Case Breakdown -->
-            <div class="cs-content-column">
-              <h3 class="cs-title">National EV Energy Network Optimizer</h3>
-              <div class="cs-tagline">24-Hour Joint LP/MILP Multi-Cluster Dispatch &amp; Battery Arbitrage Engine</div>
-
-              <div class="cs-section-block">
-                <div class="cs-block-title"><i class="fa-solid fa-triangle-exclamation"></i> Engineering Problem</div>
-                <p class="cs-block-text">
-                  Coordinating 1,200 MW of fast-charging and battery-swapping infrastructure across 5 Indian metro clusters (Delhi NCR, Mumbai MMR, Bengaluru, Hyderabad, Chennai) under highly volatile Day-Ahead Market (DAM) wholesale energy tariffs and intermittent renewable generation without exceeding feeder capacity.
-                </p>
-              </div>
-
-              <div class="cs-section-block">
-                <div class="cs-block-title"><i class="fa-solid fa-compass-drafting"></i> Architectural Contribution</div>
-                <p class="cs-block-text">
-                  Formulated a 24-hour joint LP/MILP mathematical dispatch model with 600 MWh distributed Battery Energy Storage (BESS). Integrated dynamic State-of-Charge (SoC) retention boundaries and enforced a strict 5% spinning reserve security lock to safeguard against unexpected regional grid frequency drops.
-                </p>
-              </div>
-
-              <div class="cs-section-block">
-                <div class="cs-block-title"><i class="fa-solid fa-microchip"></i> Technical Approach</div>
-                <p class="cs-block-text">
-                  Modeled time-varying demand profiles and solved the resulting large-scale linear optimization problem using the SciPy HiGHS simplex/interior-point solver in Python. Automated peak-hour battery discharge to perform price arbitrage against IEX market spikes while reserving solar charging windows.
-                </p>
-              </div>
-
-              <div class="cs-section-block">
-                <div class="cs-block-title"><i class="fa-solid fa-circle-check"></i> Measured Outcomes</div>
-                <p class="cs-block-text">
-                  Exceeded the 95.0% target by delivering 98.6% simulated dispatch reliability, lowered battery cyclic degradation by 7.8% (staying below the strict 8.0% contract ceiling), and achieved zero over-allocation events during peak electricity price regimes.
-                </p>
-              </div>
-
-              <div class="cs-footer">
-                <div class="cs-tags">
-                  <span class="cs-tag">Python</span>
-                  <span class="cs-tag">SciPy HiGHS MILP</span>
-                  <span class="cs-tag">Linear Programming</span>
-                  <span class="cs-tag">Energy Modeling</span>
-                  <span class="cs-tag">IEX DAM</span>
-                </div>
-                <div class="cs-links">
-                  <a href="https://national-ev-energy-optimizer.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                  </a>
-                  <a href="https://github.com/theNovember22/national-ev-energy-optimizer" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
-                    <i class="fa-brands fa-github"></i> Repository
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- CASE STUDY 2: Reliability-Aware Active Learning (M.Tech CSE Research) -->
-        <article class="case-study-card reveal" id="cs-activehai" data-skills="pytorch active-learning bayesian-deep-learning monte-carlo-dropout auroc">
-          <div class="cs-badge-row">
-            <span class="cs-badge research"><i class="fa-solid fa-brain"></i> M.TECH RESEARCH &bull; NIT GOA</span>
-            <span class="cs-badge-meta">Human-AI Active Learning &bull; Medical Diagnostics</span>
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Personal AI Voice Assistant'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Lead AI &amp; NLP Developer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'Python'</span>, <span class="c-string">'Groq LLM API'</span>, <span class="c-string">'SpeechRecognition'</span>, <span class="c-string">'pyttsx3'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Python voice assistant with wake-word activation, offline speech recognition, and low-latency TTS. Leverages Groq LLM API for open-ended queries while using modular rule-based routing to bypass redundant LLM calls.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
           </div>
 
-          <div class="cs-grid">
-            <!-- Left: Pipeline SVG Diagram & Research Metrics -->
-            <div class="cs-visual-column">
-              <div class="cs-diagram-frame">
-                <!-- Clean High-Tech SVG Architecture Workflow -->
-                <svg class="activehai-svg-diagram" viewBox="0 0 540 320" fill="none" preserveAspectRatio="xMidYMid meet">
-                  <rect width="540" height="320" rx="14" fill="#0E121B" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
-                  
-                  <!-- Flow Node 1: Unlabeled Medical Pool -->
-                  <g transform="translate(24, 40)">
-                    <rect width="130" height="64" rx="8" fill="rgba(10,132,255,0.12)" stroke="#0A84FF" stroke-width="1.2"/>
-                    <text x="65" y="28" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">Unlabeled Pool</text>
-                    <text x="65" y="46" fill="#8E8E93" font-size="9" text-anchor="middle" font-family="monospace">DR-5 Dataset</text>
-                  </g>
-                  
-                  <!-- Arrow 1 -> 2 -->
-                  <path d="M 154 72 L 186 72" stroke="#0A84FF" stroke-width="2" stroke-dasharray="3 3"/>
-                  
-                  <!-- Flow Node 2: Monte Carlo Dropout -->
-                  <g transform="translate(196, 40)">
-                    <rect width="148" height="64" rx="8" fill="rgba(94,92,230,0.14)" stroke="#5E5CE6" stroke-width="1.2"/>
-                    <text x="74" y="28" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">MC Dropout Inference</text>
-                    <text x="74" y="46" fill="#BF5AF2" font-size="9" text-anchor="middle" font-family="monospace">N=20 Stochastic Passes</text>
-                  </g>
-                  
-                  <!-- Arrow 2 -> 3 -->
-                  <path d="M 344 72 L 376 72" stroke="#5E5CE6" stroke-width="2"/>
-                  
-                  <!-- Flow Node 3: Epistemic Uncertainty Estimation -->
-                  <g transform="translate(386, 40)">
-                    <rect width="130" height="64" rx="8" fill="rgba(255,159,10,0.14)" stroke="#FF9F0A" stroke-width="1.2"/>
-                    <text x="65" y="28" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">Uncertainty Metric</text>
-                    <text x="65" y="46" fill="#FFD60A" font-size="9" text-anchor="middle" font-family="monospace">Predictive Entropy</text>
-                  </g>
-                  
-                  <!-- Arrow Down to Gate -->
-                  <path d="M 451 104 L 451 138 L 270 138 L 270 162" stroke="#FF9F0A" stroke-width="2"/>
-                  
-                  <!-- Decision Gate: Selective Abstention Gate -->
-                  <g transform="translate(185, 162)">
-                    <rect width="170" height="48" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
-                    <text x="85" y="24" fill="#FFFFFF" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">Selective Abstention Gate</text>
-                    <text x="85" y="38" fill="#8E8E93" font-size="8.5" text-anchor="middle" font-family="monospace">Threshold &tau; Calibration</text>
-                  </g>
-
-                  <!-- Left Path: High Uncertainty -> Human Expert -->
-                  <path d="M 210 210 L 210 240 L 110 240 L 110 254" stroke="#FF453A" stroke-width="1.8"/>
-                  <g transform="translate(35, 254)">
-                    <rect width="150" height="50" rx="8" fill="rgba(255,69,58,0.12)" stroke="#FF453A" stroke-width="1.2"/>
-                    <text x="75" y="22" fill="#FF453A" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">Specialist Oracle</text>
-                    <text x="75" y="38" fill="#AEAEB2" font-size="8.5" text-anchor="middle" font-family="monospace">Manual Human Review</text>
-                  </g>
-
-                  <!-- Right Path: Low Uncertainty -> Auto-Annotation -->
-                  <path d="M 330 210 L 330 240 L 430 240 L 430 254" stroke="#30D158" stroke-width="1.8"/>
-                  <g transform="translate(355, 254)">
-                    <rect width="150" height="50" rx="8" fill="rgba(48,209,88,0.12)" stroke="#30D158" stroke-width="1.2"/>
-                    <text x="75" y="22" fill="#30D158" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">Auto-Annotation</text>
-                    <text x="75" y="38" fill="#AEAEB2" font-size="8.5" text-anchor="middle" font-family="monospace">High-Confidence Pass</text>
-                  </g>
-                </svg>
-              </div>
-
-              <div class="cs-metrics-grid">
-                <div class="cs-metric-pod">
-                  <div class="cs-metric-number">MC Dropout</div>
-                  <div class="cs-metric-desc">Bayesian Epistemic Uncertainty</div>
-                </div>
-                <div class="cs-metric-pod">
-                  <div class="cs-metric-number">DR-5</div>
-                  <div class="cs-metric-desc">Diabetic Retinopathy 5-Class Benchmark</div>
-                </div>
-                <div class="cs-metric-pod">
-                  <div class="cs-metric-number">AUROC / AUPRC</div>
-                  <div class="cs-metric-desc">Rigorous Error-Prediction Evaluation</div>
-                </div>
-                <div class="cs-metric-pod">
-                  <div class="cs-metric-number">Selective</div>
-                  <div class="cs-metric-desc">Abstention &amp; Hybrid Human Dispatch</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right: Rigorous Engineering Case Breakdown -->
-            <div class="cs-content-column">
-              <h3 class="cs-title">Reliability-Aware Active Learning</h3>
-              <div class="cs-tagline">Bayesian Uncertainty Estimation &amp; Selective Human-AI Collaboration</div>
-
-              <div class="cs-section-block">
-                <div class="cs-block-title"><i class="fa-solid fa-triangle-exclamation"></i> Research Problem</div>
-                <p class="cs-block-text">
-                  Standard deep neural networks tend to yield overconfident predictions on ambiguous, out-of-distribution medical scans. In high-stakes clinical domains, silent misclassifications can be disastrous, while relying on exhaustive specialist labeling is prohibitively expensive.
-                </p>
-              </div>
-
-              <div class="cs-section-block">
-                <div class="cs-block-title"><i class="fa-solid fa-compass-drafting"></i> Architectural Contribution</div>
-                <p class="cs-block-text">
-                  Extended the ActiveHAI active learning framework with a 4-stage reliability evaluation methodology. Integrated test-time Monte Carlo Dropout to approximate Bayesian posteriors, allowing the pipeline to distinguish true model ignorance (epistemic uncertainty) from sensor noise (aleatoric uncertainty).
-                </p>
-              </div>
-
-              <div class="cs-section-block">
-                <div class="cs-block-title"><i class="fa-solid fa-microchip"></i> Technical Approach</div>
-                <p class="cs-block-text">
-                  Evaluated the framework on the Diabetic Retinopathy DR-5 medical imaging benchmark using PyTorch. Generated N=20 stochastic forward passes per candidate sample to extract predictive entropy and mutual information, establishing a dynamic rejection threshold that delegates borderline samples to ophthalmologists.
-                </p>
-              </div>
-
-              <div class="cs-section-block">
-                <div class="cs-block-title"><i class="fa-solid fa-circle-check"></i> Measured Outcomes</div>
-                <p class="cs-block-text">
-                  Demonstrated statistically significant gains in error-detection AUROC and AUPRC over standard maximum softmax probability baselines, cutting clinical annotation burden by selectively querying medical experts only when uncertainty exceeds calibrated bounds.
-                </p>
-              </div>
-
-              <div class="cs-footer">
-                <div class="cs-tags">
-                  <span class="cs-tag">PyTorch</span>
-                  <span class="cs-tag">Active Learning</span>
-                  <span class="cs-tag">Monte Carlo Dropout</span>
-                  <span class="cs-tag">Bayesian Deep Learning</span>
-                  <span class="cs-tag">AUROC</span>
-                </div>
-                <div class="cs-links">
-                  <a href="https://drive.google.com/file/d/1fYlmltWHaMifirhFbVfzTciafs1utzuW/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-project-cta research">
-                    <i class="fa-solid fa-book-open"></i> Research Doc
-                  </a>
-                  <a href="https://github.com/theNovember22/reliability-aware-human-ai-active-learning" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
-                    <i class="fa-brands fa-github"></i> Repository
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Additional Production Systems (Varied Engineering Grid) -->
-      <div class="engineering-grid-wrapper">
-        <div class="grid-section-heading reveal">
-          <span class="grid-heading-pill">Production Systems &bull; Algorithmic Engines</span>
-          <h3 class="grid-title">Additional Core Projects</h3>
-          <p class="grid-subtitle">Full-stack web architectures, concurrent platforms, and algorithmic backtracking solvers.</p>
-        </div>
-
-        <div class="projects-engineering-grid">
-
-          <!-- 1. Personal AI Voice Assistant -->
-          <div class="eng-card reveal" data-skills="python groq-api nlp speech-recognition">
-            <div class="eng-card-top">
-              <div class="mac-traffic-lights">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="eng-card-title">voice_assistant.py</div>
-              <span class="eng-type-badge">AI / NLP</span>
-            </div>
-            <div class="eng-card-body">
-              <h4 class="eng-card-name">Personal AI Voice Assistant</h4>
-              <p class="eng-card-desc">
-                Python wake-word voice assistant featuring offline speech recognition and low-latency TTS. Integrates the Groq LLM API for open-ended dialog while using modular rule-based routing to bypass redundant LLM inference calls.
-              </p>
-              <div class="eng-card-tags">
-                <span>Python</span>
-                <span>Groq LLM</span>
-                <span>NLP</span>
-                <span>SpeechRec</span>
-              </div>
-            </div>
-            <div class="eng-card-footer">
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
               <a href="https://github.com/theNovember22/Voice-Assistant-With-Keyword-spotting" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
-                <i class="fa-brands fa-github"></i> Code
+                <i class="fa-brands fa-github"></i> View Repository
               </a>
               <a href="https://voice-assistant-with-keyword-spotting-1.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
               </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">Python</span>
+              <span class="project-tool-tag">Groq API</span>
+              <span class="project-tool-tag">NLP</span>
             </div>
           </div>
-
-          <!-- 2. MovieGo+ Ticket Booking Platform -->
-          <div class="eng-card reveal" data-skills="react-js node-js mongodb clerk-auth rest-apis">
-            <div class="eng-card-top">
-              <div class="mac-traffic-lights">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="eng-card-title">moviego_booking.js</div>
-              <span class="eng-type-badge">Full Stack</span>
-            </div>
-            <div class="eng-card-body">
-              <h4 class="eng-card-name">MovieGo+ Ticket Platform</h4>
-              <p class="eng-card-desc">
-                Full-stack concurrent movie ticket reservation platform engineered with Clerk authentication, role-based access control (RBAC), seat locking, and projection-indexed MongoDB queries for high-throughput concurrency.
-              </p>
-              <div class="eng-card-tags">
-                <span>React.js</span>
-                <span>Node.js</span>
-                <span>MongoDB</span>
-                <span>Clerk Auth</span>
-              </div>
-            </div>
-            <div class="eng-card-footer">
-              <a href="https://github.com/theNovember22/MovieGo-" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
-                <i class="fa-brands fa-github"></i> Code
-              </a>
-              <a href="https://moviego-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
-              </a>
-            </div>
-          </div>
-
-          <!-- 3. CNN Handwritten Digit Recognizer -->
-          <div class="eng-card reveal" data-skills="tensorflow keras python-backend canvas deep-learning">
-            <div class="eng-card-top">
-              <div class="mac-traffic-lights">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="eng-card-title">cnn_digit_recognizer.js</div>
-              <span class="eng-type-badge">Computer Vision</span>
-            </div>
-            <div class="eng-card-body">
-              <h4 class="eng-card-name">CNN Digit Recognizer</h4>
-              <p class="eng-card-desc">
-                End-to-end computer vision web app featuring a LeNet-5 CNN on MNIST with confusion matrix validation. Features an interactive HTML5 drawing canvas connecting to a live containerized Python backend for probabilistic inference.
-              </p>
-              <div class="eng-card-tags">
-                <span>TensorFlow</span>
-                <span>Keras</span>
-                <span>Python Backend</span>
-                <span>Canvas</span>
-              </div>
-            </div>
-            <div class="eng-card-footer">
-              <a href="https://github.com/theNovember22/LeNet-5_CNN_Handwritten_recognition" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
-                <i class="fa-brands fa-github"></i> Code
-              </a>
-              <a href="https://lenet-5-cnn-handwritten-recognition.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
-              </a>
-            </div>
-          </div>
-
-          <!-- 4. Interactive Sudoku Solver -->
-          <div class="eng-card reveal" data-skills="javascript-es6 backtracking dsa algorithms">
-            <div class="eng-card-top">
-              <div class="mac-traffic-lights">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="eng-card-title">sudoku_backtracker.js</div>
-              <span class="eng-type-badge">Algorithms / DSA</span>
-            </div>
-            <div class="eng-card-body">
-              <h4 class="eng-card-name">Interactive Sudoku Solver</h4>
-              <p class="eng-card-desc">
-                Recursive backtracking Sudoku solver solving any valid puzzle in &lt;1 second. Features real-time constraint validation, non-blocking visual animations, and responsive zero-dependency DOM rendering.
-              </p>
-              <div class="eng-card-tags">
-                <span>JavaScript (ES6)</span>
-                <span>Backtracking</span>
-                <span>Data Structures</span>
-                <span>DOM</span>
-              </div>
-            </div>
-            <div class="eng-card-footer">
-              <a href="https://github.com/theNovember22/Sudoku_Solver" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
-                <i class="fa-brands fa-github"></i> Code
-              </a>
-              <a href="https://thenovember22.github.io/Sudoku_Solver/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
-              </a>
-            </div>
-          </div>
-
-          <!-- 5. BayGrid Smart Parking System -->
-          <div class="eng-card reveal" data-skills="cpp-oop data-structures vercel backend-systems">
-            <div class="eng-card-top">
-              <div class="mac-traffic-lights">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="eng-card-title">baygrid_parking.cpp</div>
-              <span class="eng-type-badge">C++ OOP</span>
-            </div>
-            <div class="eng-card-body">
-              <h4 class="eng-card-name">BayGrid — Smart Parking</h4>
-              <p class="eng-card-desc">
-                C++ backend applying object-oriented design (encapsulation, inheritance, polymorphism, and abstraction) to model multidimensional parking bays, dynamic ticketing, and automated entry/exit allocation on Vercel.
-              </p>
-              <div class="eng-card-tags">
-                <span>C++ (OOP)</span>
-                <span>Data Structures</span>
-                <span>Systems Arch</span>
-                <span>Vercel</span>
-              </div>
-            </div>
-            <div class="eng-card-footer">
-              <a href="https://github.com/theNovember22/Parking-Managment-System" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
-                <i class="fa-brands fa-github"></i> Code
-              </a>
-              <a href="https://parking-managment-system-frontend.vercel.app/#/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
-              </a>
-            </div>
-          </div>
+        </div>
 
         </div>
+
+        <div id="sticky-card-2" class="sticky-card">
+        <!-- 2. MovieGo+ -->
+        <div class="abusaid-project-card" data-filter="fullstack">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-brands fa-react" style="color:var(--apple-blue);"></i>
+              <span>moviego_booking.js</span>
+            </div>
+            <span class="project-num-badge">02 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'MovieGo+ Ticket Booking Platform'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Full-Stack Web Architect'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'React.js'</span>, <span class="c-string">'Node.js'</span>, <span class="c-string">'MongoDB'</span>, <span class="c-string">'Clerk Auth'</span>, <span class="c-string">'Vercel'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Full-stack movie ticket reservation platform engineered for concurrent users with Clerk authentication, RBAC, and sessions. RESTful APIs for listings and seats; optimized MongoDB queries via projection indexing.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/MovieGo-" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://moviego-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">React.js</span>
+              <span class="project-tool-tag">Node.js</span>
+              <span class="project-tool-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <div id="sticky-card-3" class="sticky-card">
+        <!-- 3. Reliability-Aware Human-AI Active Learning -->
+        <div class="abusaid-project-card" data-filter="ai">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-solid fa-brain" style="color:var(--apple-purple);"></i>
+              <span>human_ai_active_learning.py</span>
+            </div>
+            <span class="project-num-badge">03 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Reliability-Aware Active Learning'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'M.Tech CSE Researcher @ NIT Goa'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'PyTorch'</span>, <span class="c-string">'ActiveHAI'</span>, <span class="c-string">'Monte Carlo Dropout'</span>, <span class="c-string">'AUROC'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Extending the ActiveHAI framework with a 4-stage reliability evaluation methodology to maximize human-AI collaborative accuracy. Leverages Monte Carlo Dropout for uncertainty estimation and benchmarked on DR-5.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/reliability-aware-human-ai-active-learning" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://drive.google.com/file/d/1fYlmltWHaMifirhFbVfzTciafs1utzuW/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-project-cta research">
+                <i class="fa-solid fa-book-open"></i> Research Doc
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">PyTorch</span>
+              <span class="project-tool-tag">MC Dropout</span>
+              <span class="project-tool-tag">AI Reliability</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <div id="sticky-card-4" class="sticky-card">
+        <!-- 4. CNN Digit Recognition -->
+        <div class="abusaid-project-card" data-filter="ai">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-solid fa-pencil" style="color:var(--apple-green);"></i>
+              <span>cnn_digit_recognizer.js</span>
+            </div>
+            <span class="project-num-badge">04 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'CNN Handwritten Digit Recognizer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Computer Vision Developer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'TensorFlow'</span>, <span class="c-string">'Keras'</span>, <span class="c-string">'LeNet-5'</span>, <span class="c-string">'Python Backend'</span>, <span class="c-string">'Canvas'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'End-to-end AI web app featuring a LeNet-5 CNN on MNIST, evaluated via Scikit-learn confusion matrices. Drag-and-drop HTML5 drawing canvas connects to a Python HTTP backend for real-time inference and live probability charts.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/LeNet-5_CNN_Handwritten_recognition" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://lenet-5-cnn-handwritten-recognition.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">TensorFlow</span>
+              <span class="project-tool-tag">Keras</span>
+              <span class="project-tool-tag">Canvas</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <div id="sticky-card-5" class="sticky-card">
+        <!-- 5. Interactive Sudoku Solver -->
+        <div class="abusaid-project-card" data-filter="systems">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-solid fa-table-cells" style="color:var(--apple-orange);"></i>
+              <span>sudoku_backtracker.js</span>
+            </div>
+            <span class="project-num-badge">05 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Interactive Sudoku Solver'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Algorithms &amp; DSA Developer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'JavaScript (ES6)'</span>, <span class="c-string">'Backtracking'</span>, <span class="c-string">'Vanilla CSS'</span>, <span class="c-string">'DOM'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Ultra-fast algorithmic Sudoku solver solving any valid puzzle in under 1 second using recursive backtracking. Features real-time constraint validation and step-by-step visual animation with zero external libraries.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/Sudoku_Solver" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://thenovember22.github.io/Sudoku_Solver/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">Backtracking</span>
+              <span class="project-tool-tag">Vanilla JS</span>
+              <span class="project-tool-tag">DSA</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <div id="sticky-card-6" class="sticky-card">
+        <!-- 6. BayGrid Smart Parking -->
+        <div class="abusaid-project-card" data-filter="systems">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-solid fa-car" style="color:var(--apple-mint);"></i>
+              <span>baygrid_parking.cpp</span>
+            </div>
+            <span class="project-num-badge">06 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'BayGrid — Smart Parking System'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'C++ OOP &amp; Backend Engineer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'C++'</span>, <span class="c-string">'OOP Architecture'</span>, <span class="c-string">'Data Structures'</span>, <span class="c-string">'Vercel'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'C++ backend utilizing encapsulation, inheritance, polymorphism, and abstraction to model parking lots, vehicle categories, and ticketing. Implemented automated entry/exit allocation and live availability tracking on Vercel.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/Parking-Managment-System" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://parking-managment-system-frontend.vercel.app/#/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">C++ (OOP)</span>
+              <span class="project-tool-tag">Data Structures</span>
+              <span class="project-tool-tag">Vercel</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <div id="sticky-card-7" class="sticky-card">
+        <!-- 7. National EV Energy Optimization -->
+        <div class="abusaid-project-card" data-filter="systems">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-solid fa-bolt" style="color:var(--apple-yellow);"></i>
+              <span>ev_dispatch_optimizer.py</span>
+            </div>
+            <span class="project-num-badge">07 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'National EV Energy Network Optimizer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Optimization &amp; Modeling Architect'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'Python'</span>, <span class="c-string">'SciPy HiGHS MILP'</span>, <span class="c-string">'IEX DAM Trading'</span>, <span class="c-string">'Liquid Glass'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Real-time dispatch optimization for 1,200 MW installed capacity across 5 Indian metro clusters (Delhi NCR, Mumbai, Bengaluru, Hyderabad, Chennai) balancing solar/wind with DAM. Solves 24-hour MILP with 5% reserve lock.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/national-ev-energy-optimizer" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://national-ev-energy-optimizer.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">SciPy MILP</span>
+              <span class="project-tool-tag">Python</span>
+              <span class="project-tool-tag">1200 MW Grid</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ========================================================================
-       5. Technical Competencies & Categorized Skills Grid
-       ======================================================================== -->
-  <section class="section" id="skills">
+<section class="section" id="skills">
     <div class="container">
       <div class="section-header-center reveal">
-        <div class="section-pill">&lt; Technical Stack &bull; Interactive Skill Grid &gt;</div>
-        <h2 class="section-title">Technical Competencies</h2>
-        <p class="section-subtitle">Categorized proficiencies across software engineering, AI/ML research, backend architectures, and data engineering. Hover or click any skill to highlight related projects.</p>
+        <div class="section-pill">&lt; Skills &amp; Tech Stack &gt;</div>
+        <h2 class="section-title">Technical Expertise</h2>
+        <p class="section-subtitle">Core proficiencies, modern frameworks, and enterprise tools with official developer logos.</p>
       </div>
 
-      <!-- Categorized Skills Grid -->
-      <div class="categorized-skills-grid reveal">
-        
-        <!-- Category 1: Programming Languages -->
-        <div class="skill-category-card">
-          <div class="skill-cat-header">
-            <i class="fa-solid fa-code"></i>
-            <span>Programming Languages</span>
+      <!-- Dual Infinite Marquee Strips -->
+      <div class="skills-marquee-wrapper reveal">
+        <!-- Row 1: Leftward Scroll -->
+        <div class="skills-marquee-track">
+          <!-- Set 1 -->
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-box-img">
+            <span class="skill-box-name">Python</span>
           </div>
-          <div class="skill-tags-group">
-            <button type="button" class="skill-pill-btn" data-skill="python">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" class="skill-icon">
-              <span>Python</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="cpp-oop">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ logo" class="skill-icon">
-              <span>C++ (OOP)</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="c">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C logo" class="skill-icon">
-              <span>C</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="javascript-es6">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="skill-icon">
-              <span>JavaScript (ES6+)</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="sql">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL logo" class="skill-icon">
-              <span>SQL</span>
-            </button>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="skill-box-img">
+            <span class="skill-box-name">C++ (OOP)</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="skill-box-img">
+            <span class="skill-box-name">C</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-box-img">
+            <span class="skill-box-name">JavaScript</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js" class="skill-box-img">
+            <span class="skill-box-name">React.js</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-box-img">
+            <span class="skill-box-name">HTML5</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="skill-box-img">
+            <span class="skill-box-name">CSS3</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-box-img">
+            <span class="skill-box-name">Node.js</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-box-img">
+            <span class="skill-box-name">Git</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="skill-box-img">
+            <span class="skill-box-name">GitHub</span>
+          </div>
+
+          <!-- Set 2 (Duplicated for seamless loop) -->
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-box-img">
+            <span class="skill-box-name">Python</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="skill-box-img">
+            <span class="skill-box-name">C++ (OOP)</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="skill-box-img">
+            <span class="skill-box-name">C</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-box-img">
+            <span class="skill-box-name">JavaScript</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js" class="skill-box-img">
+            <span class="skill-box-name">React.js</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-box-img">
+            <span class="skill-box-name">HTML5</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="skill-box-img">
+            <span class="skill-box-name">CSS3</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-box-img">
+            <span class="skill-box-name">Node.js</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-box-img">
+            <span class="skill-box-name">Git</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="skill-box-img">
+            <span class="skill-box-name">GitHub</span>
           </div>
         </div>
 
-        <!-- Category 2: AI & Machine Learning -->
-        <div class="skill-category-card">
-          <div class="skill-cat-header">
-            <i class="fa-solid fa-brain"></i>
-            <span>AI &amp; Machine Learning</span>
+        <!-- Row 2: Rightward Scroll -->
+        <div class="skills-marquee-track reverse">
+          <!-- Set 1 -->
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-box-img">
+            <span class="skill-box-name">PyTorch</span>
           </div>
-          <div class="skill-tags-group">
-            <button type="button" class="skill-pill-btn" data-skill="pytorch">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch logo" class="skill-icon">
-              <span>PyTorch</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="tensorflow">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow logo" class="skill-icon">
-              <span>TensorFlow / Keras</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="scikit-learn">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn logo" class="skill-icon">
-              <span>Scikit-Learn</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="active-learning">
-              <i class="fa-solid fa-arrows-spin skill-fa-icon"></i>
-              <span>Active Learning</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="monte-carlo-dropout">
-              <i class="fa-solid fa-dice-d20 skill-fa-icon"></i>
-              <span>Monte Carlo Dropout</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="groq-api">
-              <i class="fa-solid fa-bolt-lightning skill-fa-icon"></i>
-              <span>Groq LLM API</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="deep-learning">
-              <i class="fa-solid fa-network-wired skill-fa-icon"></i>
-              <span>Deep Neural Networks</span>
-            </button>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-box-img">
+            <span class="skill-box-name">TensorFlow</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" class="skill-box-img">
+            <span class="skill-box-name">Scikit-Learn</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="skill-box-img">
+            <span class="skill-box-name">MongoDB</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-box-img">
+            <span class="skill-box-name">SQL / DBMS</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-box-img">
+            <span class="skill-box-name">PostgreSQL</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-box-img">
+            <span class="skill-box-name">Docker</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="skill-box-img">
+            <span class="skill-box-name">Linux</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel" class="skill-box-img">
+            <span class="skill-box-name">Vercel</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-box-img">
+            <span class="skill-box-name">VS Code</span>
+          </div>
+
+          <!-- Set 2 (Duplicated for seamless loop) -->
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-box-img">
+            <span class="skill-box-name">PyTorch</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-box-img">
+            <span class="skill-box-name">TensorFlow</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" class="skill-box-img">
+            <span class="skill-box-name">Scikit-Learn</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="skill-box-img">
+            <span class="skill-box-name">MongoDB</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-box-img">
+            <span class="skill-box-name">SQL / DBMS</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-box-img">
+            <span class="skill-box-name">PostgreSQL</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-box-img">
+            <span class="skill-box-name">Docker</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="skill-box-img">
+            <span class="skill-box-name">Linux</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel" class="skill-box-img">
+            <span class="skill-box-name">Vercel</span>
+          </div>
+          <div class="skill-box-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-box-img">
+            <span class="skill-box-name">VS Code</span>
           </div>
         </div>
-
-        <!-- Category 3: Backend & Systems -->
-        <div class="skill-category-card">
-          <div class="skill-cat-header">
-            <i class="fa-solid fa-server"></i>
-            <span>Backend &amp; Systems</span>
-          </div>
-          <div class="skill-tags-group">
-            <button type="button" class="skill-pill-btn" data-skill="node-js">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js logo" class="skill-icon">
-              <span>Node.js</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="rest-apis">
-              <i class="fa-solid fa-network-wired skill-fa-icon"></i>
-              <span>RESTful APIs</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="backend-systems">
-              <i class="fa-solid fa-cubes skill-fa-icon"></i>
-              <span>OOP Architecture</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="linux">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux logo" class="skill-icon">
-              <span>Linux / Shell</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="linear-programming">
-              <i class="fa-solid fa-chart-line skill-fa-icon"></i>
-              <span>SciPy Linear Programming</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Category 4: Data Engineering & Databases -->
-        <div class="skill-category-card">
-          <div class="skill-cat-header">
-            <i class="fa-solid fa-database"></i>
-            <span>Data Platforms &amp; Databases</span>
-          </div>
-          <div class="skill-tags-group">
-            <button type="button" class="skill-pill-btn" data-skill="mongodb">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB logo" class="skill-icon">
-              <span>MongoDB</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="postgresql">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" class="skill-icon">
-              <span>PostgreSQL</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="mysql">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo" class="skill-icon">
-              <span>MySQL</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="etl-pipelines">
-              <i class="fa-solid fa-diagram-project skill-fa-icon"></i>
-              <span>Production ETL Pipelines</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="sap-analytics">
-              <i class="fa-solid fa-chart-pie skill-fa-icon"></i>
-              <span>SAP Analytics Cloud &bull; SAC</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Category 5: Tools, Cloud & Platforms -->
-        <div class="skill-category-card">
-          <div class="skill-cat-header">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            <span>Tools &amp; Platforms</span>
-          </div>
-          <div class="skill-tags-group">
-            <button type="button" class="skill-pill-btn" data-skill="git">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" class="skill-icon">
-              <span>Git</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="github">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" class="skill-icon">
-              <span>GitHub</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="docker">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" class="skill-icon">
-              <span>Docker</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="vercel">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel logo" class="skill-icon">
-              <span>Vercel</span>
-            </button>
-            <button type="button" class="skill-pill-btn" data-skill="vscode">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code logo" class="skill-icon">
-              <span>VS Code</span>
-            </button>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1274,8 +1061,8 @@
               </div>
             </div>
 
-            <!-- Floating Liquid-Glass Flyout Panel (Opens Downward) -->
-            <div class="airport-glass-panel panel-dir-down">
+            <!-- Floating Liquid-Glass Flyout Panel (Opens to Right) -->
+            <div class="airport-glass-panel panel-dir-right">
               <div class="glass-panel-header">
                 <div class="panel-callout">
                   <i class="fa-solid fa-database"></i>
@@ -1745,7 +1532,6 @@
   </div>
 
   <!-- Vanilla JavaScript App Logic -->
-  <script src="mnist_model.js"></script>
-  <script src="app.js?v=cinematic4"></script>
+  <script src="app.js?v=cinematic3"></script>
 </body>
 </html>
