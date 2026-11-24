@@ -1095,18 +1095,18 @@ body.light-theme .nav-link.active {
 
 
 /* ==========================================================================
-   Career Flight Path (Scroll-Controlled Supersonic Trajectory)
+   Work & Leadership — Career Airport Journey (Minimal Storytelling)
    ========================================================================== */
-.flight-section {
+.airport-section {
   position: relative;
   width: 100%;
-  height: 380vh;
+  height: 260vh;
   background: transparent;
   margin: 0;
   padding: 0;
 }
 
-.flight-sticky-viewport {
+.airport-sticky-stage {
   position: sticky;
   top: 0;
   left: 0;
@@ -1119,122 +1119,154 @@ body.light-theme .nav-link.active {
   z-index: 5;
 }
 
-/* Atmospheric Ambient Lighting */
-.flight-ambient-glow {
+/* Ambient Subtle Runway Light */
+.airport-ambient-light {
   position: absolute;
   top: 25%;
   left: 10%;
   width: 80%;
   height: 50%;
-  background: radial-gradient(ellipse at 50% 50%, rgba(10, 132, 255, 0.08) 0%, rgba(94, 92, 230, 0.04) 45%, transparent 75%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(10, 132, 255, 0.05) 0%, rgba(48, 209, 88, 0.03) 40%, transparent 75%);
   pointer-events: none;
   z-index: 1;
-  filter: blur(60px);
+  filter: blur(50px);
 }
 
-body.light-theme .flight-ambient-glow {
-  background: radial-gradient(ellipse at 50% 50%, rgba(0, 113, 227, 0.06) 0%, rgba(94, 92, 230, 0.03) 45%, transparent 75%);
+body.light-theme .airport-ambient-light {
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 113, 227, 0.04) 0%, rgba(4, 120, 87, 0.02) 40%, transparent 75%);
 }
 
-/* Header & Avionics HUD */
-.flight-header-wrap {
+/* Header & Minimal Transit Bar */
+.airport-header-wrap {
   position: relative;
   z-index: 10;
   text-align: center;
-  padding: 24px 20px 8px;
+  padding: 24px 20px 6px;
   flex-shrink: 0;
 }
 
-.flight-header-wrap .section-pill {
+.airport-header-wrap .section-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-.flight-header-wrap .section-title {
+.airport-header-wrap .section-title {
   font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 4px;
 }
 
-.flight-header-wrap .section-subtitle {
-  font-size: 0.95rem;
-  max-width: 640px;
-  margin: 0 auto 12px;
+.airport-header-wrap .section-subtitle {
+  font-size: 0.92rem;
+  max-width: 620px;
+  margin: 0 auto 10px;
 }
 
-/* Cockpit HUD Bar */
-.flight-avionics-hud {
+/* Minimal Departure-Board Transit Bar */
+.airport-transit-bar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 4px;
+  padding: 5px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
-.hud-pill {
+body.light-theme .airport-transit-bar {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.transit-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: var(--radius-full);
-  font-size: 0.74rem;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #E5E5EA;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.hud-pill i {
-  color: var(--apple-cyan);
   font-size: 0.72rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  color: #8E8E93;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.hud-label {
-  opacity: 0.65;
+.transit-pill i {
+  font-size: 0.68rem;
+  opacity: 0.7;
+}
+
+.transit-code {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.transit-label {
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
-}
-
-.hud-value {
-  font-weight: 700;
-  color: #64D2FF;
   letter-spacing: 0.02em;
 }
 
-.hud-pill.active-leg .hud-value {
+.transit-pill.active {
+  color: #FFFFFF;
+  background: rgba(10, 132, 255, 0.18);
+  border: 1px solid rgba(10, 132, 255, 0.4);
+  box-shadow: 0 0 12px rgba(10, 132, 255, 0.3);
+}
+
+.transit-pill.active i {
+  color: var(--apple-cyan);
+  opacity: 1;
+}
+
+.transit-pill.passed {
+  color: #E5E5EA;
+}
+
+.transit-pill.passed i {
   color: #30D158;
 }
 
-body.light-theme .hud-pill {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: #1C1C1E;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+body.light-theme .transit-pill {
+  color: #636366;
 }
 
-body.light-theme .hud-pill i {
+body.light-theme .transit-pill.active {
+  color: #0071E3;
+  background: rgba(0, 113, 227, 0.1);
+  border: 1px solid rgba(0, 113, 227, 0.35);
+  box-shadow: 0 0 10px rgba(0, 113, 227, 0.15);
+}
+
+body.light-theme .transit-pill.active i {
   color: #0071E3;
 }
 
-body.light-theme .hud-value {
-  color: #0071E3;
-}
-
-body.light-theme .hud-pill.active-leg .hud-value {
+body.light-theme .transit-pill.passed i {
   color: #047857;
 }
 
-/* Flight Stage (Canvas for SVG & Milestone Cards) */
-.flight-stage {
+.transit-arrow {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+}
+
+body.light-theme .transit-arrow {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* Airport Stage */
+.airport-stage {
   position: relative;
   flex: 1;
   width: 100%;
@@ -1244,8 +1276,8 @@ body.light-theme .hud-pill.active-leg .hud-value {
   min-height: 480px;
 }
 
-/* Flight Path SVG */
-.flight-svg {
+/* Airport SVG Runway */
+.airport-svg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1255,46 +1287,46 @@ body.light-theme .hud-pill.active-leg .hud-value {
   overflow: visible;
 }
 
-.flight-guide-path {
-  stroke: rgba(255, 255, 255, 0.13);
-  stroke-width: 3;
+.airport-guide-path {
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 2.5;
   stroke-dasharray: 6 8;
   stroke-linecap: round;
   fill: none;
 }
 
-body.light-theme .flight-guide-path {
-  stroke: rgba(0, 0, 0, 0.13);
+body.light-theme .airport-guide-path {
+  stroke: rgba(0, 0, 0, 0.12);
 }
 
-.flight-active-trail {
-  stroke: url(#flightTrailGradDark);
-  stroke-width: 4.5;
+.airport-active-trail {
+  stroke: url(#runwayTrailGrad);
+  stroke-width: 3.5;
   stroke-linecap: round;
   fill: none;
-  filter: drop-shadow(0 0 10px rgba(10, 132, 255, 0.7));
+  filter: drop-shadow(0 0 8px rgba(10, 132, 255, 0.65));
   transition: stroke 0.3s ease;
 }
 
-body.light-theme .flight-active-trail {
-  stroke: url(#flightTrailGradLight);
-  filter: drop-shadow(0 0 8px rgba(0, 113, 227, 0.5));
+body.light-theme .airport-active-trail {
+  stroke: url(#runwayTrailGradLight);
+  filter: drop-shadow(0 0 6px rgba(0, 113, 227, 0.45));
 }
 
-/* Waypoint Beacons */
-.flight-waypoint {
+/* Gate Beacons */
+.airport-beacon {
   cursor: pointer;
   pointer-events: auto;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-  opacity: 0.5;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.45;
 }
 
-.flight-waypoint:hover {
+.airport-beacon:hover {
   opacity: 1;
   transform: scale(1.15);
 }
 
-.waypoint-pulse {
+.beacon-pulse {
   fill: none;
   stroke: rgba(10, 132, 255, 0.45);
   stroke-width: 2;
@@ -1302,476 +1334,396 @@ body.light-theme .flight-active-trail {
   transform-origin: center;
 }
 
-.waypoint-core {
+.beacon-dot {
   fill: #0A84FF;
   stroke: #FFFFFF;
   stroke-width: 2;
-  filter: drop-shadow(0 0 8px rgba(10, 132, 255, 0.85));
+  filter: drop-shadow(0 0 6px rgba(10, 132, 255, 0.8));
 }
 
-.flight-waypoint.active {
+.airport-beacon.active {
   opacity: 1;
 }
 
-.flight-waypoint.active .waypoint-core {
+.airport-beacon.active .beacon-dot {
   fill: #FFFFFF;
   stroke: #0A84FF;
-  stroke-width: 3.5;
-  filter: drop-shadow(0 0 14px rgba(10, 132, 255, 1));
+  stroke-width: 3;
+  filter: drop-shadow(0 0 12px rgba(10, 132, 255, 1));
 }
 
-.flight-waypoint.passed {
+.airport-beacon.passed {
   opacity: 0.85;
 }
 
-/* Latest Waypoint: NIT Goa Teaching Assistant (Apex/Current) */
-.latest-waypoint .current-pulse {
-  stroke: rgba(48, 209, 88, 0.55);
+.current-dest-pulse {
+  stroke: rgba(48, 209, 88, 0.5);
 }
 
-.latest-waypoint .current-core {
+.current-dest-dot {
   fill: #30D158;
-  stroke: #FFFFFF;
-  stroke-width: 2.5;
-  filter: drop-shadow(0 0 10px rgba(48, 209, 88, 0.9));
 }
 
-.latest-waypoint.active .current-core {
+.airport-beacon.active .current-dest-dot {
   fill: #FFFFFF;
   stroke: #30D158;
-  stroke-width: 4;
-  filter: drop-shadow(0 0 16px rgba(48, 209, 88, 1));
+  filter: drop-shadow(0 0 14px rgba(48, 209, 88, 1));
 }
 
-body.light-theme .waypoint-core {
+body.light-theme .beacon-dot {
   fill: #0071E3;
-  stroke: #FFFFFF;
 }
 
-body.light-theme .latest-waypoint .current-core {
+body.light-theme .current-dest-dot {
   fill: #047857;
-  stroke: #FFFFFF;
 }
 
-/* Supersonic Jet Aircraft */
-.flight-aircraft {
-  filter: drop-shadow(0 0 14px rgba(10, 132, 255, 0.65));
+/* Minimal Aircraft Silhouette */
+.airport-aircraft {
   pointer-events: auto;
   cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(10, 132, 255, 0.7));
   transition: filter 0.3s ease;
 }
 
-.aircraft-plume {
-  animation: plumeFlicker 0.15s infinite alternate ease-in-out;
+.aircraft-halo {
+  fill: rgba(10, 132, 255, 0.16);
 }
 
-.aircraft-body-wing {
-  fill: #F2F2F7;
-  stroke: rgba(255, 255, 255, 0.7);
-  stroke-width: 0.8;
-}
-
-.aircraft-body-fuselage {
+.aircraft-shape {
   fill: #FFFFFF;
-  stroke: #E5E5EA;
+  stroke: #0A84FF;
   stroke-width: 0.6;
 }
 
-.aircraft-body-canopy {
-  fill: #64D2FF;
-  opacity: 0.95;
+body.light-theme .aircraft-halo {
+  fill: rgba(0, 113, 227, 0.12);
 }
 
-.aircraft-body-tail {
-  fill: #D1D1D6;
-}
-
-body.light-theme .aircraft-body-wing {
+body.light-theme .aircraft-shape {
   fill: #1C1C1E;
-  stroke: rgba(0, 0, 0, 0.6);
+  stroke: #0071E3;
 }
 
-body.light-theme .aircraft-body-fuselage {
-  fill: #000000;
-  stroke: #3A3A3C;
-}
-
-body.light-theme .aircraft-body-tail {
-  fill: #2C2C2E;
-}
-
-/* Floating Liquid-Glass Milestone Panels */
-.flight-milestones-container {
+/* Airport Terminals Container & Cards */
+.airport-terminals-container {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 4;
 }
 
-.flight-milestone-panel {
+.airport-terminal-card {
   position: absolute;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(24px) scale(0.96);
-  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
-}
-
-/* Diagonal Staggering Across the 1440 Stage to Prevent Any Overlap */
-#milestone-1 {
-  left: 2%;
-  bottom: 5%;
-  width: clamp(290px, 23vw, 360px);
-}
-
-#milestone-2 {
-  left: 26%;
-  top: 2%;
-  width: clamp(290px, 23vw, 360px);
-}
-
-#milestone-3 {
-  left: 49%;
-  bottom: 5%;
-  width: clamp(290px, 23vw, 360px);
-}
-
-#milestone-4 {
-  right: 2%;
-  top: 2%;
-  width: clamp(310px, 25vw, 400px);
-}
-
-/* Milestone States Driven by Scroll Progress */
-.flight-milestone-panel.revealed {
-  opacity: 0.82;
-  transform: translateY(0) scale(1);
   pointer-events: auto;
-}
-
-.flight-milestone-panel.focused {
-  opacity: 1;
-  transform: translateY(-6px) scale(1.02);
-  pointer-events: auto;
-  z-index: 10;
-}
-
-.flight-milestone-panel.passed {
-  opacity: 0.8;
-  transform: translateY(0) scale(0.98);
-  pointer-events: auto;
-}
-
-/* Liquid-Glass Card Styling */
-.milestone-glass-card {
-  background: rgba(18, 18, 24, 0.74);
+  width: clamp(285px, 22.5vw, 345px);
+  background: rgba(18, 18, 24, 0.78);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  padding: 22px 24px;
-  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  border-radius: 18px;
+  padding: 20px 22px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
 }
 
-.flight-milestone-panel:hover .milestone-glass-card {
-  border-color: rgba(10, 132, 255, 0.55);
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.55), 0 0 28px rgba(10, 132, 255, 0.22);
+#airport-term-1 {
+  left: 2%;
+  top: 10%;
 }
 
-.flight-milestone-panel.focused .milestone-glass-card {
-  border-color: rgba(10, 132, 255, 0.7);
-  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.65), 0 0 36px rgba(10, 132, 255, 0.28);
+#airport-term-2 {
+  left: 26.5%;
+  top: 38%;
 }
 
-/* Current / Latest Milestone Card (NIT Goa TA) */
-.milestone-glass-card.latest-card {
-  background: rgba(15, 26, 20, 0.8);
-  border: 1px solid rgba(48, 209, 88, 0.4);
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.5), 0 0 28px rgba(48, 209, 88, 0.18);
+#airport-term-3 {
+  left: 51%;
+  top: 10%;
 }
 
-.flight-milestone-panel.focused .milestone-glass-card.latest-card,
-.flight-milestone-panel:hover .milestone-glass-card.latest-card {
-  border-color: #30D158;
-  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.65), 0 0 42px rgba(48, 209, 88, 0.35);
+#airport-term-4 {
+  right: 2%;
+  top: 38%;
 }
 
-/* Card Internal Typography & Elements */
-.milestone-flight-tag {
+/* Terminal Gate Header */
+.terminal-gate-header {
+  position: relative;
+}
+
+.gate-callsign {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
-  margin-bottom: 12px;
-  font-size: 0.74rem;
+  margin-bottom: 8px;
+  font-size: 0.72rem;
   font-weight: 700;
-  text-transform: uppercase;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
   letter-spacing: 0.05em;
 }
 
-.flight-callsign {
+.gate-tag {
   color: var(--apple-cyan);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
-.flight-callsign.current-callsign {
-  color: #30D158;
-}
-
-.flight-date-badge {
-  padding: 3px 10px;
+.gate-status {
+  padding: 2px 7px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #E5E5EA;
-  font-size: 0.72rem;
-  font-weight: 600;
-}
-
-.flight-date-badge.current-badge {
-  background: rgba(48, 209, 88, 0.14);
-  border-color: rgba(48, 209, 88, 0.32);
-  color: #30D158;
-}
-
-.milestone-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.milestone-org-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  font-size: 1.05rem;
-  flex-shrink: 0;
-  background: rgba(10, 132, 255, 0.14);
-  border: 1px solid rgba(10, 132, 255, 0.28);
-  color: var(--apple-cyan);
-}
-
-.milestone-org-avatar.amazon-icon {
-  color: #FF9900;
-  background: rgba(255, 153, 0, 0.12);
-  border-color: rgba(255, 153, 0, 0.28);
-}
-
-.milestone-org-avatar.current-avatar {
-  color: #30D158;
-  background: rgba(48, 209, 88, 0.14);
-  border-color: rgba(48, 209, 88, 0.3);
-}
-
-.milestone-role {
-  font-size: 1.05rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1.3;
-  letter-spacing: -0.015em;
-  margin: 0;
+  letter-spacing: 0.04em;
 }
 
-.milestone-company {
-  font-size: 0.84rem;
-  color: #98989D;
-  font-weight: 500;
-  margin-top: 2px;
+.status-departed {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #AEAEB2;
 }
 
-.milestone-company.current-company {
+.status-active {
+  background: rgba(10, 132, 255, 0.14);
+  border: 1px solid rgba(10, 132, 255, 0.32);
   color: #64D2FF;
 }
 
-.milestone-divider {
+.status-fellowship {
+  background: rgba(255, 153, 0, 0.12);
+  border: 1px solid rgba(255, 153, 0, 0.28);
+  color: #FF9900;
+}
+
+.terminal-org-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 0 0 3px;
+}
+
+.terminal-role-title {
+  font-size: 0.84rem;
+  color: #64D2FF;
+  font-weight: 500;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.terminal-meta-line {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.76rem;
+  color: #8E8E93;
+}
+
+.terminal-meta-line span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.terminal-hover-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s ease;
+}
+
+.terminal-hover-hint i {
+  color: var(--apple-cyan);
+  font-size: 0.65rem;
+}
+
+/* HOVER = ENTER THE TERMINAL (Interactive Sliding Door) */
+.terminal-sliding-door {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.airport-terminal-card:hover,
+.airport-terminal-card.terminal-open {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(10, 132, 255, 0.6);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 30px rgba(10, 132, 255, 0.22);
+  z-index: 10;
+}
+
+.airport-terminal-card:hover .terminal-sliding-door,
+.airport-terminal-card.terminal-open .terminal-sliding-door {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.airport-terminal-card:hover .terminal-hover-hint,
+.airport-terminal-card.terminal-open .terminal-hover-hint {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.airport-terminal-card.active-dest {
+  border-color: rgba(10, 132, 255, 0.5);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.5), 0 0 20px rgba(10, 132, 255, 0.16);
+}
+
+.airport-terminal-card.latest-dest {
+  border-color: rgba(48, 209, 88, 0.35);
+}
+
+.airport-terminal-card.latest-dest:hover,
+.airport-terminal-card.latest-dest.active-dest {
+  border-color: #30D158;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 32px rgba(48, 209, 88, 0.25);
+}
+
+.terminal-interior-body {
+  padding-top: 4px;
+}
+
+.terminal-divider {
   height: 1px;
   width: 100%;
   background: rgba(255, 255, 255, 0.08);
-  margin: 10px 0 12px;
+  margin: 10px 0 10px;
 }
 
-.milestone-divider.current-divider {
-  background: rgba(48, 209, 88, 0.22);
-}
-
-.milestone-bullets {
+.terminal-bullets {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin: 0 0 12px;
+  gap: 6px;
+  margin: 0 0 10px;
   padding: 0;
 }
 
-.milestone-bullets li {
+.terminal-bullets li {
   position: relative;
-  padding-left: 16px;
+  padding-left: 14px;
+  font-size: 0.77rem;
+  line-height: 1.45;
   color: #D1D1D6;
-  font-size: 0.82rem;
-  line-height: 1.5;
 }
 
-.milestone-bullets li::before {
+.terminal-bullets li::before {
   content: "▹";
   position: absolute;
   left: 0;
   color: var(--apple-cyan);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
-.latest-card .milestone-bullets li::before {
+.latest-dest .terminal-bullets li::before {
   color: #30D158;
 }
 
-.milestone-tags {
+.terminal-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 10px;
+  gap: 4px;
+  margin-top: 8px;
 }
 
-.milestone-chip {
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 0.72rem;
+.terminal-chip {
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 0.68rem;
   font-weight: 500;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #E5E5EA;
 }
 
-.milestone-chip.current-chip {
-  background: rgba(48, 209, 88, 0.12);
-  border-color: rgba(48, 209, 88, 0.26);
-  color: #30D158;
-}
-
-/* Light Theme Overrides for Milestone Cards */
-body.light-theme .milestone-glass-card {
-  background: rgba(255, 255, 255, 0.9);
+/* Light Theme Overrides for Airport Terminals */
+body.light-theme .airport-terminal-card {
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
 }
 
-body.light-theme .milestone-glass-card.latest-card {
-  background: rgba(240, 253, 244, 0.94);
-  border: 1px solid rgba(4, 120, 87, 0.3);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06), 0 0 25px rgba(4, 120, 87, 0.12);
-}
-
-body.light-theme .flight-milestone-panel.focused .milestone-glass-card {
+body.light-theme .airport-terminal-card:hover,
+body.light-theme .airport-terminal-card.terminal-open {
   border-color: #0071E3;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12), 0 0 32px rgba(0, 113, 227, 0.2);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12), 0 0 26px rgba(0, 113, 227, 0.18);
 }
 
-body.light-theme .flight-milestone-panel.focused .milestone-glass-card.latest-card {
-  border-color: #047857;
-  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.14), 0 0 36px rgba(4, 120, 87, 0.22);
-}
-
-body.light-theme .milestone-role {
+body.light-theme .terminal-org-name {
   color: #111113;
 }
 
-body.light-theme .milestone-company {
+body.light-theme .terminal-role-title {
+  color: #0071E3;
+}
+
+body.light-theme .gate-tag {
+  color: #0071E3;
+}
+
+body.light-theme .status-departed {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.09);
   color: #636366;
 }
 
-body.light-theme .milestone-company.current-company {
-  color: #047857;
-}
-
-body.light-theme .milestone-bullets li {
-  color: #3A3A3C;
-}
-
-body.light-theme .milestone-bullets li::before {
+body.light-theme .status-active {
+  background: rgba(0, 113, 227, 0.08);
+  border-color: rgba(0, 113, 227, 0.25);
   color: #0071E3;
 }
 
-body.light-theme .latest-card .milestone-bullets li::before {
-  color: #047857;
-}
-
-body.light-theme .flight-callsign {
-  color: #0071E3;
-}
-
-body.light-theme .flight-callsign.current-callsign {
-  color: #047857;
-}
-
-body.light-theme .flight-date-badge {
-  background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.1);
-  color: #3A3A3C;
-}
-
-body.light-theme .flight-date-badge.current-badge {
-  background: rgba(4, 120, 87, 0.1);
-  border-color: rgba(4, 120, 87, 0.25);
-  color: #047857;
-}
-
-body.light-theme .milestone-org-avatar {
-  background: rgba(0, 113, 227, 0.1);
-  border-color: rgba(0, 113, 227, 0.24);
-  color: #0071E3;
-}
-
-body.light-theme .milestone-org-avatar.amazon-icon {
-  background: rgba(245, 158, 11, 0.12);
+body.light-theme .status-fellowship {
+  background: rgba(245, 158, 11, 0.1);
   border-color: rgba(245, 158, 11, 0.25);
   color: #B45309;
 }
 
-body.light-theme .milestone-org-avatar.current-avatar {
-  background: rgba(4, 120, 87, 0.12);
-  border-color: rgba(4, 120, 87, 0.25);
-  color: #047857;
+body.light-theme .terminal-meta-line {
+  color: #636366;
 }
 
-body.light-theme .milestone-divider {
+body.light-theme .terminal-hover-hint {
+  color: #8E8E93;
+}
+
+body.light-theme .terminal-hover-hint i {
+  color: #0071E3;
+}
+
+body.light-theme .terminal-divider {
   background: rgba(0, 0, 0, 0.08);
 }
 
-body.light-theme .milestone-divider.current-divider {
-  background: rgba(4, 120, 87, 0.2);
+body.light-theme .terminal-bullets li {
+  color: #3A3A3C;
 }
 
-body.light-theme .milestone-chip {
-  background: rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 0, 0, 0.09);
-  color: #1C1C1E;
+body.light-theme .terminal-bullets li::before {
+  color: #0071E3;
 }
 
-body.light-theme .milestone-chip.current-chip {
-  background: rgba(4, 120, 87, 0.08);
-  border-color: rgba(4, 120, 87, 0.2);
+body.light-theme .latest-dest .terminal-bullets li::before {
   color: #047857;
 }
 
-/* Animations */
-@keyframes wpPulse {
-  0% { r: 12px; opacity: 0.85; stroke-width: 2.5px; }
-  50% { r: 26px; opacity: 0; stroke-width: 1px; }
-  100% { r: 12px; opacity: 0; stroke-width: 0px; }
-}
-
-@keyframes plumeFlicker {
-  0% { transform: scaleX(0.85); opacity: 0.75; }
-  100% { transform: scaleX(1.2); opacity: 1; }
-}
-
-/* Backward Compatibility Fallback for Any Legacy Timeline Selectors */
-.timeline-container, .timeline-item, .timeline-card {
-  box-sizing: border-box;
+body.light-theme .terminal-chip {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #1C1C1E;
 }
 
 /* ==========================================================================
@@ -2143,11 +2095,11 @@ body.light-theme .btn-project-cta.code:hover {
 
 
 /* ==========================================================================
-   Education Section — Yggdrasil World Tree of Knowledge
+   Education Section — Yggdrasil Tree of Knowledge (Organic Leaves)
    ========================================================================== */
 .yggdrasil-section {
   position: relative;
-  padding: 120px 0 140px;
+  padding: 100px 0 120px;
   overflow: visible;
 }
 
@@ -2159,11 +2111,11 @@ body.light-theme .btn-project-cta.code:hover {
   position: relative;
   width: 100%;
   max-width: 1200px;
-  margin: 60px auto 0;
-  min-height: 1000px;
+  margin: 40px auto 0;
+  min-height: 960px;
 }
 
-/* SVG Canvas for Trunk, Roots & Branches */
+/* SVG Canvas for Trunk, Roots, Branches, and Tapered Stems */
 .yggdrasil-svg {
   position: absolute;
   inset: 0;
@@ -2174,283 +2126,366 @@ body.light-theme .btn-project-cta.code:hover {
 }
 
 .tree-root {
-  stroke: rgba(255, 255, 255, 0.45);
-  stroke-width: 3;
+  stroke: rgba(255, 255, 255, 0.38);
+  stroke-width: 2.5;
   stroke-linecap: round;
   fill: none;
-  opacity: 0.8;
+  opacity: 0.75;
+}
+
+body.light-theme .tree-root {
+  stroke: rgba(0, 0, 0, 0.25);
 }
 
 .tree-trunk-core {
-  stroke: #FFFFFF;
-  stroke: url(#trunkGrad);
-  stroke-width: 6;
+  stroke: url(#treeBarkGrad);
+  stroke-width: 7;
   stroke-linecap: round;
   fill: none;
-  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+  filter: drop-shadow(0 0 10px rgba(123, 75, 39, 0.7));
   transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tree-trunk-glow {
-  stroke: rgba(255, 255, 255, 0.3);
-  stroke-width: 16;
+  stroke: rgba(123, 75, 39, 0.3);
+  stroke-width: 18;
   stroke-linecap: round;
   fill: none;
-  filter: blur(10px);
+  filter: blur(12px);
 }
 
 .tree-branch {
-  stroke: rgba(255, 255, 255, 0.7);
+  stroke: rgba(255, 255, 255, 0.55);
   stroke-width: 4;
   stroke-linecap: round;
   fill: none;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s ease;
+}
+
+body.light-theme .tree-branch {
+  stroke: rgba(0, 0, 0, 0.35);
 }
 
 .tree-branch.active-branch {
   stroke: #FFFFFF;
-  stroke-width: 6;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1));
+  stroke-width: 5.5;
+  filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.95));
 }
 
-.tree-branch.dimmed-branch {
-  stroke: rgba(255, 255, 255, 0.15);
+body.light-theme .tree-branch.active-branch {
+  stroke: #111113;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
 }
 
-.tree-nexus-dot {
-  fill: #FFFFFF;
-  stroke: rgba(255, 255, 255, 0.6);
-  stroke-width: 4;
-  filter: drop-shadow(0 0 14px rgba(255, 255, 255, 1));
+.tree-stem {
+  stroke: #30D158;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  fill: none;
+  filter: drop-shadow(0 0 6px rgba(48, 209, 88, 0.8));
+  opacity: 0.85;
   transition: all 0.4s ease;
 }
 
-.tree-nexus-dot.active-nexus {
-  r: 9;
-  fill: #FFFFFF;
-  stroke-width: 6;
-  filter: drop-shadow(0 0 24px rgba(255, 255, 255, 1));
+body.light-theme .tree-stem {
+  stroke: #047857;
+  filter: drop-shadow(0 0 4px rgba(4, 120, 87, 0.5));
 }
 
-.tree-nexus-dot {
-  fill: #FFFFFF;
-  stroke: rgba(255, 255, 255, 0.4);
-  stroke-width: 4;
-  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.95));
-  transition: all 0.4s ease;
+.tree-stem.active-stem {
+  stroke: #30D158;
+  stroke-width: 3.5;
+  filter: drop-shadow(0 0 12px rgba(48, 209, 88, 1));
+  opacity: 1;
 }
 
-.tree-nexus-dot.active-nexus {
-  r: 9;
-  fill: #FFFFFF;
-  stroke-width: 6;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1));
+body.light-theme .tree-stem.active-stem {
+  stroke: #047857;
+  filter: drop-shadow(0 0 10px rgba(4, 120, 87, 0.8));
 }
 
-/* Floating Liquid-Glass Education Nodes Container */
-.tree-nodes-container {
+.tree-stem-node {
+  fill: #30D158;
+  stroke: #FFFFFF;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 8px rgba(48, 209, 88, 1));
+}
+
+body.light-theme .tree-stem-node {
+  fill: #047857;
+  stroke: #FFFFFF;
+}
+
+/* Organic Education Leaves Container */
+.yggdrasil-leaves-container {
   position: relative;
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 160px;
-  row-gap: 52px;
+  column-gap: 140px;
+  row-gap: 40px;
   padding: 10px 0;
 }
 
-.tree-node-wrapper {
+.yggdrasil-leaf-wrapper {
   display: flex;
   transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
 }
 
-.tree-node-wrapper.left {
+.yggdrasil-leaf-wrapper.left {
   justify-content: flex-end;
 }
 
-.tree-node-wrapper.right {
+.yggdrasil-leaf-wrapper.right {
   justify-content: flex-start;
 }
 
-/* Floating Liquid-Glass Pod */
-.tree-glass-node {
-  width: 100%;
-  max-width: 480px;
-  padding: 28px 32px;
-  border-radius: 28px;
-  background: rgba(18, 18, 24, 0.7);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.5),
-    0 22px 50px rgba(0, 0, 0, 0.7),
-    0 0 35px rgba(255, 255, 255, 0.05);
-  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
+/* Organic Leaf Pod Silhouette */
+.yggdrasil-leaf-pod {
   position: relative;
-}
-
-.tree-glass-node:hover,
-.tree-glass-node.active-node {
-  transform: translateY(-6px) scale(1.02);
-  background: rgba(28, 28, 36, 0.88);
-  border-color: rgba(255, 255, 255, 0.38);
+  width: 100%;
+  max-width: 440px;
+  padding: 24px 28px;
+  cursor: pointer;
+  background: rgba(16, 20, 18, 0.74);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.45),
-    0 30px 65px rgba(0, 0, 0, 0.85),
-    0 0 50px rgba(255, 255, 255, 0.18);
+    0 14px 38px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 0 24px rgba(48, 209, 88, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  overflow: hidden;
 }
 
-.yggdrasil-stage.has-hover .tree-node-wrapper:not(.hovered) .tree-glass-node {
-  opacity: 0.35;
-  filter: blur(1.5px);
+.leaf-orient-left {
+  border-radius: 4px 90px 18px 90px / 4px 90px 18px 90px;
+  transform: rotate(-5deg);
+  transform-origin: 90% 60%;
+}
+
+.leaf-orient-right {
+  border-radius: 90px 4px 90px 18px / 90px 4px 90px 18px;
+  transform: rotate(5deg);
+  transform-origin: 10% 60%;
+}
+
+.yggdrasil-leaf-pod.apex-leaf {
+  transform: rotate(6deg) scale(1.02);
+  border-color: rgba(48, 209, 88, 0.35);
+  box-shadow: 
+    0 16px 42px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 30px rgba(48, 209, 88, 0.16);
+}
+
+.leaf-vein-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.leaf-vein-main {
+  stroke: rgba(48, 209, 88, 0.55);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  fill: none;
+  filter: drop-shadow(0 0 4px rgba(48, 209, 88, 0.6));
+  transition: all 0.4s ease;
+}
+
+.leaf-vein-lateral {
+  stroke: rgba(48, 209, 88, 0.3);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 4 2;
+  transition: all 0.4s ease;
+}
+
+.leaf-glass-shine {
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.08) 50%, transparent 60%);
+  transform: rotate(-25deg);
+  pointer-events: none;
+  z-index: 2;
+  transition: transform 0.6s ease;
+}
+
+.yggdrasil-leaf-pod:hover {
+  transform: translateY(-6px) scale(1.03);
+  background: rgba(22, 28, 24, 0.88);
+  border-color: rgba(48, 209, 88, 0.55);
+  box-shadow: 
+    0 22px 50px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 0 36px rgba(48, 209, 88, 0.25);
+}
+
+.yggdrasil-leaf-pod:hover .leaf-vein-svg {
+  opacity: 1;
+}
+
+.yggdrasil-leaf-pod:hover .leaf-vein-main {
+  stroke: #30D158;
+  filter: drop-shadow(0 0 8px rgba(48, 209, 88, 1));
+}
+
+.yggdrasil-leaf-pod:hover .leaf-glass-shine {
+  transform: rotate(-25deg) translateY(40%);
+}
+
+.yggdrasil-stage.has-hover .yggdrasil-leaf-wrapper:not(.hovered) .yggdrasil-leaf-pod {
+  opacity: 0.45;
+  filter: blur(1.2px);
   transform: scale(0.98);
 }
 
-.tree-node-header {
+/* Minimal Leaf Content */
+.leaf-content {
+  position: relative;
+  z-index: 3;
+}
+
+.leaf-badge-row {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.tree-inst-wrap {
-  display: flex;
   align-items: center;
-  gap: 16px;
-}
-
-.tree-node-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  color: #FFFFFF;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  flex-shrink: 0;
-}
-
-.tree-degree-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-}
-
-.tree-inst-name {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  font-family: var(--font-sans);
-}
-
-.tree-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  font-family: var(--font-mono);
-  background: rgba(48, 209, 88, 0.12);
-  border: 1px solid rgba(48, 209, 88, 0.35);
-  color: #30D158;
-  white-space: nowrap;
-}
-
-.tree-hairline {
-  height: 1px;
-  background: linear-gradient(90deg, var(--border-glass) 0%, transparent 100%);
-  margin: 16px 0;
-}
-
-.tree-node-body {
-  font-size: 0.92rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-}
-
-.tree-chips-wrap {
-  display: flex;
-  flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.72rem;
 }
 
-.tree-chip {
+.leaf-tag-pill {
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #E5E5EA;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  border-radius: 8px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  background: var(--bg-surface-glass);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  transition: all 0.25s ease;
+  gap: 5px;
 }
 
-.tree-glass-node:hover .tree-chip {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--border-glass);
-  color: var(--text-primary);
+.leaf-distinction-badge {
+  padding: 2px 9px;
+  border-radius: var(--radius-full);
+  background: rgba(48, 209, 88, 0.12);
+  border: 1px solid rgba(48, 209, 88, 0.28);
+  color: #30D158;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
-/* Mobile Responsiveness for Yggdrasil Tree */
-@media (max-width: 768px) {
-  .yggdrasil-stage {
-    min-height: auto;
-    margin-top: 30px;
-  }
-
-  .yggdrasil-svg {
-    display: none;
-  }
-
-  .tree-nodes-container {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
-    padding-left: 28px;
-    border-left: 2px solid rgba(255, 255, 255, 0.2);
-    margin-left: 14px;
-  }
-
-  .tree-node-wrapper.left,
-  .tree-node-wrapper.right {
-    justify-content: flex-start;
-  }
-
-  .tree-glass-node {
-    max-width: 100%;
-    padding: 22px 24px;
-  }
-
-  .tree-glass-node::after {
-    content: "";
-    position: absolute;
-    top: 36px;
-    left: -35px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    border: 3px solid #000000;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  }
+.leaf-degree-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+  margin: 0 0 3px;
+  letter-spacing: -0.015em;
 }
 
+.leaf-inst-name {
+  font-size: 0.85rem;
+  color: #AEAEB2;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.leaf-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.8rem;
+}
+
+.leaf-timeline {
+  color: #8E8E93;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.leaf-grade-pill {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Light Theme Overrides for Education Leaves */
+body.light-theme .yggdrasil-leaf-pod {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), 0 0 20px rgba(4, 120, 87, 0.06);
+}
+
+body.light-theme .yggdrasil-leaf-pod:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: #047857;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1), 0 0 30px rgba(4, 120, 87, 0.2);
+}
+
+body.light-theme .leaf-degree-title {
+  color: #111113;
+}
+
+body.light-theme .leaf-inst-name {
+  color: #4B4B52;
+}
+
+body.light-theme .leaf-tag-pill {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.09);
+  color: #1C1C1E;
+}
+
+body.light-theme .leaf-distinction-badge {
+  background: rgba(4, 120, 87, 0.08);
+  border-color: rgba(4, 120, 87, 0.25);
+  color: #047857;
+}
+
+body.light-theme .leaf-timeline {
+  color: #636366;
+}
+
+body.light-theme .leaf-grade-pill {
+  background: rgba(0, 0, 0, 0.06);
+  color: #111113;
+}
+
+body.light-theme .leaf-vein-main {
+  stroke: rgba(4, 120, 87, 0.45);
+}
+
+body.light-theme .leaf-vein-lateral {
+  stroke: rgba(4, 120, 87, 0.22);
+}
+
+body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
+  stroke: #047857;
+  filter: drop-shadow(0 0 6px rgba(4, 120, 87, 0.8));
+}
 
 /* ==========================================================================
    Achievements & Certifications Section (Apple Bento Grid with 1/3 & Golden Ratio Rules)
@@ -3042,20 +3077,20 @@ body.light-theme .bento-card:hover {
     gap: 36px;
   }
 
-  /* Career Flight Path Responsive Layout */
-  .flight-section {
+  /* Career Airport Journey Responsive Layout */
+  .airport-section {
     height: auto !important;
     min-height: auto !important;
     padding: 60px 0 80px;
   }
 
-  .flight-sticky-viewport {
+  .airport-sticky-stage {
     position: relative !important;
     height: auto !important;
     overflow: visible !important;
   }
 
-  .flight-stage {
+  .airport-stage {
     height: auto !important;
     min-height: auto !important;
     display: flex;
@@ -3063,39 +3098,24 @@ body.light-theme .bento-card:hover {
     padding: 16px 0;
   }
 
-  .flight-svg {
+  .airport-svg {
     display: none !important;
   }
 
-  .flight-milestones-container {
+  .airport-terminals-container {
     position: relative !important;
     inset: auto !important;
     display: flex;
     flex-direction: column;
-    gap: 28px;
-    padding: 24px 16px;
+    gap: 22px;
+    padding: 20px 16px;
     pointer-events: auto !important;
-    max-width: 780px;
+    max-width: 680px;
     margin: 0 auto;
     width: 100%;
   }
 
-  .flight-milestones-container::before {
-    content: "";
-    position: absolute;
-    left: 35px;
-    top: 24px;
-    bottom: 24px;
-    width: 2px;
-    background: linear-gradient(180deg, #0A84FF 0%, #5E5CE6 40%, #BF5AF2 70%, #30D158 100%);
-    z-index: 1;
-  }
-
-  body.light-theme .flight-milestones-container::before {
-    background: linear-gradient(180deg, #0071E3 0%, #5E5CE6 40%, #047857 100%);
-  }
-
-  .flight-milestone-panel {
+  .airport-terminal-card {
     position: relative !important;
     inset: auto !important;
     left: auto !important;
@@ -3104,43 +3124,34 @@ body.light-theme .bento-card:hover {
     bottom: auto !important;
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  .terminal-sliding-door {
+    max-height: 400px !important;
     opacity: 1 !important;
+  }
+
+  .terminal-hover-hint {
+    display: none !important;
+  }
+
+  /* Yggdrasil Tree Leaves Responsive Layout */
+  .yggdrasil-leaves-container {
+    grid-template-columns: 1fr !important;
+    row-gap: 24px !important;
+    padding: 10px 16px !important;
+  }
+
+  .yggdrasil-leaf-wrapper {
+    justify-content: center !important;
+  }
+
+  .yggdrasil-leaf-pod {
+    max-width: 100% !important;
     transform: none !important;
-    pointer-events: auto !important;
-    padding-left: 48px;
+    border-radius: 20px !important;
   }
 
-  .flight-milestone-panel::before {
-    content: "";
-    position: absolute;
-    left: 11px;
-    top: 28px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #0A84FF;
-    border: 3px solid #FFFFFF;
-    box-shadow: 0 0 12px rgba(10, 132, 255, 0.7);
-    z-index: 2;
-  }
-
-  .flight-milestone-panel.current-destination::before {
-    background: #30D158;
-    box-shadow: 0 0 14px rgba(48, 209, 88, 0.85);
-  }
-
-  body.light-theme .flight-milestone-panel::before {
-    background: #0071E3;
-    border-color: #FFFFFF;
-  }
-
-  body.light-theme .flight-milestone-panel.current-destination::before {
-    background: #047857;
-    border-color: #FFFFFF;
-  }
-}
-
-@media (max-width: 860px) {
   .nav-menu {
     position: absolute;
     top: calc(100% + 12px);
@@ -4283,12 +4294,12 @@ body.light-theme .tree-hairline {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.02) 100%) !important;
 }
 
-/* 9. Experience Flight Path in Light Mode */
-body.light-theme .flight-header-wrap .section-title {
+/* 9. Experience Airport Journey in Light Mode */
+body.light-theme .airport-header-wrap .section-title {
   color: #111113;
 }
 
-body.light-theme .flight-header-wrap .section-subtitle {
+body.light-theme .airport-header-wrap .section-subtitle {
   color: #4B4B52;
 }
 

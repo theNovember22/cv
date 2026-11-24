@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Apple HIG Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=flightpath1">
+  <link rel="stylesheet" href="styles.css?v=journey1">
 </head>
 <body>
   <!-- Apple Subtle Ambient Glow Lights -->
@@ -778,18 +778,21 @@
   </section>
 
   <!-- ========================================================================
-       5. Education Section — Yggdrasil World Tree of Knowledge
+       5. Education Section — Yggdrasil Tree of Knowledge (Organic Leaves)
        ======================================================================== -->
   <section class="section yggdrasil-section" id="education">
     <div class="container yggdrasil-container">
       <div class="section-header-center reveal">
-        <div class="section-pill">&lt; Academic Odyssey &gt;</div>
-        <h2 class="section-title">Tree of Knowledge</h2>
-        <p class="section-subtitle">Yggdrasil-inspired progression from foundational roots to postgraduate computing research.</p>
+        <div class="section-pill">
+          <i class="fa-solid fa-seedling"></i>
+          <span>Tree of Knowledge &bull; Academic Roots</span>
+        </div>
+        <h2 class="section-title">Education &amp; Roots</h2>
+        <p class="section-subtitle">Yggdrasil-inspired progression — from foundational school roots to postgraduate research leaves.</p>
       </div>
 
       <div class="yggdrasil-stage" id="yggdrasilStage">
-        <!-- Background SVG Canvas containing trunk, roots, and organic branches -->
+        <!-- Background SVG Canvas containing trunk, roots, branches, and tapered stems -->
         <svg class="yggdrasil-svg" id="yggdrasilSvg" viewBox="0 0 1200 960" fill="none" preserveAspectRatio="xMidYMid meet">
           <defs>
             <!-- Rich organic bark gradient for central trunk -->
@@ -800,170 +803,174 @@
               <stop offset="100%" stop-color="#6E4220" />
             </linearGradient>
 
-            <!-- Branch woody brown transitioning to vibrant leaf green -->
-            <linearGradient id="branchGrad1" x1="100%" y1="100%" x2="0%" y2="0%">
+            <!-- Branch woody brown transitioning into organic leaf green stem -->
+            <linearGradient id="branchStemGradLeft" x1="100%" y1="100%" x2="0%" y2="0%">
               <stop offset="0%" stop-color="#7B4B27" />
-              <stop offset="50%" stop-color="#8B5A2B" />
-              <stop offset="80%" stop-color="#558B2F" />
+              <stop offset="45%" stop-color="#8B5A2B" />
+              <stop offset="75%" stop-color="#558B2F" />
               <stop offset="100%" stop-color="#30D158" />
             </linearGradient>
-            <linearGradient id="branchGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+            <linearGradient id="branchStemGradRight" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#7B4B27" />
-              <stop offset="50%" stop-color="#8B5A2B" />
-              <stop offset="80%" stop-color="#558B2F" />
+              <stop offset="45%" stop-color="#8B5A2B" />
+              <stop offset="75%" stop-color="#558B2F" />
               <stop offset="100%" stop-color="#30D158" />
             </linearGradient>
-
-            <!-- Leaf foliage glow filter -->
-            <filter id="greenFoliageGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="5" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
           </defs>
 
-          <!-- Base Roots in organic deep bark brown -->
+          <!-- Base Roots anchored in the earth -->
           <path class="tree-root" d="M 600 940 C 570 960 510 975 440 965" />
           <path class="tree-root" d="M 600 940 C 630 960 690 975 760 965" />
           <path class="tree-root" d="M 595 945 C 550 970 490 980 410 975" />
           <path class="tree-root" d="M 605 945 C 650 970 710 980 790 975" />
 
-          <!-- Central Living Trunk (Stem): Organic Wood Brown with Amber Glow -->
+          <!-- Central Living Trunk: Organic Bark Texture with Internal Core -->
           <path class="tree-trunk-glow" d="M 600 950 C 590 840 615 730 595 620 C 580 510 620 410 600 300 C 590 200 605 130 600 70" />
           <path class="tree-trunk-core" id="treeTrunkCore" d="M 600 950 C 590 840 615 730 595 620 C 580 510 620 410 600 300 C 590 200 605 130 600 70" />
 
-          <!-- Branch 1 (Class X: Secondary School) - Lower Left with Green Foliage -->
-          <path class="tree-branch" id="branch-1" data-node="node-1" d="M 598 740 C 510 745 400 765 310 755 C 260 750 220 740 160 720" />
-          <g class="tree-foliage-group" id="foliage-1">
-            <circle class="tree-nexus-dot" id="nexus-1" cx="160" cy="720" r="8" />
-            <path class="tree-leaf" d="M 160 720 C 145 702 132 716 144 730 C 154 734 158 726 160 720 Z" />
-            <path class="tree-leaf" d="M 160 720 C 152 736 166 742 174 730 C 174 722 168 718 160 720 Z" />
-          </g>
+          <!-- Branch 1 (Class X: SSC) — Lower Left branch tapering into stem -->
+          <path class="tree-branch" id="branch-1" data-node="node-1" d="M 598 750 C 510 755 400 770 310 755 C 260 748 215 732 165 710" />
+          <path class="tree-stem" id="stem-1" d="M 165 710 C 130 690 100 670 65 650" />
+          <circle class="tree-stem-node" id="stem-node-1" cx="165" cy="710" r="4.5" />
 
-          <!-- Branch 2 (Class XII: PUC) - Lower Right with Green Foliage -->
-          <path class="tree-branch" id="branch-2" data-node="node-2" d="M 600 560 C 690 550 800 535 890 550 C 950 560 1000 550 1040 530" />
-          <g class="tree-foliage-group" id="foliage-2">
-            <circle class="tree-nexus-dot" id="nexus-2" cx="1040" cy="530" r="8" />
-            <path class="tree-leaf" d="M 1040 530 C 1055 512 1068 526 1056 540 C 1046 544 1042 536 1040 530 Z" />
-            <path class="tree-leaf" d="M 1040 530 C 1048 546 1034 552 1026 540 C 1026 532 1032 528 1040 530 Z" />
-          </g>
+          <!-- Branch 2 (Class XII: PUC) — Lower Right branch tapering into stem -->
+          <path class="tree-branch" id="branch-2" data-node="node-2" d="M 600 570 C 690 560 800 545 890 560 C 950 568 1000 554 1045 530" />
+          <path class="tree-stem" id="stem-2" d="M 1045 530 C 1080 510 1115 485 1145 455" />
+          <circle class="tree-stem-node" id="stem-node-2" cx="1045" cy="530" r="4.5" />
 
-          <!-- Branch 3 (B.Tech: RGUKT Nuzvid) - Mid Left with Green Foliage -->
-          <path class="tree-branch" id="branch-3" data-node="node-3" d="M 596 380 C 500 370 390 355 300 335 C 240 320 190 305 150 280" />
-          <g class="tree-foliage-group" id="foliage-3">
-            <circle class="tree-nexus-dot" id="nexus-3" cx="150" cy="280" r="8" />
-            <path class="tree-leaf" d="M 150 280 C 135 262 122 276 134 290 C 144 294 148 286 150 280 Z" />
-            <path class="tree-leaf" d="M 150 280 C 142 296 156 302 164 290 C 164 282 158 278 150 280 Z" />
-          </g>
+          <!-- Branch 3 (B.Tech: RGUKT) — Mid Left branch tapering into stem -->
+          <path class="tree-branch" id="branch-3" data-node="node-3" d="M 596 390 C 500 380 390 360 300 338 C 240 320 185 300 140 270" />
+          <path class="tree-stem" id="stem-3" d="M 140 270 C 105 245 75 215 45 180" />
+          <circle class="tree-stem-node" id="stem-node-3" cx="140" cy="270" r="4.5" />
 
-          <!-- Branch 4 (M.Tech: NIT Goa) - Crown Right / Top with Green Foliage -->
-          <path class="tree-branch" id="branch-4" data-node="node-4" d="M 600 190 C 700 180 810 155 900 130 C 960 115 1010 100 1050 80" />
-          <g class="tree-foliage-group" id="foliage-4">
-            <circle class="tree-nexus-dot" id="nexus-4" cx="1050" cy="80" r="9" />
-            <path class="tree-leaf" d="M 1050 80 C 1065 62 1078 76 1066 90 C 1056 94 1052 86 1050 80 Z" />
-            <path class="tree-leaf" d="M 1050 80 C 1058 96 1044 102 1036 90 C 1036 82 1042 78 1050 80 Z" />
-          </g>
+          <!-- Branch 4 (M.Tech: NIT Goa Apex) — Upper Right crown branch tapering into stem -->
+          <path class="tree-branch" id="branch-4" data-node="node-4" d="M 600 190 C 700 180 810 152 900 125 C 960 105 1010 85 1055 60" />
+          <path class="tree-stem" id="stem-4" d="M 1055 60 C 1085 42 1115 24 1145 0" />
+          <circle class="tree-stem-node" id="stem-node-4" cx="1055" cy="60" r="5" />
         </svg>
 
-        <!-- Floating Liquid-Glass Education Nodes Overlay -->
-        <div class="tree-nodes-container">
-          <!-- Node 4: Crown - M.Tech NIT Goa (Top Right) -->
-          <div class="tree-node-wrapper right" style="grid-column: 2; grid-row: 1;" data-node="node-4">
-            <div class="tree-glass-node">
-              <div class="tree-node-header">
-                <div class="tree-inst-wrap">
-                  <div class="tree-node-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
-                  <div>
-                    <h3 class="tree-degree-title">M.Tech — Computer Science &amp; Engineering</h3>
-                    <div class="tree-inst-name">National Institute of Technology Goa (NIT Goa) &bull; 2025 – 2027</div>
-                  </div>
+        <!-- Organic Yggdrasil Leaves Overlay (Branch -> Stem -> Leaf) -->
+        <div class="yggdrasil-leaves-container">
+          <!-- LEAF 04 (APEX CANOPY): M.Tech NIT Goa (Top Right) -->
+          <div class="yggdrasil-leaf-wrapper right" style="grid-column: 2; grid-row: 1;" data-node="node-4">
+            <div class="yggdrasil-leaf-pod leaf-orient-right apex-leaf">
+              <!-- Botanical Leaf Spine & Lateral Veins -->
+              <svg class="leaf-vein-svg" viewBox="0 0 460 220" fill="none" preserveAspectRatio="none">
+                <path class="leaf-vein-main" d="M 15 110 C 130 110, 280 105, 445 110" />
+                <path class="leaf-vein-lateral" d="M 100 108 C 120 70, 160 45, 200 30" />
+                <path class="leaf-vein-lateral" d="M 100 112 C 120 150, 160 175, 200 190" />
+                <path class="leaf-vein-lateral" d="M 220 108 C 245 72, 285 52, 330 40" />
+                <path class="leaf-vein-lateral" d="M 220 112 C 245 148, 285 168, 330 180" />
+                <path class="leaf-vein-lateral" d="M 340 109 C 365 82, 395 68, 425 60" />
+                <path class="leaf-vein-lateral" d="M 340 111 C 365 138, 395 152, 425 160" />
+              </svg>
+              <div class="leaf-glass-shine"></div>
+              
+              <!-- Extremely Minimal Education Content -->
+              <div class="leaf-content">
+                <div class="leaf-badge-row">
+                  <span class="leaf-tag-pill"><i class="fa-solid fa-graduation-cap"></i> POSTGRADUATE</span>
+                  <span class="leaf-distinction-badge"><i class="fa-solid fa-award"></i> Distinction</span>
                 </div>
-                <div class="tree-badge"><i class="fa-solid fa-award"></i> CGPA 8.26 &bull; Distinction</div>
-              </div>
-              <div class="tree-hairline"></div>
-              <p class="tree-node-body">
-                Pursuing advanced research in Reliability-Aware Active Learning and Human-AI collaboration. Rigorous focus on algorithmic optimization, distributed systems, and low-latency computing. Serving as the Placement Coordinator for the CSE department.
-              </p>
-              <div class="tree-chips-wrap">
-                <span class="tree-chip"><i class="fa-solid fa-code"></i> Advanced Algorithms</span>
-                <span class="tree-chip"><i class="fa-solid fa-brain"></i> Machine Learning</span>
-                <span class="tree-chip"><i class="fa-solid fa-database"></i> DBMS &amp; Storage</span>
-                <span class="tree-chip"><i class="fa-solid fa-microchip"></i> Operating Systems</span>
-                <span class="tree-chip"><i class="fa-solid fa-users"></i> Placement Coordinator</span>
+                <h3 class="leaf-degree-title">M.Tech — Computer Science &amp; Engineering</h3>
+                <div class="leaf-inst-name">National Institute of Technology Goa (NIT Goa)</div>
+                <div class="leaf-meta-row">
+                  <span class="leaf-timeline"><i class="fa-regular fa-calendar"></i> 2024 – 2026</span>
+                  <span class="leaf-grade-pill"><i class="fa-solid fa-chart-line"></i> CGPA 8.26</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Node 3: Mid Canopy - B.Tech RGUKT Nuzvid (Upper Left) -->
-          <div class="tree-node-wrapper left" style="grid-column: 1; grid-row: 2;" data-node="node-3">
-            <div class="tree-glass-node">
-              <div class="tree-node-header">
-                <div class="tree-inst-wrap">
-                  <div class="tree-node-avatar"><i class="fa-solid fa-university"></i></div>
-                  <div>
-                    <h3 class="tree-degree-title">B.Tech — Chemical Engineering</h3>
-                    <div class="tree-inst-name">Rajiv Gandhi University of Knowledge Technologies (RGUKT Nuzvid) &bull; 2018 – 2022</div>
-                  </div>
+          <!-- LEAF 03 (MID CANOPY): B.Tech Chemical Engineering (Mid Left) -->
+          <div class="yggdrasil-leaf-wrapper left" style="grid-column: 1; grid-row: 2;" data-node="node-3">
+            <div class="yggdrasil-leaf-pod leaf-orient-left">
+              <!-- Botanical Leaf Spine & Lateral Veins -->
+              <svg class="leaf-vein-svg" viewBox="0 0 460 220" fill="none" preserveAspectRatio="none">
+                <path class="leaf-vein-main" d="M 445 110 C 330 110, 180 105, 15 110" />
+                <path class="leaf-vein-lateral" d="M 360 108 C 340 70, 300 45, 260 30" />
+                <path class="leaf-vein-lateral" d="M 360 112 C 340 150, 300 175, 260 190" />
+                <path class="leaf-vein-lateral" d="M 240 108 C 215 72, 175 52, 130 40" />
+                <path class="leaf-vein-lateral" d="M 240 112 C 215 148, 175 168, 130 180" />
+                <path class="leaf-vein-lateral" d="M 120 109 C 95 82, 65 68, 35 60" />
+                <path class="leaf-vein-lateral" d="M 120 111 C 95 138, 65 152, 35 160" />
+              </svg>
+              <div class="leaf-glass-shine"></div>
+              
+              <!-- Extremely Minimal Education Content -->
+              <div class="leaf-content">
+                <div class="leaf-badge-row">
+                  <span class="leaf-tag-pill"><i class="fa-solid fa-university"></i> UNDERGRADUATE</span>
+                  <span class="leaf-distinction-badge"><i class="fa-solid fa-award"></i> Distinction</span>
                 </div>
-                <div class="tree-badge"><i class="fa-solid fa-award"></i> CGPA 8.99 &bull; Distinction</div>
-              </div>
-              <div class="tree-hairline"></div>
-              <p class="tree-node-body">
-                Graduated with Distinction, developing strong mathematical foundations, numerical simulation methods, and computational modeling. Transitioned into software engineering and secured campus placement as Systems Engineer at Infosys Limited.
-              </p>
-              <div class="tree-chips-wrap">
-                <span class="tree-chip"><i class="fa-solid fa-square-root-variable"></i> Numerical Methods</span>
-                <span class="tree-chip"><i class="fa-solid fa-chart-line"></i> Computational Math</span>
-                <span class="tree-chip"><i class="fa-brands fa-python"></i> Python &amp; SQL</span>
-                <span class="tree-chip"><i class="fa-solid fa-building"></i> Infosys Placement</span>
+                <h3 class="leaf-degree-title">B.Tech — Chemical Engineering</h3>
+                <div class="leaf-inst-name">Rajiv Gandhi University of Knowledge Technologies (RGUKT Nuzvid)</div>
+                <div class="leaf-meta-row">
+                  <span class="leaf-timeline"><i class="fa-regular fa-calendar"></i> 2018 – 2022</span>
+                  <span class="leaf-grade-pill"><i class="fa-solid fa-chart-line"></i> CGPA 8.99</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Node 2: Lower Trunk - PUC Class XII (Lower Right) -->
-          <div class="tree-node-wrapper right" style="grid-column: 2; grid-row: 3;" data-node="node-2">
-            <div class="tree-glass-node">
-              <div class="tree-node-header">
-                <div class="tree-inst-wrap">
-                  <div class="tree-node-avatar"><i class="fa-solid fa-school"></i></div>
-                  <div>
-                    <h3 class="tree-degree-title">Pre-University Course (Class XII)</h3>
-                    <div class="tree-inst-name">RGUKT Nuzvid, Andhra Pradesh &bull; 2016 – 2018</div>
-                  </div>
+          <!-- LEAF 02 (LOWER TRUNK): Class XII Pre-University Course (Lower Right) -->
+          <div class="yggdrasil-leaf-wrapper right" style="grid-column: 2; grid-row: 3;" data-node="node-2">
+            <div class="yggdrasil-leaf-pod leaf-orient-right">
+              <!-- Botanical Leaf Spine & Lateral Veins -->
+              <svg class="leaf-vein-svg" viewBox="0 0 460 220" fill="none" preserveAspectRatio="none">
+                <path class="leaf-vein-main" d="M 15 110 C 130 110, 280 105, 445 110" />
+                <path class="leaf-vein-lateral" d="M 100 108 C 120 70, 160 45, 200 30" />
+                <path class="leaf-vein-lateral" d="M 100 112 C 120 150, 160 175, 200 190" />
+                <path class="leaf-vein-lateral" d="M 220 108 C 245 72, 285 52, 330 40" />
+                <path class="leaf-vein-lateral" d="M 220 112 C 245 148, 285 168, 330 180" />
+                <path class="leaf-vein-lateral" d="M 340 109 C 365 82, 395 68, 425 60" />
+                <path class="leaf-vein-lateral" d="M 340 111 C 365 138, 395 152, 425 160" />
+              </svg>
+              <div class="leaf-glass-shine"></div>
+              
+              <!-- Extremely Minimal Education Content -->
+              <div class="leaf-content">
+                <div class="leaf-badge-row">
+                  <span class="leaf-tag-pill"><i class="fa-solid fa-school"></i> PRE-UNIVERSITY</span>
+                  <span class="leaf-distinction-badge"><i class="fa-solid fa-star"></i> Top 1% State Merit</span>
                 </div>
-                <div class="tree-badge"><i class="fa-solid fa-star"></i> CGPA 9.31 &bull; Top Tier</div>
-              </div>
-              <div class="tree-hairline"></div>
-              <p class="tree-node-body">
-                Selected among the top 1% meritorious students across the state for a fully-funded 6-year integrated education program at RGUKT. Completed intensive pre-engineering coursework in Mathematics, Physics, Chemistry, and Information Technology.
-              </p>
-              <div class="tree-chips-wrap">
-                <span class="tree-chip"><i class="fa-solid fa-calculator"></i> Mathematics &amp; Statistics</span>
-                <span class="tree-chip"><i class="fa-solid fa-atom"></i> Physics &amp; Chemistry</span>
-                <span class="tree-chip"><i class="fa-solid fa-laptop-code"></i> Information Technology</span>
+                <h3 class="leaf-degree-title">Pre-University Course (Class XII)</h3>
+                <div class="leaf-inst-name">RGUKT Nuzvid, Andhra Pradesh</div>
+                <div class="leaf-meta-row">
+                  <span class="leaf-timeline"><i class="fa-regular fa-calendar"></i> 2016 – 2018</span>
+                  <span class="leaf-grade-pill"><i class="fa-solid fa-chart-line"></i> CGPA 9.31</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Node 1: Roots - SSC Class X (Lower Left) -->
-          <div class="tree-node-wrapper left" style="grid-column: 1; grid-row: 4;" data-node="node-1">
-            <div class="tree-glass-node">
-              <div class="tree-node-header">
-                <div class="tree-inst-wrap">
-                  <div class="tree-node-avatar"><i class="fa-solid fa-medal"></i></div>
-                  <div>
-                    <h3 class="tree-degree-title">Secondary School Certificate (Class X)</h3>
-                    <div class="tree-inst-name">Municipal High School &bull; 2015 – 2016</div>
-                  </div>
+          <!-- LEAF 01 (EARTH ROOTS): Class X Secondary School (Lower Left) -->
+          <div class="yggdrasil-leaf-wrapper left" style="grid-column: 1; grid-row: 4;" data-node="node-1">
+            <div class="yggdrasil-leaf-pod leaf-orient-left">
+              <!-- Botanical Leaf Spine & Lateral Veins -->
+              <svg class="leaf-vein-svg" viewBox="0 0 460 220" fill="none" preserveAspectRatio="none">
+                <path class="leaf-vein-main" d="M 445 110 C 330 110, 180 105, 15 110" />
+                <path class="leaf-vein-lateral" d="M 360 108 C 340 70, 300 45, 260 30" />
+                <path class="leaf-vein-lateral" d="M 360 112 C 340 150, 300 175, 260 190" />
+                <path class="leaf-vein-lateral" d="M 240 108 C 215 72, 175 52, 130 40" />
+                <path class="leaf-vein-lateral" d="M 240 112 C 215 148, 175 168, 130 180" />
+                <path class="leaf-vein-lateral" d="M 120 109 C 95 82, 65 68, 35 60" />
+                <path class="leaf-vein-lateral" d="M 120 111 C 95 138, 65 152, 35 160" />
+              </svg>
+              <div class="leaf-glass-shine"></div>
+              
+              <!-- Extremely Minimal Education Content -->
+              <div class="leaf-content">
+                <div class="leaf-badge-row">
+                  <span class="leaf-tag-pill"><i class="fa-solid fa-medal"></i> SECONDARY SCHOOL</span>
+                  <span class="leaf-distinction-badge"><i class="fa-solid fa-trophy"></i> Mandal Academic Topper</span>
                 </div>
-                <div class="tree-badge"><i class="fa-solid fa-trophy"></i> GPA 9.7 &bull; Mandal Topper</div>
-              </div>
-              <div class="tree-hairline"></div>
-              <p class="tree-node-body">
-                Awarded Mandal Academic Excellence Topper honors with a perfect 10.0 grade point average in Mathematics and Physical Sciences in the State Board examinations.
-              </p>
-              <div class="tree-chips-wrap">
-                <span class="tree-chip"><i class="fa-solid fa-award"></i> Mandal Topper Award</span>
-                <span class="tree-chip"><i class="fa-solid fa-check-double"></i> 10.0 GPA in Math &amp; Science</span>
+                <h3 class="leaf-degree-title">Secondary School Certificate (Class X)</h3>
+                <div class="leaf-inst-name">Municipal High School, Andhra Pradesh</div>
+                <div class="leaf-meta-row">
+                  <span class="leaf-timeline"><i class="fa-regular fa-calendar"></i> 2015 – 2016</span>
+                  <span class="leaf-grade-pill"><i class="fa-solid fa-check-double"></i> GPA 9.7 / 10.0</span>
+                </div>
               </div>
             </div>
           </div>
@@ -973,253 +980,250 @@
   </section>
 
   <!-- ==========================================================================
-       Career Flight Path (Scroll-Controlled Aircraft Experience)
+       6. Work & Leadership — Career Airport Journey
        ========================================================================== -->
-  <section class="flight-section" id="experience">
-    <div class="flight-sticky-viewport">
-      <!-- Ambient Atmospheric Lighting -->
-      <div class="flight-ambient-glow"></div>
+  <section class="airport-section" id="experience">
+    <div class="airport-sticky-stage">
+      <!-- Ambient Airport Atmosphere -->
+      <div class="airport-ambient-light"></div>
 
-      <!-- Flight Control HUD & Section Header -->
-      <div class="flight-header-wrap">
+      <!-- Departure Board Header & Minimal Transit Bar -->
+      <div class="airport-header-wrap">
         <div class="section-pill">
           <i class="fa-solid fa-plane-departure"></i>
-          <span>Flight Path &bull; Career Milestones</span>
+          <span>Career Airport Journey</span>
         </div>
-        <h2 class="section-title">Career Flight Path</h2>
-        <p class="section-subtitle">Scroll to navigate the supersonic trajectory connecting four career destinations.</p>
+        <h2 class="section-title">Work &amp; Leadership</h2>
+        <p class="section-subtitle">Scroll to trace my professional transit across four airport gates. Hover any terminal to enter and inspect details.</p>
         
-        <!-- Apple Cockpit Avionics HUD -->
-        <div class="flight-avionics-hud">
-          <div class="hud-pill">
-            <i class="fa-solid fa-compass"></i>
-            <span class="hud-label">HEADING:</span>
-            <span class="hud-value" id="hudHeading">078&deg; ENE</span>
+        <!-- Minimal Departure-Board Transit Bar -->
+        <div class="airport-transit-bar">
+          <div class="transit-pill active" id="transit-step-1" data-gate="1">
+            <i class="fa-solid fa-plane"></i>
+            <span class="transit-code">HYD</span>
+            <span class="transit-label">GATE 01 &bull; INFOSYS</span>
           </div>
-          <div class="hud-pill">
-            <i class="fa-solid fa-gauge-high"></i>
-            <span class="hud-label">VELOCITY:</span>
-            <span class="hud-value" id="hudSpeed">MACH 0.82</span>
+          <span class="transit-arrow">&rarr;</span>
+          <div class="transit-pill" id="transit-step-2" data-gate="2">
+            <i class="fa-solid fa-plane"></i>
+            <span class="transit-code">GOA</span>
+            <span class="transit-label">GATE 02 &bull; TEACHING ASSISTANT</span>
           </div>
-          <div class="hud-pill active-leg">
-            <i class="fa-solid fa-location-crosshairs"></i>
-            <span class="hud-label">WAYPOINT:</span>
-            <span class="hud-value" id="hudWaypoint">LEG 01: INFOSYS</span>
+          <span class="transit-arrow">&rarr;</span>
+          <div class="transit-pill" id="transit-step-3" data-gate="3">
+            <i class="fa-solid fa-plane"></i>
+            <span class="transit-code">GOA</span>
+            <span class="transit-label">GATE 03 &bull; PLACEMENT COORD</span>
           </div>
-          <div class="hud-pill progress-leg">
-            <i class="fa-solid fa-route"></i>
-            <span class="hud-label">PROGRESS:</span>
-            <span class="hud-value" id="hudProgress">0%</span>
+          <span class="transit-arrow">&rarr;</span>
+          <div class="transit-pill" id="transit-step-4" data-gate="4">
+            <i class="fa-solid fa-plane"></i>
+            <span class="transit-code">AMZ</span>
+            <span class="transit-label">GATE 04 &bull; ML SUMMER SCHOOL</span>
           </div>
         </div>
       </div>
 
-      <!-- Main Flight Path Stage -->
-      <div class="flight-stage" id="flightStage">
-        <!-- SVG Canvas for Curving Flight Trajectory & Supersonic Jet -->
-        <svg class="flight-svg" id="flightSvg" viewBox="0 0 1440 760" fill="none" preserveAspectRatio="xMidYMid meet">
+      <!-- Main Airport Stage (Curved Runway & 4 Terminals) -->
+      <div class="airport-stage" id="airportStage">
+        <!-- SVG Curved Flight Runway connecting Gates 01 -> 02 -> 03 -> 04 -->
+        <svg class="airport-svg" id="airportSvg" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="xMidYMid meet">
           <defs>
-            <!-- Glowing Flight Trail Gradient (Dark Mode) -->
-            <linearGradient id="flightTrailGradDark" x1="0%" y1="100%" x2="100%" y2="0%">
+            <linearGradient id="runwayTrailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#0A84FF" stop-opacity="0.9" />
-              <stop offset="35%" stop-color="#5E5CE6" stop-opacity="0.95" />
-              <stop offset="70%" stop-color="#BF5AF2" stop-opacity="0.95" />
+              <stop offset="50%" stop-color="#5E5CE6" stop-opacity="0.95" />
               <stop offset="100%" stop-color="#30D158" stop-opacity="1" />
             </linearGradient>
-
-            <!-- Flight Trail Gradient (Light Mode) -->
-            <linearGradient id="flightTrailGradLight" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#0071E3" stop-opacity="0.95" />
-              <stop offset="45%" stop-color="#5E5CE6" stop-opacity="0.95" />
-              <stop offset="80%" stop-color="#30D158" stop-opacity="0.95" />
+            <linearGradient id="runwayTrailGradLight" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0071E3" stop-opacity="0.9" />
+              <stop offset="50%" stop-color="#5E5CE6" stop-opacity="0.95" />
               <stop offset="100%" stop-color="#047857" stop-opacity="1" />
             </linearGradient>
-
-            <!-- Afterburner Plume Gradient -->
-            <linearGradient id="jetAfterburnerGrad" x1="0%" y1="50%" x2="100%" y2="50%">
-              <stop offset="0%" stop-color="#0A84FF" stop-opacity="0" />
-              <stop offset="40%" stop-color="#64D2FF" stop-opacity="0.8" />
-              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
-            </linearGradient>
-
-            <!-- Glow Filters -->
-            <filter id="flightPathGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="4" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
           </defs>
 
-          <!-- Faint Guide Trajectory (Future Course) -->
-          <path class="flight-guide-path" id="flightGuidePath" 
-            d="M 40 680 C 120 660, 170 590, 240 540 C 350 460, 450 250, 580 230 C 700 210, 800 520, 930 550 C 1050 580, 1150 250, 1280 220 C 1330 210, 1390 200, 1440 190" />
+          <!-- Dotted Guidance Course -->
+          <path class="airport-guide-path" id="airportGuidePath" 
+            d="M 180 200 C 320 200, 420 440, 560 440 C 700 440, 800 200, 940 200 C 1080 200, 1180 440, 1320 440" />
 
-          <!-- Active Illuminated Flight Trail (Extends on Scroll) -->
-          <path class="flight-active-trail" id="flightActiveTrail" 
-            d="M 40 680 C 120 660, 170 590, 240 540 C 350 460, 450 250, 580 230 C 700 210, 800 520, 930 550 C 1050 580, 1150 250, 1280 220 C 1330 210, 1390 200, 1440 190" />
+          <!-- Illuminated Active Flight Path (Scroll-Controlled) -->
+          <path class="airport-active-trail" id="airportActiveTrail" 
+            d="M 180 200 C 320 200, 420 440, 560 440 C 700 440, 800 200, 940 200 C 1080 200, 1180 440, 1320 440" />
 
-          <!-- Waypoint 1: Infosys Limited (x=240, y=540) -->
-          <g class="flight-waypoint" id="waypoint-1" data-waypoint="1" transform="translate(240, 540)">
-            <circle class="waypoint-pulse" r="16" />
-            <circle class="waypoint-core" r="7" />
+          <!-- Gate Waypoint Beacons -->
+          <g class="airport-beacon active" id="airportBeacon1" transform="translate(180, 200)">
+            <circle class="beacon-pulse" r="14" />
+            <circle class="beacon-dot" r="6" />
+          </g>
+          <g class="airport-beacon" id="airportBeacon2" transform="translate(560, 440)">
+            <circle class="beacon-pulse" r="14" />
+            <circle class="beacon-dot" r="6" />
+          </g>
+          <g class="airport-beacon" id="airportBeacon3" transform="translate(940, 200)">
+            <circle class="beacon-pulse" r="14" />
+            <circle class="beacon-dot" r="6" />
+          </g>
+          <g class="airport-beacon" id="airportBeacon4" transform="translate(1320, 440)">
+            <circle class="beacon-pulse current-dest-pulse" r="18" />
+            <circle class="beacon-dot current-dest-dot" r="8" />
           </g>
 
-          <!-- Waypoint 2: NIT Goa Placement Coordinator (x=580, y=230) -->
-          <g class="flight-waypoint" id="waypoint-2" data-waypoint="2" transform="translate(580, 230)">
-            <circle class="waypoint-pulse" r="16" />
-            <circle class="waypoint-core" r="7" />
-          </g>
-
-          <!-- Waypoint 3: Amazon ML Summer School (x=930, y=550) -->
-          <g class="flight-waypoint" id="waypoint-3" data-waypoint="3" transform="translate(930, 550)">
-            <circle class="waypoint-pulse" r="16" />
-            <circle class="waypoint-core" r="7" />
-          </g>
-
-          <!-- Waypoint 4: NIT Goa Teaching Assistant - Current/Latest (x=1280, y=220) -->
-          <g class="flight-waypoint latest-waypoint" id="waypoint-4" data-waypoint="4" transform="translate(1280, 220)">
-            <circle class="waypoint-pulse current-pulse" r="22" />
-            <circle class="waypoint-core current-core" r="9" />
-          </g>
-
-          <!-- Supersonic Aircraft Group (Controlled by Scroll) -->
-          <g class="flight-aircraft" id="flightAircraft">
-            <!-- Afterburner Thruster Plume -->
-            <polygon points="-24,-4 -36,0 -24,4" fill="url(#jetAfterburnerGrad)" class="aircraft-plume" />
-            <circle cx="-24" cy="0" r="5" fill="#0A84FF" filter="url(#flightPathGlow)" />
-            
-            <!-- Swept Delta Wings -->
-            <path d="M 6 -5 L -16 -24 C -19 -24 -20 -22 -18 -18 L -9 -4 L -9 4 L -18 18 C -20 22 -19 24 -16 24 L 6 5 Z" class="aircraft-body-wing" />
-            
-            <!-- Precision Fuselage -->
-            <path d="M 28 0 C 20 -4 10 -5 -6 -5 L -22 -4 C -24 -4 -24 4 -22 4 L -6 5 C 10 5 20 4 28 0 Z" class="aircraft-body-fuselage" />
-            
-            <!-- Cockpit Glass Canopy -->
-            <path d="M 16 0 C 12 -2 4 -2 -2 -2 C 3 -1 8 0 16 0 Z" class="aircraft-body-canopy" />
-            
-            <!-- Twin Vertical Stabilizers -->
-            <path d="M -16 -4 L -23 -11 L -21 -11 L -13 -4 Z" class="aircraft-body-tail" />
-            <path d="M -16 4 L -23 11 L -21 11 L -13 4 Z" class="aircraft-body-tail" />
-
-            <!-- Wingtip Lights -->
-            <circle cx="-16" cy="-22" r="1.5" fill="#FF453A" />
-            <circle cx="-16" cy="22" r="1.5" fill="#30D158" />
+          <!-- Sleek Minimal Aircraft Silhouette -->
+          <g class="airport-aircraft" id="airportAircraft" transform="translate(180, 200)">
+            <circle cx="0" cy="0" r="16" class="aircraft-halo" />
+            <path d="M 14 0 L -4 -10 L -2 -3 L -10 -2 L -12 -5 L -14 -5 L -13 0 L -14 5 L -12 5 L -10 2 L -2 3 L -4 10 Z" class="aircraft-shape" />
           </g>
         </svg>
 
-        <!-- Floating Liquid-Glass Milestone Panels -->
-        <div class="flight-milestones-container">
-          <!-- MILESTONE 01: Infosys Limited -->
-          <div class="flight-milestone-panel" id="milestone-1" data-index="1">
-            <div class="milestone-glass-card">
-              <div class="milestone-flight-tag">
-                <span class="flight-callsign"><i class="fa-solid fa-plane"></i> LEG 01 &bull; HYDERABAD</span>
-                <span class="flight-date-badge">July 2022 – Oct 2023</span>
+        <!-- 4 Airport Gate Terminals (Hover to Enter Terminal) -->
+        <div class="airport-terminals-container">
+          <!-- GATE 01: Infosys Limited -->
+          <div class="airport-terminal-card active-dest" id="airport-term-1" data-gate="1">
+            <div class="terminal-gate-header">
+              <div class="gate-callsign">
+                <span class="gate-tag"><i class="fa-solid fa-door-open"></i> GATE 01 &bull; HYD</span>
+                <span class="gate-status status-departed">DEPARTED</span>
               </div>
-              <div class="milestone-header">
-                <div class="milestone-org-avatar"><i class="fa-solid fa-building"></i></div>
-                <div>
-                  <h3 class="milestone-role">Systems Engineer — SAP BW/4HANA</h3>
-                  <div class="milestone-company">Infosys Limited &bull; Hyderabad, India</div>
+              <h3 class="terminal-org-name">Infosys Limited</h3>
+              <div class="terminal-role-title">Systems Engineer — Software &amp; Data Engineering</div>
+              <div class="terminal-meta-line">
+                <span><i class="fa-regular fa-calendar"></i> July 2022 – Oct 2023</span>
+                <span><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
+              </div>
+              <div class="terminal-hover-hint">
+                <i class="fa-solid fa-angles-down"></i>
+                <span>Hover to Enter Terminal</span>
+              </div>
+            </div>
+
+            <!-- Terminal Interior (Slides open on hover) -->
+            <div class="terminal-sliding-door">
+              <div class="terminal-interior-body">
+                <div class="terminal-divider"></div>
+                <ul class="terminal-bullets">
+                  <li>Monitored, troubleshot, and debugged mission-critical enterprise ETL data pipelines maintaining 99.9% system availability.</li>
+                  <li>Engineered interactive reporting dashboards in SAP Analytics Cloud (SAC) for cross-functional business stakeholders.</li>
+                  <li>Collaborated in fast-paced Agile sprint delivery, rigorous code reviews, automated batch-job monitoring, and SLA incident management.</li>
+                </ul>
+                <div class="terminal-tags">
+                  <span class="terminal-chip">SAP BW/4HANA</span>
+                  <span class="terminal-chip">ETL Pipelines</span>
+                  <span class="terminal-chip">SAP Analytics Cloud</span>
+                  <span class="terminal-chip">SLA Management</span>
                 </div>
-              </div>
-              <div class="milestone-divider"></div>
-              <ul class="milestone-bullets">
-                <li>Monitored, troubleshot, and debugged mission-critical enterprise ETL data pipelines to maintain 99.9% system availability.</li>
-                <li>Engineered interactive reporting dashboards in SAP Analytics Cloud (SAC) for cross-functional business stakeholders.</li>
-                <li>Collaborated in fast-paced Agile sprint delivery, rigorous code reviews, automated batch-job monitoring, and SLA incident management.</li>
-              </ul>
-              <div class="milestone-tags">
-                <span class="milestone-chip">SAP BW/4HANA</span>
-                <span class="milestone-chip">ETL Pipelines</span>
-                <span class="milestone-chip">SAP Analytics Cloud</span>
-                <span class="milestone-chip">Incident Management</span>
               </div>
             </div>
           </div>
 
-          <!-- MILESTONE 02: Placement Coordinator (NIT Goa) -->
-          <div class="flight-milestone-panel" id="milestone-2" data-index="2">
-            <div class="milestone-glass-card">
-              <div class="milestone-flight-tag">
-                <span class="flight-callsign"><i class="fa-solid fa-plane"></i> LEG 02 &bull; NIT GOA</span>
-                <span class="flight-date-badge">Aug 2026 – Present</span>
+          <!-- GATE 02: Teaching Assistant — NIT Goa -->
+          <div class="airport-terminal-card" id="airport-term-2" data-gate="2">
+            <div class="terminal-gate-header">
+              <div class="gate-callsign">
+                <span class="gate-tag"><i class="fa-solid fa-chalkboard-user"></i> GATE 02 &bull; GOA</span>
+                <span class="gate-status status-active">ACTIVE TRANSIT</span>
               </div>
-              <div class="milestone-header">
-                <div class="milestone-org-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
-                <div>
-                  <h3 class="milestone-role">Placement Coordinator (M.Tech CSE)</h3>
-                  <div class="milestone-company">National Institute of Technology Goa</div>
+              <h3 class="terminal-org-name">National Institute of Technology Goa</h3>
+              <div class="terminal-role-title">Teaching Assistant (M.Tech CSE)</div>
+              <div class="terminal-meta-line">
+                <span><i class="fa-regular fa-calendar"></i> Aug 2024 – Present</span>
+                <span><i class="fa-solid fa-location-dot"></i> Goa, India</span>
+              </div>
+              <div class="terminal-hover-hint">
+                <i class="fa-solid fa-angles-down"></i>
+                <span>Hover to Enter Terminal</span>
+              </div>
+            </div>
+
+            <!-- Terminal Interior (Slides open on hover) -->
+            <div class="terminal-sliding-door">
+              <div class="terminal-interior-body">
+                <div class="terminal-divider"></div>
+                <ul class="terminal-bullets">
+                  <li>Appointed as Graduate Teaching Assistant for core Computer Science &amp; Engineering undergraduate laboratory courses.</li>
+                  <li>Conducting hands-on programming labs, problem-solving tutorials, and assignment evaluations in C/C++, Python, and Data Structures.</li>
+                  <li>Mentoring junior engineering students on algorithmic efficiency, object-oriented software design, and rigorous debugging practices.</li>
+                </ul>
+                <div class="terminal-tags">
+                  <span class="terminal-chip">Data Structures &amp; Algorithms</span>
+                  <span class="terminal-chip">C/C++ &amp; Python</span>
+                  <span class="terminal-chip">Lab Instruction</span>
+                  <span class="terminal-chip">Academic Mentorship</span>
                 </div>
-              </div>
-              <div class="milestone-divider"></div>
-              <ul class="milestone-bullets">
-                <li>Elected to represent the M.Tech Computer Science &amp; Engineering cohort for campus recruitment and industry relations.</li>
-                <li>Coordinating recruitment drives, technical preparation workshops, and resume review sessions with Tier-1 tech recruiters.</li>
-                <li>Liaising between Department of CSE faculty, Dean of Student Affairs, and visiting enterprise hiring teams.</li>
-              </ul>
-              <div class="milestone-tags">
-                <span class="milestone-chip">Cohort Leadership</span>
-                <span class="milestone-chip">Industry Relations</span>
-                <span class="milestone-chip">Technical Prep</span>
-                <span class="milestone-chip">Recruitment Strategy</span>
               </div>
             </div>
           </div>
 
-          <!-- MILESTONE 03: Amazon ML Summer School -->
-          <div class="flight-milestone-panel" id="milestone-3" data-index="3">
-            <div class="milestone-glass-card">
-              <div class="milestone-flight-tag">
-                <span class="flight-callsign"><i class="fa-solid fa-plane"></i> LEG 03 &bull; AMAZON MLSS</span>
-                <span class="flight-date-badge">Jul – Aug 2026</span>
+          <!-- GATE 03: Placement Coordinator — NIT Goa -->
+          <div class="airport-terminal-card" id="airport-term-3" data-gate="3">
+            <div class="terminal-gate-header">
+              <div class="gate-callsign">
+                <span class="gate-tag"><i class="fa-solid fa-users"></i> GATE 03 &bull; GOA</span>
+                <span class="gate-status status-active">ACTIVE TRANSIT</span>
               </div>
-              <div class="milestone-header">
-                <div class="milestone-org-avatar amazon-icon"><i class="fa-brands fa-amazon"></i></div>
-                <div>
-                  <h3 class="milestone-role">Amazon ML Summer School 2026 Participant</h3>
-                  <div class="milestone-company">Amazon India Machine Learning Team</div>
+              <h3 class="terminal-org-name">National Institute of Technology Goa</h3>
+              <div class="terminal-role-title">Placement Coordinator (M.Tech CSE)</div>
+              <div class="terminal-meta-line">
+                <span><i class="fa-regular fa-calendar"></i> Aug 2024 – Present</span>
+                <span><i class="fa-solid fa-location-dot"></i> Goa, India</span>
+              </div>
+              <div class="terminal-hover-hint">
+                <i class="fa-solid fa-angles-down"></i>
+                <span>Hover to Enter Terminal</span>
+              </div>
+            </div>
+
+            <!-- Terminal Interior (Slides open on hover) -->
+            <div class="terminal-sliding-door">
+              <div class="terminal-interior-body">
+                <div class="terminal-divider"></div>
+                <ul class="terminal-bullets">
+                  <li>Elected to represent the M.Tech Computer Science &amp; Engineering cohort for campus recruitment and industry relations.</li>
+                  <li>Coordinating recruitment drives, technical preparation workshops, and resume review sessions with Tier-1 tech recruiters.</li>
+                  <li>Liaising between Department of CSE faculty, Dean of Student Affairs, and visiting enterprise hiring teams.</li>
+                </ul>
+                <div class="terminal-tags">
+                  <span class="terminal-chip">Cohort Leadership</span>
+                  <span class="terminal-chip">Industry Relations</span>
+                  <span class="terminal-chip">Technical Prep</span>
+                  <span class="terminal-chip">Recruitment Strategy</span>
                 </div>
-              </div>
-              <div class="milestone-divider"></div>
-              <ul class="milestone-bullets">
-                <li>Competitively selected participant for the prestigious Amazon ML Summer School (MLSS) 2026.</li>
-                <li>Underwent deep technical immersion in Deep Neural Networks, Large Language Models (LLMs), Probabilistic Graphical Models, and production ML pipelines.</li>
-                <li>Mentored directly by Amazon Principal Scientists on state-of-the-art architectures and enterprise AI scaling.</li>
-              </ul>
-              <div class="milestone-tags">
-                <span class="milestone-chip">Deep Neural Networks</span>
-                <span class="milestone-chip">LLMs</span>
-                <span class="milestone-chip">Probabilistic Models</span>
-                <span class="milestone-chip">Amazon Scientists</span>
               </div>
             </div>
           </div>
 
-          <!-- MILESTONE 04: Teaching Assistant — NIT Goa (CURRENT / LATEST EXPERIENCE) -->
-          <div class="flight-milestone-panel current-destination" id="milestone-4" data-index="4">
-            <div class="milestone-glass-card latest-card">
-              <div class="milestone-flight-tag">
-                <span class="flight-callsign current-callsign"><i class="fa-solid fa-plane-arrival"></i> CURRENT &bull; FINAL DESTINATION</span>
-                <span class="flight-date-badge current-badge">During M.Tech CSE &bull; Present</span>
+          <!-- GATE 04: Amazon ML Summer School -->
+          <div class="airport-terminal-card latest-dest" id="airport-term-4" data-gate="4">
+            <div class="terminal-gate-header">
+              <div class="gate-callsign">
+                <span class="gate-tag"><i class="fa-brands fa-amazon"></i> GATE 04 &bull; AMZ</span>
+                <span class="gate-status status-fellowship">COMPLETED</span>
               </div>
-              <div class="milestone-header">
-                <div class="milestone-org-avatar current-avatar"><i class="fa-solid fa-chalkboard-user"></i></div>
-                <div>
-                  <h3 class="milestone-role current-title">Teaching Assistant — NIT Goa</h3>
-                  <div class="milestone-company current-company">National Institute of Technology Goa (NIT Goa)</div>
+              <h3 class="terminal-org-name">Amazon India Machine Learning Team</h3>
+              <div class="terminal-role-title">Amazon ML Summer School 2024 Participant</div>
+              <div class="terminal-meta-line">
+                <span><i class="fa-regular fa-calendar"></i> Jul – Aug 2024</span>
+                <span><i class="fa-solid fa-location-dot"></i> India</span>
+              </div>
+              <div class="terminal-hover-hint">
+                <i class="fa-solid fa-angles-down"></i>
+                <span>Hover to Enter Terminal</span>
+              </div>
+            </div>
+
+            <!-- Terminal Interior (Slides open on hover) -->
+            <div class="terminal-sliding-door">
+              <div class="terminal-interior-body">
+                <div class="terminal-divider"></div>
+                <ul class="terminal-bullets">
+                  <li>Competitively selected participant for the prestigious Amazon ML Summer School (MLSS) 2024.</li>
+                  <li>Underwent deep technical immersion in Deep Neural Networks, Large Language Models (LLMs), Probabilistic Graphical Models, and production ML pipelines.</li>
+                  <li>Mentored directly by Amazon Principal Scientists on state-of-the-art architectures and enterprise AI scaling.</li>
+                </ul>
+                <div class="terminal-tags">
+                  <span class="terminal-chip">Deep Neural Networks</span>
+                  <span class="terminal-chip">Large Language Models</span>
+                  <span class="terminal-chip">Probabilistic Models</span>
+                  <span class="terminal-chip">Amazon Scientists</span>
                 </div>
-              </div>
-              <div class="milestone-divider current-divider"></div>
-              <ul class="milestone-bullets">
-                <li>Appointed as Graduate Teaching Assistant for core Computer Science &amp; Engineering undergraduate laboratory courses.</li>
-                <li>Conducting hands-on programming labs, problem-solving tutorials, and assignment evaluations in C/C++, Python, and Data Structures.</li>
-                <li>Mentoring junior engineering students on algorithmic efficiency, object-oriented software design, and rigorous debugging practices.</li>
-              </ul>
-              <div class="milestone-tags">
-                <span class="milestone-chip current-chip">Data Structures &amp; Algorithms</span>
-                <span class="milestone-chip current-chip">C/C++ &amp; Python</span>
-                <span class="milestone-chip current-chip">Lab Instruction</span>
-                <span class="milestone-chip current-chip">Academic Mentorship</span>
               </div>
             </div>
           </div>
@@ -1228,7 +1232,7 @@
     </div>
   </section>
 
-<section class="section" id="achievements">
+  <section class="section" id="achievements">
     <div class="container">
       <div class="section-header-center reveal">
         <div class="section-pill">&lt; Honors &amp; Credentials &gt;</div>
@@ -1510,6 +1514,6 @@
   </div>
 
   <!-- Vanilla JavaScript App Logic -->
-  <script src="app.js?v=flightpath1"></script>
+  <script src="app.js?v=journey1"></script>
 </body>
 </html>

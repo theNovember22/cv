@@ -256,14 +256,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 7. Yggdrasil Tree of Knowledge Interactive Engine
+  // 7. Yggdrasil Tree of Knowledge Interactive Engine (Leaves & Stems)
   // ==========================================
   const yggdrasilStage = document.getElementById("yggdrasilStage");
-  const treeNodeWrappers = document.querySelectorAll(".tree-node-wrapper");
+  const yggdrasilLeafWrappers = document.querySelectorAll(".yggdrasil-leaf-wrapper");
   const treeSection = document.getElementById("education");
-  const treePaths = document.querySelectorAll(".tree-trunk-core, .tree-branch, .tree-root");
+  const treePaths = document.querySelectorAll(".tree-trunk-core, .tree-branch, .tree-stem, .tree-root");
 
-  // A. SVG Branch Drawing on Scroll Entry
+  // A. SVG Branch & Stem Drawing on Scroll Entry
   let treeDrawn = false;
   function triggerTreeAnimation() {
     if (treeDrawn) return;
@@ -271,12 +271,12 @@ document.addEventListener("DOMContentLoaded", () => {
     treePaths.forEach((path, idx) => {
       try {
         const length = path.getTotalLength ? path.getTotalLength() : 800;
-        path.style.strokeDasharray = `${length}`;
-        path.style.strokeDashoffset = `${length}`;
-        path.style.transition = "stroke-dashoffset 1.6s cubic-bezier(0.16, 1, 0.3, 1)";
+        path.style.strokeDasharray = ;
+        path.style.strokeDashoffset = ;
+        path.style.transition = "stroke-dashoffset 1.8s cubic-bezier(0.16, 1, 0.3, 1)";
         setTimeout(() => {
           path.style.strokeDashoffset = "0";
-        }, idx * 80);
+        }, idx * 70);
       } catch (err) {
         path.style.strokeDashoffset = "0";
       }
@@ -297,30 +297,30 @@ document.addEventListener("DOMContentLoaded", () => {
   if (treeSection) {
     treeScrollObserver.observe(treeSection);
   }
-  // Safe fallback to guarantee branches are drawn even on rapid navigation
   setTimeout(triggerTreeAnimation, 1800);
 
-  // B. Interactive Branch & Node Focus on Hover
-  treeNodeWrappers.forEach((wrapper) => {
+  // B. Interactive Branch, Stem & Leaf Focus on Hover
+  yggdrasilLeafWrappers.forEach((wrapper) => {
     const nodeKey = wrapper.getAttribute("data-node");
-    const branchId = `branch-${nodeKey ? nodeKey.replace("node-", "") : ""}`;
-    const nexusId = `nexus-${nodeKey ? nodeKey.replace("node-", "") : ""}`;
-
-    const branch = document.getElementById(branchId);
-    const nexus = document.getElementById(nexusId);
+    const num = nodeKey ? nodeKey.replace("node-", "") : "";
+    const branch = document.getElementById("branch-" + num);
+    const stem = document.getElementById("stem-" + num);
+    const stemNode = document.getElementById("stem-node-" + num);
 
     wrapper.addEventListener("mouseenter", () => {
       if (yggdrasilStage) yggdrasilStage.classList.add("has-hover");
       wrapper.classList.add("hovered");
       if (branch) branch.classList.add("active-branch");
-      if (nexus) nexus.classList.add("active-nexus");
+      if (stem) stem.classList.add("active-stem");
+      if (stemNode) stemNode.classList.add("active-stem-node");
     });
 
     wrapper.addEventListener("mouseleave", () => {
       if (yggdrasilStage) yggdrasilStage.classList.remove("has-hover");
       wrapper.classList.remove("hovered");
       if (branch) branch.classList.remove("active-branch");
-      if (nexus) nexus.classList.remove("active-nexus");
+      if (stem) stem.classList.remove("active-stem");
+      if (stemNode) stemNode.classList.remove("active-stem-node");
     });
   });
 
@@ -497,79 +497,71 @@ Sent from Battula Bhargav Portfolio`
   revealElements.forEach((el) => revealObserver.observe(el));
 
   // ==========================================
-  // 14. Career Flight Path Engine (Scroll-Controlled Supersonic Trajectory)
+  // 14. Career Airport Journey Controller (Minimal Scroll-Controlled Aircraft)
   // ==========================================
-  const flightSection = document.getElementById("experience");
-  const flightGuidePath = document.getElementById("flightGuidePath");
-  const flightActiveTrail = document.getElementById("flightActiveTrail");
-  const flightAircraft = document.getElementById("flightAircraft");
-  const hudHeading = document.getElementById("hudHeading");
-  const hudSpeed = document.getElementById("hudSpeed");
-  const hudWaypoint = document.getElementById("hudWaypoint");
-  const hudProgress = document.getElementById("hudProgress");
+  const airportSection = document.getElementById("experience");
+  const airportGuidePath = document.getElementById("airportGuidePath");
+  const airportActiveTrail = document.getElementById("airportActiveTrail");
+  const airportAircraft = document.getElementById("airportAircraft");
 
-  const waypoints = [
-    document.getElementById("waypoint-1"),
-    document.getElementById("waypoint-2"),
-    document.getElementById("waypoint-3"),
-    document.getElementById("waypoint-4")
+  const airportBeacons = [
+    document.getElementById("airportBeacon1"),
+    document.getElementById("airportBeacon2"),
+    document.getElementById("airportBeacon3"),
+    document.getElementById("airportBeacon4")
   ];
 
-  const milestones = [
-    document.getElementById("milestone-1"),
-    document.getElementById("milestone-2"),
-    document.getElementById("milestone-3"),
-    document.getElementById("milestone-4")
+  const airportTerminals = [
+    document.getElementById("airport-term-1"),
+    document.getElementById("airport-term-2"),
+    document.getElementById("airport-term-3"),
+    document.getElementById("airport-term-4")
   ];
 
-  if (flightSection && flightGuidePath && flightActiveTrail && flightAircraft) {
-    let totalPathLength = 0;
+  const transitSteps = [
+    document.getElementById("transit-step-1"),
+    document.getElementById("transit-step-2"),
+    document.getElementById("transit-step-3"),
+    document.getElementById("transit-step-4")
+  ];
 
-    function initFlightPath() {
+  if (airportSection && airportGuidePath && airportActiveTrail && airportAircraft) {
+    let totalRunwayLength = 0;
+
+    function initAirportRunway() {
       try {
-        totalPathLength = flightGuidePath.getTotalLength();
-        flightActiveTrail.style.strokeDasharray = `${totalPathLength} ${totalPathLength}`;
-        flightActiveTrail.style.strokeDashoffset = `${totalPathLength}`;
+        totalRunwayLength = airportGuidePath.getTotalLength();
+        airportActiveTrail.style.strokeDasharray = totalRunwayLength + " " + totalRunwayLength;
+        airportActiveTrail.style.strokeDashoffset = totalRunwayLength;
       } catch (err) {
-        console.warn("SVG Path length calculation error:", err);
+        console.warn("Runway calculation error:", err);
       }
     }
 
-    initFlightPath();
-    window.addEventListener("resize", initFlightPath);
+    initAirportRunway();
+    window.addEventListener("resize", initAirportRunway);
 
-    const waypointRatios = [0.132, 0.383, 0.645, 0.913];
-    const legNames = [
-      "LEG 01: INFOSYS",
-      "LEG 02: NIT GOA COORDINATOR",
-      "LEG 03: AMAZON MLSS",
-      "LEG 04: NIT GOA TA (CURRENT)"
-    ];
-    const revealThresholds = [0.01, 0.22, 0.48, 0.72];
-
+    const gateRatios = [0.05, 0.35, 0.65, 0.95];
     let ticking = false;
 
-    function updateFlightController() {
+    function updateAirportJourney() {
       ticking = false;
 
-      // On mobile / tablet, layout switches to vertical log
+      // On tablet / mobile, runway SVG is hidden and terminals stack cleanly
       if (window.innerWidth <= 1024) {
-        milestones.forEach((panel) => {
-          if (panel) {
-            panel.classList.add("revealed");
-            panel.classList.remove("focused", "passed");
-          }
+        airportTerminals.forEach((card) => {
+          if (card) card.classList.add("terminal-open");
         });
         return;
       }
 
-      if (!totalPathLength) {
-        initFlightPath();
-        if (!totalPathLength) return;
+      if (!totalRunwayLength) {
+        initAirportRunway();
+        if (!totalRunwayLength) return;
       }
 
-      const rect = flightSection.getBoundingClientRect();
-      const sectionHeight = flightSection.offsetHeight;
+      const rect = airportSection.getBoundingClientRect();
+      const sectionHeight = airportSection.offsetHeight;
       const viewportHeight = window.innerHeight;
       const maxScroll = sectionHeight - viewportHeight;
 
@@ -579,132 +571,103 @@ Sent from Battula Bhargav Portfolio`
       let rawProgress = scrollDist / maxScroll;
       let progress = Math.max(0, Math.min(1, rawProgress));
 
-      // 1. Update Active Flight Trail
-      const strokeOffset = totalPathLength * (1 - progress);
-      flightActiveTrail.style.strokeDashoffset = `${strokeOffset}`;
+      // 1. Update Active Flight Runway
+      const strokeOffset = totalRunwayLength * (1 - progress);
+      airportActiveTrail.style.strokeDashoffset = strokeOffset;
 
-      // 2. Calculate Aircraft Position and Tangent Banking
-      const currentLength = progress * totalPathLength;
-      const pt = flightGuidePath.getPointAtLength(currentLength);
-      const delta = 3;
-      const ptAhead = flightGuidePath.getPointAtLength(Math.min(totalPathLength, currentLength + delta));
-      const ptBehind = flightGuidePath.getPointAtLength(Math.max(0, currentLength - delta));
+      // 2. Position & Rotate Minimal Aircraft
+      const currentLength = progress * totalRunwayLength;
+      const pt = airportGuidePath.getPointAtLength(currentLength);
+      const delta = 2;
+      const ptAhead = airportGuidePath.getPointAtLength(Math.min(totalRunwayLength, currentLength + delta));
+      const ptBehind = airportGuidePath.getPointAtLength(Math.max(0, currentLength - delta));
       const angleRad = Math.atan2(ptAhead.y - ptBehind.y, ptAhead.x - ptBehind.x);
       const angleDeg = angleRad * (180 / Math.PI);
 
-      flightAircraft.setAttribute("transform", `translate(${pt.x}, ${pt.y}) rotate(${angleDeg})`);
+      airportAircraft.setAttribute("transform", "translate(" + pt.x + ", " + pt.y + ") rotate(" + angleDeg + ")");
 
-      // 3. Update Avionics Cockpit HUD
-      if (hudProgress) {
-        hudProgress.textContent = `${Math.round(progress * 100)}%`;
-      }
-
-      if (hudSpeed) {
-        const mach = (0.82 + progress * 0.54).toFixed(2);
-        hudSpeed.textContent = `MACH ${mach}`;
-      }
-
-      if (hudHeading) {
-        const compassHeading = Math.round((angleDeg + 360) % 360);
-        let cardinal = "ENE";
-        if (compassHeading >= 337.5 || compassHeading < 22.5) cardinal = "N";
-        else if (compassHeading < 67.5) cardinal = "NE";
-        else if (compassHeading < 112.5) cardinal = "E";
-        else if (compassHeading < 157.5) cardinal = "SE";
-        else if (compassHeading < 202.5) cardinal = "S";
-        else if (compassHeading < 247.5) cardinal = "SW";
-        else if (compassHeading < 292.5) cardinal = "W";
-        else cardinal = "NW";
-        hudHeading.innerHTML = `${String(compassHeading).padStart(3, "0")}&deg; ${cardinal}`;
-      }
-
-      // Determine active flight leg
-      let activeLegIndex = 0;
+      // 3. Determine Active Destination Gate (0 to 3)
+      let activeGateIndex = 0;
       if (progress < 0.25) {
-        activeLegIndex = 0;
-      } else if (progress < 0.51) {
-        activeLegIndex = 1;
+        activeGateIndex = 0;
+      } else if (progress < 0.52) {
+        activeGateIndex = 1;
       } else if (progress < 0.78) {
-        activeLegIndex = 2;
+        activeGateIndex = 2;
       } else {
-        activeLegIndex = 3;
+        activeGateIndex = 3;
       }
 
-      if (hudWaypoint) {
-        hudWaypoint.textContent = legNames[activeLegIndex];
-      }
-
-      // 4. Update Milestone Glass Panels
-      milestones.forEach((panel, idx) => {
-        if (!panel) return;
-        const isRevealed = progress >= revealThresholds[idx];
-        const isFocused = (activeLegIndex === idx);
-        const isPassed = (progress > waypointRatios[idx] + 0.05 && activeLegIndex !== idx);
-
-        if (isFocused) {
-          panel.classList.add("revealed", "focused");
-          panel.classList.remove("passed");
-        } else if (isRevealed) {
-          panel.classList.add("revealed");
-          panel.classList.remove("focused");
-          if (isPassed) {
-            panel.classList.add("passed");
-          } else {
-            panel.classList.remove("passed");
-          }
+      // 4. Update Departure-Board Transit Bar
+      transitSteps.forEach((pill, idx) => {
+        if (!pill) return;
+        if (idx === activeGateIndex) {
+          pill.classList.add("active");
+          pill.classList.remove("passed");
+        } else if (idx < activeGateIndex) {
+          pill.classList.remove("active");
+          pill.classList.add("passed");
         } else {
-          panel.classList.remove("revealed", "focused", "passed");
+          pill.classList.remove("active", "passed");
         }
       });
 
-      // 5. Update Waypoint Pins in SVG
-      waypoints.forEach((wp, idx) => {
-        if (!wp) return;
-        const reached = progress >= (waypointRatios[idx] - 0.03);
-        const isCurrent = (activeLegIndex === idx);
-        if (isCurrent) {
-          wp.classList.add("active");
+      // 5. Update Gate Beacons along SVG
+      airportBeacons.forEach((beacon, idx) => {
+        if (!beacon) return;
+        if (idx === activeGateIndex) {
+          beacon.classList.add("active");
         } else {
-          wp.classList.remove("active");
+          beacon.classList.remove("active");
         }
-        if (reached) {
-          wp.classList.add("passed");
+        if (idx <= activeGateIndex) {
+          beacon.classList.add("passed");
         } else {
-          wp.classList.remove("passed");
+          beacon.classList.remove("passed");
+        }
+      });
+
+      // 6. Highlight Active Destination Terminal Card
+      airportTerminals.forEach((card, idx) => {
+        if (!card) return;
+        if (idx === activeGateIndex) {
+          card.classList.add("active-dest");
+        } else {
+          card.classList.remove("active-dest");
         }
       });
     }
 
-    function onFlightScroll() {
+    function onAirportScroll() {
       if (!ticking) {
-        requestAnimationFrame(updateFlightController);
+        requestAnimationFrame(updateAirportJourney);
         ticking = true;
       }
     }
 
-    window.addEventListener("scroll", onFlightScroll, { passive: true });
-    updateFlightController();
+    window.addEventListener("scroll", onAirportScroll, { passive: true });
+    updateAirportJourney();
 
-    // Interactive Waypoint Navigation (Click Waypoint / Milestone to fly to it)
-    waypoints.forEach((wp, idx) => {
-      if (!wp) return;
-      wp.addEventListener("click", () => {
-        const sectionTop = flightSection.offsetTop;
-        const maxScroll = flightSection.offsetHeight - window.innerHeight;
-        const targetScroll = sectionTop + (waypointRatios[idx] * maxScroll);
+    // Click transit pill to smoothly navigate to that airport gate
+    transitSteps.forEach((pill, idx) => {
+      if (!pill) return;
+      pill.addEventListener("click", () => {
+        const sectionTop = airportSection.offsetTop;
+        const maxScroll = airportSection.offsetHeight - window.innerHeight;
+        const targetScroll = sectionTop + (gateRatios[idx] * maxScroll);
         window.scrollTo({ top: targetScroll, behavior: "smooth" });
       });
     });
 
-    milestones.forEach((panel, idx) => {
-      if (!panel) return;
-      panel.addEventListener("click", (e) => {
-        if (e.target.closest("a")) return;
-        const sectionTop = flightSection.offsetTop;
-        const maxScroll = flightSection.offsetHeight - window.innerHeight;
-        const targetScroll = sectionTop + (waypointRatios[idx] * maxScroll);
+    airportBeacons.forEach((beacon, idx) => {
+      if (!beacon) return;
+      beacon.addEventListener("click", () => {
+        const sectionTop = airportSection.offsetTop;
+        const maxScroll = airportSection.offsetHeight - window.innerHeight;
+        const targetScroll = sectionTop + (gateRatios[idx] * maxScroll);
         window.scrollTo({ top: targetScroll, behavior: "smooth" });
       });
     });
   }
+
 });
