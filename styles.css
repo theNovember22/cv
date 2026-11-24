@@ -2453,6 +2453,20 @@ body.light-theme .bento-card:hover {
     gap: 40px;
   }
 
+  .identity-stage {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .photo-reveal-container {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .photo-liquid-frame {
+    height: 500px;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -2518,6 +2532,15 @@ body.light-theme .bento-card:hover {
 @media (max-width: 640px) {
   .container {
     width: calc(100% - 28px);
+  }
+
+  .photo-reveal-container {
+    max-width: 340px;
+  }
+
+  .photo-liquid-frame {
+    height: 420px;
+    border-radius: 28px;
   }
 
   .hero-section {
