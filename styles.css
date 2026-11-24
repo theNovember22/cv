@@ -1,68 +1,76 @@
 /* ==========================================================================
-   Liquid-Glass Black & White Design System
+   Apple Liquid-Glass Design System
    Developer Portfolio: Battula Bhargav
-   Visual Language: Strict Monochrome Liquid Glass + Emerald Green GitHub Links
+   Visual Language: Deep Obsidian Liquid Glass + Apple Blue / Purple / Green
    ========================================================================== */
 
 :root {
-  /* Strict Monochrome Grayscale Palette */
-  --apple-blue: #FFFFFF;
-  --apple-blue-rgb: 255, 255, 255;
-  --apple-purple: #E4E4E7;
-  --apple-purple-rgb: 228, 228, 231;
-  --apple-indigo: #D4D4D8;
-  --apple-indigo-rgb: 212, 212, 216;
-  --apple-cyan: #F4F4F5;
-  --apple-cyan-rgb: 244, 244, 245;
-  --apple-mint: #E4E4E7;
-  --apple-mint-rgb: 228, 228, 231;
-  --apple-green: #D4D4D8;
-  --apple-green-rgb: 212, 212, 216;
-  --apple-yellow: #F4F4F5;
-  --apple-yellow-rgb: 244, 244, 245;
-  --apple-orange: #E4E4E7;
-  --apple-orange-rgb: 228, 228, 231;
-  --apple-pink: #D4D4D8;
-  --apple-pink-rgb: 212, 212, 216;
-  --apple-red: #A1A1AA;
-  --apple-red-rgb: 161, 161, 170;
+  /* Apple HIG System Colors */
+  --apple-blue: #0A84FF;
+  --apple-blue-rgb: 10, 132, 255;
+  --apple-purple: #BF5AF2;
+  --apple-purple-rgb: 191, 90, 242;
+  --apple-indigo: #5E5CE6;
+  --apple-indigo-rgb: 94, 92, 230;
+  --apple-cyan: #64D2FF;
+  --apple-cyan-rgb: 100, 210, 255;
+  --apple-mint: #63E6E2;
+  --apple-mint-rgb: 99, 230, 226;
+  --apple-green: #30D158;
+  --apple-green-rgb: 48, 209, 88;
+  --apple-yellow: #FFD60A;
+  --apple-yellow-rgb: 255, 214, 10;
+  --apple-orange: #FF9F0A;
+  --apple-orange-rgb: 255, 159, 10;
+  --apple-pink: #FF375F;
+  --apple-pink-rgb: 255, 55, 95;
+  --apple-red: #FF453A;
+  --apple-red-rgb: 255, 69, 58;
 
-  /* GitHub Emerald Green Accent (THE SOLE CHROMATIC EXCEPTION) */
-  --github-green: #10B981;
-  --github-green-rgb: 16, 185, 129;
+  /* Yggdrasil Living World Tree: Organic Brown Stem/Bark & Emerald Leaves */
+  --tree-bark-deep: #4A2E18;
+  --tree-bark-mid: #7B4B27;
+  --tree-bark-warm: #9C6638;
+  --tree-branch-wood: #8B5A2B;
+  --tree-leaf-green: #30D158;
+  --tree-leaf-emerald: #10B981;
+  --tree-leaf-mint: #34D399;
+
+  /* GitHub Emerald Green Accent */
+  --github-green: #30D158;
   --github-emerald-start: #064E3B;
   --github-emerald-mid: #059669;
-  --github-emerald-end: #10B981;
-  --grad-github-emerald: linear-gradient(135deg, #064E3B 0%, #059669 50%, #10B981 100%);
-  --shadow-github-glow: 0 4px 20px rgba(16, 185, 129, 0.35);
+  --github-emerald-end: #30D158;
+  --grad-github-emerald: linear-gradient(135deg, #064E3B 0%, #059669 45%, #30D158 100%);
+  --shadow-github-glow: 0 4px 20px rgba(48, 209, 88, 0.35);
 
   /* Surfaces & Deep Liquid Glass */
   --bg-base: #000000;
   --bg-deep: #050507;
-  --bg-surface: rgba(18, 18, 22, 0.65);
-  --bg-surface-elevated: rgba(26, 26, 32, 0.85);
-  --bg-surface-glass: rgba(255, 255, 255, 0.04);
-  --bg-card: rgba(20, 20, 26, 0.6);
-  --bg-code: #0a0a0d;
+  --bg-surface: rgba(18, 18, 24, 0.72);
+  --bg-surface-elevated: rgba(26, 26, 34, 0.88);
+  --bg-surface-glass: rgba(255, 255, 255, 0.05);
+  --bg-card: rgba(22, 22, 28, 0.65);
+  --bg-code: #0a0a0e;
   
   /* Hairline Specular Borders */
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-glass: rgba(255, 255, 255, 0.14);
-  --border-active: rgba(255, 255, 255, 0.45);
-  --border-glow: rgba(255, 255, 255, 0.3);
+  --border-active: rgba(10, 132, 255, 0.5);
+  --border-glow: rgba(10, 132, 255, 0.3);
 
   /* Typography / Labels */
   --text-primary: #FFFFFF;
-  --text-secondary: rgba(240, 240, 245, 0.72);
-  --text-tertiary: rgba(240, 240, 245, 0.45);
-  --text-muted: rgba(240, 240, 245, 0.28);
+  --text-secondary: rgba(235, 235, 245, 0.78);
+  --text-tertiary: rgba(235, 235, 245, 0.50);
+  --text-muted: rgba(235, 235, 245, 0.32);
 
-  /* Liquid Glass Monochrome Gradients */
-  --grad-primary: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 50%, #FFFFFF 100%);
-  --grad-accent: linear-gradient(135deg, #FFFFFF 0%, #71717A 100%);
-  --grad-mint-green: linear-gradient(135deg, #FFFFFF 0%, #D4D4D8 100%);
-  --grad-sunset: linear-gradient(135deg, #E4E4E7 0%, #71717A 100%);
-  --grad-apple-glow: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 70%);
+  /* Apple Gradients */
+  --grad-primary: linear-gradient(135deg, var(--apple-cyan) 0%, var(--apple-blue) 50%, var(--apple-indigo) 100%);
+  --grad-accent: linear-gradient(135deg, var(--apple-indigo) 0%, var(--apple-purple) 100%);
+  --grad-mint-green: linear-gradient(135deg, var(--apple-mint) 0%, var(--apple-green) 100%);
+  --grad-sunset: linear-gradient(135deg, var(--apple-orange) 0%, var(--apple-pink) 100%);
+  --grad-apple-glow: radial-gradient(circle at 50% 0%, rgba(10, 132, 255, 0.18), transparent 70%);
 
   /* Liquid Glass Elevation Shadows & Filters */
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
@@ -143,7 +151,7 @@ body {
   overflow-x: visible;
 }
 
-/* Obsidian Ambient Lighting Background */
+/* Apple Ambient Lighting Background (Blue, Purple, Green Orbs) */
 .ambient-glow-1 {
   position: fixed;
   top: -150px;
@@ -151,7 +159,7 @@ body {
   width: 650px;
   height: 650px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(10, 132, 255, 0.14) 0%, transparent 70%);
   filter: blur(90px);
   pointer-events: none;
   z-index: 0;
@@ -164,7 +172,7 @@ body {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(191, 90, 242, 0.12) 0%, transparent 70%);
   filter: blur(100px);
   pointer-events: none;
   z-index: 0;
@@ -177,7 +185,7 @@ body {
   width: 550px;
   height: 550px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(48, 209, 88, 0.10) 0%, transparent 70%);
   filter: blur(90px);
   pointer-events: none;
   z-index: 0;
@@ -2549,134 +2557,467 @@ body.light-theme .bento-card:hover {
 
 
 
+
 /* ==========================================================================
-   GitHub Emerald Green Button Exception (THE ONLY CHROMATIC ACCENT)
+   Apple Design System: Blue, Purple, Green Accents & Yggdrasil Styling
    ========================================================================== */
-.btn-github-emerald,
-.btn-project-cta.code.btn-github-emerald,
-.btn-project-cta.code.github {
-  background: linear-gradient(135deg, #064E3B 0%, #059669 50%, #10B981 100%) !important;
-  border: 1px solid rgba(16, 185, 129, 0.45) !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+
+/* 1. Hyperlink & Navbar Animations */
+.nav-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(235, 235, 245, 0.75);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-github-emerald:hover,
-.btn-project-cta.code.btn-github-emerald:hover,
-.btn-project-cta.code.github:hover {
-  background: linear-gradient(135deg, #047857 0%, #10B981 100%) !important;
-  border-color: #34D399 !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 6px 28px rgba(16, 185, 129, 0.55), 0 0 35px rgba(16, 185, 129, 0.35) !important;
-  transform: translateY(-2px);
+.nav-link:hover {
+  color: #FFFFFF;
+  background: rgba(10, 132, 255, 0.15);
+  box-shadow: 0 0 16px rgba(10, 132, 255, 0.35);
+  transform: translateY(-1px);
 }
 
+.nav-link.active {
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #0A84FF 0%, #5E5CE6 100%);
+  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.45);
+}
+
+.brand:hover .brand-name {
+  color: var(--apple-cyan);
+  text-shadow: 0 0 12px rgba(100, 210, 255, 0.5);
+}
+
+.brand:hover .brand-badge {
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 14px rgba(10, 132, 255, 0.4);
+}
+
+/* Social Icon Buttons Hover Accents */
 .social-icon-btn.github:hover {
-  border-color: #10B981 !important;
-  color: #10B981 !important;
-  box-shadow: 0 0 24px rgba(16, 185, 129, 0.4) !important;
+  color: #30D158 !important;
+  border-color: #30D158 !important;
+  box-shadow: 0 0 20px rgba(48, 209, 88, 0.45) !important;
+}
+.social-icon-btn.linkedin:hover {
+  color: #0A84FF !important;
+  border-color: #0A84FF !important;
+  box-shadow: 0 0 20px rgba(10, 132, 255, 0.45) !important;
+}
+.social-icon-btn.leetcode:hover {
+  color: #FF9F0A !important;
+  border-color: #FF9F0A !important;
+  box-shadow: 0 0 20px rgba(255, 159, 10, 0.45) !important;
+}
+.social-icon-btn.email:hover {
+  color: #BF5AF2 !important;
+  border-color: #BF5AF2 !important;
+  box-shadow: 0 0 20px rgba(191, 90, 242, 0.45) !important;
+}
+.social-icon-btn.phone:hover {
+  color: #63E6E2 !important;
+  border-color: #63E6E2 !important;
+  box-shadow: 0 0 20px rgba(99, 230, 226, 0.45) !important;
 }
 
-/* Live Demo Monochrome Frosted Button */
-.btn-project-cta.demo {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+/* 2. Hero Accents */
+.hero-pill {
+  background: rgba(48, 209, 88, 0.08);
+  border: 1px solid rgba(48, 209, 88, 0.3);
+  color: var(--apple-mint);
+}
+.pulse-dot {
+  background: #30D158 !important;
+  box-shadow: 0 0 12px #30D158 !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 15%, var(--apple-cyan) 45%, var(--apple-blue) 75%, var(--apple-purple) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block;
+}
+
+.typing-target {
+  color: var(--apple-cyan);
+  text-shadow: 0 0 12px rgba(100, 210, 255, 0.4);
+}
+
+/* 3. Level & Filter Category Buttons: Apple Blue, Purple, Green */
+.skill-filter-btn {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Apple Blue Button Hovers */
+.skill-filter-btn[data-category="all"]:hover,
+.skill-filter-btn[data-category="databases"]:hover,
+.project-filter-btn[data-filter="all"]:hover {
   color: #FFFFFF !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  border-color: var(--apple-blue) !important;
+  background: rgba(10, 132, 255, 0.15) !important;
+  box-shadow: 0 4px 18px rgba(10, 132, 255, 0.4) !important;
+  transform: translateY(-2px);
+}
+.skill-filter-btn[data-category="all"].active,
+.skill-filter-btn[data-category="databases"].active,
+.project-filter-btn[data-filter="all"].active {
+  background: var(--apple-blue) !important;
+  color: #FFFFFF !important;
+  border-color: var(--apple-blue) !important;
+  box-shadow: 0 4px 20px rgba(10, 132, 255, 0.55) !important;
 }
 
-.btn-project-cta.demo:hover {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  border-color: #FFFFFF !important;
-  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.45), 0 0 30px rgba(255, 255, 255, 0.2) !important;
+/* Apple Purple Button Hovers */
+.skill-filter-btn[data-category="languages"]:hover,
+.skill-filter-btn[data-category="core"]:hover,
+.project-filter-btn[data-filter="aiml"]:hover {
+  color: #FFFFFF !important;
+  border-color: var(--apple-purple) !important;
+  background: rgba(191, 90, 242, 0.15) !important;
+  box-shadow: 0 4px 18px rgba(191, 90, 242, 0.4) !important;
+  transform: translateY(-2px);
+}
+.skill-filter-btn[data-category="languages"].active,
+.skill-filter-btn[data-category="core"].active,
+.project-filter-btn[data-filter="aiml"].active {
+  background: var(--apple-purple) !important;
+  color: #FFFFFF !important;
+  border-color: var(--apple-purple) !important;
+  box-shadow: 0 4px 20px rgba(191, 90, 242, 0.55) !important;
+}
+
+/* Apple Green Button Hovers */
+.skill-filter-btn[data-category="frameworks"]:hover,
+.project-filter-btn[data-filter="web"]:hover,
+.project-filter-btn[data-filter="systems"]:hover {
+  color: #FFFFFF !important;
+  border-color: var(--apple-green) !important;
+  background: rgba(48, 209, 88, 0.15) !important;
+  box-shadow: 0 4px 18px rgba(48, 209, 88, 0.4) !important;
+  transform: translateY(-2px);
+}
+.skill-filter-btn[data-category="frameworks"].active,
+.project-filter-btn[data-filter="web"].active,
+.project-filter-btn[data-filter="systems"].active {
+  background: var(--apple-green) !important;
+  color: #FFFFFF !important;
+  border-color: var(--apple-green) !important;
+  box-shadow: 0 4px 20px rgba(48, 209, 88, 0.55) !important;
+}
+
+/* 4. Action Buttons (Blue, Purple, Green) */
+.btn-primary {
+  background: linear-gradient(135deg, #0071E3 0%, #0A84FF 100%) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(100, 210, 255, 0.4) !important;
+  box-shadow: 0 4px 18px rgba(10, 132, 255, 0.4) !important;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0077ED 0%, #64D2FF 100%) !important;
+  box-shadow: 0 6px 26px rgba(10, 132, 255, 0.6) !important;
   transform: translateY(-2px);
 }
 
-/* Skills Monochrome Devicon Enhancement */
+.btn-glass:hover {
+  border-color: var(--apple-purple) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 18px rgba(191, 90, 242, 0.35) !important;
+}
+
+.btn-header-resume {
+  background: rgba(10, 132, 255, 0.12) !important;
+  border: 1px solid rgba(10, 132, 255, 0.3) !important;
+  color: var(--apple-cyan) !important;
+}
+.btn-header-resume:hover {
+  background: var(--apple-blue) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 18px rgba(10, 132, 255, 0.45) !important;
+}
+
+/* Project Card Buttons */
+.btn-project-cta.code,
+.btn-github-emerald {
+  background: linear-gradient(135deg, #064E3B 0%, #059669 45%, #30D158 100%) !important;
+  border: 1px solid rgba(48, 209, 88, 0.45) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 18px rgba(48, 209, 88, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+.btn-project-cta.code:hover,
+.btn-github-emerald:hover {
+  background: linear-gradient(135deg, #047857 0%, #30D158 100%) !important;
+  border-color: #34D399 !important;
+  box-shadow: 0 6px 26px rgba(48, 209, 88, 0.55), 0 0 35px rgba(48, 209, 88, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+.btn-project-cta.demo {
+  background: linear-gradient(135deg, #0071E3 0%, #0A84FF 100%) !important;
+  border: 1px solid rgba(100, 210, 255, 0.35) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+.btn-project-cta.demo:hover {
+  background: linear-gradient(135deg, #0077ED 0%, #64D2FF 100%) !important;
+  border-color: #64D2FF !important;
+  box-shadow: 0 6px 24px rgba(10, 132, 255, 0.55), 0 0 30px rgba(100, 210, 255, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+.btn-project-cta.research {
+  background: linear-gradient(135deg, #5E5CE6 0%, #BF5AF2 100%) !important;
+  border: 1px solid rgba(191, 90, 242, 0.35) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(191, 90, 242, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+.btn-project-cta.research:hover {
+  background: linear-gradient(135deg, #6E6CE6 0%, #CF70FF 100%) !important;
+  border-color: #BF5AF2 !important;
+  box-shadow: 0 6px 24px rgba(191, 90, 242, 0.55), 0 0 30px rgba(191, 90, 242, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* "HIRE ME" Magnetic Overlay Pill */
+.hire-me-pill {
+  background: rgba(12, 12, 16, 0.88);
+  border: 1px solid rgba(48, 209, 88, 0.45);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 14px 40px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(48, 209, 88, 0.25);
+}
+.hire-me-pulse {
+  background: #30D158;
+  box-shadow: 0 0 14px #30D158;
+}
+.hire-me-pill:hover {
+  background: linear-gradient(135deg, #0071E3 0%, #0A84FF 50%, #30D158 100%) !important;
+  border-color: #34D399 !important;
+  box-shadow: 0 16px 48px rgba(48, 209, 88, 0.5), 0 0 40px rgba(10, 132, 255, 0.5) !important;
+}
+.hire-me-pill:hover .hire-me-text,
+.hire-me-pill:hover .hire-me-arrow {
+  color: #FFFFFF !important;
+}
+.hire-me-pill:hover .hire-me-pulse {
+  background: #FFFFFF !important;
+  box-shadow: 0 0 12px #FFFFFF !important;
+}
+
+/* 5. Skills Section: Full Vibrant Devicon Colors */
 .skill-box-img {
-  filter: grayscale(100%) brightness(1.2);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35)) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease !important;
 }
 
 .skill-box-card:hover .skill-box-img {
-  filter: grayscale(100%) brightness(1.8) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  transform: scale(1.18) !important;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5)) !important;
 }
 
 .skill-box-card::after {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent) !important;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--apple-cyan), var(--apple-blue), transparent);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.skill-box-card:hover::after {
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  opacity: 1;
+  box-shadow: 0 0 12px var(--apple-cyan);
 }
 
 .skill-box-card:hover {
-  box-shadow: var(--shadow-md), 0 0 24px rgba(255, 255, 255, 0.16) !important;
+  border-color: var(--apple-blue);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 24px rgba(10, 132, 255, 0.3);
 }
 
-/* Bento Monochrome Enhancement */
-.bento-hero-stat,
-.bento-hero-stat.yellow,
-.bento-hero-stat.orange,
-.bento-hero-stat.green,
+/* 6. Yggdrasil Living World Tree: Organic Brown Stem/Bark & Emerald Leaves */
+.tree-root {
+  stroke: #5C3A21 !important;
+  stroke-width: 4.5 !important;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0.95;
+}
+
+.tree-trunk-glow {
+  stroke: rgba(123, 75, 39, 0.5) !important;
+  stroke-width: 22 !important;
+  stroke-linecap: round;
+  fill: none;
+  filter: blur(10px) !important;
+}
+
+.tree-trunk-core {
+  stroke: url(#treeBarkGrad) !important;
+  stroke-width: 10 !important;
+  stroke-linecap: round;
+  fill: none;
+  filter: drop-shadow(0 0 12px rgba(92, 58, 33, 0.85)) !important;
+  transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tree-branch {
+  stroke: url(#branchGrad1) !important;
+  stroke-width: 6 !important;
+  stroke-linecap: round;
+  fill: none;
+  filter: drop-shadow(0 0 8px rgba(123, 75, 39, 0.6)) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tree-branch[id="branch-2"],
+.tree-branch[id="branch-4"] {
+  stroke: url(#branchGrad2) !important;
+}
+
+.tree-branch.active-branch {
+  stroke: #30D158 !important;
+  stroke-width: 7.5 !important;
+  filter: drop-shadow(0 0 22px rgba(48, 209, 88, 1)) !important;
+}
+
+.tree-nexus-dot {
+  fill: #30D158 !important;
+  stroke: #34D399 !important;
+  stroke-width: 4.5 !important;
+  filter: drop-shadow(0 0 16px rgba(48, 209, 88, 1)) !important;
+  transition: all 0.4s ease;
+}
+
+.tree-nexus-dot.active-nexus {
+  r: 11 !important;
+  fill: #30D158 !important;
+  stroke: #FFFFFF !important;
+  stroke-width: 5 !important;
+  filter: drop-shadow(0 0 26px rgba(48, 209, 88, 1)) !important;
+}
+
+.tree-leaf {
+  fill: #30D158 !important;
+  filter: drop-shadow(0 0 8px rgba(48, 209, 88, 0.85)) !important;
+  transition: all 0.4s ease;
+}
+
+.tree-foliage-group:hover .tree-leaf {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 14px rgba(48, 209, 88, 1)) !important;
+}
+
+.tree-badge {
+  background: rgba(48, 209, 88, 0.12) !important;
+  border: 1px solid rgba(48, 209, 88, 0.35) !important;
+  color: #30D158 !important;
+}
+
+.tree-node-avatar {
+  background: linear-gradient(135deg, rgba(123, 75, 39, 0.3) 0%, rgba(48, 209, 88, 0.25) 100%) !important;
+  border: 1px solid rgba(48, 209, 88, 0.4) !important;
+  color: #30D158 !important;
+}
+
+.tree-glass-node:hover,
+.tree-glass-node.active-node {
+  border-color: rgba(48, 209, 88, 0.5) !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    0 0 35px rgba(48, 209, 88, 0.25) !important;
+}
+
+/* 7. Achievements Bento Accents */
+.bento-pill-badge.gate {
+  background: rgba(10, 132, 255, 0.14) !important;
+  border-color: rgba(10, 132, 255, 0.35) !important;
+  color: var(--apple-cyan) !important;
+}
+.bento-pill-badge.amazon {
+  background: rgba(191, 90, 242, 0.14) !important;
+  border-color: rgba(191, 90, 242, 0.35) !important;
+  color: var(--apple-purple) !important;
+}
+.bento-pill-badge.leetcode {
+  background: rgba(255, 214, 10, 0.14) !important;
+  border-color: rgba(255, 214, 10, 0.35) !important;
+  color: var(--apple-yellow) !important;
+}
+.bento-pill-badge.infosys {
+  background: rgba(48, 209, 88, 0.14) !important;
+  border-color: rgba(48, 209, 88, 0.35) !important;
+  color: var(--apple-green) !important;
+}
+.bento-pill-badge.ncc {
+  background: rgba(191, 90, 242, 0.14) !important;
+  border-color: rgba(191, 90, 242, 0.35) !important;
+  color: var(--apple-purple) !important;
+}
+
+.bento-hero-stat {
+  background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-cyan) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.bento-hero-stat.yellow {
+  background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-yellow) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.bento-hero-stat.orange {
+  background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-orange) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.bento-hero-stat.green {
+  background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-green) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
 .bento-hero-stat.purple {
-  background: linear-gradient(135deg, #FFFFFF 25%, #A1A1AA 85%) !important;
+  background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-purple) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 
-.bento-pill-badge.gate,
-.bento-pill-badge.amazon,
-.bento-pill-badge.leetcode,
-.bento-pill-badge.infosys,
-.bento-pill-badge.ncc {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: #FFFFFF !important;
-}
-
-.bento-card::before {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%) !important;
-}
-
-.bento-card:hover {
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.12) !important;
-}
-
-/* Experience Timeline Monochrome */
+/* 8. Experience Timeline Accents */
 .timeline-container::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 65%, transparent 100%) !important;
+  background: linear-gradient(180deg, var(--apple-cyan) 0%, var(--apple-blue) 45%, var(--apple-purple) 90%, transparent 100%) !important;
 }
-
 .timeline-marker {
-  border-color: #FFFFFF !important;
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.4) !important;
+  border-color: var(--apple-blue) !important;
+  box-shadow: 0 0 16px rgba(10, 132, 255, 0.5) !important;
 }
 
-.btn-primary {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.3) !important;
-}
+/* 9. macOS Traffic Lights */
+.mac-dot.red { background: #FF5F56 !important; }
+.mac-dot.yellow { background: #FFBD2E !important; }
+.mac-dot.green { background: #27C93F !important; }
 
-.btn-primary:hover {
-  background: #F4F4F5 !important;
-  color: #000000 !important;
-  box-shadow: 0 6px 26px rgba(255, 255, 255, 0.5) !important;
-}
-
-.btn-header-resume {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  color: #FFFFFF !important;
-}
-
-.btn-header-resume:hover {
-  background: #FFFFFF !important;
-  color: #000000 !important;
-  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.35) !important;
-}
-
-.pulse-dot {
-  background: #FFFFFF !important;
-  box-shadow: 0 0 12px #FFFFFF !important;
-}
+/* 10. Code Syntax Highlighting */
+.code-keyword { color: var(--apple-purple) !important; font-weight: 700; }
+.code-prop { color: var(--apple-cyan) !important; }
+.code-string { color: var(--apple-green) !important; }
+.code-number, .code-bool { color: var(--apple-orange) !important; }
+.code-fn { color: var(--apple-blue) !important; font-weight: 600; }
+.code-comment { color: var(--text-muted) !important; font-style: italic; }

@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Apple HIG Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=liquidglass6">
+  <link rel="stylesheet" href="styles.css?v=applecolors7">
 </head>
 <body>
   <!-- Apple Subtle Ambient Glow Lights -->
@@ -396,7 +396,7 @@
               <a href="https://github.com/theNovember22/reliability-aware-human-ai-active-learning" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
                 <i class="fa-brands fa-github"></i> View Repository
               </a>
-              <a href="https://drive.google.com/file/d/1fYlmltWHaMifirhFbVfzTciafs1utzuW/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+              <a href="https://drive.google.com/file/d/1fYlmltWHaMifirhFbVfzTciafs1utzuW/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-project-cta research">
                 <i class="fa-solid fa-book-open"></i> Research Doc
               </a>
             </div>
@@ -792,42 +792,76 @@
         <!-- Background SVG Canvas containing trunk, roots, and organic branches -->
         <svg class="yggdrasil-svg" id="yggdrasilSvg" viewBox="0 0 1200 960" fill="none" preserveAspectRatio="xMidYMid meet">
           <defs>
-            <linearGradient id="trunkGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85" />
-              <stop offset="45%" stop-color="#a1a1aa" stop-opacity="0.65" />
-              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
+            <!-- Rich organic bark gradient for central trunk -->
+            <linearGradient id="treeBarkGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#4A2E18" />
+              <stop offset="35%" stop-color="#7B4B27" />
+              <stop offset="70%" stop-color="#9C6638" />
+              <stop offset="100%" stop-color="#6E4220" />
             </linearGradient>
-            <linearGradient id="rootGrad" x1="50%" y1="0%" x2="50%" y2="100%">
-              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
-              <stop offset="100%" stop-color="#71717a" stop-opacity="0.1" />
+
+            <!-- Branch woody brown transitioning to vibrant leaf green -->
+            <linearGradient id="branchGrad1" x1="100%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#7B4B27" />
+              <stop offset="50%" stop-color="#8B5A2B" />
+              <stop offset="80%" stop-color="#558B2F" />
+              <stop offset="100%" stop-color="#30D158" />
             </linearGradient>
+            <linearGradient id="branchGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7B4B27" />
+              <stop offset="50%" stop-color="#8B5A2B" />
+              <stop offset="80%" stop-color="#558B2F" />
+              <stop offset="100%" stop-color="#30D158" />
+            </linearGradient>
+
+            <!-- Leaf foliage glow filter -->
+            <filter id="greenFoliageGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="5" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
           </defs>
 
-          <!-- Base Roots Anchoring the Tree -->
+          <!-- Base Roots in organic deep bark brown -->
           <path class="tree-root" d="M 600 940 C 570 960 510 975 440 965" />
           <path class="tree-root" d="M 600 940 C 630 960 690 975 760 965" />
           <path class="tree-root" d="M 595 945 C 550 970 490 980 410 975" />
           <path class="tree-root" d="M 605 945 C 650 970 710 980 790 975" />
 
-          <!-- Central Living Trunk: Growing from Roots to Crown -->
+          <!-- Central Living Trunk (Stem): Organic Wood Brown with Amber Glow -->
           <path class="tree-trunk-glow" d="M 600 950 C 590 840 615 730 595 620 C 580 510 620 410 600 300 C 590 200 605 130 600 70" />
           <path class="tree-trunk-core" id="treeTrunkCore" d="M 600 950 C 590 840 615 730 595 620 C 580 510 620 410 600 300 C 590 200 605 130 600 70" />
 
-          <!-- Branch 1 (Class X: Secondary School) - Lower Left -->
+          <!-- Branch 1 (Class X: Secondary School) - Lower Left with Green Foliage -->
           <path class="tree-branch" id="branch-1" data-node="node-1" d="M 598 740 C 510 745 400 765 310 755 C 260 750 220 740 160 720" />
-          <circle class="tree-nexus-dot" id="nexus-1" cx="160" cy="720" r="6" />
+          <g class="tree-foliage-group" id="foliage-1">
+            <circle class="tree-nexus-dot" id="nexus-1" cx="160" cy="720" r="8" />
+            <path class="tree-leaf" d="M 160 720 C 145 702 132 716 144 730 C 154 734 158 726 160 720 Z" />
+            <path class="tree-leaf" d="M 160 720 C 152 736 166 742 174 730 C 174 722 168 718 160 720 Z" />
+          </g>
 
-          <!-- Branch 2 (Class XII: PUC) - Lower Right -->
+          <!-- Branch 2 (Class XII: PUC) - Lower Right with Green Foliage -->
           <path class="tree-branch" id="branch-2" data-node="node-2" d="M 600 560 C 690 550 800 535 890 550 C 950 560 1000 550 1040 530" />
-          <circle class="tree-nexus-dot" id="nexus-2" cx="1040" cy="530" r="6" />
+          <g class="tree-foliage-group" id="foliage-2">
+            <circle class="tree-nexus-dot" id="nexus-2" cx="1040" cy="530" r="8" />
+            <path class="tree-leaf" d="M 1040 530 C 1055 512 1068 526 1056 540 C 1046 544 1042 536 1040 530 Z" />
+            <path class="tree-leaf" d="M 1040 530 C 1048 546 1034 552 1026 540 C 1026 532 1032 528 1040 530 Z" />
+          </g>
 
-          <!-- Branch 3 (B.Tech: RGUKT Nuzvid) - Mid Left -->
+          <!-- Branch 3 (B.Tech: RGUKT Nuzvid) - Mid Left with Green Foliage -->
           <path class="tree-branch" id="branch-3" data-node="node-3" d="M 596 380 C 500 370 390 355 300 335 C 240 320 190 305 150 280" />
-          <circle class="tree-nexus-dot" id="nexus-3" cx="150" cy="280" r="6" />
+          <g class="tree-foliage-group" id="foliage-3">
+            <circle class="tree-nexus-dot" id="nexus-3" cx="150" cy="280" r="8" />
+            <path class="tree-leaf" d="M 150 280 C 135 262 122 276 134 290 C 144 294 148 286 150 280 Z" />
+            <path class="tree-leaf" d="M 150 280 C 142 296 156 302 164 290 C 164 282 158 278 150 280 Z" />
+          </g>
 
-          <!-- Branch 4 (M.Tech: NIT Goa) - Crown Right / Top -->
+          <!-- Branch 4 (M.Tech: NIT Goa) - Crown Right / Top with Green Foliage -->
           <path class="tree-branch" id="branch-4" data-node="node-4" d="M 600 190 C 700 180 810 155 900 130 C 960 115 1010 100 1050 80" />
-          <circle class="tree-nexus-dot" id="nexus-4" cx="1050" cy="80" r="6" />
+          <g class="tree-foliage-group" id="foliage-4">
+            <circle class="tree-nexus-dot" id="nexus-4" cx="1050" cy="80" r="9" />
+            <path class="tree-leaf" d="M 1050 80 C 1065 62 1078 76 1066 90 C 1056 94 1052 86 1050 80 Z" />
+            <path class="tree-leaf" d="M 1050 80 C 1058 96 1044 102 1036 90 C 1036 82 1042 78 1050 80 Z" />
+          </g>
         </svg>
 
         <!-- Floating Liquid-Glass Education Nodes Overlay -->
@@ -1298,6 +1332,6 @@
   </div>
 
   <!-- Vanilla JavaScript App Logic -->
-  <script src="app.js?v=liquidglass6"></script>
+  <script src="app.js?v=applecolors7"></script>
 </body>
 </html>
