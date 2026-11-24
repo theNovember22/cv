@@ -253,26 +253,56 @@ button {
 }
 
 .navbar {
+  position: relative;
   width: min(var(--max-width), 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 22px;
-  background: var(--bg-surface);
-  backdrop-filter: var(--blur-header);
-  -webkit-backdrop-filter: var(--blur-header);
-  border: 1px solid var(--border-glass);
+  padding: 8px 20px;
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-md);
+  overflow: hidden; /* Contains the spotlight glow within the pill shape */
+  background: rgba(18, 22, 32, 0.55);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.20);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: var(--shadow-lg), 0 0 20px rgba(10, 132, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.30);
+  box-shadow: 
+    0 22px 55px rgba(0, 0, 0, 0.42),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+/* MovieGo+ Interactive Hover Light Spotlight Layer */
+.navbar-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  background: radial-gradient(
+    circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.18) 25%,
+    rgba(255, 255, 255, 0.04) 55%,
+    transparent 75%
+  );
+}
+
+.navbar-spotlight.active {
+  opacity: 1;
 }
 
 .brand {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -282,16 +312,16 @@ button {
 }
 
 .brand-badge {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
   background: var(--grad-primary);
   display: grid;
   place-items: center;
   color: #fff;
   font-weight: 800;
-  font-size: 0.95rem;
-  box-shadow: 0 6px 16px rgba(10, 132, 255, 0.35);
+  font-size: 0.92rem;
+  box-shadow: 0 4px 14px rgba(10, 132, 255, 0.35);
   position: relative;
   overflow: hidden;
 }
@@ -304,7 +334,7 @@ button {
   right: 0;
   height: 50%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent);
-  border-radius: 12px 12px 0 0;
+  border-radius: 11px 11px 0 0;
 }
 
 .brand-text {
@@ -314,44 +344,65 @@ button {
 
 .brand-name {
   color: var(--text-primary);
-  font-size: 0.96rem;
+  font-size: 0.94rem;
   font-weight: 700;
   line-height: 1.15;
+  transition: color 0.25s ease;
 }
 
 .brand-role {
   color: var(--apple-cyan);
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 500;
   letter-spacing: 0.02em;
 }
 
 .nav-menu {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 6px;
+  gap: 4px;
 }
 
 .nav-link {
-  padding: 8px 14px;
+  position: relative;
+  padding: 6px 13px;
   border-radius: var(--radius-full);
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-link:hover {
-  color: var(--text-primary);
+  color: #FFFFFF;
   background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
 }
 
 .nav-link.active {
   color: #FFFFFF;
-  background: var(--apple-blue);
-  box-shadow: 0 4px 14px rgba(10, 132, 255, 0.35);
+  font-weight: 600;
 }
 
 body.light-theme .nav-link.active {
@@ -360,48 +411,53 @@ body.light-theme .nav-link.active {
 }
 
 .nav-controls {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .theme-toggle-btn {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   color: var(--apple-yellow);
   display: grid;
   place-items: center;
-  font-size: 1.05rem;
+  font-size: 1rem;
   transition: all 0.25s ease;
 }
 
 .theme-toggle-btn:hover {
-  transform: scale(1.08) rotate(15deg);
-  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.06) rotate(15deg);
+  background: rgba(255, 255, 255, 0.16);
   border-color: var(--apple-yellow);
-  box-shadow: 0 0 16px rgba(255, 214, 10, 0.3);
+  box-shadow: 0 0 14px rgba(255, 214, 10, 0.35);
 }
 
 .btn-header-resume {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
+  gap: 7px;
+  padding: 7px 16px;
   border-radius: var(--radius-full);
-  background: var(--grad-primary);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   color: #FFFFFF;
   font-size: 0.84rem;
   font-weight: 600;
-  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-header-resume:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(10, 132, 255, 0.45);
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.40);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .mobile-menu-btn {
@@ -4369,16 +4425,34 @@ body.light-theme::before {
   filter: invert(1);
 }
 
-/* 2. Navbar in Light Mode */
+/* 2. Navbar in Light Mode (MovieGo+ Frosted Liquid Glass) */
 body.light-theme .navbar {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  box-shadow: 
+    0 18px 40px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.03),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95);
 }
 
 body.light-theme .navbar:hover {
-  border-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 22px 50px rgba(0, 0, 0, 0.11),
+    0 4px 12px rgba(0, 0, 0, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+body.light-theme .navbar-spotlight {
+  background: radial-gradient(
+    circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.50) 25%,
+    rgba(255, 255, 255, 0.15) 55%,
+    transparent 75%
+  );
 }
 
 body.light-theme .brand-name {
@@ -4409,46 +4483,52 @@ body.light-theme .nav-link {
   color: #4B4B52;
   font-size: 0.88rem;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 6px 13px;
   border-radius: var(--radius-full);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+body.light-theme .nav-link::after {
+  background: #111113;
+}
+
 body.light-theme .nav-link:hover {
   color: #111113;
-  background: rgba(0, 0, 0, 0.06);
-  box-shadow: none;
-  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 body.light-theme .nav-link.active {
-  color: #FFFFFF;
-  background: #111113;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  color: #111113;
+  font-weight: 600;
+  background: transparent;
+  box-shadow: none;
 }
 
 body.light-theme .theme-toggle-btn {
   background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.10);
   color: #111113;
 }
 
 body.light-theme .theme-toggle-btn:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.09);
   border-color: #FF9500;
   color: #FF9500;
 }
 
 body.light-theme .btn-header-resume {
-  background: rgba(0, 113, 227, 0.1);
-  border: 1px solid rgba(0, 113, 227, 0.28);
-  color: #0071E3;
+  background: #111113;
+  border: 1px solid #111113;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 body.light-theme .btn-header-resume:hover {
-  background: #0071E3;
+  background: #27272A;
+  border-color: #27272A;
   color: #FFFFFF;
-  box-shadow: 0 4px 18px rgba(0, 113, 227, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  transform: translateY(-1px);
 }
 
 body.light-theme .mobile-menu-btn {

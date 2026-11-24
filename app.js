@@ -358,6 +358,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ==========================================
+  // 8B. MovieGo+ Liquid Glass Interactive Hover Light Spotlight
+  // ==========================================
+  const navElement = document.getElementById("navbar");
+  const navSpotlight = document.getElementById("navSpotlight");
+
+  if (navElement && navSpotlight) {
+    navElement.addEventListener("mousemove", (e) => {
+      const rect = navElement.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      navSpotlight.style.setProperty("--mouse-x", `${x.toFixed(2)}%`);
+      navSpotlight.style.setProperty("--mouse-y", `${y.toFixed(2)}%`);
+    });
+
+    navElement.addEventListener("mouseenter", () => {
+      navSpotlight.classList.add("active");
+    });
+
+    navElement.addEventListener("mouseleave", () => {
+      navSpotlight.classList.remove("active");
+    });
+  }
+
+  // ==========================================
   // 9. Scrollspy & Sticky Header Highlighting
   // ==========================================
   const sections = document.querySelectorAll("section[id]");
