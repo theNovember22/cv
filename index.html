@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Apple HIG Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=journey2">
+  <link rel="stylesheet" href="styles.css?v=journey3">
 </head>
 <body>
   <!-- Apple Subtle Ambient Glow Lights -->
@@ -1074,11 +1074,12 @@
           </g>
         </svg>
 
-        <!-- 4 Airport Gate Terminals (Hover to Enter Terminal) -->
+        <!-- 4 Airport Gate Terminals (Sleek Stops with Floating Liquid-Glass Flyouts) -->
         <div class="airport-terminals-container">
           <!-- GATE 01: Infosys Limited -->
-          <div class="airport-terminal-card active-dest" id="airport-term-1" data-gate="1">
-            <div class="terminal-gate-header">
+          <div class="airport-stop-container active-dest" id="airport-term-1" data-gate="1">
+            <!-- Compact Airport Stop Marker -->
+            <div class="airport-stop-marker">
               <div class="gate-callsign">
                 <span class="gate-tag"><i class="fa-solid fa-door-open"></i> GATE 01 &bull; HYD</span>
                 <span class="gate-status status-departed">DEPARTED</span>
@@ -1089,34 +1090,40 @@
                 <span><i class="fa-regular fa-calendar"></i> July 2022 – Oct 2023</span>
                 <span><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
               </div>
-              <div class="terminal-hover-hint">
-                <i class="fa-solid fa-angles-down"></i>
-                <span>Hover to Enter Terminal</span>
+              <div class="terminal-enter-hint">
+                <span class="hint-beacon"><i class="fa-solid fa-circle-dot"></i> Terminal 01</span>
+                <span class="hint-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</span>
               </div>
             </div>
 
-            <!-- Terminal Interior (Slides open on hover) -->
-            <div class="terminal-sliding-door">
-              <div class="terminal-interior-body">
-                <div class="terminal-divider"></div>
-                <ul class="terminal-bullets">
-                  <li>Monitored, troubleshot, and debugged mission-critical enterprise ETL data pipelines maintaining 99.9% system availability.</li>
-                  <li>Engineered interactive reporting dashboards in SAP Analytics Cloud (SAC) for cross-functional business stakeholders.</li>
-                  <li>Collaborated in fast-paced Agile sprint delivery, rigorous code reviews, automated batch-job monitoring, and SLA incident management.</li>
-                </ul>
-                <div class="terminal-tags">
-                  <span class="terminal-chip">SAP BW/4HANA</span>
-                  <span class="terminal-chip">ETL Pipelines</span>
-                  <span class="terminal-chip">SAP Analytics Cloud</span>
-                  <span class="terminal-chip">SLA Management</span>
+            <!-- Floating Liquid-Glass Flyout Panel (Opens to Right) -->
+            <div class="airport-glass-panel panel-dir-right">
+              <div class="glass-panel-header">
+                <div class="panel-callout">
+                  <i class="fa-solid fa-plane-departure"></i>
+                  <span>TERMINAL 01 &bull; FLIGHT LOG</span>
                 </div>
+                <span class="panel-badge">ENTERPRISE DELIVERY</span>
+              </div>
+              <div class="glass-panel-divider"></div>
+              <ul class="terminal-bullets">
+                <li>Monitored, troubleshot, and debugged mission-critical enterprise ETL data pipelines maintaining 99.9% system availability.</li>
+                <li>Engineered interactive reporting dashboards in SAP Analytics Cloud (SAC) for cross-functional business stakeholders.</li>
+                <li>Collaborated in fast-paced Agile sprint delivery, rigorous code reviews, automated batch-job monitoring, and SLA incident management.</li>
+              </ul>
+              <div class="terminal-tags">
+                <span class="terminal-chip">SAP BW/4HANA</span>
+                <span class="terminal-chip">ETL Pipelines</span>
+                <span class="terminal-chip">SAP Analytics Cloud</span>
+                <span class="terminal-chip">SLA Management</span>
               </div>
             </div>
           </div>
 
           <!-- GATE 02: Teaching Assistant — NIT Goa -->
-          <div class="airport-terminal-card" id="airport-term-2" data-gate="2">
-            <div class="terminal-gate-header">
+          <div class="airport-stop-container" id="airport-term-2" data-gate="2">
+            <!-- Compact Airport Stop Marker -->
+            <div class="airport-stop-marker">
               <div class="gate-callsign">
                 <span class="gate-tag"><i class="fa-solid fa-chalkboard-user"></i> GATE 02 &bull; GOA</span>
                 <span class="gate-status status-active">ACTIVE TRANSIT</span>
@@ -1127,34 +1134,40 @@
                 <span><i class="fa-regular fa-calendar"></i> Aug 2024 – Present</span>
                 <span><i class="fa-solid fa-location-dot"></i> Goa, India</span>
               </div>
-              <div class="terminal-hover-hint">
-                <i class="fa-solid fa-angles-down"></i>
-                <span>Hover to Enter Terminal</span>
+              <div class="terminal-enter-hint">
+                <span class="hint-beacon"><i class="fa-solid fa-circle-dot"></i> Terminal 02</span>
+                <span class="hint-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</span>
               </div>
             </div>
 
-            <!-- Terminal Interior (Slides open on hover) -->
-            <div class="terminal-sliding-door">
-              <div class="terminal-interior-body">
-                <div class="terminal-divider"></div>
-                <ul class="terminal-bullets">
-                  <li>Appointed as Graduate Teaching Assistant for core Computer Science &amp; Engineering undergraduate laboratory courses.</li>
-                  <li>Conducting hands-on programming labs, problem-solving tutorials, and assignment evaluations in C/C++, Python, and Data Structures.</li>
-                  <li>Mentoring junior engineering students on algorithmic efficiency, object-oriented software design, and rigorous debugging practices.</li>
-                </ul>
-                <div class="terminal-tags">
-                  <span class="terminal-chip">Data Structures &amp; Algorithms</span>
-                  <span class="terminal-chip">C/C++ &amp; Python</span>
-                  <span class="terminal-chip">Lab Instruction</span>
-                  <span class="terminal-chip">Academic Mentorship</span>
+            <!-- Floating Liquid-Glass Flyout Panel (Opens Upward) -->
+            <div class="airport-glass-panel panel-dir-up">
+              <div class="glass-panel-header">
+                <div class="panel-callout">
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                  <span>TERMINAL 02 &bull; ACADEMIC INSTRUCTION</span>
                 </div>
+                <span class="panel-badge">GRADUATE TA</span>
+              </div>
+              <div class="glass-panel-divider"></div>
+              <ul class="terminal-bullets">
+                <li>Appointed as Graduate Teaching Assistant for core Computer Science &amp; Engineering undergraduate laboratory courses.</li>
+                <li>Conducting hands-on programming labs, problem-solving tutorials, and assignment evaluations in C/C++, Python, and Data Structures.</li>
+                <li>Mentoring junior engineering students on algorithmic efficiency, object-oriented software design, and rigorous debugging practices.</li>
+              </ul>
+              <div class="terminal-tags">
+                <span class="terminal-chip">Data Structures &amp; Algorithms</span>
+                <span class="terminal-chip">C/C++ &amp; Python</span>
+                <span class="terminal-chip">Lab Instruction</span>
+                <span class="terminal-chip">Academic Mentorship</span>
               </div>
             </div>
           </div>
 
           <!-- GATE 03: Placement Coordinator — NIT Goa -->
-          <div class="airport-terminal-card" id="airport-term-3" data-gate="3">
-            <div class="terminal-gate-header">
+          <div class="airport-stop-container" id="airport-term-3" data-gate="3">
+            <!-- Compact Airport Stop Marker -->
+            <div class="airport-stop-marker">
               <div class="gate-callsign">
                 <span class="gate-tag"><i class="fa-solid fa-users"></i> GATE 03 &bull; GOA</span>
                 <span class="gate-status status-active">ACTIVE TRANSIT</span>
@@ -1165,34 +1178,40 @@
                 <span><i class="fa-regular fa-calendar"></i> Aug 2024 – Present</span>
                 <span><i class="fa-solid fa-location-dot"></i> Goa, India</span>
               </div>
-              <div class="terminal-hover-hint">
-                <i class="fa-solid fa-angles-down"></i>
-                <span>Hover to Enter Terminal</span>
+              <div class="terminal-enter-hint">
+                <span class="hint-beacon"><i class="fa-solid fa-circle-dot"></i> Terminal 03</span>
+                <span class="hint-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</span>
               </div>
             </div>
 
-            <!-- Terminal Interior (Slides open on hover) -->
-            <div class="terminal-sliding-door">
-              <div class="terminal-interior-body">
-                <div class="terminal-divider"></div>
-                <ul class="terminal-bullets">
-                  <li>Elected to represent the M.Tech Computer Science &amp; Engineering cohort for campus recruitment and industry relations.</li>
-                  <li>Coordinating recruitment drives, technical preparation workshops, and resume review sessions with Tier-1 tech recruiters.</li>
-                  <li>Liaising between Department of CSE faculty, Dean of Student Affairs, and visiting enterprise hiring teams.</li>
-                </ul>
-                <div class="terminal-tags">
-                  <span class="terminal-chip">Cohort Leadership</span>
-                  <span class="terminal-chip">Industry Relations</span>
-                  <span class="terminal-chip">Technical Prep</span>
-                  <span class="terminal-chip">Recruitment Strategy</span>
+            <!-- Floating Liquid-Glass Flyout Panel (Opens Downward) -->
+            <div class="airport-glass-panel panel-dir-down">
+              <div class="glass-panel-header">
+                <div class="panel-callout">
+                  <i class="fa-solid fa-users"></i>
+                  <span>TERMINAL 03 &bull; COHORT LEADERSHIP</span>
                 </div>
+                <span class="panel-badge">PLACEMENT LIAISON</span>
+              </div>
+              <div class="glass-panel-divider"></div>
+              <ul class="terminal-bullets">
+                <li>Elected to represent the M.Tech Computer Science &amp; Engineering cohort for campus recruitment and industry relations.</li>
+                <li>Coordinating recruitment drives, technical preparation workshops, and resume review sessions with Tier-1 tech recruiters.</li>
+                <li>Liaising between Department of CSE faculty, Dean of Student Affairs, and visiting enterprise hiring teams.</li>
+              </ul>
+              <div class="terminal-tags">
+                <span class="terminal-chip">Cohort Leadership</span>
+                <span class="terminal-chip">Industry Relations</span>
+                <span class="terminal-chip">Technical Prep</span>
+                <span class="terminal-chip">Recruitment Strategy</span>
               </div>
             </div>
           </div>
 
           <!-- GATE 04: Amazon ML Summer School -->
-          <div class="airport-terminal-card latest-dest" id="airport-term-4" data-gate="4">
-            <div class="terminal-gate-header">
+          <div class="airport-stop-container latest-dest" id="airport-term-4" data-gate="4">
+            <!-- Compact Airport Stop Marker -->
+            <div class="airport-stop-marker">
               <div class="gate-callsign">
                 <span class="gate-tag"><i class="fa-brands fa-amazon"></i> GATE 04 &bull; AMZ</span>
                 <span class="gate-status status-fellowship">COMPLETED</span>
@@ -1203,32 +1222,37 @@
                 <span><i class="fa-regular fa-calendar"></i> Jul – Aug 2024</span>
                 <span><i class="fa-solid fa-location-dot"></i> India</span>
               </div>
-              <div class="terminal-hover-hint">
-                <i class="fa-solid fa-angles-down"></i>
-                <span>Hover to Enter Terminal</span>
+              <div class="terminal-enter-hint">
+                <span class="hint-beacon"><i class="fa-solid fa-circle-dot"></i> Terminal 04</span>
+                <span class="hint-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</span>
               </div>
             </div>
 
-            <!-- Terminal Interior (Slides open on hover) -->
-            <div class="terminal-sliding-door">
-              <div class="terminal-interior-body">
-                <div class="terminal-divider"></div>
-                <ul class="terminal-bullets">
-                  <li>Competitively selected participant for the prestigious Amazon ML Summer School (MLSS) 2024.</li>
-                  <li>Underwent deep technical immersion in Deep Neural Networks, Large Language Models (LLMs), Probabilistic Graphical Models, and production ML pipelines.</li>
-                  <li>Mentored directly by Amazon Principal Scientists on state-of-the-art architectures and enterprise AI scaling.</li>
-                </ul>
-                <div class="terminal-tags">
-                  <span class="terminal-chip">Deep Neural Networks</span>
-                  <span class="terminal-chip">Large Language Models</span>
-                  <span class="terminal-chip">Probabilistic Models</span>
-                  <span class="terminal-chip">Amazon Scientists</span>
+            <!-- Floating Liquid-Glass Flyout Panel (Opens to Left) -->
+            <div class="airport-glass-panel panel-dir-left">
+              <div class="glass-panel-header">
+                <div class="panel-callout">
+                  <i class="fa-brands fa-amazon"></i>
+                  <span>TERMINAL 04 &bull; ADVANCED AI RESEARCH</span>
                 </div>
+                <span class="panel-badge">COMPETITIVE FELLOWSHIP</span>
+              </div>
+              <div class="glass-panel-divider"></div>
+              <ul class="terminal-bullets">
+                <li>Competitively selected participant for the prestigious Amazon ML Summer School (MLSS) 2024.</li>
+                <li>Underwent deep technical immersion in Deep Neural Networks, Large Language Models (LLMs), Probabilistic Graphical Models, and production ML pipelines.</li>
+                <li>Mentored directly by Amazon Principal Scientists on state-of-the-art architectures and enterprise AI scaling.</li>
+              </ul>
+              <div class="terminal-tags">
+                <span class="terminal-chip">Deep Neural Networks</span>
+                <span class="terminal-chip">Large Language Models</span>
+                <span class="terminal-chip">Probabilistic Models</span>
+                <span class="terminal-chip">Amazon Scientists</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
+            </div>
     </div>
   </section>
 
@@ -1514,6 +1538,6 @@
   </div>
 
   <!-- Vanilla JavaScript App Logic -->
-  <script src="app.js?v=journey2"></script>
+  <script src="app.js?v=journey3"></script>
 </body>
 </html>

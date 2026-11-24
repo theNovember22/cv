@@ -1104,6 +1104,7 @@ body.light-theme .nav-link.active {
   background: transparent;
   margin: 0;
   padding: 0;
+  overflow: visible;
 }
 
 .airport-sticky-stage {
@@ -1112,7 +1113,7 @@ body.light-theme .nav-link.active {
   left: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1274,6 +1275,7 @@ body.light-theme .transit-arrow {
   margin: 0 auto;
   height: calc(100vh - 160px);
   min-height: 480px;
+  overflow: visible;
 }
 
 /* Airport SVG Runway */
@@ -1405,61 +1407,95 @@ body.light-theme .aircraft-shape {
   stroke: #0071E3;
 }
 
-/* Airport Terminals Container & Cards */
+/* ==========================================================================
+   Airport Terminals Container & Stops
+   ========================================================================== */
 .airport-terminals-container {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 4;
+  overflow: visible;
 }
 
-.airport-terminal-card {
+/* Anchor Container for Each Airport Stop */
+.airport-stop-container {
   position: absolute;
   pointer-events: auto;
-  width: clamp(285px, 22.5vw, 345px);
-  background: rgba(18, 18, 24, 0.78);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  padding: 20px 22px;
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
-  cursor: pointer;
+  z-index: 10;
+  overflow: visible;
+  transition: z-index 0.2s ease;
+}
+
+.airport-stop-container:hover,
+.airport-stop-container.terminal-open {
+  z-index: 60;
 }
 
 #airport-term-1 {
   left: 2%;
-  top: 10%;
+  top: 12%;
 }
 
 #airport-term-2 {
-  left: 26.5%;
-  top: 38%;
+  left: 27%;
+  top: 52%;
 }
 
 #airport-term-3 {
   left: 51%;
-  top: 10%;
+  top: 12%;
 }
 
 #airport-term-4 {
   right: 2%;
-  top: 38%;
+  top: 52%;
 }
 
-/* Terminal Gate Header */
-.terminal-gate-header {
-  position: relative;
+/* Sleek Compact Permanent Airport Stop Marker (Never clipped, fixed size) */
+.airport-stop-marker {
+  width: clamp(260px, 20.5vw, 305px);
+  padding: 16px 18px;
+  background: rgba(18, 22, 28, 0.78);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
+.airport-stop-container:hover .airport-stop-marker,
+.airport-stop-container.terminal-open .airport-stop-marker {
+  transform: translateY(-3px);
+  border-color: rgba(10, 132, 255, 0.65);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55), 0 0 20px rgba(10, 132, 255, 0.2);
+}
+
+.airport-stop-container.active-dest .airport-stop-marker {
+  border-color: rgba(10, 132, 255, 0.55);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.48), 0 0 18px rgba(10, 132, 255, 0.16);
+}
+
+.airport-stop-container.latest-dest .airport-stop-marker {
+  border-color: rgba(48, 209, 88, 0.32);
+}
+
+.airport-stop-container.latest-dest:hover .airport-stop-marker,
+.airport-stop-container.latest-dest.active-dest .airport-stop-marker {
+  border-color: #30D158;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.55), 0 0 24px rgba(48, 209, 88, 0.22);
+}
+
+/* Stop Marker Internal Typography */
 .gate-callsign {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
-  font-size: 0.72rem;
+  margin-bottom: 6px;
+  font-size: 0.7rem;
   font-weight: 700;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
   letter-spacing: 0.05em;
@@ -1475,13 +1511,13 @@ body.light-theme .aircraft-shape {
 .gate-status {
   padding: 2px 7px;
   border-radius: var(--radius-full);
-  font-size: 0.66rem;
+  font-size: 0.64rem;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
 
 .status-departed {
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #AEAEB2;
 }
@@ -1499,27 +1535,27 @@ body.light-theme .aircraft-shape {
 }
 
 .terminal-org-name {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #FFFFFF;
   line-height: 1.25;
   letter-spacing: -0.015em;
-  margin: 0 0 3px;
+  margin: 0 0 2px;
 }
 
 .terminal-role-title {
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   color: #64D2FF;
   font-weight: 500;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   line-height: 1.3;
 }
 
 .terminal-meta-line {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  font-size: 0.76rem;
+  gap: 2px;
+  font-size: 0.72rem;
   color: #8E8E93;
 }
 
@@ -1529,78 +1565,160 @@ body.light-theme .aircraft-shape {
   gap: 5px;
 }
 
-.terminal-hover-hint {
+.terminal-enter-hint {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 6px;
-  margin-top: 10px;
-  font-size: 0.68rem;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.66rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: opacity 0.3s ease;
+  letter-spacing: 0.04em;
 }
 
-.terminal-hover-hint i {
+.hint-beacon {
+  color: #8E8E93;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hint-action {
   color: var(--apple-cyan);
-  font-size: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
-/* HOVER = ENTER THE TERMINAL (Interactive Sliding Door) */
-.terminal-sliding-door {
-  max-height: 0;
+/* ==========================================================================
+   Floating Liquid-Glass Terminal Flyout Panel (Secondary Layer)
+   ========================================================================== */
+.airport-glass-panel {
+  position: absolute;
+  width: clamp(310px, 24vw, 360px);
+  pointer-events: none;
   opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  visibility: hidden;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s ease;
+  z-index: 60;
+  background: rgba(14, 18, 24, 0.65);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  padding: 18px 22px;
+  box-shadow: 
+    0 20px 48px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 0 28px rgba(10, 132, 255, 0.12);
 }
 
-.airport-terminal-card:hover,
-.airport-terminal-card.terminal-open {
-  transform: translateY(-6px) scale(1.02);
-  border-color: rgba(10, 132, 255, 0.6);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 30px rgba(10, 132, 255, 0.22);
-  z-index: 10;
+/* Directional Flyouts */
+.panel-dir-right {
+  left: calc(100% + 14px);
+  top: 0;
+  transform: translateX(-8px) scale(0.97);
 }
 
-.airport-terminal-card:hover .terminal-sliding-door,
-.airport-terminal-card.terminal-open .terminal-sliding-door {
-  max-height: 400px;
+.panel-dir-up {
+  left: 0;
+  bottom: calc(100% + 14px);
+  transform: translateY(8px) scale(0.97);
+}
+
+.panel-dir-down {
+  left: 0;
+  top: calc(100% + 14px);
+  transform: translateY(-8px) scale(0.97);
+}
+
+.panel-dir-left {
+  right: calc(100% + 14px);
+  bottom: 0;
+  transform: translateX(8px) scale(0.97);
+}
+
+/* Continuous Hit-Bridge across the 14px gap */
+.airport-glass-panel::before {
+  content: "";
+  position: absolute;
+  pointer-events: auto;
+}
+
+.panel-dir-right::before {
+  left: -18px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+}
+
+.panel-dir-up::before {
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.panel-dir-down::before {
+  top: -18px;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.panel-dir-left::before {
+  right: -18px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+}
+
+/* Hover Reveal of Secondary Liquid-Glass Flyout */
+.airport-stop-container:hover .airport-glass-panel,
+.airport-stop-container.terminal-open .airport-glass-panel {
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(0, 0) scale(1);
 }
 
-.airport-terminal-card:hover .terminal-hover-hint,
-.airport-terminal-card.terminal-open .terminal-hover-hint {
-  opacity: 0;
-  height: 0;
-  margin: 0;
-  overflow: hidden;
+/* Liquid-Glass Panel Internal Elements */
+.glass-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
 }
 
-.airport-terminal-card.active-dest {
-  border-color: rgba(10, 132, 255, 0.5);
-  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.5), 0 0 20px rgba(10, 132, 255, 0.16);
+.panel-callout {
+  color: var(--apple-cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.05em;
 }
 
-.airport-terminal-card.latest-dest {
-  border-color: rgba(48, 209, 88, 0.35);
+.panel-badge {
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #E5E5EA;
+  font-size: 0.64rem;
+  font-weight: 600;
 }
 
-.airport-terminal-card.latest-dest:hover,
-.airport-terminal-card.latest-dest.active-dest {
-  border-color: #30D158;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 32px rgba(48, 209, 88, 0.25);
-}
-
-.terminal-interior-body {
-  padding-top: 4px;
-}
-
-.terminal-divider {
+.glass-panel-divider {
   height: 1px;
   width: 100%;
   background: rgba(255, 255, 255, 0.08);
-  margin: 10px 0 10px;
+  margin: 8px 0 10px;
 }
 
 .terminal-bullets {
@@ -1628,8 +1746,16 @@ body.light-theme .aircraft-shape {
   font-size: 0.8rem;
 }
 
-.latest-dest .terminal-bullets li::before {
+.airport-stop-container.latest-dest .terminal-bullets li::before {
   color: #30D158;
+}
+
+.airport-stop-container.latest-dest .airport-glass-panel {
+  border-color: rgba(48, 209, 88, 0.4);
+  box-shadow: 
+    0 20px 48px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 0 28px rgba(48, 209, 88, 0.18);
 }
 
 .terminal-tags {
@@ -1649,17 +1775,26 @@ body.light-theme .aircraft-shape {
   color: #E5E5EA;
 }
 
-/* Light Theme Overrides for Airport Terminals */
-body.light-theme .airport-terminal-card {
+/* Light Theme Overrides for Airport Stops & Liquid-Glass Flyouts */
+body.light-theme .airport-stop-marker {
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
-body.light-theme .airport-terminal-card:hover,
-body.light-theme .airport-terminal-card.terminal-open {
+body.light-theme .airport-stop-container:hover .airport-stop-marker,
+body.light-theme .airport-stop-container.terminal-open .airport-stop-marker {
   border-color: #0071E3;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12), 0 0 26px rgba(0, 113, 227, 0.18);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 113, 227, 0.15);
+}
+
+body.light-theme .airport-glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 
+    0 18px 42px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(0, 113, 227, 0.08);
 }
 
 body.light-theme .terminal-org-name {
@@ -1671,6 +1806,14 @@ body.light-theme .terminal-role-title {
 }
 
 body.light-theme .gate-tag {
+  color: #0071E3;
+}
+
+body.light-theme .hint-action {
+  color: #0071E3;
+}
+
+body.light-theme .panel-callout {
   color: #0071E3;
 }
 
@@ -1696,15 +1839,21 @@ body.light-theme .terminal-meta-line {
   color: #636366;
 }
 
-body.light-theme .terminal-hover-hint {
+body.light-theme .hint-beacon {
   color: #8E8E93;
 }
 
-body.light-theme .terminal-hover-hint i {
-  color: #0071E3;
+body.light-theme .terminal-enter-hint {
+  border-top-color: rgba(0, 0, 0, 0.06);
 }
 
-body.light-theme .terminal-divider {
+body.light-theme .panel-badge {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.09);
+  color: #3A3A3C;
+}
+
+body.light-theme .glass-panel-divider {
   background: rgba(0, 0, 0, 0.08);
 }
 
@@ -1716,8 +1865,16 @@ body.light-theme .terminal-bullets li::before {
   color: #0071E3;
 }
 
-body.light-theme .latest-dest .terminal-bullets li::before {
+body.light-theme .airport-stop-container.latest-dest .terminal-bullets li::before {
   color: #047857;
+}
+
+body.light-theme .airport-stop-container.latest-dest .airport-glass-panel {
+  border-color: rgba(4, 120, 87, 0.35);
+  box-shadow: 
+    0 18px 42px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 0 22px rgba(4, 120, 87, 0.16);
 }
 
 body.light-theme .terminal-chip {
@@ -3082,6 +3239,7 @@ body.light-theme .bento-card:hover {
     height: auto !important;
     min-height: auto !important;
     padding: 60px 0 80px;
+    overflow: visible !important;
   }
 
   .airport-sticky-stage {
@@ -3096,6 +3254,7 @@ body.light-theme .bento-card:hover {
     display: flex;
     flex-direction: column;
     padding: 16px 0;
+    overflow: visible !important;
   }
 
   .airport-svg {
@@ -3107,15 +3266,16 @@ body.light-theme .bento-card:hover {
     inset: auto !important;
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 24px;
     padding: 20px 16px;
     pointer-events: auto !important;
     max-width: 680px;
     margin: 0 auto;
     width: 100%;
+    overflow: visible !important;
   }
 
-  .airport-terminal-card {
+  .airport-stop-container {
     position: relative !important;
     inset: auto !important;
     left: auto !important;
@@ -3124,18 +3284,39 @@ body.light-theme .bento-card:hover {
     bottom: auto !important;
     width: 100% !important;
     max-width: 100% !important;
+    overflow: visible !important;
   }
 
-  .terminal-sliding-door {
-    max-height: 400px !important;
+  .airport-stop-marker {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .airport-glass-panel {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
     opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    margin-top: 10px;
   }
 
-  .terminal-hover-hint {
+  .airport-glass-panel::before {
     display: none !important;
   }
 
-  /* Yggdrasil Tree Leaves Responsive Layout */
+  .terminal-enter-hint {
+    display: none !important;
+  }
+
+    /* Yggdrasil Tree Leaves Responsive Layout */
   .yggdrasil-leaves-container {
     grid-template-columns: 1fr !important;
     row-gap: 24px !important;
