@@ -93,34 +93,40 @@
   --font-mono: "JetBrains Mono", "SF Mono", Menlo, Monaco, Consolas, monospace;
 }
 
-/* Light Theme (Frosted Monochrome Glass) */
+/* Light Theme (Apple Liquid Frosted Glass) */
 body.light-theme {
-  --bg-base: #FAFAFA;
-  --bg-deep: #F0F0F2;
-  --bg-surface: rgba(255, 255, 255, 0.85);
-  --bg-surface-elevated: rgba(255, 255, 255, 0.95);
-  --bg-surface-glass: rgba(0, 0, 0, 0.02);
-  --bg-card: rgba(255, 255, 255, 0.8);
-  --bg-code: #18181B;
+  --bg-base: #F8F9FA;
+  --bg-deep: #EEF0F3;
+  --bg-surface: rgba(255, 255, 255, 0.84);
+  --bg-surface-elevated: rgba(255, 255, 255, 0.96);
+  --bg-surface-glass: rgba(0, 0, 0, 0.03);
+  --bg-card: rgba(255, 255, 255, 0.88);
+  --bg-code: #FFFFFF;
   
   --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-glass: rgba(0, 0, 0, 0.14);
-  --border-active: rgba(0, 0, 0, 0.45);
-  --border-glow: rgba(0, 0, 0, 0.25);
+  --border-glass: rgba(0, 0, 0, 0.12);
+  --border-active: rgba(0, 113, 227, 0.5);
+  --border-glow: rgba(0, 113, 227, 0.25);
 
-  --text-primary: #09090B;
-  --text-secondary: #52525B;
-  --text-tertiary: #71717A;
-  --text-muted: #A1A1AA;
+  --text-primary: #111113;
+  --text-secondary: #4B4B52;
+  --text-tertiary: #6E6E73;
+  --text-muted: #86868B;
+  --icon-color: #4B4B52;
+
+  --apple-blue: #0071E3;
+  --apple-cyan: #0071E3;
+  --apple-purple: #8928BA;
+  --apple-mint: #047857;
 
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 40px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 40px rgba(0, 0, 0, 0.06);
 
-  --grad-primary: linear-gradient(135deg, #09090B 0%, #52525B 50%, #09090B 100%);
-  --grad-accent: linear-gradient(135deg, #18181B 0%, #71717A 100%);
-  --grad-apple-glow: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.08), transparent 70%);
+  --grad-primary: linear-gradient(135deg, #111113 0%, #3A3A3C 50%, #111113 100%);
+  --grad-accent: linear-gradient(135deg, #111113 0%, #6E6E73 100%);
+  --grad-apple-glow: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.05), transparent 70%);
 }
 
 
@@ -1022,7 +1028,7 @@ body.light-theme .nav-link.active {
 }
 
 .identity-badge-pill i {
-  color: #FFFFFF;
+  color: var(--apple-cyan);
 }
 
 .identity-headline {
@@ -1068,7 +1074,7 @@ body.light-theme .nav-link.active {
   font-size: 1.45rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #FFFFFF;
+  color: var(--text-primary);
   margin-bottom: 6px;
   font-family: var(--font-sans);
 }
@@ -1781,7 +1787,7 @@ body.light-theme .btn-project-cta.code:hover {
 .tree-degree-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-primary);
   margin-bottom: 4px;
   letter-spacing: -0.01em;
   line-height: 1.25;
@@ -1789,7 +1795,7 @@ body.light-theme .btn-project-cta.code:hover {
 
 .tree-inst-name {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--text-secondary);
   font-family: var(--font-sans);
 }
 
@@ -1802,22 +1808,22 @@ body.light-theme .btn-project-cta.code:hover {
   font-size: 0.78rem;
   font-weight: 700;
   font-family: var(--font-mono);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #FFFFFF;
+  background: rgba(48, 209, 88, 0.12);
+  border: 1px solid rgba(48, 209, 88, 0.35);
+  color: #30D158;
   white-space: nowrap;
 }
 
 .tree-hairline {
   height: 1px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 100%);
+  background: linear-gradient(90deg, var(--border-glass) 0%, transparent 100%);
   margin: 16px 0;
 }
 
 .tree-node-body {
   font-size: 0.92rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--text-secondary);
   margin-bottom: 20px;
 }
 
@@ -1835,16 +1841,16 @@ body.light-theme .btn-project-cta.code:hover {
   border-radius: 8px;
   font-size: 0.78rem;
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.85);
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
   transition: all 0.25s ease;
 }
 
 .tree-glass-node:hover .tree-chip {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.24);
-  color: #FFFFFF;
+  border-color: var(--border-glass);
+  color: var(--text-primary);
 }
 
 /* Mobile Responsiveness for Yggdrasil Tree */
@@ -2582,11 +2588,14 @@ body.light-theme .bento-card:hover {
 
 
 /* ==========================================================================
-   Apple Design System: Blue, Purple, Green Accents & Yggdrasil Styling
+   Apple Design System: Dark Mode Accents & Complete Light Mode System
    ========================================================================== */
 
-/* 1. Hyperlink & Navbar Animations */
-.nav-link {
+/* --------------------------------------------------------------------------
+   A. DARK MODE: Authentic Accents (Preserved 100% Unchanged)
+   -------------------------------------------------------------------------- */
+
+body:not(.light-theme) .nav-link {
   font-size: 0.88rem;
   font-weight: 500;
   color: rgba(235, 235, 245, 0.75);
@@ -2596,58 +2605,58 @@ body.light-theme .bento-card:hover {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav-link:hover {
+body:not(.light-theme) .nav-link:hover {
   color: #FFFFFF;
   background: rgba(10, 132, 255, 0.15);
   box-shadow: 0 0 16px rgba(10, 132, 255, 0.35);
   transform: translateY(-1px);
 }
 
-.nav-link.active {
+body:not(.light-theme) .nav-link.active {
   color: #FFFFFF;
   background: linear-gradient(135deg, #0A84FF 0%, #5E5CE6 100%);
   box-shadow: 0 4px 16px rgba(10, 132, 255, 0.45);
 }
 
-.brand:hover .brand-name {
+body:not(.light-theme) .brand:hover .brand-name {
   color: var(--apple-cyan);
   text-shadow: 0 0 12px rgba(100, 210, 255, 0.5);
 }
 
-.brand:hover .brand-badge {
+body:not(.light-theme) .brand:hover .brand-badge {
   border-color: var(--apple-blue);
   box-shadow: 0 0 14px rgba(10, 132, 255, 0.4);
 }
 
-/* Social Icon Buttons Hover Accents */
-.social-icon-btn.github:hover {
+/* Dark Mode Social Icon Buttons Hover Accents */
+body:not(.light-theme) .social-icon-btn.github:hover {
   color: #30D158 !important;
   border-color: #30D158 !important;
   box-shadow: 0 0 20px rgba(48, 209, 88, 0.45) !important;
 }
-.social-icon-btn.linkedin:hover {
+body:not(.light-theme) .social-icon-btn.linkedin:hover {
   color: #0A84FF !important;
   border-color: #0A84FF !important;
   box-shadow: 0 0 20px rgba(10, 132, 255, 0.45) !important;
 }
-.social-icon-btn.leetcode:hover {
+body:not(.light-theme) .social-icon-btn.leetcode:hover {
   color: #FF9F0A !important;
   border-color: #FF9F0A !important;
   box-shadow: 0 0 20px rgba(255, 159, 10, 0.45) !important;
 }
-.social-icon-btn.email:hover {
+body:not(.light-theme) .social-icon-btn.email:hover {
   color: #BF5AF2 !important;
   border-color: #BF5AF2 !important;
   box-shadow: 0 0 20px rgba(191, 90, 242, 0.45) !important;
 }
-.social-icon-btn.phone:hover {
+body:not(.light-theme) .social-icon-btn.phone:hover {
   color: #63E6E2 !important;
   border-color: #63E6E2 !important;
   box-shadow: 0 0 20px rgba(99, 230, 226, 0.45) !important;
 }
 
-/* 2. Hero Accents */
-.hero-pill {
+/* Hero Accents */
+body:not(.light-theme) .hero-pill {
   background: rgba(48, 209, 88, 0.08);
   border: 1px solid rgba(48, 209, 88, 0.3);
   color: var(--apple-mint);
@@ -2657,20 +2666,20 @@ body.light-theme .bento-card:hover {
   box-shadow: 0 0 12px #30D158 !important;
 }
 
-.gradient-text {
+body:not(.light-theme) .gradient-text {
   background: linear-gradient(135deg, #FFFFFF 15%, var(--apple-cyan) 45%, var(--apple-blue) 75%, var(--apple-purple) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   display: inline-block;
 }
 
-.typing-target {
+body:not(.light-theme) .typing-target {
   color: var(--apple-cyan);
   text-shadow: 0 0 12px rgba(100, 210, 255, 0.4);
 }
 
-/* 3. Level & Filter Category Buttons: Apple Blue, Purple, Green */
-.skill-filter-btn {
+/* Dark Mode Filter Buttons: Apple Blue, Purple, Green */
+body:not(.light-theme) .skill-filter-btn {
   padding: 8px 18px;
   border-radius: var(--radius-full);
   background: var(--bg-card);
@@ -2681,94 +2690,91 @@ body.light-theme .bento-card:hover {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Apple Blue Button Hovers */
-.skill-filter-btn[data-category="all"]:hover,
-.skill-filter-btn[data-category="databases"]:hover,
-.project-filter-btn[data-filter="all"]:hover {
+body:not(.light-theme) .skill-filter-btn[data-category="all"]:hover,
+body:not(.light-theme) .skill-filter-btn[data-category="databases"]:hover,
+body:not(.light-theme) .project-filter-btn[data-filter="all"]:hover {
   color: #FFFFFF !important;
   border-color: var(--apple-blue) !important;
   background: rgba(10, 132, 255, 0.15) !important;
   box-shadow: 0 4px 18px rgba(10, 132, 255, 0.4) !important;
   transform: translateY(-2px);
 }
-.skill-filter-btn[data-category="all"].active,
-.skill-filter-btn[data-category="databases"].active,
-.project-filter-btn[data-filter="all"].active {
+body:not(.light-theme) .skill-filter-btn[data-category="all"].active,
+body:not(.light-theme) .skill-filter-btn[data-category="databases"].active,
+body:not(.light-theme) .project-filter-btn[data-filter="all"].active {
   background: var(--apple-blue) !important;
   color: #FFFFFF !important;
   border-color: var(--apple-blue) !important;
   box-shadow: 0 4px 20px rgba(10, 132, 255, 0.55) !important;
 }
 
-/* Apple Purple Button Hovers */
-.skill-filter-btn[data-category="languages"]:hover,
-.skill-filter-btn[data-category="core"]:hover,
-.project-filter-btn[data-filter="aiml"]:hover {
+body:not(.light-theme) .skill-filter-btn[data-category="languages"]:hover,
+body:not(.light-theme) .skill-filter-btn[data-category="core"]:hover,
+body:not(.light-theme) .project-filter-btn[data-filter="aiml"]:hover {
   color: #FFFFFF !important;
   border-color: var(--apple-purple) !important;
   background: rgba(191, 90, 242, 0.15) !important;
   box-shadow: 0 4px 18px rgba(191, 90, 242, 0.4) !important;
   transform: translateY(-2px);
 }
-.skill-filter-btn[data-category="languages"].active,
-.skill-filter-btn[data-category="core"].active,
-.project-filter-btn[data-filter="aiml"].active {
+body:not(.light-theme) .skill-filter-btn[data-category="languages"].active,
+body:not(.light-theme) .skill-filter-btn[data-category="core"].active,
+body:not(.light-theme) .project-filter-btn[data-filter="aiml"].active {
   background: var(--apple-purple) !important;
   color: #FFFFFF !important;
   border-color: var(--apple-purple) !important;
   box-shadow: 0 4px 20px rgba(191, 90, 242, 0.55) !important;
 }
 
-/* Apple Green Button Hovers */
-.skill-filter-btn[data-category="frameworks"]:hover,
-.project-filter-btn[data-filter="web"]:hover,
-.project-filter-btn[data-filter="systems"]:hover {
+body:not(.light-theme) .skill-filter-btn[data-category="frameworks"]:hover,
+body:not(.light-theme) .project-filter-btn[data-filter="web"]:hover,
+body:not(.light-theme) .project-filter-btn[data-filter="systems"]:hover {
   color: #FFFFFF !important;
   border-color: var(--apple-green) !important;
   background: rgba(48, 209, 88, 0.15) !important;
   box-shadow: 0 4px 18px rgba(48, 209, 88, 0.4) !important;
   transform: translateY(-2px);
 }
-.skill-filter-btn[data-category="frameworks"].active,
-.project-filter-btn[data-filter="web"].active,
-.project-filter-btn[data-filter="systems"].active {
+body:not(.light-theme) .skill-filter-btn[data-category="frameworks"].active,
+body:not(.light-theme) .project-filter-btn[data-filter="web"].active,
+body:not(.light-theme) .project-filter-btn[data-filter="systems"].active {
   background: var(--apple-green) !important;
   color: #FFFFFF !important;
   border-color: var(--apple-green) !important;
   box-shadow: 0 4px 20px rgba(48, 209, 88, 0.55) !important;
 }
 
-/* 4. Action Buttons (Blue, Purple, Green) */
-.btn-primary {
+/* Dark Mode Action Buttons */
+body:not(.light-theme) .btn-primary {
   background: linear-gradient(135deg, #0071E3 0%, #0A84FF 100%) !important;
   color: #FFFFFF !important;
   border: 1px solid rgba(100, 210, 255, 0.4) !important;
   box-shadow: 0 4px 18px rgba(10, 132, 255, 0.4) !important;
 }
-.btn-primary:hover {
+body:not(.light-theme) .btn-primary:hover {
   background: linear-gradient(135deg, #0077ED 0%, #64D2FF 100%) !important;
   box-shadow: 0 6px 26px rgba(10, 132, 255, 0.6) !important;
   transform: translateY(-2px);
 }
 
-.btn-glass:hover {
+body:not(.light-theme) .btn-glass:hover {
   border-color: var(--apple-purple) !important;
   color: #FFFFFF !important;
   box-shadow: 0 4px 18px rgba(191, 90, 242, 0.35) !important;
 }
 
-.btn-header-resume {
+body:not(.light-theme) .btn-header-resume {
   background: rgba(10, 132, 255, 0.12) !important;
   border: 1px solid rgba(10, 132, 255, 0.3) !important;
   color: var(--apple-cyan) !important;
 }
-.btn-header-resume:hover {
+body:not(.light-theme) .btn-header-resume:hover {
   background: var(--apple-blue) !important;
   color: #FFFFFF !important;
   box-shadow: 0 4px 18px rgba(10, 132, 255, 0.45) !important;
 }
 
-/* Project Card Buttons */
+/* GitHub Emerald Green Accent (APPLIES TO BOTH MODES) */
 .btn-project-cta.code,
 .btn-github-emerald {
   background: linear-gradient(135deg, #064E3B 0%, #059669 45%, #30D158 100%) !important;
@@ -2784,34 +2790,34 @@ body.light-theme .bento-card:hover {
   transform: translateY(-2px);
 }
 
-.btn-project-cta.demo {
+body:not(.light-theme) .btn-project-cta.demo {
   background: linear-gradient(135deg, #0071E3 0%, #0A84FF 100%) !important;
   border: 1px solid rgba(100, 210, 255, 0.35) !important;
   color: #FFFFFF !important;
   box-shadow: 0 4px 16px rgba(10, 132, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
 }
-.btn-project-cta.demo:hover {
+body:not(.light-theme) .btn-project-cta.demo:hover {
   background: linear-gradient(135deg, #0077ED 0%, #64D2FF 100%) !important;
   border-color: #64D2FF !important;
   box-shadow: 0 6px 24px rgba(10, 132, 255, 0.55), 0 0 30px rgba(100, 210, 255, 0.3) !important;
   transform: translateY(-2px);
 }
 
-.btn-project-cta.research {
+body:not(.light-theme) .btn-project-cta.research {
   background: linear-gradient(135deg, #5E5CE6 0%, #BF5AF2 100%) !important;
   border: 1px solid rgba(191, 90, 242, 0.35) !important;
   color: #FFFFFF !important;
   box-shadow: 0 4px 16px rgba(191, 90, 242, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
 }
-.btn-project-cta.research:hover {
+body:not(.light-theme) .btn-project-cta.research:hover {
   background: linear-gradient(135deg, #6E6CE6 0%, #CF70FF 100%) !important;
   border-color: #BF5AF2 !important;
   box-shadow: 0 6px 24px rgba(191, 90, 242, 0.55), 0 0 30px rgba(191, 90, 242, 0.3) !important;
   transform: translateY(-2px);
 }
 
-/* "HIRE ME" Magnetic Overlay Pill */
-.hire-me-pill {
+/* "HIRE ME" Magnetic Overlay Pill (Dark Mode) */
+body:not(.light-theme) .hire-me-pill {
   background: rgba(12, 12, 16, 0.88);
   border: 1px solid rgba(48, 209, 88, 0.45);
   box-shadow: 
@@ -2823,21 +2829,21 @@ body.light-theme .bento-card:hover {
   background: #30D158;
   box-shadow: 0 0 14px #30D158;
 }
-.hire-me-pill:hover {
+body:not(.light-theme) .hire-me-pill:hover {
   background: linear-gradient(135deg, #0071E3 0%, #0A84FF 50%, #30D158 100%) !important;
   border-color: #34D399 !important;
   box-shadow: 0 16px 48px rgba(48, 209, 88, 0.5), 0 0 40px rgba(10, 132, 255, 0.5) !important;
 }
-.hire-me-pill:hover .hire-me-text,
-.hire-me-pill:hover .hire-me-arrow {
+body:not(.light-theme) .hire-me-pill:hover .hire-me-text,
+body:not(.light-theme) .hire-me-pill:hover .hire-me-arrow {
   color: #FFFFFF !important;
 }
-.hire-me-pill:hover .hire-me-pulse {
+body:not(.light-theme) .hire-me-pill:hover .hire-me-pulse {
   background: #FFFFFF !important;
   box-shadow: 0 0 12px #FFFFFF !important;
 }
 
-/* 5. Skills Section: Full Vibrant Devicon Colors */
+/* Skills Section: Full Vibrant Devicon Colors */
 .skill-box-img {
   width: 48px !important;
   height: 48px !important;
@@ -2851,7 +2857,7 @@ body.light-theme .bento-card:hover {
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5)) !important;
 }
 
-.skill-box-card::after {
+body:not(.light-theme) .skill-box-card::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -2863,7 +2869,7 @@ body.light-theme .bento-card:hover {
   transition: all 0.3s ease;
 }
 
-.skill-box-card:hover::after {
+body:not(.light-theme) .skill-box-card:hover::after {
   left: 5%;
   right: 5%;
   height: 3px;
@@ -2871,12 +2877,12 @@ body.light-theme .bento-card:hover {
   box-shadow: 0 0 12px var(--apple-cyan);
 }
 
-.skill-box-card:hover {
+body:not(.light-theme) .skill-box-card:hover {
   border-color: var(--apple-blue);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 24px rgba(10, 132, 255, 0.3);
 }
 
-/* 6. Yggdrasil Living World Tree: Organic Brown Stem/Bark & Emerald Leaves */
+/* Yggdrasil Living World Tree (Wood Brown Stem/Branches & Emerald Leaves) */
 .tree-root {
   stroke: #5C3A21 !important;
   stroke-width: 4.5 !important;
@@ -2949,20 +2955,20 @@ body.light-theme .bento-card:hover {
   filter: drop-shadow(0 0 14px rgba(48, 209, 88, 1)) !important;
 }
 
-.tree-badge {
+body:not(.light-theme) .tree-badge {
   background: rgba(48, 209, 88, 0.12) !important;
   border: 1px solid rgba(48, 209, 88, 0.35) !important;
   color: #30D158 !important;
 }
 
-.tree-node-avatar {
+body:not(.light-theme) .tree-node-avatar {
   background: linear-gradient(135deg, rgba(123, 75, 39, 0.3) 0%, rgba(48, 209, 88, 0.25) 100%) !important;
   border: 1px solid rgba(48, 209, 88, 0.4) !important;
   color: #30D158 !important;
 }
 
-.tree-glass-node:hover,
-.tree-glass-node.active-node {
+body:not(.light-theme) .tree-glass-node:hover,
+body:not(.light-theme) .tree-glass-node.active-node {
   border-color: rgba(48, 209, 88, 0.5) !important;
   box-shadow: 
     inset 0 1px 0 rgba(255, 255, 255, 0.4),
@@ -2970,77 +2976,915 @@ body.light-theme .bento-card:hover {
     0 0 35px rgba(48, 209, 88, 0.25) !important;
 }
 
-/* 7. Achievements Bento Accents */
-.bento-pill-badge.gate {
+/* Dark Mode Bento Badges */
+body:not(.light-theme) .bento-pill-badge.gate {
   background: rgba(10, 132, 255, 0.14) !important;
   border-color: rgba(10, 132, 255, 0.35) !important;
   color: var(--apple-cyan) !important;
 }
-.bento-pill-badge.amazon {
+body:not(.light-theme) .bento-pill-badge.amazon {
   background: rgba(191, 90, 242, 0.14) !important;
   border-color: rgba(191, 90, 242, 0.35) !important;
   color: var(--apple-purple) !important;
 }
-.bento-pill-badge.leetcode {
+body:not(.light-theme) .bento-pill-badge.leetcode {
   background: rgba(255, 214, 10, 0.14) !important;
   border-color: rgba(255, 214, 10, 0.35) !important;
   color: var(--apple-yellow) !important;
 }
-.bento-pill-badge.infosys {
+body:not(.light-theme) .bento-pill-badge.infosys {
   background: rgba(48, 209, 88, 0.14) !important;
   border-color: rgba(48, 209, 88, 0.35) !important;
   color: var(--apple-green) !important;
 }
-.bento-pill-badge.ncc {
+body:not(.light-theme) .bento-pill-badge.ncc {
   background: rgba(191, 90, 242, 0.14) !important;
   border-color: rgba(191, 90, 242, 0.35) !important;
   color: var(--apple-purple) !important;
 }
 
-.bento-hero-stat {
+body:not(.light-theme) .bento-hero-stat {
   background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-cyan) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
-.bento-hero-stat.yellow {
+body:not(.light-theme) .bento-hero-stat.yellow {
   background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-yellow) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
-.bento-hero-stat.orange {
+body:not(.light-theme) .bento-hero-stat.orange {
   background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-orange) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
-.bento-hero-stat.green {
+body:not(.light-theme) .bento-hero-stat.green {
   background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-green) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
-.bento-hero-stat.purple {
+body:not(.light-theme) .bento-hero-stat.purple {
   background: linear-gradient(135deg, #FFFFFF 30%, var(--apple-purple) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 
-/* 8. Experience Timeline Accents */
-.timeline-container::before {
+body:not(.light-theme) .timeline-container::before {
   background: linear-gradient(180deg, var(--apple-cyan) 0%, var(--apple-blue) 45%, var(--apple-purple) 90%, transparent 100%) !important;
 }
-.timeline-marker {
+body:not(.light-theme) .timeline-marker {
   border-color: var(--apple-blue) !important;
   box-shadow: 0 0 16px rgba(10, 132, 255, 0.5) !important;
 }
 
-/* 9. macOS Traffic Lights */
+/* macOS Traffic Lights */
 .mac-dot.red { background: #FF5F56 !important; }
 .mac-dot.yellow { background: #FFBD2E !important; }
 .mac-dot.green { background: #27C93F !important; }
 
-/* 10. Code Syntax Highlighting */
-.code-keyword { color: var(--apple-purple) !important; font-weight: 700; }
-.code-prop { color: var(--apple-cyan) !important; }
-.code-string { color: var(--apple-green) !important; }
-.code-number, .code-bool { color: var(--apple-orange) !important; }
-.code-fn { color: var(--apple-blue) !important; font-weight: 600; }
-.code-comment { color: var(--text-muted) !important; font-style: italic; }
+/* Dark Mode Syntax Tokens */
+body:not(.light-theme) .code-keyword { color: var(--apple-purple) !important; font-weight: 700; }
+body:not(.light-theme) .code-prop { color: var(--apple-cyan) !important; }
+body:not(.light-theme) .code-string { color: var(--apple-green) !important; }
+body:not(.light-theme) .code-number, body:not(.light-theme) .code-bool { color: var(--apple-orange) !important; }
+body:not(.light-theme) .code-fn { color: var(--apple-blue) !important; font-weight: 600; }
+body:not(.light-theme) .code-comment { color: var(--text-muted) !important; font-style: italic; }
+
+
+/* --------------------------------------------------------------------------
+   B. LIGHT THEME COMPLETE SYSTEM (Context-Aware, 100% Readable, Liquid Glass)
+   -------------------------------------------------------------------------- */
+
+/* 1. Ambient Lighting & Body Background */
+body.light-theme {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+}
+
+body.light-theme .ambient-glow-1 {
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.08) 0%, transparent 70%);
+}
+
+body.light-theme .ambient-glow-2 {
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.06) 0%, transparent 70%);
+}
+
+body.light-theme .ambient-glow-3 {
+  background: radial-gradient(circle, rgba(48, 209, 88, 0.06) 0%, transparent 70%);
+}
+
+body.light-theme::before {
+  opacity: 0.35;
+  filter: invert(1);
+}
+
+/* 2. Navbar in Light Mode */
+body.light-theme .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .navbar:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+body.light-theme .brand-name {
+  color: #111113;
+}
+
+body.light-theme .brand-role {
+  color: #0071E3;
+}
+
+body.light-theme .brand-badge {
+  background: #111113;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .brand:hover .brand-name {
+  color: #0071E3;
+  text-shadow: none;
+}
+
+body.light-theme .brand:hover .brand-badge {
+  border-color: #0071E3;
+  box-shadow: 0 0 14px rgba(0, 113, 227, 0.3);
+}
+
+body.light-theme .nav-link {
+  color: #4B4B52;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.light-theme .nav-link:hover {
+  color: #111113;
+  background: rgba(0, 0, 0, 0.06);
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+body.light-theme .nav-link.active {
+  color: #FFFFFF;
+  background: #111113;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .theme-toggle-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111113;
+}
+
+body.light-theme .theme-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: #FF9500;
+  color: #FF9500;
+}
+
+body.light-theme .btn-header-resume {
+  background: rgba(0, 113, 227, 0.1);
+  border: 1px solid rgba(0, 113, 227, 0.28);
+  color: #0071E3;
+}
+
+body.light-theme .btn-header-resume:hover {
+  background: #0071E3;
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(0, 113, 227, 0.4);
+}
+
+body.light-theme .mobile-menu-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111113;
+}
+
+body.light-theme .nav-menu {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* 3. Hero Section in Light Mode */
+body.light-theme .hero-pill {
+  background: rgba(48, 209, 88, 0.12);
+  border-color: rgba(48, 209, 88, 0.35);
+  color: #047857;
+}
+
+body.light-theme .hero-title {
+  color: #111113;
+}
+
+body.light-theme .hero-title .gradient-text,
+body.light-theme .gradient-text {
+  background: linear-gradient(135deg, #111113 0%, #3F3F46 60%, #111113 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.light-theme .hero-typing-wrapper {
+  color: #4B4B52;
+}
+
+body.light-theme .typing-target {
+  color: #0071E3;
+  border-color: #0071E3;
+  text-shadow: none;
+}
+
+body.light-theme .hero-desc {
+  color: #4B4B52;
+}
+
+body.light-theme .btn-primary {
+  background: #111113 !important;
+  color: #FFFFFF !important;
+  border-color: #111113 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.light-theme .btn-primary:hover {
+  background: #2C2C2E !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.light-theme .btn-glass {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  color: #111113;
+}
+
+body.light-theme .btn-glass:hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme .social-icon-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #4B4B52;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .social-icon-btn:hover {
+  background: #FFFFFF;
+  color: #111113;
+  border-color: #0071E3;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+body.light-theme .social-icon-btn.github:hover {
+  color: #047857 !important;
+  border-color: #047857 !important;
+  box-shadow: 0 6px 18px rgba(48, 209, 88, 0.25) !important;
+}
+
+body.light-theme .social-icon-btn.linkedin:hover {
+  color: #0071E3 !important;
+  border-color: #0071E3 !important;
+}
+
+body.light-theme .social-icon-btn.leetcode:hover {
+  color: #C97A00 !important;
+  border-color: #C97A00 !important;
+}
+
+body.light-theme .social-icon-btn.email:hover {
+  color: #7B1FA2 !important;
+  border-color: #7B1FA2 !important;
+}
+
+/* 4. Code Cards & Terminals in Light Mode */
+body.light-theme .code-window,
+body.light-theme .abusaid-project-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .code-window-header,
+body.light-theme .project-window-top {
+  background: rgba(0, 0, 0, 0.03);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .code-tab,
+body.light-theme .project-window-title {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #4B4B52;
+}
+
+body.light-theme .project-num-badge {
+  background: rgba(0, 113, 227, 0.1);
+  border-color: rgba(0, 113, 227, 0.25);
+  color: #0071E3;
+}
+
+body.light-theme .btn-code-action {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #4B4B52;
+}
+
+body.light-theme .btn-code-action:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #111113;
+  border-color: #0071E3;
+}
+
+body.light-theme .btn-code-action.run-btn {
+  background: rgba(48, 209, 88, 0.12);
+  border-color: rgba(48, 209, 88, 0.3);
+  color: #047857;
+}
+
+body.light-theme .line-no {
+  color: #86868B;
+}
+
+body.light-theme .c-keyword,
+body.light-theme .code-keyword {
+  color: #8928BA !important;
+}
+
+body.light-theme .c-var,
+body.light-theme .code-prop {
+  color: #0071E3 !important;
+}
+
+body.light-theme .c-prop {
+  color: #111113 !important;
+}
+
+body.light-theme .c-string,
+body.light-theme .code-string {
+  color: #047857 !important;
+}
+
+body.light-theme .c-bool,
+body.light-theme .code-bool {
+  color: #047857 !important;
+}
+
+body.light-theme .c-func,
+body.light-theme .code-fn {
+  color: #0071E3 !important;
+}
+
+body.light-theme .c-comment,
+body.light-theme .code-comment {
+  color: #86868B !important;
+}
+
+body.light-theme .c-num,
+body.light-theme .code-number {
+  color: #C97A00 !important;
+}
+
+body.light-theme .project-desc-text {
+  color: #111113;
+}
+
+body.light-theme .code-output-tray {
+  background: rgba(0, 113, 227, 0.08);
+  border-color: rgba(0, 113, 227, 0.25);
+  color: #0071E3;
+}
+
+body.light-theme .project-window-footer {
+  background: rgba(0, 0, 0, 0.02);
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .project-tool-tag {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #4B4B52;
+}
+
+body.light-theme .project-tool-tag:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #111113;
+}
+
+body.light-theme .btn-project-cta.demo {
+  background: #111113 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #111113 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light-theme .btn-project-cta.demo:hover {
+  background: #2C2C2E !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22) !important;
+}
+
+body.light-theme .btn-project-cta.research {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.14) !important;
+  color: #111113 !important;
+  box-shadow: none !important;
+}
+
+body.light-theme .btn-project-cta.research:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: #000000 !important;
+}
+
+/* 5. Section Titles & Pills */
+body.light-theme .section-title {
+  color: #111113;
+}
+
+body.light-theme .section-subtitle {
+  color: #4B4B52;
+}
+
+body.light-theme .section-pill {
+  background: rgba(147, 51, 234, 0.1);
+  border-color: rgba(147, 51, 234, 0.3);
+  color: #7B1FA2;
+}
+
+/* 6. Digital Identity & Personal Photo Reveal */
+body.light-theme .photo-liquid-frame {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.14);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+body.light-theme .photo-reveal-veil {
+  background: radial-gradient(circle at 50% 50%, rgba(240, 240, 244, 0.35) 0%, rgba(250, 250, 250, 0.94) 100%);
+}
+
+body.light-theme .photo-ambient-halo {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.06) 0%, transparent 70%);
+}
+
+body.light-theme .hire-me-overlay {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+body.light-theme .hire-me-pill {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(0, 0, 0, 0.16);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .hire-me-text,
+body.light-theme .hire-me-arrow {
+  color: #111113 !important;
+}
+
+body.light-theme .hire-me-pulse {
+  background: #30D158;
+  box-shadow: 0 0 10px #30D158;
+}
+
+body.light-theme .hire-me-pill:hover {
+  background: #111113 !important;
+  border-color: #111113 !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.light-theme .hire-me-pill:hover .hire-me-text,
+body.light-theme .hire-me-pill:hover .hire-me-arrow {
+  color: #FFFFFF !important;
+}
+
+body.light-theme .identity-headline {
+  color: #111113;
+}
+
+body.light-theme .identity-bio {
+  color: #4B4B52;
+}
+
+body.light-theme .identity-badge-pill {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #4B4B52;
+}
+
+body.light-theme .identity-badge-pill i {
+  color: #0071E3;
+}
+
+body.light-theme .identity-metric-pod {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .identity-metric-pod:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .identity-metric-pod .metric-val {
+  color: #111113;
+}
+
+body.light-theme .identity-metric-pod .metric-label {
+  color: #4B4B52;
+}
+
+/* 7. Skills Section in Light Mode */
+body.light-theme .skills-marquee-wrapper {
+  mask-image: linear-gradient(90deg, transparent, #F8F9FA 8%, #F8F9FA 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #F8F9FA 8%, #F8F9FA 92%, transparent);
+}
+
+body.light-theme .skill-box-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .skill-box-card:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: #0071E3;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 113, 227, 0.2);
+}
+
+body.light-theme .skill-box-name {
+  color: #111113;
+}
+
+body.light-theme .skill-box-card::after {
+  background: linear-gradient(90deg, transparent, #0071E3, transparent);
+  opacity: 0.4;
+}
+
+body.light-theme .skill-filter-btn,
+body.light-theme .project-filter-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #4B4B52;
+}
+
+body.light-theme .skill-filter-btn:hover,
+body.light-theme .project-filter-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #111113;
+}
+
+body.light-theme .skill-filter-btn.active,
+body.light-theme .project-filter-btn.active {
+  background: #111113 !important;
+  color: #FFFFFF !important;
+  border-color: #111113 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Light Mode Filter Hover States */
+body.light-theme .skill-filter-btn[data-category="all"]:hover,
+body.light-theme .skill-filter-btn[data-category="databases"]:hover,
+body.light-theme .project-filter-btn[data-filter="all"]:hover {
+  color: #0071E3 !important;
+  border-color: #0071E3 !important;
+  background: rgba(0, 113, 227, 0.08) !important;
+  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.2) !important;
+}
+
+body.light-theme .skill-filter-btn[data-category="languages"]:hover,
+body.light-theme .skill-filter-btn[data-category="core"]:hover,
+body.light-theme .project-filter-btn[data-filter="aiml"]:hover {
+  color: #7B1FA2 !important;
+  border-color: #7B1FA2 !important;
+  background: rgba(147, 51, 234, 0.08) !important;
+  box-shadow: 0 4px 14px rgba(147, 51, 234, 0.2) !important;
+}
+
+body.light-theme .skill-filter-btn[data-category="frameworks"]:hover,
+body.light-theme .project-filter-btn[data-filter="web"]:hover,
+body.light-theme .project-filter-btn[data-filter="systems"]:hover {
+  color: #047857 !important;
+  border-color: #047857 !important;
+  background: rgba(48, 209, 88, 0.08) !important;
+  box-shadow: 0 4px 14px rgba(48, 209, 88, 0.2) !important;
+}
+
+/* 8. Education Section (Yggdrasil Living World Tree in Light Mode) */
+body.light-theme .tree-glass-node {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .tree-glass-node:hover,
+body.light-theme .tree-glass-node.active-node {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(48, 209, 88, 0.6) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12), 0 0 35px rgba(48, 209, 88, 0.25) !important;
+}
+
+body.light-theme .tree-degree-title {
+  color: #111113 !important;
+}
+
+body.light-theme .tree-inst-name {
+  color: #4B4B52 !important;
+}
+
+body.light-theme .tree-badge {
+  background: rgba(48, 209, 88, 0.14) !important;
+  border-color: rgba(48, 209, 88, 0.4) !important;
+  color: #047857 !important;
+}
+
+body.light-theme .tree-node-body {
+  color: #4B4B52 !important;
+}
+
+body.light-theme .tree-chip {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #4B4B52 !important;
+}
+
+body.light-theme .tree-chip:hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+  color: #111113 !important;
+}
+
+body.light-theme .tree-node-avatar {
+  background: rgba(48, 209, 88, 0.12) !important;
+  border-color: rgba(48, 209, 88, 0.35) !important;
+  color: #047857 !important;
+}
+
+body.light-theme .tree-hairline {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.02) 100%) !important;
+}
+
+/* 9. Experience Timeline in Light Mode */
+body.light-theme .timeline-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .timeline-card:hover {
+  border-color: #0071E3;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08), 0 0 25px rgba(0, 113, 227, 0.15);
+}
+
+body.light-theme .timeline-role {
+  color: #111113;
+}
+
+body.light-theme .timeline-company {
+  color: #0071E3;
+}
+
+body.light-theme .timeline-badge {
+  background: rgba(0, 113, 227, 0.08);
+  border-color: rgba(0, 113, 227, 0.25);
+  color: #0071E3;
+}
+
+body.light-theme .timeline-bullets li {
+  color: #4B4B52;
+}
+
+body.light-theme .timeline-bullets li::before {
+  color: #0071E3;
+}
+
+body.light-theme .timeline-marker {
+  background: #FFFFFF;
+  border-color: #0071E3;
+}
+
+body.light-theme .timeline-marker::after {
+  background: #0071E3;
+}
+
+body.light-theme .timeline-container::before {
+  background: linear-gradient(180deg, #0071E3 0%, rgba(0, 113, 227, 0.4) 70%, transparent 100%) !important;
+}
+
+/* 10. Achievements Bento Grid in Light Mode */
+body.light-theme .bento-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .bento-card:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .bento-card-title {
+  color: #111113;
+}
+
+body.light-theme .bento-card-desc {
+  color: #4B4B52;
+}
+
+body.light-theme .bento-metric-col h5 {
+  color: #111113;
+}
+
+body.light-theme .bento-metric-col p {
+  color: #4B4B52;
+}
+
+body.light-theme .bento-dual-metrics {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .bento-date-tag {
+  color: #86868B;
+}
+
+body.light-theme .bento-action-link {
+  color: #0071E3;
+}
+
+body.light-theme .bento-pill-badge.gate {
+  background: rgba(0, 113, 227, 0.1) !important;
+  border-color: rgba(0, 113, 227, 0.25) !important;
+  color: #0071E3 !important;
+}
+
+body.light-theme .bento-pill-badge.amazon {
+  background: rgba(255, 159, 10, 0.12) !important;
+  border-color: rgba(255, 159, 10, 0.3) !important;
+  color: #B36800 !important;
+}
+
+body.light-theme .bento-pill-badge.leetcode {
+  background: rgba(255, 179, 0, 0.12) !important;
+  border-color: rgba(255, 179, 0, 0.3) !important;
+  color: #9A6600 !important;
+}
+
+body.light-theme .bento-pill-badge.infosys {
+  background: rgba(48, 209, 88, 0.12) !important;
+  border-color: rgba(48, 209, 88, 0.3) !important;
+  color: #047857 !important;
+}
+
+body.light-theme .bento-pill-badge.ncc {
+  background: rgba(191, 90, 242, 0.12) !important;
+  border-color: rgba(191, 90, 242, 0.3) !important;
+  color: #7B1FA2 !important;
+}
+
+body.light-theme .bento-hero-stat {
+  background: linear-gradient(135deg, #111113 30%, #3A3A3C 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.light-theme .bento-hero-stat.yellow {
+  background: linear-gradient(135deg, #111113 30%, #9A6600 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.light-theme .bento-hero-stat.orange {
+  background: linear-gradient(135deg, #111113 30%, #B36800 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.light-theme .bento-hero-stat.green {
+  background: linear-gradient(135deg, #111113 30%, #047857 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.light-theme .bento-hero-stat.purple {
+  background: linear-gradient(135deg, #111113 30%, #7B1FA2 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* 11. Contact Section & Contact Form in Light Mode */
+body.light-theme .contact-card-item {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .contact-card-icon {
+  background: #111113;
+  color: #FFFFFF;
+}
+
+body.light-theme .contact-card-text span {
+  color: #0071E3;
+}
+
+body.light-theme .contact-card-text strong {
+  color: #111113;
+}
+
+body.light-theme .contact-form-card {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .form-title {
+  color: #111113;
+}
+
+body.light-theme .form-subtitle {
+  color: #4B4B52;
+}
+
+body.light-theme .form-label {
+  color: #111113;
+}
+
+body.light-theme .form-input,
+body.light-theme .form-textarea {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  color: #111113;
+}
+
+body.light-theme .form-input::placeholder,
+body.light-theme .form-textarea::placeholder {
+  color: #86868B;
+  opacity: 1;
+}
+
+body.light-theme .form-input:focus,
+body.light-theme .form-textarea:focus {
+  border-color: #0071E3;
+  background: #FFFFFF;
+  color: #111113;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+}
+
+/* 12. Footer in Light Mode */
+body.light-theme .footer {
+  background: #EEF0F3;
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .footer-copy {
+  color: #4B4B52;
+}
+
+body.light-theme .footer-copy strong {
+  color: #111113;
+}
+
+body.light-theme .footer-links a {
+  color: #4B4B52;
+}
+
+body.light-theme .footer-links a:hover {
+  color: #111113;
+}
+
+body.light-theme .footer-links a[href*="github"]:hover {
+  color: #047857 !important;
+}
+
+body.light-theme .footer-links a[href*="linkedin"]:hover {
+  color: #0071E3 !important;
+}
+
+/* 13. Back to Top Button in Light Mode */
+body.light-theme .back-to-top {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.14);
+  color: #111113;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .back-to-top:hover {
+  background: #111113;
+  color: #FFFFFF;
+  border-color: #111113;
+}
+
+/* 14. Toast in Light Mode */
+body.light-theme .apple-toast {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(0, 0, 0, 0.14);
+  color: #111113;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
