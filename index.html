@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Apple HIG Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=2.4">
+  <link rel="stylesheet" href="styles.css?v=liquidglass3">
 </head>
 <body>
   <!-- Apple Subtle Ambient Glow Lights -->
@@ -44,11 +44,11 @@
       </a>
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#identity" class="nav-link">Identity</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#achievements" class="nav-link">Honors</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
@@ -183,151 +183,414 @@
     </div>
   </section>
 
-  <!-- About Me Section -->
-  <section class="section" id="about">
+  <!-- ========================================================================
+       2. Digital Identity & Cinematic Photo Reveal ("HIRE ME" Interactive Experience)
+       ======================================================================== -->
+  <section class="section" id="identity">
+    <div id="about" style="position: absolute; top: -100px;"></div>
     <div class="container">
       <div class="section-header-center reveal">
-        <div class="section-pill">&lt; About Me &gt;</div>
-        <h2 class="section-title">Who I Am</h2>
-        <p class="section-subtitle">Bridging rigorous computer science fundamentals, enterprise data infrastructure, and modern AI/ML innovation.</p>
+        <div class="section-pill">&lt; Digital Identity &gt;</div>
+        <h2 class="section-title">Architecting at the Interface</h2>
+        <p class="section-subtitle">Systems rigor meets AI research, algorithmic discipline, and human-centric software.</p>
       </div>
 
-      <div class="about-grid">
-        <!-- Photo Frame with Apple Glowing Glass -->
-        <div class="about-photo-wrapper reveal">
-          <div class="about-photo-frame">
-            <img src="profile.jpg" alt="Battula Bhargav smiling portrait" class="about-photo">
-            <div class="about-floating-badge">
-              <div class="floating-badge-icon">
-                <i class="fa-solid fa-laptop-code"></i>
+      <div class="identity-stage">
+        <!-- Cinematic Photo Reveal Stage -->
+        <div class="photo-reveal-container" id="photoRevealContainer">
+          <div class="photo-liquid-frame" id="photoLiquidFrame">
+            <!-- Glass Specular Glare Layer -->
+            <div class="photo-glass-glare" id="photoGlare"></div>
+
+            <!-- Portrait Image -->
+            <img src="profile.jpg" alt="Battula Bhargav - Software Engineer &amp; AI Researcher" class="photo-reveal-img" id="photoImg" loading="lazy">
+
+            <!-- Cinematic Frosted Glass Veil (Melt/Dissolve on scroll) -->
+            <div class="photo-reveal-veil" id="photoVeil"></div>
+
+            <!-- Interactive "HIRE ME" Magnetic Overlay & Pill -->
+            <a href="#contact" class="hire-me-overlay" id="hireMeOverlay" aria-label="Hire Battula Bhargav">
+              <div class="hire-me-pill" id="hireMePill">
+                <span class="hire-me-pulse"></span>
+                <span class="hire-me-text">HIRE ME</span>
+                <i class="fa-solid fa-arrow-right hire-me-arrow"></i>
               </div>
-              <div class="floating-badge-text">
-                <strong>1+ Year Enterprise Exp</strong>
-                <span>Systems Engineer @ Infosys</span>
-              </div>
-            </div>
+            </a>
           </div>
+          
+          <!-- Ambient Liquid-Glass Halo / Glow -->
+          <div class="photo-ambient-halo"></div>
         </div>
 
-        <!-- Narrative Content -->
-        <div class="about-content reveal">
-          <h3>Systems Engineer Turned AI &amp; Software Researcher</h3>
-          <p class="about-bio">
+        <!-- Narrative & Architecture Content -->
+        <div class="identity-narrative reveal">
+          <div class="identity-badge-pill">
+            <i class="fa-solid fa-terminal"></i>
+            <span>Ex-Systems Engineer @ Infosys &bull; M.Tech CSE @ NIT Goa</span>
+          </div>
+          <h3 class="identity-headline">Systems Engineer Turned AI &amp; Software Researcher</h3>
+          <p class="identity-bio">
             I am currently pursuing my <strong>M.Tech in Computer Science and Engineering at National Institute of Technology Goa (NIT Goa)</strong>. 
-            Prior to my postgraduate studies, I spent over a year at <strong>Infosys</strong> as a Systems Engineer working with SAP BW/4HANA, 
-            where I monitored and debugged production ETL pipelines to sustain high system availability and built analytical reporting dashboards in SAP SAC.
+            Prior to my postgraduate studies, I spent over a year at <strong>Infosys</strong> as a Systems Engineer debugging mission-critical enterprise ETL pipelines, optimizing SQL queries, and maintaining zero-loss data integrity across production servers.
           </p>
-          <p class="about-bio">
-            My engineering work is rooted in solid fundamentals: <strong>Object-Oriented Programming (C/C++), Python, Data Structures &amp; Algorithms (300+ LeetCode solved)</strong>, 
-            and distributed backend architecture. In my research at NIT Goa, I am actively extending ActiveHAI with Monte Carlo Dropout uncertainty estimation 
-            to boost human-AI collaborative reliability.
+          <p class="identity-bio">
+            My primary research centers on <strong>Reliability-Aware Active Learning</strong> and <strong>Human-AI collaboration</strong>, developing selective labeling algorithms and confidence metrics that minimize human intervention while preventing catastrophic model drift.
           </p>
+          
+          <div class="identity-metrics-row">
+            <div class="identity-metric-pod">
+              <div class="metric-val">GATE CSE</div>
+              <div class="metric-label">AIR 10139 (Top ~6% Nationally)</div>
+            </div>
+            <div class="identity-metric-pod">
+              <div class="metric-val">300+ Solved</div>
+              <div class="metric-label">LeetCode Algorithms &amp; Data Structures</div>
+            </div>
+            <div class="identity-metric-pod">
+              <div class="metric-val">1+ Year</div>
+              <div class="metric-label">Enterprise Production ETL Systems</div>
+            </div>
+          </div>
 
-          <!-- 4 Quick Metric Cards -->
-          <div class="about-highlights-grid">
-            <div class="highlight-card">
-              <strong>1+ Year</strong>
-              <span>Professional Experience at Infosys</span>
-            </div>
-            <div class="highlight-card">
-              <strong>300+</strong>
-              <span>LeetCode Problems Solved</span>
-            </div>
-            <div class="highlight-card">
-              <strong>AIR 10139</strong>
-              <span>GATE CSE 2025 (Top ~6% Nationwide)</span>
-            </div>
-            <div class="highlight-card">
-              <strong>8.26</strong>
-              <span>M.Tech CSE CGPA at NIT Goa</span>
-            </div>
+          <div class="identity-actions">
+            <a href="#projects" class="btn-primary">
+              <span>Explore My Work</span>
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <a href="Battula_Bhargav_Resume.pdf" target="_blank" download class="btn-glass">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>Download Curriculum Vitae</span>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience Timeline Section -->
-  <section class="section" id="experience">
+<section class="section" id="projects">
     <div class="container">
       <div class="section-header-center reveal">
-        <div class="section-pill">&lt; Experience &gt;</div>
-        <h2 class="section-title">Work &amp; Leadership</h2>
-        <p class="section-subtitle">A track record of engineering delivery, enterprise reliability, and academic leadership.</p>
+        <div class="section-pill">&lt; Portfolio Showcase &gt;</div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Real-world applications, AI/ML research engines, and algorithmic systems formatted as developer window cards.</p>
       </div>
 
-      <div class="timeline-container">
-        <!-- Infosys Limited -->
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Systems Engineer — SAP BW/4HANA</h3>
-                <div class="timeline-company">
-                  <i class="fa-solid fa-building"></i>
-                  <span>Infosys Limited • Hyderabad, India</span>
-                </div>
-              </div>
-              <span class="timeline-badge">July 2022 – Oct 2023</span>
+      <!-- Project Cards Stack (Abu Said Sticky Stacking Cards) -->
+      <div class="projects-stack" id="projectsStack">
+
+        <div id="sticky-card-1" class="sticky-card">
+        <!-- 1. Personal AI Voice Assistant -->
+        <div class="abusaid-project-card" data-filter="ai">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
             </div>
-            <ul class="timeline-bullets">
-              <li>Monitored, troubleshot, and debugged mission-critical enterprise ETL data pipelines to maintain 99.9% system availability.</li>
-              <li>Engineered interactive reporting dashboards in SAP Analytics Cloud (SAC) for cross-functional business stakeholders.</li>
-              <li>Collaborated in fast-paced Agile sprint delivery, rigorous code reviews, automated batch-job monitoring, and SLA incident management.</li>
-            </ul>
+            <div class="project-window-title">
+              <i class="fa-brands fa-python" style="color:var(--apple-cyan);"></i>
+              <span>voice_assistant.py</span>
+            </div>
+            <span class="project-num-badge">01 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Personal AI Voice Assistant'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Lead AI &amp; NLP Developer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'Python'</span>, <span class="c-string">'Groq LLM API'</span>, <span class="c-string">'SpeechRecognition'</span>, <span class="c-string">'pyttsx3'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Python voice assistant with wake-word activation, offline speech recognition, and low-latency TTS. Leverages Groq LLM API for open-ended queries while using modular rule-based routing to bypass redundant LLM calls.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/Voice-Assistant-With-Keyword-spotting" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://voice-assistant-with-keyword-spotting-1.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">Python</span>
+              <span class="project-tool-tag">Groq API</span>
+              <span class="project-tool-tag">NLP</span>
+            </div>
           </div>
         </div>
 
-        <!-- NIT Goa Placement Coordinator -->
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Placement Coordinator (M.Tech CSE)</h3>
-                <div class="timeline-company">
-                  <i class="fa-solid fa-graduation-cap"></i>
-                  <span>National Institute of Technology Goa</span>
-                </div>
-              </div>
-              <span class="timeline-badge">Aug 2026 – Present</span>
+        </div>
+
+        <div id="sticky-card-2" class="sticky-card">
+        <!-- 2. MovieGo+ -->
+        <div class="abusaid-project-card" data-filter="fullstack">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
             </div>
-            <ul class="timeline-bullets">
-              <li>Elected to represent the M.Tech Computer Science &amp; Engineering cohort for campus recruitment and industry relations.</li>
-              <li>Coordinating recruitment drives, technical preparation workshops, and resume review sessions with Tier-1 tech recruiters.</li>
-              <li>Liaising between Department of CSE faculty, Dean of Student Affairs, and visiting enterprise hiring teams.</li>
-            </ul>
+            <div class="project-window-title">
+              <i class="fa-brands fa-react" style="color:var(--apple-blue);"></i>
+              <span>moviego_booking.js</span>
+            </div>
+            <span class="project-num-badge">02 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'MovieGo+ Ticket Booking Platform'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Full-Stack Web Architect'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'React.js'</span>, <span class="c-string">'Node.js'</span>, <span class="c-string">'MongoDB'</span>, <span class="c-string">'Clerk Auth'</span>, <span class="c-string">'Vercel'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Full-stack movie ticket reservation platform engineered for concurrent users with Clerk authentication, RBAC, and sessions. RESTful APIs for listings and seats; optimized MongoDB queries via projection indexing.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/MovieGo-" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://moviego-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">React.js</span>
+              <span class="project-tool-tag">Node.js</span>
+              <span class="project-tool-tag">MongoDB</span>
+            </div>
           </div>
         </div>
 
-        <!-- Amazon ML Summer School -->
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Amazon ML Summer School 2026 Participant</h3>
-                <div class="timeline-company">
-                  <i class="fa-brands fa-amazon"></i>
-                  <span>Amazon India Machine Learning Team</span>
-                </div>
-              </div>
-              <span class="timeline-badge">Jul – Aug 2026</span>
+        </div>
+
+        <div id="sticky-card-3" class="sticky-card">
+        <!-- 3. Reliability-Aware Human-AI Active Learning -->
+        <div class="abusaid-project-card" data-filter="ai">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
             </div>
-            <ul class="timeline-bullets">
-              <li>Competitively selected participant for the prestigious Amazon ML Summer School (MLSS) 2026.</li>
-              <li>Underwent deep technical immersion in Deep Neural Networks, Large Language Models (LLMs), Probabilistic Graphical Models, and production ML pipelines.</li>
-              <li>Mentored directly by Amazon Principal Scientists on state-of-the-art architectures and enterprise AI scaling.</li>
-            </ul>
+            <div class="project-window-title">
+              <i class="fa-solid fa-brain" style="color:var(--apple-purple);"></i>
+              <span>human_ai_active_learning.py</span>
+            </div>
+            <span class="project-num-badge">03 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Reliability-Aware Active Learning'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'M.Tech CSE Researcher @ NIT Goa'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'PyTorch'</span>, <span class="c-string">'ActiveHAI'</span>, <span class="c-string">'Monte Carlo Dropout'</span>, <span class="c-string">'AUROC'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Extending the ActiveHAI framework with a 4-stage reliability evaluation methodology to maximize human-AI collaborative accuracy. Leverages Monte Carlo Dropout for uncertainty estimation and benchmarked on DR-5.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/reliability-aware-human-ai-active-learning" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://drive.google.com/file/d/1fYlmltWHaMifirhFbVfzTciafs1utzuW/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-book-open"></i> Research Doc
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">PyTorch</span>
+              <span class="project-tool-tag">MC Dropout</span>
+              <span class="project-tool-tag">AI Reliability</span>
+            </div>
           </div>
         </div>
+
+        </div>
+
+        <div id="sticky-card-4" class="sticky-card">
+        <!-- 4. CNN Digit Recognition -->
+        <div class="abusaid-project-card" data-filter="ai">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-solid fa-pencil" style="color:var(--apple-green);"></i>
+              <span>cnn_digit_recognizer.js</span>
+            </div>
+            <span class="project-num-badge">04 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'CNN Handwritten Digit Recognizer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Computer Vision Developer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'TensorFlow'</span>, <span class="c-string">'Keras'</span>, <span class="c-string">'LeNet-5'</span>, <span class="c-string">'Python Backend'</span>, <span class="c-string">'Canvas'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'End-to-end AI web app featuring a LeNet-5 CNN on MNIST, evaluated via Scikit-learn confusion matrices. Drag-and-drop HTML5 drawing canvas connects to a Python HTTP backend for real-time inference and live probability charts.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/LeNet-5_CNN_Handwritten_recognition" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://lenet-5-cnn-handwritten-recognition.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">TensorFlow</span>
+              <span class="project-tool-tag">Keras</span>
+              <span class="project-tool-tag">Canvas</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <div id="sticky-card-5" class="sticky-card">
+        <!-- 5. Interactive Sudoku Solver -->
+        <div class="abusaid-project-card" data-filter="systems">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-solid fa-table-cells" style="color:var(--apple-orange);"></i>
+              <span>sudoku_backtracker.js</span>
+            </div>
+            <span class="project-num-badge">05 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Interactive Sudoku Solver'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Algorithms &amp; DSA Developer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'JavaScript (ES6)'</span>, <span class="c-string">'Backtracking'</span>, <span class="c-string">'Vanilla CSS'</span>, <span class="c-string">'DOM'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Ultra-fast algorithmic Sudoku solver solving any valid puzzle in under 1 second using recursive backtracking. Features real-time constraint validation and step-by-step visual animation with zero external libraries.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/Sudoku_Solver" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://thenovember22.github.io/Sudoku_Solver/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">Backtracking</span>
+              <span class="project-tool-tag">Vanilla JS</span>
+              <span class="project-tool-tag">DSA</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <div id="sticky-card-6" class="sticky-card">
+        <!-- 6. BayGrid Smart Parking -->
+        <div class="abusaid-project-card" data-filter="systems">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-solid fa-car" style="color:var(--apple-mint);"></i>
+              <span>baygrid_parking.cpp</span>
+            </div>
+            <span class="project-num-badge">06 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'BayGrid — Smart Parking System'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'C++ OOP &amp; Backend Engineer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'C++'</span>, <span class="c-string">'OOP Architecture'</span>, <span class="c-string">'Data Structures'</span>, <span class="c-string">'Vercel'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'C++ backend utilizing encapsulation, inheritance, polymorphism, and abstraction to model parking lots, vehicle categories, and ticketing. Implemented automated entry/exit allocation and live availability tracking on Vercel.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/Parking-Managment-System" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://parking-managment-system-frontend.vercel.app/#/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">C++ (OOP)</span>
+              <span class="project-tool-tag">Data Structures</span>
+              <span class="project-tool-tag">Vercel</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <div id="sticky-card-7" class="sticky-card">
+        <!-- 7. National EV Energy Optimization -->
+        <div class="abusaid-project-card" data-filter="systems">
+          <div class="project-window-top">
+            <div class="mac-traffic-lights">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+            </div>
+            <div class="project-window-title">
+              <i class="fa-solid fa-bolt" style="color:var(--apple-yellow);"></i>
+              <span>ev_dispatch_optimizer.py</span>
+            </div>
+            <span class="project-num-badge">07 / 07</span>
+          </div>
+
+          <div class="project-code-area">
+            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
+            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'National EV Energy Network Optimizer'</span>,</div>
+            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Optimization &amp; Modeling Architect'</span>,</div>
+            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'Python'</span>, <span class="c-string">'SciPy HiGHS MILP'</span>, <span class="c-string">'IEX DAM Trading'</span>, <span class="c-string">'Liquid Glass'</span>],</div>
+            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Real-time dispatch optimization for 1,200 MW installed capacity across 5 Indian metro clusters (Delhi NCR, Mumbai, Bengaluru, Hyderabad, Chennai) balancing solar/wind with DAM. Solves 24-hour MILP with 5% reserve lock.'</span></div>
+            <div class="project-code-line"><span class="line-no">06</span>};</div>
+          </div>
+
+          <div class="project-window-footer">
+            <div class="project-action-buttons">
+              <a href="https://github.com/theNovember22/national-ev-energy-optimizer" target="_blank" rel="noopener noreferrer" class="btn-project-cta code btn-github-emerald">
+                <i class="fa-brands fa-github"></i> View Repository
+              </a>
+              <a href="https://national-ev-energy-optimizer.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+            <div class="project-tools-wrap">
+              <span class="project-tool-tag">SciPy MILP</span>
+              <span class="project-tool-tag">Python</span>
+              <span class="project-tool-tag">1200 MW Grid</span>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Skills Section (Abu Said Style with Real SVG Web Images & Dual Marquee) -->
-  <section class="section" id="skills">
+<section class="section" id="skills">
     <div class="container">
       <div class="section-header-center reveal">
         <div class="section-pill">&lt; Skills &amp; Tech Stack &gt;</div>
@@ -514,455 +777,246 @@
     </div>
   </section>
 
-  <!-- Projects Section (Abu Said IDE Window Cards with Apple HIG) -->
-  <section class="section" id="projects">
-    <div class="container">
+  <!-- ========================================================================
+       5. Education Section — Yggdrasil World Tree of Knowledge
+       ======================================================================== -->
+  <section class="section yggdrasil-section" id="education">
+    <div class="container yggdrasil-container">
       <div class="section-header-center reveal">
-        <div class="section-pill">&lt; Portfolio Showcase &gt;</div>
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Real-world applications, AI/ML research engines, and algorithmic systems formatted as developer window cards.</p>
+        <div class="section-pill">&lt; Academic Odyssey &gt;</div>
+        <h2 class="section-title">Tree of Knowledge</h2>
+        <p class="section-subtitle">Yggdrasil-inspired progression from foundational roots to postgraduate computing research.</p>
       </div>
 
-      <!-- Project Cards Stack (Abu Said Sticky Stacking Cards) -->
-      <div class="projects-stack" id="projectsStack">
+      <div class="yggdrasil-stage" id="yggdrasilStage">
+        <!-- Background SVG Canvas containing trunk, roots, and organic branches -->
+        <svg class="yggdrasil-svg" viewBox="0 0 1200 960" fill="none" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="trunkGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85" />
+              <stop offset="45%" stop-color="#a1a1aa" stop-opacity="0.65" />
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
+            </linearGradient>
+            <linearGradient id="rootGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+              <stop offset="100%" stop-color="#71717a" stop-opacity="0.1" />
+            </linearGradient>
+          </defs>
 
-        <div id="sticky-card-1" class="sticky-card">
-        <!-- 1. Personal AI Voice Assistant -->
-        <div class="abusaid-project-card" data-filter="ai">
-          <div class="project-window-top">
-            <div class="mac-traffic-lights">
-              <span class="mac-dot red"></span>
-              <span class="mac-dot yellow"></span>
-              <span class="mac-dot green"></span>
-            </div>
-            <div class="project-window-title">
-              <i class="fa-brands fa-python" style="color:var(--apple-cyan);"></i>
-              <span>voice_assistant.py</span>
-            </div>
-            <span class="project-num-badge">01 / 07</span>
-          </div>
+          <!-- Base Roots Anchoring the Tree -->
+          <path class="tree-root" d="M 600 940 C 570 960 510 975 440 965" />
+          <path class="tree-root" d="M 600 940 C 630 960 690 975 760 965" />
+          <path class="tree-root" d="M 595 945 C 550 970 490 980 410 975" />
+          <path class="tree-root" d="M 605 945 C 650 970 710 980 790 975" />
 
-          <div class="project-code-area">
-            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
-            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Personal AI Voice Assistant'</span>,</div>
-            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Lead AI &amp; NLP Developer'</span>,</div>
-            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'Python'</span>, <span class="c-string">'Groq LLM API'</span>, <span class="c-string">'SpeechRecognition'</span>, <span class="c-string">'pyttsx3'</span>],</div>
-            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Python voice assistant with wake-word activation, offline speech recognition, and low-latency TTS. Leverages Groq LLM API for open-ended queries while using modular rule-based routing to bypass redundant LLM calls.'</span></div>
-            <div class="project-code-line"><span class="line-no">06</span>};</div>
-          </div>
+          <!-- Central Living Trunk: Growing from Roots to Crown -->
+          <path class="tree-trunk-glow" d="M 600 950 C 590 840 615 730 595 620 C 580 510 620 410 600 300 C 590 200 605 130 600 70" />
+          <path class="tree-trunk-core" id="treeTrunkCore" d="M 600 950 C 590 840 615 730 595 620 C 580 510 620 410 600 300 C 590 200 605 130 600 70" />
 
-          <div class="project-window-footer">
-            <div class="project-action-buttons">
-              <a href="https://github.com/theNovember22/Voice-Assistant-With-Keyword-spotting" target="_blank" rel="noopener noreferrer" class="btn-project-cta code">
-                <i class="fa-brands fa-github"></i> View Repository
-              </a>
-              <a href="https://voice-assistant-with-keyword-spotting-1.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-            </div>
-            <div class="project-tools-wrap">
-              <span class="project-tool-tag">Python</span>
-              <span class="project-tool-tag">Groq API</span>
-              <span class="project-tool-tag">NLP</span>
-            </div>
-          </div>
-        </div>
+          <!-- Branch 1 (Class X: Secondary School) - Lower Left -->
+          <path class="tree-branch" id="branch-1" data-node="node-1" d="M 598 740 C 510 745 400 765 310 755 C 260 750 220 740 160 720" />
+          <circle class="tree-nexus-dot" id="nexus-1" cx="160" cy="720" r="6" />
 
-        </div>
+          <!-- Branch 2 (Class XII: PUC) - Lower Right -->
+          <path class="tree-branch" id="branch-2" data-node="node-2" d="M 600 560 C 690 550 800 535 890 550 C 950 560 1000 550 1040 530" />
+          <circle class="tree-nexus-dot" id="nexus-2" cx="1040" cy="530" r="6" />
 
-        <div id="sticky-card-2" class="sticky-card">
-        <!-- 2. MovieGo+ -->
-        <div class="abusaid-project-card" data-filter="fullstack">
-          <div class="project-window-top">
-            <div class="mac-traffic-lights">
-              <span class="mac-dot red"></span>
-              <span class="mac-dot yellow"></span>
-              <span class="mac-dot green"></span>
-            </div>
-            <div class="project-window-title">
-              <i class="fa-brands fa-react" style="color:var(--apple-blue);"></i>
-              <span>moviego_booking.js</span>
-            </div>
-            <span class="project-num-badge">02 / 07</span>
-          </div>
+          <!-- Branch 3 (B.Tech: RGUKT Nuzvid) - Mid Left -->
+          <path class="tree-branch" id="branch-3" data-node="node-3" d="M 596 380 C 500 370 390 355 300 335 C 240 320 190 305 150 280" />
+          <circle class="tree-nexus-dot" id="nexus-3" cx="150" cy="280" r="6" />
 
-          <div class="project-code-area">
-            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
-            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'MovieGo+ Ticket Booking Platform'</span>,</div>
-            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Full-Stack Web Architect'</span>,</div>
-            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'React.js'</span>, <span class="c-string">'Node.js'</span>, <span class="c-string">'MongoDB'</span>, <span class="c-string">'Clerk Auth'</span>, <span class="c-string">'Vercel'</span>],</div>
-            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Full-stack movie ticket reservation platform engineered for concurrent users with Clerk authentication, RBAC, and sessions. RESTful APIs for listings and seats; optimized MongoDB queries via projection indexing.'</span></div>
-            <div class="project-code-line"><span class="line-no">06</span>};</div>
-          </div>
+          <!-- Branch 4 (M.Tech: NIT Goa) - Crown Right / Top -->
+          <path class="tree-branch" id="branch-4" data-node="node-4" d="M 600 190 C 700 180 810 155 900 130 C 960 115 1010 100 1050 80" />
+          <circle class="tree-nexus-dot" id="nexus-4" cx="1050" cy="80" r="6" />
+        </svg>
 
-          <div class="project-window-footer">
-            <div class="project-action-buttons">
-              <a href="https://github.com/theNovember22/MovieGo-" target="_blank" rel="noopener noreferrer" class="btn-project-cta code">
-                <i class="fa-brands fa-github"></i> View Repository
-              </a>
-              <a href="https://moviego-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-            </div>
-            <div class="project-tools-wrap">
-              <span class="project-tool-tag">React.js</span>
-              <span class="project-tool-tag">Node.js</span>
-              <span class="project-tool-tag">MongoDB</span>
-            </div>
-          </div>
-        </div>
-
-        </div>
-
-        <div id="sticky-card-3" class="sticky-card">
-        <!-- 3. Reliability-Aware Human-AI Active Learning -->
-        <div class="abusaid-project-card" data-filter="ai">
-          <div class="project-window-top">
-            <div class="mac-traffic-lights">
-              <span class="mac-dot red"></span>
-              <span class="mac-dot yellow"></span>
-              <span class="mac-dot green"></span>
-            </div>
-            <div class="project-window-title">
-              <i class="fa-solid fa-brain" style="color:var(--apple-purple);"></i>
-              <span>human_ai_active_learning.py</span>
-            </div>
-            <span class="project-num-badge">03 / 07</span>
-          </div>
-
-          <div class="project-code-area">
-            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
-            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Reliability-Aware Active Learning'</span>,</div>
-            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'M.Tech CSE Researcher @ NIT Goa'</span>,</div>
-            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'PyTorch'</span>, <span class="c-string">'ActiveHAI'</span>, <span class="c-string">'Monte Carlo Dropout'</span>, <span class="c-string">'AUROC'</span>],</div>
-            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Extending the ActiveHAI framework with a 4-stage reliability evaluation methodology to maximize human-AI collaborative accuracy. Leverages Monte Carlo Dropout for uncertainty estimation and benchmarked on DR-5.'</span></div>
-            <div class="project-code-line"><span class="line-no">06</span>};</div>
-          </div>
-
-          <div class="project-window-footer">
-            <div class="project-action-buttons">
-              <a href="https://github.com/theNovember22/reliability-aware-human-ai-active-learning" target="_blank" rel="noopener noreferrer" class="btn-project-cta code">
-                <i class="fa-brands fa-github"></i> View Repository
-              </a>
-              <a href="https://drive.google.com/file/d/1fYlmltWHaMifirhFbVfzTciafs1utzuW/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-book-open"></i> Research Doc
-              </a>
-            </div>
-            <div class="project-tools-wrap">
-              <span class="project-tool-tag">PyTorch</span>
-              <span class="project-tool-tag">MC Dropout</span>
-              <span class="project-tool-tag">AI Reliability</span>
-            </div>
-          </div>
-        </div>
-
-        </div>
-
-        <div id="sticky-card-4" class="sticky-card">
-        <!-- 4. CNN Digit Recognition -->
-        <div class="abusaid-project-card" data-filter="ai">
-          <div class="project-window-top">
-            <div class="mac-traffic-lights">
-              <span class="mac-dot red"></span>
-              <span class="mac-dot yellow"></span>
-              <span class="mac-dot green"></span>
-            </div>
-            <div class="project-window-title">
-              <i class="fa-solid fa-pencil" style="color:var(--apple-green);"></i>
-              <span>cnn_digit_recognizer.js</span>
-            </div>
-            <span class="project-num-badge">04 / 07</span>
-          </div>
-
-          <div class="project-code-area">
-            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
-            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'CNN Handwritten Digit Recognizer'</span>,</div>
-            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Computer Vision Developer'</span>,</div>
-            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'TensorFlow'</span>, <span class="c-string">'Keras'</span>, <span class="c-string">'LeNet-5'</span>, <span class="c-string">'Python Backend'</span>, <span class="c-string">'Canvas'</span>],</div>
-            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'End-to-end AI web app featuring a LeNet-5 CNN on MNIST, evaluated via Scikit-learn confusion matrices. Drag-and-drop HTML5 drawing canvas connects to a Python HTTP backend for real-time inference and live probability charts.'</span></div>
-            <div class="project-code-line"><span class="line-no">06</span>};</div>
-          </div>
-
-          <div class="project-window-footer">
-            <div class="project-action-buttons">
-              <a href="https://github.com/theNovember22/LeNet-5_CNN_Handwritten_recognition" target="_blank" rel="noopener noreferrer" class="btn-project-cta code">
-                <i class="fa-brands fa-github"></i> View Repository
-              </a>
-              <a href="https://lenet-5-cnn-handwritten-recognition.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-            </div>
-            <div class="project-tools-wrap">
-              <span class="project-tool-tag">TensorFlow</span>
-              <span class="project-tool-tag">Keras</span>
-              <span class="project-tool-tag">Canvas</span>
-            </div>
-          </div>
-        </div>
-
-        </div>
-
-        <div id="sticky-card-5" class="sticky-card">
-        <!-- 5. Interactive Sudoku Solver -->
-        <div class="abusaid-project-card" data-filter="systems">
-          <div class="project-window-top">
-            <div class="mac-traffic-lights">
-              <span class="mac-dot red"></span>
-              <span class="mac-dot yellow"></span>
-              <span class="mac-dot green"></span>
-            </div>
-            <div class="project-window-title">
-              <i class="fa-solid fa-table-cells" style="color:var(--apple-orange);"></i>
-              <span>sudoku_backtracker.js</span>
-            </div>
-            <span class="project-num-badge">05 / 07</span>
-          </div>
-
-          <div class="project-code-area">
-            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
-            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'Interactive Sudoku Solver'</span>,</div>
-            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Algorithms &amp; DSA Developer'</span>,</div>
-            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'JavaScript (ES6)'</span>, <span class="c-string">'Backtracking'</span>, <span class="c-string">'Vanilla CSS'</span>, <span class="c-string">'DOM'</span>],</div>
-            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Ultra-fast algorithmic Sudoku solver solving any valid puzzle in under 1 second using recursive backtracking. Features real-time constraint validation and step-by-step visual animation with zero external libraries.'</span></div>
-            <div class="project-code-line"><span class="line-no">06</span>};</div>
-          </div>
-
-          <div class="project-window-footer">
-            <div class="project-action-buttons">
-              <a href="https://github.com/theNovember22/Sudoku_Solver" target="_blank" rel="noopener noreferrer" class="btn-project-cta code">
-                <i class="fa-brands fa-github"></i> View Repository
-              </a>
-              <a href="https://thenovember22.github.io/Sudoku_Solver/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-            </div>
-            <div class="project-tools-wrap">
-              <span class="project-tool-tag">Backtracking</span>
-              <span class="project-tool-tag">Vanilla JS</span>
-              <span class="project-tool-tag">DSA</span>
-            </div>
-          </div>
-        </div>
-
-        </div>
-
-        <div id="sticky-card-6" class="sticky-card">
-        <!-- 6. BayGrid Smart Parking -->
-        <div class="abusaid-project-card" data-filter="systems">
-          <div class="project-window-top">
-            <div class="mac-traffic-lights">
-              <span class="mac-dot red"></span>
-              <span class="mac-dot yellow"></span>
-              <span class="mac-dot green"></span>
-            </div>
-            <div class="project-window-title">
-              <i class="fa-solid fa-car" style="color:var(--apple-mint);"></i>
-              <span>baygrid_parking.cpp</span>
-            </div>
-            <span class="project-num-badge">06 / 07</span>
-          </div>
-
-          <div class="project-code-area">
-            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
-            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'BayGrid — Smart Parking System'</span>,</div>
-            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'C++ OOP &amp; Backend Engineer'</span>,</div>
-            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'C++'</span>, <span class="c-string">'OOP Architecture'</span>, <span class="c-string">'Data Structures'</span>, <span class="c-string">'Vercel'</span>],</div>
-            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'C++ backend utilizing encapsulation, inheritance, polymorphism, and abstraction to model parking lots, vehicle categories, and ticketing. Implemented automated entry/exit allocation and live availability tracking on Vercel.'</span></div>
-            <div class="project-code-line"><span class="line-no">06</span>};</div>
-          </div>
-
-          <div class="project-window-footer">
-            <div class="project-action-buttons">
-              <a href="https://github.com/theNovember22/Parking-Managment-System" target="_blank" rel="noopener noreferrer" class="btn-project-cta code">
-                <i class="fa-brands fa-github"></i> View Repository
-              </a>
-              <a href="https://parking-managment-system-frontend.vercel.app/#/" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-            </div>
-            <div class="project-tools-wrap">
-              <span class="project-tool-tag">C++ (OOP)</span>
-              <span class="project-tool-tag">Data Structures</span>
-              <span class="project-tool-tag">Vercel</span>
-            </div>
-          </div>
-        </div>
-
-        </div>
-
-        <div id="sticky-card-7" class="sticky-card">
-        <!-- 7. National EV Energy Optimization -->
-        <div class="abusaid-project-card" data-filter="systems">
-          <div class="project-window-top">
-            <div class="mac-traffic-lights">
-              <span class="mac-dot red"></span>
-              <span class="mac-dot yellow"></span>
-              <span class="mac-dot green"></span>
-            </div>
-            <div class="project-window-title">
-              <i class="fa-solid fa-bolt" style="color:var(--apple-yellow);"></i>
-              <span>ev_dispatch_optimizer.py</span>
-            </div>
-            <span class="project-num-badge">07 / 07</span>
-          </div>
-
-          <div class="project-code-area">
-            <div class="project-code-line"><span class="line-no">01</span><span class="c-keyword">const</span> <span class="c-var">project</span> = {</div>
-            <div class="project-code-line"><span class="line-no">02</span>  <span class="c-prop">name</span>: <span class="c-string">'National EV Energy Network Optimizer'</span>,</div>
-            <div class="project-code-line"><span class="line-no">03</span>  <span class="c-prop">role</span>: <span class="c-string">'Optimization &amp; Modeling Architect'</span>,</div>
-            <div class="project-code-line"><span class="line-no">04</span>  <span class="c-prop">tools</span>: [<span class="c-string">'Python'</span>, <span class="c-string">'SciPy HiGHS MILP'</span>, <span class="c-string">'IEX DAM Trading'</span>, <span class="c-string">'Liquid Glass'</span>],</div>
-            <div class="project-code-line"><span class="line-no">05</span>  <span class="c-prop">description</span>: <span class="project-desc-text">'Real-time dispatch optimization for 1,200 MW installed capacity across 5 Indian metro clusters (Delhi NCR, Mumbai, Bengaluru, Hyderabad, Chennai) balancing solar/wind with DAM. Solves 24-hour MILP with 5% reserve lock.'</span></div>
-            <div class="project-code-line"><span class="line-no">06</span>};</div>
-          </div>
-
-          <div class="project-window-footer">
-            <div class="project-action-buttons">
-              <a href="https://github.com/theNovember22/national-ev-energy-optimizer" target="_blank" rel="noopener noreferrer" class="btn-project-cta code">
-                <i class="fa-brands fa-github"></i> View Repository
-              </a>
-              <a href="https://national-ev-energy-optimizer.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project-cta demo">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-            </div>
-            <div class="project-tools-wrap">
-              <span class="project-tool-tag">SciPy MILP</span>
-              <span class="project-tool-tag">Python</span>
-              <span class="project-tool-tag">1200 MW Grid</span>
-            </div>
-          </div>
-        </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section class="section" id="education">
-    <div class="container">
-      <div class="section-header-center reveal">
-        <div class="section-pill">&lt; Academic Journey &gt;</div>
-        <h2 class="section-title">Education</h2>
-        <p class="section-subtitle">Consistent academic excellence across premier national institutes and technical universities.</p>
-      </div>
-
-      <div class="elip-education-stack reveal">
-        <!-- NIT Goa M.Tech -->
-        <div class="elip-edu-card">
-          <div class="elip-edu-header">
-            <div class="elip-edu-inst-wrap">
-              <div class="elip-inst-avatar">
-                <i class="fa-solid fa-graduation-cap"></i>
+        <!-- Floating Liquid-Glass Education Nodes Overlay -->
+        <div class="tree-nodes-container">
+          <!-- Node 4: Crown - M.Tech NIT Goa (Top Right) -->
+          <div class="tree-node-wrapper right" style="grid-column: 2; grid-row: 1;" data-node="node-4">
+            <div class="tree-glass-node">
+              <div class="tree-node-header">
+                <div class="tree-inst-wrap">
+                  <div class="tree-node-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
+                  <div>
+                    <h3 class="tree-degree-title">M.Tech — Computer Science &amp; Engineering</h3>
+                    <div class="tree-inst-name">National Institute of Technology Goa (NIT Goa) &bull; 2025 – 2027</div>
+                  </div>
+                </div>
+                <div class="tree-badge"><i class="fa-solid fa-award"></i> CGPA 8.26 &bull; Distinction</div>
               </div>
-              <div>
-                <h3 class="elip-degree-title">M.Tech — Computer Science &amp; Engineering</h3>
-                <div class="elip-inst-name">National Institute of Technology Goa (NIT Goa) &bull; 2025 – 2027</div>
+              <div class="tree-hairline"></div>
+              <p class="tree-node-body">
+                Pursuing advanced research in Reliability-Aware Active Learning and Human-AI collaboration. Rigorous focus on algorithmic optimization, distributed systems, and low-latency computing. Serving as the Placement Coordinator for the CSE department.
+              </p>
+              <div class="tree-chips-wrap">
+                <span class="tree-chip"><i class="fa-solid fa-code"></i> Advanced Algorithms</span>
+                <span class="tree-chip"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+                <span class="tree-chip"><i class="fa-solid fa-database"></i> DBMS &amp; Storage</span>
+                <span class="tree-chip"><i class="fa-solid fa-microchip"></i> Operating Systems</span>
+                <span class="tree-chip"><i class="fa-solid fa-users"></i> Placement Coordinator</span>
               </div>
             </div>
-            <div class="elip-fit-badge">
-              <i class="fa-solid fa-award"></i> CGPA: 8.26 &bull; Distinction
-            </div>
           </div>
-          <div class="elip-hairline"></div>
-          <p class="elip-edu-body">
-            Pursuing advanced research in Reliability-Aware Active Learning and Human-AI collaboration. Rigorous focus on algorithmic optimization, distributed systems, and low-latency computing. Serving as the Placement Coordinator for the CSE department.
-          </p>
-          <div class="elip-chips-wrap">
-            <span class="elip-chip"><i class="fa-solid fa-code"></i> Advanced Algorithms</span>
-            <span class="elip-chip"><i class="fa-solid fa-brain"></i> Machine Learning</span>
-            <span class="elip-chip"><i class="fa-solid fa-database"></i> DBMS &amp; Storage</span>
-            <span class="elip-chip"><i class="fa-solid fa-microchip"></i> Operating Systems</span>
-            <span class="elip-chip"><i class="fa-solid fa-users"></i> Placement Coordinator</span>
-          </div>
-        </div>
 
-        <!-- RGUKT Nuzvid B.Tech -->
-        <div class="elip-edu-card">
-          <div class="elip-edu-header">
-            <div class="elip-edu-inst-wrap">
-              <div class="elip-inst-avatar">
-                <i class="fa-solid fa-university"></i>
+          <!-- Node 3: Mid Canopy - B.Tech RGUKT Nuzvid (Upper Left) -->
+          <div class="tree-node-wrapper left" style="grid-column: 1; grid-row: 2;" data-node="node-3">
+            <div class="tree-glass-node">
+              <div class="tree-node-header">
+                <div class="tree-inst-wrap">
+                  <div class="tree-node-avatar"><i class="fa-solid fa-university"></i></div>
+                  <div>
+                    <h3 class="tree-degree-title">B.Tech — Chemical Engineering</h3>
+                    <div class="tree-inst-name">Rajiv Gandhi University of Knowledge Technologies (RGUKT Nuzvid) &bull; 2018 – 2022</div>
+                  </div>
+                </div>
+                <div class="tree-badge"><i class="fa-solid fa-award"></i> CGPA 8.99 &bull; Distinction</div>
               </div>
-              <div>
-                <h3 class="elip-degree-title">B.Tech — Chemical Engineering</h3>
-                <div class="elip-inst-name">Rajiv Gandhi University of Knowledge Technologies (RGUKT Nuzvid) &bull; 2018 – 2022</div>
+              <div class="tree-hairline"></div>
+              <p class="tree-node-body">
+                Graduated with Distinction, developing strong mathematical foundations, numerical simulation methods, and computational modeling. Transitioned into software engineering and secured campus placement as Systems Engineer at Infosys Limited.
+              </p>
+              <div class="tree-chips-wrap">
+                <span class="tree-chip"><i class="fa-solid fa-square-root-variable"></i> Numerical Methods</span>
+                <span class="tree-chip"><i class="fa-solid fa-chart-line"></i> Computational Math</span>
+                <span class="tree-chip"><i class="fa-brands fa-python"></i> Python &amp; SQL</span>
+                <span class="tree-chip"><i class="fa-solid fa-building"></i> Infosys Placement</span>
               </div>
             </div>
-            <div class="elip-fit-badge">
-              <i class="fa-solid fa-award"></i> CGPA: 8.99 &bull; Distinction
-            </div>
           </div>
-          <div class="elip-hairline"></div>
-          <p class="elip-edu-body">
-            Graduated with Distinction, developing strong mathematical foundations, numerical simulation methods, and computational modeling. Transitioned into software engineering and secured campus placement as Systems Engineer at Infosys Limited.
-          </p>
-          <div class="elip-chips-wrap">
-            <span class="elip-chip"><i class="fa-solid fa-square-root-variable"></i> Numerical Methods</span>
-            <span class="elip-chip"><i class="fa-solid fa-chart-line"></i> Computational Math</span>
-            <span class="elip-chip"><i class="fa-brands fa-python"></i> Python &amp; SQL</span>
-            <span class="elip-chip"><i class="fa-solid fa-building"></i> Infosys Placement</span>
-          </div>
-        </div>
 
-        <!-- RGUKT Class XII -->
-        <div class="elip-edu-card">
-          <div class="elip-edu-header">
-            <div class="elip-edu-inst-wrap">
-              <div class="elip-inst-avatar">
-                <i class="fa-solid fa-school"></i>
+          <!-- Node 2: Lower Trunk - PUC Class XII (Lower Right) -->
+          <div class="tree-node-wrapper right" style="grid-column: 2; grid-row: 3;" data-node="node-2">
+            <div class="tree-glass-node">
+              <div class="tree-node-header">
+                <div class="tree-inst-wrap">
+                  <div class="tree-node-avatar"><i class="fa-solid fa-school"></i></div>
+                  <div>
+                    <h3 class="tree-degree-title">Pre-University Course (Class XII)</h3>
+                    <div class="tree-inst-name">RGUKT Nuzvid, Andhra Pradesh &bull; 2016 – 2018</div>
+                  </div>
+                </div>
+                <div class="tree-badge"><i class="fa-solid fa-star"></i> CGPA 9.31 &bull; Top Tier</div>
               </div>
-              <div>
-                <h3 class="elip-degree-title">Pre-University Course (Class XII)</h3>
-                <div class="elip-inst-name">RGUKT Nuzvid, Andhra Pradesh &bull; 2016 – 2018</div>
+              <div class="tree-hairline"></div>
+              <p class="tree-node-body">
+                Selected among the top 1% meritorious students across the state for a fully-funded 6-year integrated education program at RGUKT. Completed intensive pre-engineering coursework in Mathematics, Physics, Chemistry, and Information Technology.
+              </p>
+              <div class="tree-chips-wrap">
+                <span class="tree-chip"><i class="fa-solid fa-calculator"></i> Mathematics &amp; Statistics</span>
+                <span class="tree-chip"><i class="fa-solid fa-atom"></i> Physics &amp; Chemistry</span>
+                <span class="tree-chip"><i class="fa-solid fa-laptop-code"></i> Information Technology</span>
               </div>
             </div>
-            <div class="elip-fit-badge">
-              <i class="fa-solid fa-star"></i> CGPA: 9.31 &bull; Top Tier
-            </div>
           </div>
-          <div class="elip-hairline"></div>
-          <p class="elip-edu-body">
-            Selected among the top 1% meritorious students across the state for a fully-funded 6-year integrated education program at RGUKT. Completed intensive pre-engineering coursework in Mathematics, Physics, Chemistry, and Information Technology.
-          </p>
-          <div class="elip-chips-wrap">
-            <span class="elip-chip"><i class="fa-solid fa-calculator"></i> Mathematics &amp; Statistics</span>
-            <span class="elip-chip"><i class="fa-solid fa-atom"></i> Physics &amp; Chemistry</span>
-            <span class="elip-chip"><i class="fa-solid fa-laptop-code"></i> Information Technology</span>
-          </div>
-        </div>
 
-        <!-- Class X -->
-        <div class="elip-edu-card">
-          <div class="elip-edu-header">
-            <div class="elip-edu-inst-wrap">
-              <div class="elip-inst-avatar">
-                <i class="fa-solid fa-medal"></i>
+          <!-- Node 1: Roots - SSC Class X (Lower Left) -->
+          <div class="tree-node-wrapper left" style="grid-column: 1; grid-row: 4;" data-node="node-1">
+            <div class="tree-glass-node">
+              <div class="tree-node-header">
+                <div class="tree-inst-wrap">
+                  <div class="tree-node-avatar"><i class="fa-solid fa-medal"></i></div>
+                  <div>
+                    <h3 class="tree-degree-title">Secondary School Certificate (Class X)</h3>
+                    <div class="tree-inst-name">Municipal High School &bull; 2015 – 2016</div>
+                  </div>
+                </div>
+                <div class="tree-badge"><i class="fa-solid fa-trophy"></i> GPA 9.7 &bull; Mandal Topper</div>
               </div>
-              <div>
-                <h3 class="elip-degree-title">Secondary School Certificate (Class X)</h3>
-                <div class="elip-inst-name">Municipal High School &bull; 2015 – 2016</div>
+              <div class="tree-hairline"></div>
+              <p class="tree-node-body">
+                Awarded Mandal Academic Excellence Topper honors with a perfect 10.0 grade point average in Mathematics and Physical Sciences in the State Board examinations.
+              </p>
+              <div class="tree-chips-wrap">
+                <span class="tree-chip"><i class="fa-solid fa-award"></i> Mandal Topper Award</span>
+                <span class="tree-chip"><i class="fa-solid fa-check-double"></i> 10.0 GPA in Math &amp; Science</span>
               </div>
             </div>
-            <div class="elip-fit-badge">
-              <i class="fa-solid fa-trophy"></i> GPA: 9.7 &bull; Mandal Topper
-            </div>
-          </div>
-          <div class="elip-hairline"></div>
-          <p class="elip-edu-body">
-            Awarded Mandal Academic Excellence Topper honors with a perfect 10.0 grade point average in Mathematics and Physical Sciences in the State Board examinations.
-          </p>
-          <div class="elip-chips-wrap">
-            <span class="elip-chip"><i class="fa-solid fa-award"></i> Mandal Topper Award</span>
-            <span class="elip-chip"><i class="fa-solid fa-check-double"></i> 10.0 GPA in Math &amp; Science</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Achievements & Certifications Section -->
-  <section class="section" id="achievements">
+<section class="section" id="experience">
+    <div class="container">
+      <div class="section-header-center reveal">
+        <div class="section-pill">&lt; Experience &gt;</div>
+        <h2 class="section-title">Work &amp; Leadership</h2>
+        <p class="section-subtitle">A track record of engineering delivery, enterprise reliability, and academic leadership.</p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Infosys Limited -->
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Systems Engineer — SAP BW/4HANA</h3>
+                <div class="timeline-company">
+                  <i class="fa-solid fa-building"></i>
+                  <span>Infosys Limited • Hyderabad, India</span>
+                </div>
+              </div>
+              <span class="timeline-badge">July 2022 – Oct 2023</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Monitored, troubleshot, and debugged mission-critical enterprise ETL data pipelines to maintain 99.9% system availability.</li>
+              <li>Engineered interactive reporting dashboards in SAP Analytics Cloud (SAC) for cross-functional business stakeholders.</li>
+              <li>Collaborated in fast-paced Agile sprint delivery, rigorous code reviews, automated batch-job monitoring, and SLA incident management.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- NIT Goa Placement Coordinator -->
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Placement Coordinator (M.Tech CSE)</h3>
+                <div class="timeline-company">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <span>National Institute of Technology Goa</span>
+                </div>
+              </div>
+              <span class="timeline-badge">Aug 2026 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Elected to represent the M.Tech Computer Science &amp; Engineering cohort for campus recruitment and industry relations.</li>
+              <li>Coordinating recruitment drives, technical preparation workshops, and resume review sessions with Tier-1 tech recruiters.</li>
+              <li>Liaising between Department of CSE faculty, Dean of Student Affairs, and visiting enterprise hiring teams.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Amazon ML Summer School -->
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Amazon ML Summer School 2026 Participant</h3>
+                <div class="timeline-company">
+                  <i class="fa-brands fa-amazon"></i>
+                  <span>Amazon India Machine Learning Team</span>
+                </div>
+              </div>
+              <span class="timeline-badge">Jul – Aug 2026</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Competitively selected participant for the prestigious Amazon ML Summer School (MLSS) 2026.</li>
+              <li>Underwent deep technical immersion in Deep Neural Networks, Large Language Models (LLMs), Probabilistic Graphical Models, and production ML pipelines.</li>
+              <li>Mentored directly by Amazon Principal Scientists on state-of-the-art architectures and enterprise AI scaling.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section" id="achievements">
     <div class="container">
       <div class="section-header-center reveal">
         <div class="section-pill">&lt; Honors &amp; Credentials &gt;</div>
@@ -1117,8 +1171,7 @@
     </div>
   </section>
 
-  <!-- Contact Section (Abu Said Layout with Apple Glass Cards) -->
-  <section class="section" id="contact">
+<section class="section" id="contact">
     <div class="container">
       <div class="section-header-center reveal">
         <div class="section-pill">&lt; Let's Connect &gt;</div>
@@ -1245,6 +1298,6 @@
   </div>
 
   <!-- Vanilla JavaScript App Logic -->
-  <script src="app.js?v=2.2"></script>
+  <script src="app.js?v=liquidglass3"></script>
 </body>
 </html>

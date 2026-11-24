@@ -1,11 +1,18 @@
 /**
  * Developer Portfolio: Battula Bhargav
- * Apple HIG Interactive Engine & Abu Said Architecture
+ * Architecture: Liquid-Glass Black & White Aesthetic
+ * Features:
+ *  - Cinematic Scroll Reveal for Personal Portrait
+ *  - 3D Perspective Tilt, Specular Glare & Magnetic "HIRE ME" CTA
+ *  - Yggdrasil World Tree of Knowledge Interactive SVG Engine & Node Focus
+ *  - Abu Said Sticky Stacking Card System & IDE Windows
+ *  - Infinite Monochrome Skills Marquee
+ *  - Dynamic Typing Engine, Toast System & Scrollspy
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
-  // 1. Apple Toast Notification System
+  // 1. Toast Notification System
   // ==========================================
   const toast = document.getElementById("appleToast");
   const toastMessage = document.getElementById("toastMessage");
@@ -28,13 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 2. Apple Theme Toggle (Dark & Light Mode)
+  // 2. Liquid Glass Theme Toggle (Obsidian Dark & Frost Light)
   // ==========================================
   const themeToggle = document.getElementById("themeToggle");
   const themeIcon = document.getElementById("themeIcon");
   const body = document.body;
 
-  const currentTheme = localStorage.getItem("bhargav-apple-theme") || "dark";
+  const currentTheme = localStorage.getItem("bhargav-theme") || "dark";
   if (currentTheme === "light") {
     body.classList.add("light-theme");
     if (themeIcon) {
@@ -47,17 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle.addEventListener("click", () => {
       const isLight = body.classList.toggle("light-theme");
       const nextTheme = isLight ? "light" : "dark";
-      localStorage.setItem("bhargav-apple-theme", nextTheme);
+      localStorage.setItem("bhargav-theme", nextTheme);
 
       if (themeIcon) {
         if (isLight) {
           themeIcon.classList.remove("fa-sun");
           themeIcon.classList.add("fa-moon");
-          showToast("Switched to Apple Light Frost mode", "fa-sun");
+          showToast("Switched to Frosted Monochrome Light", "fa-sun");
         } else {
           themeIcon.classList.remove("fa-moon");
           themeIcon.classList.add("fa-sun");
-          showToast("Switched to Apple Obsidian Dark mode", "fa-moon");
+          showToast("Switched to Obsidian Liquid Glass", "fa-moon");
         }
       }
     });
@@ -73,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Ex-Systems Engineer @ Infosys",
     "M.Tech CSE @ NIT Goa",
     "GATE CSE AIR 10139",
-    "Full-Stack Developer",
+    "Full-Stack Architect",
     "Competitive Programmer (300+ LeetCode)"
   ];
 
@@ -97,12 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!isDeleting && charIdx === currentRole.length) {
-      typingDelay = 2000; // Pause at full word
+      typingDelay = 2200; // Pause at full word
       isDeleting = true;
     } else if (isDeleting && charIdx === 0) {
       isDeleting = false;
       roleIdx = (roleIdx + 1) % roles.length;
-      typingDelay = 400; // Pause before new word
+      typingDelay = 450; // Pause before new word
     }
 
     setTimeout(typeEffect, typingDelay);
@@ -141,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
   coreSkills: ['C/C++', 'Python', 'React.js', 'PyTorch', 'MongoDB', 'SQL', 'DSA'],
   leetCodeProblems: '300+ Solved',
   gateCSE: 'AIR 10139 (Top ~6%)',
-  amazonMLSS: 'Selected Participant 2026',
   hardWorker: true,
   problemSolver: true,
   hireable: function() {
@@ -158,7 +164,167 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 5. Skills Category Filter (Abu Said Cards)
+  // 5. Cinematic Photo Scroll Reveal Engine
+  // ==========================================
+  const photoContainer = document.getElementById("photoRevealContainer");
+  const photoVeil = document.getElementById("photoVeil");
+  const photoImg = document.getElementById("photoImg");
+
+  function updatePhotoScrollReveal() {
+    if (!photoContainer || !photoVeil) return;
+    const rect = photoContainer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Start dissolving when element enters viewport from bottom
+    // Fully clear when element is well in view
+    const triggerBottom = windowHeight * 0.95;
+    const triggerTop = windowHeight * 0.35;
+
+    let progress = (triggerBottom - rect.top) / (triggerBottom - triggerTop);
+    progress = Math.min(Math.max(progress, 0), 1);
+
+    const veilOpacity = 1 - progress;
+    const blurPx = (1 - progress) * 36;
+    const scale = 0.93 + progress * 0.07;
+    const translateY = (1 - progress) * 20;
+
+    photoVeil.style.opacity = veilOpacity.toFixed(3);
+    photoVeil.style.backdropFilter = `blur(${blurPx.toFixed(1)}px)`;
+    photoVeil.style.webkitBackdropFilter = `blur(${blurPx.toFixed(1)}px)`;
+
+    if (photoImg) {
+      photoImg.style.transform = `scale(${scale.toFixed(3)}) translateY(${translateY.toFixed(1)}px)`;
+    }
+
+    if (progress >= 0.95) {
+      photoVeil.classList.add("revealed");
+    } else {
+      photoVeil.classList.remove("revealed");
+    }
+  }
+
+  window.addEventListener("scroll", updatePhotoScrollReveal, { passive: true });
+  updatePhotoScrollReveal();
+
+  // ==========================================
+  // 6. Photo 3D Perspective Tilt & Glare & Magnetic "HIRE ME"
+  // ==========================================
+  const photoFrame = document.getElementById("photoLiquidFrame");
+  const photoGlare = document.getElementById("photoGlare");
+  const hireMePill = document.getElementById("hireMePill");
+
+  if (photoFrame) {
+    photoFrame.addEventListener("mousemove", (e) => {
+      const rect = photoFrame.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const deltaX = (x - centerX) / centerX;
+      const deltaY = (y - centerY) / centerY;
+
+      // 3D Perspective Tilt
+      const tiltX = -deltaY * 12;
+      const tiltY = deltaX * 12;
+      photoFrame.style.transform = `perspective(1000px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) scale3d(1.025, 1.025, 1.025)`;
+
+      // Dynamic Glare Reflection
+      if (photoGlare) {
+        photoGlare.style.opacity = "0.75";
+        photoGlare.style.transform = `translate(${(-deltaX * 35).toFixed(1)}px, ${(-deltaY * 35).toFixed(1)}px)`;
+      }
+
+      // Magnetic "HIRE ME" CTA tracking
+      if (hireMePill) {
+        const moveX = deltaX * 24;
+        const moveY = deltaY * 24;
+        hireMePill.style.transform = `translate(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px) scale(1)`;
+      }
+    });
+
+    photoFrame.addEventListener("mouseleave", () => {
+      photoFrame.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+      if (photoGlare) {
+        photoGlare.style.opacity = "0.55";
+        photoGlare.style.transform = "translate(0, 0)";
+      }
+      if (hireMePill) {
+        hireMePill.style.transform = "translate(0, 0) scale(1)";
+      }
+    });
+  }
+
+  // ==========================================
+  // 7. Yggdrasil Tree of Knowledge Interactive Engine
+  // ==========================================
+  const yggdrasilStage = document.getElementById("yggdrasilStage");
+  const treeNodeWrappers = document.querySelectorAll(".tree-node-wrapper");
+  const treeSection = document.getElementById("education");
+  const treePaths = document.querySelectorAll(".tree-trunk-core, .tree-branch, .tree-root");
+
+  // A. SVG Branch Drawing on Scroll Entry
+  let treeDrawn = false;
+  function setupTreeSVGAnimation() {
+    treePaths.forEach((path) => {
+      try {
+        const length = path.getTotalLength ? path.getTotalLength() : 800;
+        path.style.strokeDasharray = `${length}`;
+        path.style.strokeDashoffset = `${length}`;
+        path.style.transition = "stroke-dashoffset 1.8s cubic-bezier(0.16, 1, 0.3, 1)";
+      } catch (err) {
+        // fallback
+      }
+    });
+  }
+  setupTreeSVGAnimation();
+
+  const treeScrollObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !treeDrawn) {
+          treeDrawn = true;
+          treePaths.forEach((path, idx) => {
+            setTimeout(() => {
+              path.style.strokeDashoffset = "0";
+            }, idx * 110);
+          });
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  if (treeSection) {
+    treeScrollObserver.observe(treeSection);
+  }
+
+  // B. Interactive Branch & Node Focus on Hover
+  treeNodeWrappers.forEach((wrapper) => {
+    const nodeKey = wrapper.getAttribute("data-node");
+    const branchId = `branch-${nodeKey ? nodeKey.replace("node-", "") : ""}`;
+    const nexusId = `nexus-${nodeKey ? nodeKey.replace("node-", "") : ""}`;
+
+    const branch = document.getElementById(branchId);
+    const nexus = document.getElementById(nexusId);
+
+    wrapper.addEventListener("mouseenter", () => {
+      if (yggdrasilStage) yggdrasilStage.classList.add("has-hover");
+      wrapper.classList.add("hovered");
+      if (branch) branch.classList.add("active-branch");
+      if (nexus) nexus.classList.add("active-nexus");
+    });
+
+    wrapper.addEventListener("mouseleave", () => {
+      if (yggdrasilStage) yggdrasilStage.classList.remove("has-hover");
+      wrapper.classList.remove("hovered");
+      if (branch) branch.classList.remove("active-branch");
+      if (nexus) nexus.classList.remove("active-nexus");
+    });
+  });
+
+  // ==========================================
+  // 8. Skills Category Filter
   // ==========================================
   const skillFilterBtns = document.querySelectorAll(".skill-filter-btn");
   const skillCards = document.querySelectorAll("#skillsGrid .skill-box-card, .skill-card");
@@ -190,39 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ==========================================
-  // 6. Projects Filter Tabs (Abu Said IDE Windows)
-  // ==========================================
-  const projectFilterBtns = document.querySelectorAll(".project-filter-btn");
-  const projectCards = document.querySelectorAll("#projectsGrid .abusaid-project-card, .project-card");
-
-  projectFilterBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      projectFilterBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const filter = btn.getAttribute("data-filter");
-
-      projectCards.forEach((card) => {
-        const cardFilter = card.getAttribute("data-filter");
-        if (filter === "all" || cardFilter === filter) {
-          card.style.display = "flex";
-          setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0) scale(1)";
-          }, 20);
-        } else {
-          card.style.opacity = "0";
-          card.style.transform = "translateY(10px) scale(0.95)";
-          setTimeout(() => {
-            card.style.display = "none";
-          }, 250);
-        }
-      });
-    });
-  });
-
-  // ==========================================
-  // 7. Scrollspy & Sticky Header Highlighting
+  // 9. Scrollspy & Sticky Header Highlighting
   // ==========================================
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
@@ -238,7 +372,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (scrollPos >= top && scrollPos < top + height) {
         navLinks.forEach((link) => {
           link.classList.remove("active");
-          if (link.getAttribute("href") === `#${id}`) {
+          const href = link.getAttribute("href");
+          if (href === `#${id}` || (id === "identity" && href === "#about")) {
             link.classList.add("active");
           }
         });
@@ -246,21 +381,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  window.addEventListener("scroll", scrollSpy);
-  scrollSpy(); // initial run
+  window.addEventListener("scroll", scrollSpy, { passive: true });
+  scrollSpy();
 
   // ==========================================
-  // 8. Back to Top Button
+  // 10. Back to Top Button
   // ==========================================
   const backToTopBtn = document.getElementById("backToTop");
   if (backToTopBtn) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 450) {
         backToTopBtn.classList.add("show");
       } else {
         backToTopBtn.classList.remove("show");
       }
-    });
+    }, { passive: true });
 
     backToTopBtn.addEventListener("click", () => {
       window.scrollTo({
@@ -271,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 9. Mobile Menu Toggle
+  // 11. Mobile Menu Toggle
   // ==========================================
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const navMenu = document.getElementById("navMenu");
@@ -287,7 +422,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Close on link click
     navMenu.querySelectorAll(".nav-link").forEach((link) => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("open");
@@ -298,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 10. Contact Form Handler (Direct Mailto)
+  // 12. Contact Form Handler (Direct Mailto)
   // ==========================================
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
@@ -316,14 +450,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const recipient = "battulabhargav222@gmail.com";
-      const fullSubject = encodeURIComponent(`[Portfolio] ${subject} - from ${name}`);
+      const fullSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} - from ${name}`);
       const bodyContent = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from Portfolio Contact Form`
+        `Name: ${name}
+Email: ${email}
+
+Message:
+${message}
+
+---
+Sent from Battula Bhargav Portfolio`
       );
 
       const mailtoUrl = `mailto:${recipient}?subject=${fullSubject}&body=${bodyContent}`;
 
-      showToast("Opening your email client to send note...", "fa-paper-plane");
+      showToast("Opening email client...", "fa-paper-plane");
 
       setTimeout(() => {
         window.location.href = mailtoUrl;
@@ -334,7 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 11. Intersection Observer for Reveal Elements
+  // 13. Reveal Elements Observer
   // ==========================================
   const revealElements = document.querySelectorAll(".reveal");
   const revealObserver = new IntersectionObserver(
