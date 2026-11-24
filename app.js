@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Ex-Systems Engineer @ Infosys",
     "M.Tech CSE @ NIT Goa",
     "GATE CSE AIR 10139",
-    "Full-Stack Architect",
+    "Full-Stack Developer",
     "Competitive Programmer (300+ LeetCode)"
   ];
 
@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
   coreSkills: ['C/C++', 'Python', 'React.js', 'PyTorch', 'MongoDB', 'SQL', 'DSA'],
   leetCodeProblems: '300+ Solved',
   gateCSE: 'AIR 10139 (Top ~6%)',
+  amazonMLSS: 'Selected Participant 2024',
   hardWorker: true,
   problemSolver: true,
   hireable: function() {
