@@ -2694,7 +2694,7 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
 }
 
 /* ==========================================================================
-   Achievements & Accreditations: Playing Cards Fan on Luxury Surface
+   Achievements & Accreditations: Smooth Playing Cards Fan (Jitter-Free)
    ========================================================================== */
 .achievements-table-section {
   position: relative;
@@ -2706,10 +2706,10 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
   position: relative;
   max-width: 1240px;
   margin: 0 auto;
-  perspective: 1800px;
+  perspective: 1600px;
 }
 
-/* Luxury Table Surface (Felt & Frosted Dark Matte Table) */
+/* Luxury Table Surface */
 .cards-table-surface {
   position: relative;
   border-radius: 40px;
@@ -2750,88 +2750,99 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
   perspective: 1400px;
 }
 
+/* Individual Card Coordinates (Preserved on hover to prevent shaking/jumping) */
+.fan-card-1 {
+  --card-x: -320px;
+  --card-y: 12px;
+  --card-rot: -10deg;
+  --card-z: 1;
+}
+
+.fan-card-2 {
+  --card-x: -160px;
+  --card-y: 3px;
+  --card-rot: -5deg;
+  --card-z: 2;
+}
+
+.fan-card-3 {
+  --card-x: 0px;
+  --card-y: -4px;
+  --card-rot: 0deg;
+  --card-z: 5;
+}
+
+.fan-card-4 {
+  --card-x: 160px;
+  --card-y: 3px;
+  --card-rot: 5deg;
+  --card-z: 3;
+}
+
+.fan-card-5 {
+  --card-x: 320px;
+  --card-y: 12px;
+  --card-rot: 10deg;
+  --card-z: 1;
+}
+
 /* Physical Playing Card Base (Apple Control Center Frosted Glass) */
 .playing-card {
   position: absolute;
   bottom: 25px;
-  width: clamp(230px, 19.5vw, 275px);
-  height: 395px;
-  border-radius: 22px;
-  background: rgba(22, 26, 36, 0.72);
+  width: clamp(230px, 19vw, 265px);
+  height: 385px;
+  border-radius: 20px;
+  background: rgba(22, 26, 36, 0.75);
   backdrop-filter: blur(36px) saturate(200%);
   -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.42),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 16px 40px rgba(0, 0, 0, 0.52);
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 14px 36px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  transform-origin: 50% 135%;
+  transform-origin: 50% 120%;
+  transform: translateX(var(--card-x)) translateY(var(--card-y)) rotate(var(--card-rot));
+  z-index: var(--card-z);
+  will-change: transform;
   transition: 
-    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
-    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
-    border-color 0.35s ease, 
-    background 0.35s ease;
-  will-change: transform, box-shadow;
+    transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1), 
+    box-shadow 350ms ease, 
+    border-color 250ms ease, 
+    background-color 250ms ease;
   user-select: none;
 }
 
-/* Semicircular Fan Offsets for the 5 Cards */
-.fan-card-1 {
-  transform: translateX(-350px) translateY(28px) rotate(-16deg);
-  z-index: 1;
-}
-
-.fan-card-2 {
-  transform: translateX(-175px) translateY(8px) rotate(-8deg);
-  z-index: 2;
-}
-
-/* Featured Centerpiece Card: NCC Corporal 'C' Certificate */
-.fan-card-3 {
-  transform: translateX(0) translateY(-6px) rotate(0deg);
-  z-index: 5;
-}
-
-.fan-card-4 {
-  transform: translateX(175px) translateY(8px) rotate(8deg);
-  z-index: 3;
-}
-
-.fan-card-5 {
-  transform: translateX(350px) translateY(28px) rotate(16deg);
-  z-index: 1;
-}
-
-/* Hover Lift Effect: Card glides up smoothly, straightens, scales, deep shadow */
+/* Hover Lift Effect: Strictly preserves --card-x to eliminate horizontal jumping/jitter */
 .playing-card:hover,
 .playing-card.card-lifted {
-  transform: translateY(-56px) rotate(0deg) scale(1.08) !important;
+  transform: translateX(var(--card-x)) translateY(calc(var(--card-y) - 26px)) rotate(calc(var(--card-rot) * 0.2)) scale(1.04) !important;
   z-index: 50 !important;
   border-color: rgba(10, 132, 255, 0.85);
-  background: rgba(28, 34, 48, 0.90);
+  background-color: rgba(28, 34, 48, 0.92);
   box-shadow: 
-    inset 0 1px 2px rgba(255, 255, 255, 0.65),
-    0 32px 85px rgba(0, 0, 0, 0.78), 
-    0 0 32px rgba(10, 132, 255, 0.35);
+    inset 0 1px 2px rgba(255, 255, 255, 0.6),
+    0 26px 70px rgba(0, 0, 0, 0.75), 
+    0 0 28px rgba(10, 132, 255, 0.32);
 }
 
-/* Featured NCC Card Special Styling */
+/* Featured NCC Card Special Accent */
 .featured-ncc-card {
   border-color: rgba(191, 90, 242, 0.45);
   box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.5),
-    0 20px 48px rgba(0, 0, 0, 0.55),
-    0 0 24px rgba(191, 90, 242, 0.2);
+    inset 0 1px 1px rgba(255, 255, 255, 0.45),
+    0 16px 42px rgba(0, 0, 0, 0.52),
+    0 0 20px rgba(191, 90, 242, 0.18);
 }
 
 .featured-ncc-card:hover,
 .featured-ncc-card.card-lifted {
   border-color: rgba(191, 90, 242, 0.9) !important;
   box-shadow: 
-    inset 0 1px 2px rgba(255, 255, 255, 0.75),
-    0 34px 90px rgba(0, 0, 0, 0.82),
-    0 0 42px rgba(191, 90, 242, 0.45) !important;
+    inset 0 1px 2px rgba(255, 255, 255, 0.7),
+    0 28px 75px rgba(0, 0, 0, 0.78),
+    0 0 35px rgba(191, 90, 242, 0.4) !important;
 }
 
 /* Playing Card Corner Indices (Top-Left & Bottom-Right) */
@@ -2973,11 +2984,20 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
   margin: 6px 0 10px;
 }
 
+/* Supporting details: smooth fade on hover without changing dimensions */
 .card-desc {
   font-size: 0.77rem;
   line-height: 1.48;
-  color: #D1D1D6;
+  color: #B0B0B8;
   margin-bottom: 12px;
+  opacity: 0.85;
+  transition: opacity 250ms ease, color 250ms ease;
+}
+
+.playing-card:hover .card-desc,
+.playing-card.card-lifted .card-desc {
+  opacity: 1;
+  color: #FFFFFF;
 }
 
 .card-desc strong {
@@ -2993,12 +3013,23 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
 }
 
-.card-metrics-pill span {
+.card-metrics-pill span,
+.card-metrics-pill .card-link {
   padding: 3px 8px;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: #F2F2F7;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-metrics-pill .card-link:hover {
+  background: rgba(10, 132, 255, 0.2);
+  border-color: rgba(10, 132, 255, 0.45);
+  color: #64D2FF;
 }
 
 .featured-ncc-card .card-metrics-pill span {
@@ -3007,486 +3038,42 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
   color: #E8B4FC;
 }
 
+
 /* ==========================================================================
-   Get In Touch: Cinematic House + Vintage Mailbox Interaction
+   Get In Touch: Personal Developer Desk & Airmail Letter Canvas
    ========================================================================== */
-.contact-scene-section {
+.contact-desk-section {
   position: relative;
   overflow: visible;
   padding: 80px 0 110px;
 }
 
-.contact-cinematic-stage {
+.contact-desk-container {
   position: relative;
-  max-width: 1100px;
+  max-width: 860px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  min-height: 580px;
 }
 
-/* Atmospheric Night Sky & Glow */
-.scene-sky-glow {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 850px;
-  height: 420px;
-  background: radial-gradient(ellipse at 50% 30%, rgba(255, 159, 10, 0.12) 0%, rgba(10, 132, 255, 0.08) 40%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* 1. Cinematic Stylized House */
-.cinematic-house-container {
+/* Personal Letter Surface Card */
+.contact-letter-surface {
   position: relative;
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
-  z-index: 2;
-}
-
-.house-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.65));
-}
-
-.house-ground {
-  fill: #12151D;
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 1.5;
-}
-
-.house-main-walls {
-  fill: rgba(22, 26, 36, 0.92);
-  stroke: rgba(255, 255, 255, 0.2);
-  stroke-width: 1.5;
-}
-
-.house-roof {
-  fill: #1A1E29;
-  stroke: rgba(255, 255, 255, 0.28);
-  stroke-width: 2;
-}
-
-.house-gable-trim {
-  fill: rgba(255, 255, 255, 0.03);
-  stroke: rgba(255, 255, 255, 0.14);
-  stroke-width: 1;
-}
-
-.house-chimney {
-  fill: #242936;
-  stroke: rgba(255, 255, 255, 0.2);
-  stroke-width: 1.5;
-}
-
-.house-chimney-cap {
-  fill: #1A1E29;
-  stroke: rgba(255, 255, 255, 0.25);
-  stroke-width: 1.5;
-}
-
-/* Chimney Smoke Animation */
-.chimney-smoke {
-  fill: rgba(255, 255, 255, 0.25);
-  filter: blur(3px);
-  opacity: 0;
-  animation: smokePuff 4s ease-out infinite;
-}
-
-.smoke-1 { animation-delay: 0s; }
-.smoke-2 { animation-delay: 1.3s; }
-.smoke-3 { animation-delay: 2.6s; }
-
-@keyframes smokePuff {
-  0% { transform: translateY(0) scale(0.6); opacity: 0; }
-  20% { opacity: 0.65; }
-  80% { opacity: 0.2; }
-  100% { transform: translateY(-45px) translateX(22px) scale(2.2); opacity: 0; }
-}
-
-/* Windows with Warm Breathing Light Glow */
-.house-window-frame {
-  fill: #1C212E;
-  stroke: rgba(255, 255, 255, 0.24);
-  stroke-width: 1.5;
-}
-
-.house-window-glass {
-  animation: windowBreathing 4s ease-in-out infinite alternate;
-}
-
-@keyframes windowBreathing {
-  0% { opacity: 0.85; filter: drop-shadow(0 0 10px rgba(255, 179, 0, 0.5)); }
-  100% { opacity: 1; filter: drop-shadow(0 0 22px rgba(255, 179, 0, 0.85)); }
-}
-
-.window-muntin {
-  stroke: #1C212E;
-  stroke-width: 1.5;
-}
-
-.house-porch-trim {
-  fill: rgba(255, 255, 255, 0.04);
-  stroke: rgba(255, 255, 255, 0.16);
-  stroke-width: 1.5;
-}
-
-.house-door {
-  fill: #1F2432;
-  stroke: rgba(255, 255, 255, 0.22);
-  stroke-width: 1.5;
-}
-
-.door-panel {
-  fill: #171B26;
-  stroke: rgba(255, 255, 255, 0.12);
-  stroke-width: 1;
-}
-
-.door-knob {
-  fill: #FFD60A;
-  filter: drop-shadow(0 0 4px #FFD60A);
-}
-
-.house-address-plate {
-  fill: #0E1118;
-  stroke: rgba(255, 255, 255, 0.3);
-  stroke-width: 1;
-}
-
-.house-address-text {
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-  font-size: 7.5px;
-  font-weight: 800;
-  fill: #FFEAA7;
-  letter-spacing: 0.08em;
-}
-
-.porch-lantern {
-  fill: #1A1E29;
-  stroke: rgba(255, 255, 255, 0.3);
-  stroke-width: 1;
-}
-
-.house-stone-path {
-  fill: rgba(255, 255, 255, 0.04);
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 1;
-  stroke-dasharray: 4 4;
-}
-
-.house-id-capsule {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: var(--radius-full);
+  border-radius: 32px;
+  padding: 44px 48px;
   background: rgba(22, 26, 36, 0.72);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  font-size: 0.76rem;
-  font-weight: 600;
-  color: #AEAEB2;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-}
-
-.house-id-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #30D158;
-  box-shadow: 0 0 8px #30D158;
-}
-
-/* 2. Interactive Vintage Mailbox Station */
-.vintage-mailbox-station {
-  position: relative;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  margin-top: -35px;
-}
-
-.mailbox-prompt-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  border-radius: var(--radius-full);
-  background: rgba(10, 132, 255, 0.18);
-  border: 1px solid rgba(10, 132, 255, 0.45);
-  color: #64D2FF;
-  font-size: 0.8rem;
-  font-weight: 700;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-  letter-spacing: 0.04em;
-  margin-bottom: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 16px rgba(10, 132, 255, 0.25);
-  animation: promptPulse 2.5s ease-in-out infinite;
-  cursor: pointer;
-}
-
-@keyframes promptPulse {
-  0%, 100% {
-    transform: translateY(0);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 16px rgba(10, 132, 255, 0.25);
-  }
-  50% {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5), 0 0 24px rgba(10, 132, 255, 0.45);
-  }
-}
-
-.mailbox-assembly {
-  position: relative;
-  width: 140px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  perspective: 1000px;
-  transition: transform 0.3s ease;
-}
-
-.mailbox-assembly:hover {
-  transform: scale(1.04);
-}
-
-/* Curved Dome Mailbox Chamber */
-.mailbox-body-tunnel {
-  position: relative;
-  width: 130px;
-  height: 86px;
-  border-radius: 50px 50px 8px 8px;
-  background: linear-gradient(135deg, #2D3342 0%, #151822 100%);
-  border: 2px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 
-    inset 0 2px 4px rgba(255, 255, 255, 0.3), 
-    inset 0 -2px 6px rgba(0, 0, 0, 0.6), 
-    0 14px 34px rgba(0, 0, 0, 0.55);
-  overflow: visible;
-  z-index: 5;
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 24px 70px rgba(0, 0, 0, 0.55);
 }
 
-/* Interior Slot Cavity */
-.mailbox-interior-slot {
-  position: absolute;
-  inset: 6px;
-  border-radius: 44px 44px 4px 4px;
-  background: #0A0C11;
-  box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.letter-peeking-slip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
-  border-radius: 4px;
-  background: #FFF8E7;
-  color: #1C212E;
-  font-size: 0.64rem;
-  font-weight: 800;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-  letter-spacing: 0.05em;
-  transform: translateY(2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  border: 1px dashed #D97706;
-}
-
-/* Front Hinged Door (Swings Down in 3D) */
-.mailbox-hinged-door {
-  position: absolute;
-  inset: 0;
-  border-radius: 50px 50px 8px 8px;
-  background: linear-gradient(135deg, #373E50 0%, #1A1E29 100%);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  transform-origin: bottom center;
-  transform-style: preserve-3d;
-  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-  backface-visibility: hidden;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.door-emboss-bezel {
-  position: absolute;
-  inset: 8px;
-  border-radius: 42px 42px 4px 4px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  pointer-events: none;
-}
-
-.door-vintage-latch {
-  width: 34px;
-  height: 10px;
-  background: #8E8E93;
-  border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  display: grid;
-  place-items: center;
-}
-
-.latch-handle {
-  width: 14px;
-  height: 4px;
-  background: #E5E5EA;
-  border-radius: 2px;
-}
-
-.door-mail-slot-decorative {
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-  font-size: 0.66rem;
-  font-weight: 800;
-  color: #AEAEB2;
-  letter-spacing: 0.12em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-/* Red Postal Flag */
-.mailbox-red-flag {
-  position: absolute;
-  right: -14px;
-  top: 24px;
-  width: 38px;
-  height: 46px;
-  transform-origin: 6px 36px;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 12;
-}
-
-.flag-staff {
-  position: absolute;
-  left: 4px;
-  bottom: 6px;
-  width: 4px;
-  height: 32px;
-  background: #D1D1D6;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-}
-
-.flag-blade {
-  position: absolute;
-  left: 8px;
-  top: 6px;
-  width: 26px;
-  height: 18px;
-  background: #FF3B30;
-  border-radius: 2px 6px 6px 2px;
-  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
-}
-
-/* Mailbox Post Stand */
-.mailbox-post-stand {
-  width: 18px;
-  height: 100px;
-  background: linear-gradient(to right, #4A3B32 0%, #2B1D16 60%, #4A3B32 100%);
-  border-radius: 3px;
-  position: relative;
-  z-index: 2;
-  box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.5);
-}
-
-.post-ground-mound {
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70px;
-  height: 14px;
-  background: #161A24;
-  border-radius: 50%;
-  filter: blur(2px);
-  z-index: -1;
-}
-
-/* Mailbox Open State on Hover / Active Modal */
-.vintage-mailbox-station:hover .mailbox-hinged-door,
-.vintage-mailbox-station.mailbox-open .mailbox-hinged-door,
-body.letter-modal-open .mailbox-hinged-door {
-  transform: rotateX(-105deg);
-}
-
-.vintage-mailbox-station:hover .mailbox-red-flag,
-.vintage-mailbox-station.mailbox-open .mailbox-red-flag,
-body.letter-modal-open .mailbox-red-flag {
-  transform: rotate(-90deg);
-}
-
-/* 3. Cinematic Vintage Unfolding Letter Modal */
-.vintage-letter-container {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
-  padding: 20px;
-}
-
-.vintage-letter-container.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.vintage-letter-envelope {
-  position: relative;
+/* Retro Airmail Accent Trim */
+.airmail-accent-line {
+  height: 5px;
   width: 100%;
-  max-width: 760px;
-  max-height: 88vh;
-  overflow-y: auto;
-  background: rgba(24, 28, 38, 0.88);
-  backdrop-filter: blur(40px) saturate(200%);
-  -webkit-backdrop-filter: blur(40px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 24px;
-  padding: 34px 34px 28px;
-  box-shadow: 
-    inset 0 1px 2px rgba(255, 255, 255, 0.45), 
-    0 30px 80px rgba(0, 0, 0, 0.75);
-  transform: scale(0.92) translateY(24px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.vintage-letter-container.active .vintage-letter-envelope {
-  transform: scale(1) translateY(0);
-}
-
-/* Airmail Diagonal Stripe Border */
-.airmail-strip-border {
-  height: 7px;
-  width: 100%;
-  border-radius: 4px;
+  border-radius: 3px;
   background: repeating-linear-gradient(
     135deg, 
     #FF3B30 0px, 
@@ -3498,373 +3085,381 @@ body.letter-modal-open .mailbox-red-flag {
     #FFFFFF 36px, 
     #FFFFFF 44px
   );
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-/* Postmark & Postage Stamp Header */
-.stationery-top-row {
+/* Top Meta Row (Postmark & Availability) */
+.letter-top-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.stationery-postmark {
+.letter-postmark-tag {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-}
-
-.postmark-circle {
-  width: 56px;
-  height: 56px;
-  border: 1.5px dashed rgba(255, 255, 255, 0.35);
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 7px;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-  font-size: 0.58rem;
+  font-size: 0.74rem;
+  font-weight: 700;
   color: #AEAEB2;
-  line-height: 1.2;
-  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.postmark-circle strong {
-  color: #FFFFFF;
-  font-size: 0.64rem;
-}
-
-.postmark-wavy-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.postmark-wavy-lines span {
-  width: 28px;
-  height: 1.5px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 1px;
-}
-
-.stationery-stamp {
-  width: 44px;
-  height: 52px;
-  border: 1.5px dashed #FF3B30;
-  border-radius: 4px;
-  background: rgba(255, 59, 48, 0.1);
-  color: #FF453A;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-  font-size: 0.72rem;
-  font-weight: 800;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.stationery-close-btn {
+.letter-status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
+  gap: 8px;
+  padding: 5px 14px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #E5E5EA;
-  font-size: 0.76rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-left: auto;
+  background: rgba(48, 209, 88, 0.12);
+  border: 1px solid rgba(48, 209, 88, 0.3);
+  color: #30D158;
+  font-size: 0.74rem;
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
 }
 
-.stationery-close-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.35);
+.status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #30D158;
+  box-shadow: 0 0 8px #30D158;
+  animation: pulseDot 2s ease-in-out infinite;
 }
 
-/* Salutation & Body Text */
-.stationery-salutation h4 {
-  font-size: 1.3rem;
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Letter Message Body */
+.letter-main-content {
+  margin-bottom: 32px;
+}
+
+.letter-salutation {
+  font-size: 1.55rem;
   font-weight: 800;
   color: #FFFFFF;
   letter-spacing: -0.02em;
-  margin-bottom: 3px;
+  margin-bottom: 14px;
 }
 
-.stationery-salutation p {
-  font-size: 0.8rem;
-  color: #64D2FF;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-  margin: 0;
-}
-
-.stationery-divider {
-  height: 1px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 14px 0 16px;
-}
-
-.stationery-body-text {
-  font-size: 0.88rem;
-  line-height: 1.6;
+.letter-body-p {
+  font-size: 1.02rem;
+  line-height: 1.7;
   color: #D1D1D6;
   margin-bottom: 22px;
 }
 
-.stationery-body-text em {
-  color: #64D2FF;
-  font-style: normal;
+.letter-body-p strong {
+  color: #FFFFFF;
   font-weight: 600;
 }
 
-/* Contact Capsules Grid */
-.stationery-contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.letter-contact-pill {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.25s ease;
-  position: relative;
-}
-
-.letter-contact-pill:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(10, 132, 255, 0.55);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-}
-
-.pill-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: rgba(10, 132, 255, 0.15);
-  border: 1px solid rgba(10, 132, 255, 0.3);
-  display: grid;
-  place-items: center;
-  color: #64D2FF;
-  font-size: 0.95rem;
-  flex-shrink: 0;
-}
-
-.pill-info {
+.letter-signoff {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  gap: 2px;
 }
 
-.pill-label {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.signoff-sub {
+  font-size: 0.86rem;
   color: #8E8E93;
+  font-style: italic;
+}
+
+.signoff-name {
+  font-size: 1.2rem;
+  color: #64D2FF;
   font-weight: 700;
+}
+
+.signoff-role {
+  font-size: 0.78rem;
+  color: #AEAEB2;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
 }
 
-.pill-val {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+/* Secondary Contact Links Row (Spacious & Minimal) */
+.contact-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 34px;
 }
 
-.pill-copy-btn {
-  margin-left: auto;
+.desk-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #F2F2F7;
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease, background-color 250ms ease;
+}
+
+.desk-contact-pill i {
+  color: #64D2FF;
+  font-size: 0.9rem;
+}
+
+.desk-contact-pill .pill-title {
+  color: #8E8E93;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
+  margin-right: 2px;
+}
+
+.desk-contact-pill:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(10, 132, 255, 0.6);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  color: #FFFFFF;
+}
+
+/* GitHub Subtle Green Gradient Exception */
+.desk-contact-pill.github-pill:hover {
+  background: linear-gradient(135deg, rgba(35, 134, 54, 0.35), rgba(46, 160, 67, 0.2)) !important;
+  border-color: rgba(46, 160, 67, 0.7) !important;
+  color: #3FB950 !important;
+  box-shadow: 0 6px 20px rgba(46, 160, 67, 0.3) !important;
+}
+
+.desk-contact-pill.github-pill:hover i {
+  color: #3FB950 !important;
+}
+
+/* Primary CTA Button */
+.desk-cta-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.btn-write-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 34px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #0A84FF, #0071E3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(10, 132, 255, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  transition: transform 250ms ease, box-shadow 250ms ease, background-color 250ms ease;
+}
+
+.btn-write-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(10, 132, 255, 0.55);
+}
+
+.btn-write-cta .cta-arrow {
+  transition: transform 250ms ease;
+}
+
+.btn-write-cta:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+.btn-write-cta.active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Initially Hidden Form Panel (Smooth Expandable) */
+.desk-form-expandable {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: 
+    max-height 450ms cubic-bezier(0.2, 0.8, 0.2, 1), 
+    opacity 350ms ease, 
+    margin-top 350ms ease;
+  margin-top: 0;
+}
+
+.desk-form-expandable.active {
+  max-height: 900px;
+  opacity: 1;
+  pointer-events: auto;
+  margin-top: 32px;
+}
+
+.desk-form-inner {
+  padding: 28px 30px;
+  border-radius: 24px;
+  background: rgba(14, 18, 26, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.desk-form-divider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #64D2FF;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.desk-form-close {
   background: none;
   border: none;
   color: #8E8E93;
   cursor: pointer;
-  padding: 6px;
-  font-size: 0.88rem;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.pill-copy-btn:hover {
-  color: #64D2FF;
-  transform: scale(1.15);
-}
-
-.pill-ext {
-  margin-left: auto;
-  font-size: 0.72rem;
-  color: #8E8E93;
-}
-
-.resume-pill {
-  grid-column: span 2;
-  border-color: rgba(48, 209, 88, 0.3);
-}
-
-.resume-pill:hover {
-  border-color: #30D158;
-}
-
-.resume-pill .pill-icon {
-  background: rgba(48, 209, 88, 0.15);
-  border-color: rgba(48, 209, 88, 0.3);
-  color: #30D158;
-}
-
-/* Quick Note Reply Card */
-.letter-reply-card {
-  padding: 18px 20px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 20px;
-}
-
-.reply-title {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin-bottom: 12px;
-  display: flex;
+  font-size: 0.76rem;
+  font-weight: 600;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
+  transition: color 200ms ease;
+}
+
+.desk-form-close:hover {
+  color: #FFFFFF;
+}
+
+.desk-quick-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .form-row-dual {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 16px;
 }
 
-.letter-input, 
-.letter-textarea {
+.form-field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #AEAEB2;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace;
+}
+
+.desk-input,
+.desk-textarea {
   width: 100%;
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   color: #FFFFFF;
   font-family: var(--font-sans);
-  font-size: 0.84rem;
-  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  transition: border-color 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
 }
 
-.letter-input:focus, 
-.letter-textarea:focus {
+.desk-input:focus,
+.desk-textarea:focus {
   outline: none;
   border-color: #0A84FF;
-  background: rgba(10, 132, 255, 0.08);
-  box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.2);
+  background-color: rgba(10, 132, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.22);
 }
 
-.letter-textarea {
+.desk-textarea {
   resize: vertical;
-  margin-bottom: 12px;
+  min-height: 100px;
 }
 
-.letter-submit-btn {
+.desk-form-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.desk-send-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 10px 22px;
+  gap: 9px;
+  padding: 12px 28px;
   border-radius: var(--radius-full);
   background: linear-gradient(135deg, #0A84FF, #0071E3);
   border: none;
   color: #FFFFFF;
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(10, 132, 255, 0.35);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  box-shadow: 0 6px 18px rgba(10, 132, 255, 0.4);
 }
 
-.letter-submit-btn:hover {
+.desk-send-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(10, 132, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(10, 132, 255, 0.55);
 }
 
-/* Wax Seal & Closing */
-.stationery-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+.desk-send-hint {
+  font-size: 0.76rem;
+  color: #8E8E93;
 }
 
-.wax-seal {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #FF453A 0%, #B71C1C 100%);
-  display: grid;
-  place-items: center;
-  color: #FFEAA7;
-  font-weight: 900;
-  font-size: 0.85rem;
-  font-family: Georgia, serif;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5), inset 0 2px 3px rgba(255, 255, 255, 0.4);
-  border: 2px solid rgba(255, 255, 255, 0.15);
-}
 
-.stationery-closing {
-  text-align: right;
-  font-size: 0.8rem;
-  color: #AEAEB2;
-}
-
-.stationery-closing em {
-  display: block;
-  font-style: italic;
-}
-
-.stationery-closing strong {
-  color: #FFFFFF;
-  font-size: 0.92rem;
-}
-
-/* Responsive Rules for Playing Cards and Contact Scene */
+/* ==========================================================================
+   Responsive Breakpoints for Achievements & Contact
+   ========================================================================== */
 @media (max-width: 1024px) {
   .cards-fan-spread {
-    height: 450px;
+    height: 440px;
   }
+  
+  .fan-card-1 { --card-x: -240px; --card-y: 10px; --card-rot: -8deg; }
+  .fan-card-2 { --card-x: -120px; --card-y: 3px;  --card-rot: -4deg; }
+  .fan-card-3 { --card-x: 0px;    --card-y: -4px; --card-rot: 0deg; }
+  .fan-card-4 { --card-x: 120px;  --card-y: 3px;  --card-rot: 4deg; }
+  .fan-card-5 { --card-x: 240px;  --card-y: 10px; --card-rot: 8deg; }
   
   .playing-card {
-    width: 220px;
-    height: 370px;
+    width: 215px;
+    height: 375px;
   }
-  
-  .fan-card-1 { transform: translateX(-270px) translateY(24px) rotate(-14deg); }
-  .fan-card-2 { transform: translateX(-135px) translateY(8px) rotate(-7deg); }
-  .fan-card-3 { transform: translateX(0) translateY(-4px) rotate(0deg); }
-  .fan-card-4 { transform: translateX(135px) translateY(8px) rotate(7deg); }
-  .fan-card-5 { transform: translateX(270px) translateY(24px) rotate(14deg); }
+
+  .contact-letter-surface {
+    padding: 38px 36px;
+  }
 }
 
 @media (max-width: 768px) {
   .cards-table-surface {
-    padding: 40px 16px 50px;
+    padding: 36px 16px 40px;
     border-radius: 28px;
   }
 
@@ -3873,39 +3468,52 @@ body.letter-modal-open .mailbox-red-flag {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
     perspective: none;
+    margin-top: 0;
   }
 
   .playing-card {
     position: relative;
     bottom: auto;
     width: 100%;
-    max-width: 330px;
+    max-width: 360px;
     height: auto;
-    min-height: 360px;
+    min-height: 340px;
     transform: none !important;
+    margin: 0 auto;
   }
 
   .playing-card:hover,
   .playing-card.card-lifted {
-    transform: translateY(-6px) scale(1.02) !important;
+    transform: translateY(-5px) scale(1.02) !important;
   }
 
-  .stationery-contact-grid {
-    grid-template-columns: 1fr;
+  .contact-letter-surface {
+    padding: 30px 20px;
+    border-radius: 24px;
   }
 
-  .resume-pill {
-    grid-column: span 1;
+  .letter-salutation {
+    font-size: 1.35rem;
+  }
+
+  .contact-links-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .desk-contact-pill {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .form-row-dual {
     grid-template-columns: 1fr;
   }
 
-  .vintage-letter-envelope {
-    padding: 24px 20px;
+  .desk-form-inner {
+    padding: 20px 16px;
   }
 }
 
@@ -5355,7 +4963,7 @@ body.light-theme .table-ambient-spotlight {
 }
 
 body.light-theme .playing-card {
-  background: rgba(255, 255, 255, 0.68);
+  background-color: rgba(255, 255, 255, 0.68);
   backdrop-filter: blur(36px) saturate(200%);
   -webkit-backdrop-filter: blur(36px) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.85);
@@ -5367,11 +4975,11 @@ body.light-theme .playing-card {
 
 body.light-theme .playing-card:hover,
 body.light-theme .playing-card.card-lifted {
-  background: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.88);
   border-color: rgba(0, 113, 227, 0.65);
   box-shadow: 
     inset 0 1px 1px #FFFFFF,
-    0 26px 65px rgba(0, 0, 0, 0.14),
+    0 24px 60px rgba(0, 0, 0, 0.12),
     0 0 25px rgba(0, 113, 227, 0.2);
 }
 
@@ -5395,7 +5003,8 @@ body.light-theme .card-corner-index {
   color: #636366;
 }
 
-body.light-theme .card-metrics-pill span {
+body.light-theme .card-metrics-pill span,
+body.light-theme .card-metrics-pill .card-link {
   background: rgba(0, 0, 0, 0.05);
   border-color: rgba(0, 0, 0, 0.09);
   color: #111113;
@@ -5411,147 +5020,107 @@ body.light-theme .card-face-watermark {
   color: rgba(0, 0, 0, 0.04);
 }
 
-/* 11. Contact Section, House & Mailbox in Light Mode */
-body.light-theme .scene-sky-glow {
-  background: radial-gradient(ellipse at 50% 30%, rgba(255, 159, 10, 0.08) 0%, rgba(0, 113, 227, 0.05) 40%, transparent 70%);
-}
-
-body.light-theme .house-ground {
-  fill: #E2E6EE;
-  stroke: rgba(0, 0, 0, 0.1);
-}
-
-body.light-theme .house-main-walls {
-  fill: rgba(255, 255, 255, 0.92);
-  stroke: rgba(0, 0, 0, 0.15);
-}
-
-body.light-theme .house-roof {
-  fill: #2C3444;
-  stroke: rgba(0, 0, 0, 0.25);
-}
-
-body.light-theme .house-window-frame {
-  fill: #E9ECEF;
-  stroke: rgba(0, 0, 0, 0.15);
-}
-
-body.light-theme .house-id-capsule {
-  background: rgba(255, 255, 255, 0.75);
-  border-color: rgba(0, 0, 0, 0.1);
-  color: #4B4B52;
-}
-
-body.light-theme .mailbox-prompt-pill {
-  background: rgba(0, 113, 227, 0.1);
-  border-color: rgba(0, 113, 227, 0.35);
-  color: #0071E3;
-}
-
-body.light-theme .mailbox-body-tunnel {
-  background: linear-gradient(135deg, #4A5568 0%, #2D3748 100%);
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-body.light-theme .mailbox-hinged-door {
-  background: linear-gradient(135deg, #5A6678 0%, #3A4658 100%);
-  border-color: rgba(255, 255, 255, 0.7);
-}
-
-body.light-theme .vintage-letter-envelope {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(255, 255, 255, 0.95);
+/* 11. Contact Personal Developer Desk in Light Mode */
+body.light-theme .contact-letter-surface {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   box-shadow: 
-    inset 0 1px 2px #FFFFFF,
-    0 30px 80px rgba(0, 0, 0, 0.22);
+    inset 0 1px 1px #FFFFFF,
+    0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
-body.light-theme .stationery-salutation h4 {
-  color: #111113;
-}
-
-body.light-theme .stationery-salutation p {
-  color: #0071E3;
-}
-
-body.light-theme .stationery-body-text {
-  color: #333336;
-}
-
-body.light-theme .stationery-body-text em {
-  color: #0071E3;
-}
-
-body.light-theme .letter-contact-pill {
-  background: rgba(0, 0, 0, 0.03);
-  border-color: rgba(0, 0, 0, 0.08);
-  color: inherit;
-}
-
-body.light-theme .letter-contact-pill:hover {
-  background: rgba(0, 113, 227, 0.06);
-  border-color: rgba(0, 113, 227, 0.35);
-}
-
-body.light-theme .pill-val {
-  color: #111113;
-}
-
-body.light-theme .pill-icon {
-  background: rgba(0, 113, 227, 0.08);
-  border-color: rgba(0, 113, 227, 0.2);
-  color: #0071E3;
-}
-
-body.light-theme .letter-reply-card {
-  background: rgba(0, 0, 0, 0.02);
-  border-color: rgba(0, 0, 0, 0.08);
-}
-
-body.light-theme .reply-title {
-  color: #111113;
-}
-
-body.light-theme .letter-input, 
-body.light-theme .letter-textarea {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(0, 0, 0, 0.14);
-  color: #111113;
-}
-
-body.light-theme .letter-input:focus, 
-body.light-theme .letter-textarea:focus {
-  background: #FFFFFF;
-  border-color: #0071E3;
-  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.2);
-}
-
-body.light-theme .postmark-circle {
-  border-color: rgba(0, 0, 0, 0.25);
+body.light-theme .letter-postmark-tag {
   color: #636366;
 }
 
-body.light-theme .postmark-circle strong {
+body.light-theme .letter-salutation {
   color: #111113;
 }
 
-body.light-theme .postmark-wavy-lines span {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-body.light-theme .stationery-close-btn {
-  background: rgba(0, 0, 0, 0.06);
-  border-color: rgba(0, 0, 0, 0.12);
+body.light-theme .letter-body-p {
   color: #333336;
 }
 
-body.light-theme .stationery-close-btn:hover {
-  background: rgba(0, 0, 0, 0.12);
+body.light-theme .letter-body-p strong {
   color: #111113;
 }
 
-body.light-theme .stationery-closing strong {
+body.light-theme .signoff-name {
+  color: #0071E3;
+}
+
+body.light-theme .signoff-role {
+  color: #636366;
+}
+
+body.light-theme .desk-contact-pill {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.09);
   color: #111113;
+}
+
+body.light-theme .desk-contact-pill i {
+  color: #0071E3;
+}
+
+body.light-theme .desk-contact-pill .pill-title {
+  color: #636366;
+}
+
+body.light-theme .desk-contact-pill:hover {
+  background: rgba(0, 113, 227, 0.08);
+  border-color: rgba(0, 113, 227, 0.4);
+  color: #0071E3;
+}
+
+body.light-theme .desk-contact-pill.github-pill:hover {
+  background: linear-gradient(135deg, rgba(35, 134, 54, 0.15), rgba(46, 160, 67, 0.08)) !important;
+  border-color: rgba(46, 160, 67, 0.5) !important;
+  color: #047857 !important;
+}
+
+body.light-theme .desk-contact-pill.github-pill:hover i {
+  color: #047857 !important;
+}
+
+body.light-theme .desk-form-inner {
+  background: rgba(245, 247, 250, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .desk-form-divider {
+  color: #0071E3;
+}
+
+body.light-theme .desk-form-close {
+  color: #636366;
+}
+
+body.light-theme .desk-form-close:hover {
+  color: #111113;
+}
+
+body.light-theme .form-field-label {
+  color: #636366;
+}
+
+body.light-theme .desk-input,
+body.light-theme .desk-textarea {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  color: #111113;
+}
+
+body.light-theme .desk-input:focus,
+body.light-theme .desk-textarea:focus {
+  background: #FFFFFF;
+  border-color: #0071E3;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+}
+
+body.light-theme .desk-send-hint {
+  color: #636366;
 }
 
 

@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Apple HIG Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=cinematic2">
+  <link rel="stylesheet" href="styles.css?v=cinematic3">
 </head>
 <body>
   <!-- Apple Subtle Ambient Glow Lights -->
@@ -1376,287 +1376,129 @@
   </section>
 
   <!-- ==========================================================================
-       Get In Touch: Cinematic House + Vintage Mailbox Interaction
+       Get In Touch: Personal Developer Desk & Airmail Note
        ========================================================================== -->
-  <section class="section contact-scene-section" id="contact">
+  <section class="section contact-desk-section" id="contact">
     <div class="container">
       <div class="section-header-center reveal">
-        <div class="section-pill">&lt; My Digital Residence &gt;</div>
+        <div class="section-pill">&lt; Direct Channel &gt;</div>
         <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Welcome to my personal home. Click the vintage mailbox below to open my letter and slip a direct note.</p>
+        <p class="section-subtitle">Open for software engineering roles, distributed systems, and AI research opportunities.</p>
       </div>
 
-      <!-- Cinematic House + Mailbox Landscape Scene -->
-      <div class="contact-cinematic-stage reveal">
-        
-        <!-- Ambient Atmospheric Sky & Star Backdrop -->
-        <div class="scene-sky-glow"></div>
-
-        <!-- 1. The Stylized Personal House (Background Environment Anchor) -->
-        <div class="cinematic-house-container">
-          <svg class="house-svg" viewBox="0 0 680 460" fill="none" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <radialGradient id="houseWindowGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#FFD60A" stop-opacity="0.9" />
-                <stop offset="60%" stop-color="#FF9F0A" stop-opacity="0.45" />
-                <stop offset="100%" stop-color="#FF9F0A" stop-opacity="0" />
-              </radialGradient>
-              <radialGradient id="lanternGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#FFEAA7" stop-opacity="1" />
-                <stop offset="50%" stop-color="#FDBB2D" stop-opacity="0.6" />
-                <stop offset="100%" stop-color="#FDBB2D" stop-opacity="0" />
-              </radialGradient>
-            </defs>
-
-            <!-- Rolling Landscape Ground -->
-            <path d="M 0 410 Q 220 390, 440 400 T 680 390 L 680 460 L 0 460 Z" class="house-ground" />
-            
-            <!-- Chimney with Soft Ambient Smoke Puffs -->
-            <rect x="420" y="80" width="34" height="110" rx="3" class="house-chimney" />
-            <rect x="414" y="70" width="46" height="12" rx="3" class="house-chimney-cap" />
-            <circle cx="437" cy="55" r="7" class="chimney-smoke smoke-1" />
-            <circle cx="442" cy="38" r="11" class="chimney-smoke smoke-2" />
-            <circle cx="448" cy="18" r="15" class="chimney-smoke smoke-3" />
-
-            <!-- Main House Silhouette (Liquid Glass Architectural Structure) -->
-            <path d="M 160 210 L 360 70 L 560 210 L 540 420 L 180 420 Z" class="house-main-walls" />
-            <!-- Pitched Roof with Overhang -->
-            <path d="M 130 215 L 360 55 L 590 215 L 570 230 L 360 80 L 150 230 Z" class="house-roof" />
-            <!-- Gable Trim -->
-            <polygon points="360,100 200,215 520,215" class="house-gable-trim" />
-
-            <!-- Round Attic Window -->
-            <circle cx="360" cy="165" r="22" class="house-window-frame" />
-            <circle cx="360" cy="165" r="18" fill="url(#houseWindowGlow)" class="house-window-glass" />
-            <line x1="360" y1="147" x2="360" y2="183" class="window-muntin" />
-            <line x1="342" y1="165" x2="378" y2="165" class="window-muntin" />
-
-            <!-- Ground Floor Left Window (Warm Glowing Ambient Light) -->
-            <rect x="210" y="260" width="65" height="80" rx="6" class="house-window-frame" />
-            <rect x="215" y="265" width="55" height="70" rx="4" fill="url(#houseWindowGlow)" class="house-window-glass" />
-            <line x1="242.5" y1="265" x2="242.5" y2="335" class="window-muntin" />
-            <line x1="215" y1="300" x2="270" y2="300" class="window-muntin" />
-
-            <!-- Ground Floor Right Window (Warm Glowing Ambient Light) -->
-            <rect x="445" y="260" width="65" height="80" rx="6" class="house-window-frame" />
-            <rect x="450" y="265" width="55" height="70" rx="4" fill="url(#houseWindowGlow)" class="house-window-glass" />
-            <line x1="477.5" y1="265" x2="477.5" y2="335" class="window-muntin" />
-            <line x1="450" y1="300" x2="505" y2="300" class="window-muntin" />
-
-            <!-- Front Porch & Welcoming Doorway -->
-            <path d="M 305 260 L 360 230 L 415 260 L 415 420 L 305 420 Z" class="house-porch-trim" />
-            <rect x="325" y="285" width="70" height="135" rx="6" class="house-door" />
-            <rect x="333" y="295" width="22" height="40" rx="3" class="door-panel" />
-            <rect x="365" y="295" width="22" height="40" rx="3" class="door-panel" />
-            <circle cx="386" cy="355" r="3.5" class="door-knob" />
-
-            <!-- Address Plaque -->
-            <rect x="330" y="258" width="60" height="15" rx="3" class="house-address-plate" />
-            <text x="360" y="269" text-anchor="middle" class="house-address-text">BHARGAV &bull; 22</text>
-
-            <!-- Welcoming Porch Lantern -->
-            <circle cx="360" cy="236" r="16" fill="url(#lanternGlow)" />
-            <path d="M 354 231 L 366 231 L 364 243 L 356 243 Z" class="porch-lantern" />
-            <circle cx="360" cy="237" r="3" fill="#FFEAA7" />
-
-            <!-- Pathway toward Foreground -->
-            <path d="M 330 420 Q 290 440, 240 460 L 480 460 Q 430 440, 390 420 Z" class="house-stone-path" />
-          </svg>
-
-          <!-- House Address Capsule -->
-          <div class="house-id-capsule">
-            <span class="house-id-dot"></span>
-            <span>Battula Bhargav's Residence &bull; Goa &amp; Hyderabad</span>
-          </div>
-        </div>
-
-        <!-- 2. The Vintage Standalone Mailbox (Interactive Foreground Centerpiece) -->
-        <div class="vintage-mailbox-station" id="mailboxStation">
+      <!-- Developer Desk / Personal Letter Canvas -->
+      <div class="contact-desk-container reveal">
+        <div class="contact-letter-surface">
           
-          <!-- Interactive Prompt Pill -->
-          <div class="mailbox-prompt-pill" id="mailboxPromptPill">
-            <i class="fa-solid fa-envelope-open-text"></i>
-            <span>Click Mailbox to Open Letter</span>
+          <!-- Retro Airmail Accent Trim -->
+          <div class="airmail-accent-line"></div>
+
+          <!-- Top Postmark & Availability Status -->
+          <div class="letter-top-meta">
+            <div class="letter-postmark-tag">
+              <i class="fa-solid fa-stamp"></i>
+              <span>NIT GOA &bull; HYDERABAD &bull; 2026</span>
+            </div>
+            <div class="letter-status-pill">
+              <span class="status-pulse-dot"></span>
+              <span>Available for New Roles</span>
+            </div>
           </div>
 
-          <!-- Mailbox 3D Assembly -->
-          <div class="mailbox-assembly" id="mailboxAssembly" role="button" tabindex="0" aria-label="Open Vintage Mailbox">
-            
-            <!-- Wooden/Iron Post Stand -->
-            <div class="mailbox-post-stand">
-              <div class="post-texture"></div>
-              <div class="post-ground-mound"></div>
+          <!-- The Personal Developer Letter -->
+          <div class="letter-main-content">
+            <h3 class="letter-salutation">Dear future collaborator,</h3>
+            <p class="letter-body-p">
+              I'm currently open to <strong>software engineering, AI/ML, and research opportunities</strong>. Whether you have an engineering challenge, want to discuss large-scale data systems, or explore a new initiative together &mdash; let's build something useful.
+            </p>
+            <div class="letter-signoff">
+              <span class="signoff-sub">Warm regards,</span>
+              <strong class="signoff-name">&mdash; Bhargav</strong>
+              <span class="signoff-role">M.Tech Computer Science &bull; NIT Goa</span>
             </div>
-
-            <!-- Mailbox Chamber Tunnel -->
-            <div class="mailbox-body-tunnel">
-              <!-- Interior Slot Cavity -->
-              <div class="mailbox-interior-slot">
-                <!-- Glimpse of the letter slip waiting inside -->
-                <div class="letter-peeking-slip">
-                  <i class="fa-solid fa-stamp"></i>
-                  <span>AIR MAIL</span>
-                </div>
-              </div>
-
-              <!-- Hinged Front Door (Swings down when opened) -->
-              <div class="mailbox-hinged-door" id="mailboxDoor">
-                <div class="door-emboss-bezel"></div>
-                <div class="door-vintage-latch">
-                  <div class="latch-handle"></div>
-                </div>
-                <div class="door-mail-slot-decorative">
-                  <span>POST</span>
-                </div>
-              </div>
-
-              <!-- Red Postal Flag (Flips up when opened) -->
-              <div class="mailbox-red-flag" id="mailboxFlag">
-                <div class="flag-staff"></div>
-                <div class="flag-blade"></div>
-              </div>
-            </div>
-
           </div>
 
-        </div>
+          <!-- Secondary Contact Capsules (Minimal, Spacious, Direct Links) -->
+          <div class="contact-links-row">
+            <a href="mailto:battulabhargav222@gmail.com" class="desk-contact-pill" title="Email Bhargav">
+              <i class="fa-solid fa-envelope"></i>
+              <span class="pill-title">Email</span>
+              <span class="pill-detail">battulabhargav222@gmail.com</span>
+            </a>
+            <a href="https://github.com/theNovember22" target="_blank" rel="noopener noreferrer" class="desk-contact-pill github-pill" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+              <span class="pill-title">GitHub</span>
+              <span class="pill-detail">theNovember22</span>
+            </a>
+            <a href="https://www.linkedin.com/in/b22in" target="_blank" rel="noopener noreferrer" class="desk-contact-pill" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <span class="pill-title">LinkedIn</span>
+              <span class="pill-detail">in/b22in</span>
+            </a>
+            <a href="Battula_Bhargav_Resume.pdf" target="_blank" download class="desk-contact-pill resume-pill" title="Download Resume">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span class="pill-title">Resume</span>
+              <span class="pill-detail">Curriculum Vitae</span>
+            </a>
+            <a href="tel:+917286066067" class="desk-contact-pill phone-pill" title="Call or WhatsApp">
+              <i class="fa-solid fa-phone"></i>
+              <span class="pill-title">Phone</span>
+              <span class="pill-detail">+91 7286066067</span>
+            </a>
+          </div>
 
-        <!-- 3. The Cinematic Vintage Unfolding Letter (Emerges from Mailbox) -->
-        <div class="vintage-letter-container" id="vintageLetterContainer" aria-hidden="true">
-          <div class="vintage-letter-envelope" id="vintageLetterEnvelope">
-            
-            <!-- Letter Stationery Header -->
-            <div class="stationery-header">
-              <div class="airmail-strip-border"></div>
-              <div class="stationery-top-row">
-                <div class="stationery-postmark">
-                  <div class="postmark-circle">
-                    <span>AIR MAIL</span>
-                    <strong>NIT GOA</strong>
-                    <small>2026</small>
-                  </div>
-                  <div class="postmark-wavy-lines">
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
+          <!-- Primary CTA Button (Toggles Hidden Form) -->
+          <div class="desk-cta-wrap">
+            <button type="button" class="btn-write-cta" id="toggleContactFormBtn" aria-expanded="false" aria-controls="deskFormPanel">
+              <span class="cta-text">WRITE TO BHARGAV</span>
+              <i class="fa-solid fa-arrow-right cta-arrow"></i>
+            </button>
+          </div>
 
-                <!-- Vintage Stamp -->
-                <div class="stationery-stamp">
-                  <i class="fa-solid fa-paper-plane"></i>
-                  <span>22&cent;</span>
-                </div>
-
-                <button type="button" class="stationery-close-btn" id="closeLetterBtn" aria-label="Close Letter">
-                  <i class="fa-solid fa-xmark"></i>
-                  <span>Close Mailbox</span>
+          <!-- Initially Hidden Form Panel (Expands smoothly on click) -->
+          <div class="desk-form-expandable" id="deskFormPanel" aria-hidden="true">
+            <div class="desk-form-inner">
+              <div class="desk-form-divider">
+                <span><i class="fa-solid fa-pen-nib"></i> Compose Direct Note</span>
+                <button type="button" class="desk-form-close" id="closeDeskFormBtn" aria-label="Collapse Form">
+                  <i class="fa-solid fa-xmark"></i> Close Form
                 </button>
               </div>
 
-              <div class="stationery-salutation">
-                <h4>A Personal Letter From Battula Bhargav</h4>
-                <p>M.Tech Computer Science &amp; Engineering &bull; NIT Goa &bull; Systems &amp; AI</p>
-              </div>
-              <div class="stationery-divider"></div>
-            </div>
-
-            <!-- Letter Message Body -->
-            <div class="stationery-body-text">
-              <p>
-                <em>Dear Visitor / Recruiter,</em>
-              </p>
-              <p>
-                Thank you for stopping by my digital residence. Whether you are exploring software engineering opportunities, discussing distributed systems &amp; AI research, or simply wishing to connect — my mailbox is always open.
-              </p>
-            </div>
-
-            <!-- Contact Capsules Grid inside the Letter -->
-            <div class="stationery-contact-grid">
-              <a href="mailto:battulabhargav222@gmail.com" class="letter-contact-pill">
-                <div class="pill-icon"><i class="fa-solid fa-envelope"></i></div>
-                <div class="pill-info">
-                  <span class="pill-label">Personal Email</span>
-                  <strong class="pill-val">battulabhargav222@gmail.com</strong>
-                </div>
-                <button type="button" class="pill-copy-btn" data-copy="battulabhargav222@gmail.com" title="Copy Email">
-                  <i class="fa-regular fa-copy"></i>
-                </button>
-              </a>
-
-              <a href="mailto:25cse2006@nitgoa.ac.in" class="letter-contact-pill">
-                <div class="pill-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <div class="pill-info">
-                  <span class="pill-label">Academic Email</span>
-                  <strong class="pill-val">25cse2006@nitgoa.ac.in</strong>
-                </div>
-              </a>
-
-              <a href="tel:+917286066067" class="letter-contact-pill">
-                <div class="pill-icon"><i class="fa-solid fa-phone"></i></div>
-                <div class="pill-info">
-                  <span class="pill-label">Phone &bull; WhatsApp</span>
-                  <strong class="pill-val">+91 7286066067</strong>
-                </div>
-              </a>
-
-              <a href="https://www.linkedin.com/in/b22in" target="_blank" rel="noopener noreferrer" class="letter-contact-pill">
-                <div class="pill-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-                <div class="pill-info">
-                  <span class="pill-label">LinkedIn</span>
-                  <strong class="pill-val">linkedin.com/in/b22in</strong>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square pill-ext"></i>
-              </a>
-
-              <a href="https://github.com/theNovember22" target="_blank" rel="noopener noreferrer" class="letter-contact-pill">
-                <div class="pill-icon"><i class="fa-brands fa-github"></i></div>
-                <div class="pill-info">
-                  <span class="pill-label">GitHub</span>
-                  <strong class="pill-val">github.com/theNovember22</strong>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square pill-ext"></i>
-              </a>
-
-              <a href="Battula_Bhargav_Resume.pdf" target="_blank" download class="letter-contact-pill resume-pill">
-                <div class="pill-icon"><i class="fa-solid fa-file-pdf"></i></div>
-                <div class="pill-info">
-                  <span class="pill-label">Curriculum Vitae</span>
-                  <strong class="pill-val">Download Resume (PDF)</strong>
-                </div>
-                <i class="fa-solid fa-download pill-ext"></i>
-              </a>
-            </div>
-
-            <!-- Quick "Drop a Reply Note" Section embedded in the letter -->
-            <div class="letter-reply-card">
-              <h5 class="reply-title"><i class="fa-solid fa-pen-fancy"></i> Drop a Note into the Mailbox</h5>
-              <form class="mailbox-quick-form" id="contactForm">
+              <form class="desk-quick-form" id="contactForm">
                 <div class="form-row-dual">
-                  <input type="text" id="contactName" class="letter-input" placeholder="Your Name" required>
-                  <input type="email" id="contactEmail" class="letter-input" placeholder="Your Email" required>
+                  <div class="form-field-wrap">
+                    <label for="contactName" class="form-field-label">Your Name</label>
+                    <input type="text" id="contactName" class="desk-input" placeholder="e.g. Sarah Jenkins" required>
+                  </div>
+                  <div class="form-field-wrap">
+                    <label for="contactEmail" class="form-field-label">Your Email</label>
+                    <input type="email" id="contactEmail" class="desk-input" placeholder="e.g. sarah@company.com" required>
+                  </div>
                 </div>
-                <input type="text" id="contactSubject" class="letter-input" placeholder="Subject (Engineering Role, AI Research, Collaboration)" required style="margin-bottom:10px;">
-                <textarea id="contactMessage" class="letter-textarea" placeholder="Hello Bhargav, I came across your portfolio and would love to connect..." rows="3" required></textarea>
-                <button type="submit" class="letter-submit-btn">
-                  <span>Send Direct Note</span>
-                  <i class="fa-solid fa-paper-plane"></i>
-                </button>
+
+                <div class="form-field-wrap">
+                  <label for="contactSubject" class="form-field-label">Subject</label>
+                  <input type="text" id="contactSubject" class="desk-input" placeholder="e.g. Software Engineering Opportunity / AI Project" required>
+                </div>
+
+                <div class="form-field-wrap">
+                  <label for="contactMessage" class="form-field-label">Message</label>
+                  <textarea id="contactMessage" class="desk-textarea" rows="4" placeholder="Hello Bhargav, I came across your portfolio and would love to connect about..." required></textarea>
+                </div>
+
+                <div class="desk-form-submit-row">
+                  <button type="submit" class="desk-send-btn">
+                    <span>Send Message</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                  <span class="desk-send-hint">Directly dispatches to battulabhargav222@gmail.com</span>
+                </div>
               </form>
             </div>
-
-            <!-- Bottom Wax Seal & Stamp -->
-            <div class="stationery-footer">
-              <div class="wax-seal">
-                <span>BB</span>
-              </div>
-              <div class="stationery-closing">
-                <em>Warm regards,</em>
-                <strong>Battula Bhargav</strong>
-              </div>
-            </div>
-
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
   </section>
@@ -1690,6 +1532,6 @@
   </div>
 
   <!-- Vanilla JavaScript App Logic -->
-  <script src="app.js?v=cinematic2"></script>
+  <script src="app.js?v=cinematic3"></script>
 </body>
 </html>

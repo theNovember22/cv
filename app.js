@@ -628,119 +628,102 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 15. Vintage Mailbox & Airmail Letter Controller
+  // 15. Personal Developer Desk & Expandable Form Controller
   // ==========================================
-  const mailboxStation = document.getElementById("mailboxStation");
-  const mailboxAssembly = document.getElementById("mailboxAssembly");
-  const mailboxPromptPill = document.getElementById("mailboxPromptPill");
-  const vintageLetterContainer = document.getElementById("vintageLetterContainer");
-  const vintageLetterEnvelope = document.getElementById("vintageLetterEnvelope");
-  const closeLetterBtn = document.getElementById("closeLetterBtn");
+  const toggleContactFormBtn = document.getElementById("toggleContactFormBtn");
+  const closeDeskFormBtn = document.getElementById("closeDeskFormBtn");
+  const deskFormPanel = document.getElementById("deskFormPanel");
   const contactForm = document.getElementById("contactForm");
 
-  function openMailboxLetter() {
-    if (!vintageLetterContainer) return;
-    vintageLetterContainer.classList.add("active");
-    if (mailboxStation) mailboxStation.classList.add("mailbox-open");
-    document.body.classList.add("letter-modal-open");
-    vintageLetterContainer.setAttribute("aria-hidden", "false");
-  }
-
-  function closeMailboxLetter() {
-    if (!vintageLetterContainer) return;
-    vintageLetterContainer.classList.remove("active");
-    if (mailboxStation) mailboxStation.classList.remove("mailbox-open");
-    document.body.classList.remove("letter-modal-open");
-    vintageLetterContainer.setAttribute("aria-hidden", "true");
-  }
-
-  if (mailboxAssembly) {
-    mailboxAssembly.addEventListener("click", openMailboxLetter);
-    mailboxAssembly.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openMailboxLetter();
+  function toggleDeskForm() {
+    if (!deskFormPanel) return;
+    const isExpanded = deskFormPanel.classList.toggle("active");
+    deskFormPanel.setAttribute("aria-hidden", (!isExpanded).toString());
+    if (toggleContactFormBtn) {
+      toggleContactFormBtn.setAttribute("aria-expanded", isExpanded.toString());
+      if (isExpanded) {
+        toggleContactFormBtn.classList.add("active");
+        setTimeout(() => {
+          deskFormPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }, 150);
+      } else {
+        toggleContactFormBtn.classList.remove("active");
       }
-    });
+    }
   }
 
-  if (mailboxPromptPill) {
-    mailboxPromptPill.addEventListener("click", openMailboxLetter);
+  function closeDeskForm() {
+    if (!deskFormPanel) return;
+    deskFormPanel.classList.remove("active");
+    deskFormPanel.setAttribute("aria-hidden", "true");
+    if (toggleContactFormBtn) {
+      toggleContactFormBtn.setAttribute("aria-expanded", "false");
+      toggleContactFormBtn.classList.remove("active");
+    }
   }
 
-  if (closeLetterBtn) {
-    closeLetterBtn.addEventListener("click", closeMailboxLetter);
+  if (toggleContactFormBtn) {
+    toggleContactFormBtn.addEventListener("click", toggleDeskForm);
   }
 
-  if (vintageLetterContainer) {
-    // Clicking backdrop closes modal
-    vintageLetterContainer.addEventListener("click", (e) => {
-      if (e.target === vintageLetterContainer) {
-        closeMailboxLetter();
-      }
-    });
-
-    // Escape key closes modal
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && vintageLetterContainer.classList.contains("active")) {
-        closeMailboxLetter();
-      }
-    });
+  if (closeDeskFormBtn) {
+    closeDeskFormBtn.addEventListener("click", closeDeskForm);
   }
-
-  // Copy-to-clipboard for email/phone pills
-  const copyButtons = document.querySelectorAll(".pill-copy-btn");
-  copyButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const textToCopy = btn.getAttribute("data-copy");
-      if (textToCopy && navigator.clipboard) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          const originalHTML = btn.innerHTML;
-          btn.innerHTML = '<i class="fa-solid fa-check" style="color:#30D158;"></i>';
-          showToast("Copied to clipboard: " + textToCopy);
-          setTimeout(() => {
-            btn.innerHTML = originalHTML;
-          }, 2000);
-        }).catch((err) => {
-          console.error("Clipboard copy failed:", err);
-        });
-      }
-    });
-  });
 
   // Handle Note Submission
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = document.getElementById("contactName")?.value || "";
-      showToast("Thank you, " + (name ? name : "friend") + "! Note dropped into mailbox.");
+      const name = document.getElementById("contactName")?.value.trim() || "";
+      const email = document.getElementById("contactEmail")?.value.trim() || "";
+      const subject = document.getElementById("contactSubject")?.value.trim() || "Portfolio Opportunity";
+      const message = document.getElementById("contactMessage")?.value.trim() || "";
+
+      if (!name || !email || !message) {
+        showToast("Please fill in all fields", "fa-triangle-exclamation");
+        return;
+      }
+
+      showToast("Thank you, " + name + "! Opening email client...", "fa-paper-plane");
+
+      const recipient = "battulabhargav222@gmail.com";
+      const fullSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} - from ${name}`);
+      const bodyContent = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from Battula Bhargav Portfolio Desk`
+      );
+      const mailtoUrl = `mailto:${recipient}?subject=${fullSubject}&body=${bodyContent}`;
+
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 500);
+
       contactForm.reset();
       setTimeout(() => {
-        closeMailboxLetter();
+        closeDeskForm();
       }, 1500);
     });
   }
 
   // ==========================================
-  // 16. Playing Cards Fan Interactive Lift
+  // 16. Playing Cards Mobile Tap Controller
   // ==========================================
   const playingCards = document.querySelectorAll(".playing-card");
-  playingCards.forEach((card) => {
-    card.addEventListener("click", (e) => {
-      const isLifted = card.classList.contains("card-lifted");
-      playingCards.forEach((c) => c.classList.remove("card-lifted"));
-      if (!isLifted) {
-        card.classList.add("card-lifted");
+  if (window.matchMedia("(hover: none)").matches) {
+    playingCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const isLifted = card.classList.contains("card-lifted");
+        playingCards.forEach((c) => c.classList.remove("card-lifted"));
+        if (!isLifted) {
+          card.classList.add("card-lifted");
+        }
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".playing-card")) {
+        playingCards.forEach((c) => c.classList.remove("card-lifted"));
       }
     });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".playing-card")) {
-      playingCards.forEach((c) => c.classList.remove("card-lifted"));
-    }
-  });
+  }
 
 });
