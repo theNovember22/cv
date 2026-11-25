@@ -76,12 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingTarget = document.getElementById("typingText");
   const roles = [
     "Software Engineer",
-    "AI & ML Researcher",
-    "Ex-Systems Engineer @ Infosys",
-    "M.Tech CSE @ NIT Goa",
-    "GATE CSE AIR 10139",
+    "AI Researcher",
     "Full-Stack Developer",
-    "Competitive Programmer (300+ LeetCode)"
+    "M.Tech CSE Student @ NIT Goa",
+    "Problem Solver"
   ];
 
   let roleIdx = 0;
@@ -143,8 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const codeSnippet = `const developer = {
   name: 'Battula Bhargav',
   title: 'Software Engineer & AI Researcher',
-  institution: 'NIT Goa (M.Tech CSE)',
-  experience: 'Ex-Systems Engineer @ Infosys',
+  institution: 'NIT Goa (M.Tech CSE, 2025–2027)',
+  experience: 'Former Systems Engineer @ Infosys',
   coreSkills: ['C/C++', 'Python', 'React.js', 'PyTorch', 'MongoDB', 'SQL', 'DSA'],
   leetCodeProblems: '300+ Solved',
   gateCSE: 'AIR 10139 (Top ~6%)',
