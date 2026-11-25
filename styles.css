@@ -145,6 +145,8 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -154,7 +156,8 @@ body {
   line-height: 1.6;
   position: relative;
   transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow-x: visible;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 /* Apple Ambient Lighting Background (Blue, Purple, Green Orbs) */
@@ -283,6 +286,7 @@ button {
   position: absolute;
   inset: 0;
   border-radius: inherit;
+  overflow: hidden;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -3875,6 +3879,12 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
     pointer-events: auto !important;
     transform: none !important;
     margin-top: 10px;
+    display: none;
+  }
+
+  .airport-stop-container.terminal-open .airport-glass-panel {
+    display: block;
+    animation: accordionReveal 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .airport-glass-panel::before {
@@ -5486,4 +5496,792 @@ body.light-theme .terminal-chip {
   border-color: rgba(255, 255, 255, 0.78);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 0 0 0.5px rgba(0, 0, 0, 0.10), 0 1px 4px rgba(0, 0, 0, 0.04);
   color: #111113;
+}
+
+/* ==========================================================================
+   Dedicated Mobile & Tablet Architecture (Desktop > 1024px Preserved)
+   ========================================================================== */
+.desktop-copy {
+  display: inline;
+}
+
+.mobile-copy,
+.mobile-tap-hint,
+.mobile-cards-hint,
+.mobile-only-nav-item {
+  display: none;
+}
+
+@keyframes accordionReveal {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .desktop-copy {
+    display: none;
+  }
+
+  .mobile-copy {
+    display: inline;
+  }
+
+  /* Fix navbar clipping mobile dropdown menu */
+  .navbar {
+    overflow: visible !important;
+    padding: 8px 16px;
+  }
+
+  .mobile-menu-btn,
+  .theme-toggle-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    padding: 14px;
+    border-radius: 24px;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px) scale(0.98);
+    transform-origin: top center;
+    transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1), transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.24s ease;
+  }
+
+  .nav-menu.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .nav-menu .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 0.96rem;
+    border-radius: 14px;
+  }
+
+  .nav-menu .nav-link::after {
+    display: none;
+  }
+
+  .mobile-only-nav-item {
+    display: block;
+    margin-top: 6px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .nav-link-resume {
+    justify-content: center !important;
+    gap: 8px;
+    background: var(--apple-blue) !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+  }
+
+  body.light-theme .nav-link-resume {
+    background: #111113 !important;
+    color: #FFFFFF !important;
+  }
+
+  /* Grid overflow containment on tablet/mobile */
+  .hero-grid > *,
+  .hero-content,
+  .code-window,
+  .identity-stage > *,
+  .sticky-card,
+  .abusaid-project-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Work & Leadership Vertical Interactive Flight-Path Timeline */
+  .airport-terminals-container {
+    position: relative !important;
+    padding: 14px 0 8px 34px !important;
+    gap: 18px !important;
+  }
+
+  .airport-terminals-container::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 24px;
+    bottom: 24px;
+    width: 2.5px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #0A84FF 0%, #5E5CE6 50%, #30D158 100%);
+    opacity: 0.78;
+  }
+
+  .airport-stop-container {
+    position: relative !important;
+  }
+
+  .airport-stop-container::before {
+    content: "";
+    position: absolute;
+    left: -29px;
+    top: 24px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #0A84FF;
+    border: 3px solid var(--bg-base);
+    box-shadow: 0 0 12px rgba(10, 132, 255, 0.75);
+    z-index: 5;
+  }
+
+  .airport-stop-container.latest-dest::before {
+    background: #30D158;
+    box-shadow: 0 0 12px rgba(48, 209, 88, 0.8);
+  }
+
+  .mobile-tap-hint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--apple-cyan);
+  }
+
+  body.light-theme .mobile-tap-hint {
+    border-top-color: rgba(0, 0, 0, 0.08);
+    color: #0066CC;
+  }
+
+  .mobile-tap-hint i {
+    transition: transform 0.25s ease;
+  }
+
+  .airport-stop-container.terminal-open .mobile-tap-hint i {
+    transform: rotate(180deg);
+  }
+
+  /* Education Vertical Yggdrasil Tree of Knowledge */
+  .yggdrasil-svg {
+    display: none;
+  }
+
+  .yggdrasil-stage {
+    min-height: auto;
+    margin-top: 24px;
+  }
+
+  .yggdrasil-leaves-container {
+    grid-template-columns: 1fr !important;
+    padding: 8px 0 8px 34px !important;
+    row-gap: 20px !important;
+    column-gap: 0 !important;
+    position: relative;
+  }
+
+  .yggdrasil-leaves-container::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 20px;
+    bottom: 20px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #30D158 0%, #8B5A2B 55%, #4A2E18 100%);
+    box-shadow: 0 0 12px rgba(48, 209, 88, 0.3);
+  }
+
+  .yggdrasil-leaf-wrapper {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    justify-content: stretch !important;
+    position: relative;
+  }
+
+  .yggdrasil-leaf-wrapper::before {
+    content: "";
+    position: absolute;
+    left: -29px;
+    top: 30px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #30D158;
+    border: 3px solid var(--bg-base);
+    box-shadow: 0 0 10px rgba(48, 209, 88, 0.8);
+    z-index: 3;
+  }
+
+  .yggdrasil-leaf-wrapper::after {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 36px;
+    width: 16px;
+    height: 2px;
+    background: rgba(48, 209, 88, 0.75);
+    z-index: 2;
+  }
+
+  body.light-theme .yggdrasil-leaf-wrapper::before {
+    background: #047857;
+    box-shadow: 0 0 8px rgba(4, 120, 87, 0.45);
+  }
+
+  body.light-theme .yggdrasil-leaf-wrapper::after {
+    background: rgba(4, 120, 87, 0.6);
+  }
+
+  .yggdrasil-leaf-pod {
+    max-width: 100% !important;
+    padding: 18px 18px;
+    transform: none !important;
+    border-radius: 8px 24px 20px 24px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(var(--max-width), calc(100% - 24px));
+  }
+
+  .header-wrapper {
+    top: max(10px, env(safe-area-inset-top, 10px));
+    padding: 0 12px;
+  }
+
+  .section {
+    padding: 68px 0;
+  }
+
+  .section-header-center {
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-size: clamp(1.65rem, 6.5vw, 2.25rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.94rem;
+  }
+
+  /* Mobile Hero Composition */
+  .hero-section {
+    padding: 26px 0 48px;
+    min-height: auto;
+  }
+
+  .hero-grid {
+    gap: 28px;
+  }
+
+  .hero-content {
+    gap: 16px;
+  }
+
+  .hero-pill {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 8.8vw, 3rem);
+    line-height: 1.08;
+  }
+
+  .hero-typing-wrapper {
+    font-size: clamp(1.05rem, 4.4vw, 1.35rem);
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .hero-desc {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-glass {
+    flex: 1 1 148px;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 18px;
+    font-size: 0.92rem;
+  }
+
+  .hero-socials {
+    gap: 12px;
+  }
+
+  .social-icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* developer.js Contained Code Window */
+  .code-window-header {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .code-tab {
+    padding: 3px 10px;
+    font-size: 0.76rem;
+  }
+
+  .btn-code-action {
+    padding: 6px 10px;
+    font-size: 0.74rem;
+    min-height: 32px;
+  }
+
+  .code-body {
+    padding: 14px 12px;
+    font-size: 0.78rem;
+    line-height: 1.65;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .code-line {
+    min-width: max-content;
+  }
+
+  .line-no {
+    width: 20px;
+    margin-right: 12px;
+    font-size: 0.74rem;
+    flex-shrink: 0;
+  }
+
+  .code-output-tray {
+    margin: 8px 12px 14px;
+    padding: 10px 12px;
+    font-size: 0.78rem;
+  }
+
+  /* Identity / About Mobile Composition */
+  .identity-stage {
+    gap: 28px;
+  }
+
+  .photo-reveal-container {
+    max-width: 320px;
+  }
+
+  .photo-liquid-frame {
+    height: clamp(300px, 78vw, 380px);
+    border-radius: 26px;
+  }
+
+  .identity-headline {
+    font-size: clamp(1.35rem, 5.2vw, 1.7rem);
+  }
+
+  .identity-bio {
+    font-size: 0.95rem;
+    line-height: 1.68;
+  }
+
+  .identity-metrics-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .identity-metric-pod {
+    padding: 16px 14px;
+  }
+
+  .identity-metric-pod:last-child {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .identity-metric-pod:last-child .metric-val {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    white-space: nowrap;
+  }
+
+  .identity-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .identity-actions .btn-primary,
+  .identity-actions .btn-glass {
+    flex: 1 1 150px;
+    justify-content: center;
+    min-height: 46px;
+    font-size: 0.9rem;
+  }
+
+  /* Projects Mobile Presentation (Disable Sticky Overlap Crush) */
+  .projects-stack {
+    gap: 20px;
+    padding-bottom: 8px;
+  }
+
+  .sticky-card {
+    position: static !important;
+    top: auto !important;
+  }
+
+  .abusaid-project-card {
+    border-radius: 20px;
+  }
+
+  .project-window-top {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .project-window-title {
+    min-width: 0;
+    overflow: hidden;
+    padding: 3px 10px;
+    font-size: 0.76rem;
+  }
+
+  .project-window-title span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .project-num-badge {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    padding: 3px 9px;
+  }
+
+  .project-code-area {
+    padding: 16px 14px 12px;
+    font-size: 0.8rem;
+    line-height: 1.65;
+  }
+
+  .project-code-line .line-no {
+    min-width: 22px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  .project-window-footer {
+    padding: 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .project-action-buttons {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn-project-cta {
+    flex: 1;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 0.84rem;
+  }
+
+  .project-tools-wrap {
+    gap: 6px;
+  }
+
+  /* Skills Responsive Grid */
+  .skills-marquee-wrapper {
+    mask-image: none;
+    -webkit-mask-image: none;
+    overflow: visible;
+    padding: 8px 0 0;
+  }
+
+  .skills-marquee-track,
+  .skills-marquee-track.reverse {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    animation: none !important;
+    transform: none !important;
+    margin-top: 12px;
+  }
+
+  .skills-marquee-track .skill-box-card:nth-child(n+11) {
+    display: none;
+  }
+
+  .skill-box-card {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    padding: 14px 8px;
+    gap: 8px;
+    border-radius: 16px;
+  }
+
+  .skill-box-img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .skill-box-name {
+    font-size: 0.78rem;
+  }
+
+  /* Education Mobile Polish */
+  .yggdrasil-section {
+    padding: 68px 0;
+  }
+
+  .leaf-degree-title {
+    font-size: 1.02rem;
+  }
+
+  .leaf-meta-row {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  /* Achievements Compact Interactive Playing Cards */
+  .mobile-cards-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  body.light-theme .mobile-cards-hint {
+    background: rgba(255, 255, 255, 0.45);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #2C2C34;
+  }
+
+  .cards-table-surface {
+    padding: 24px 14px 28px;
+    border-radius: 24px;
+  }
+
+  .playing-card {
+    max-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    border-radius: 20px;
+  }
+
+  .card-corner-index.top-left {
+    top: 16px;
+    right: 16px;
+    left: auto;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .card-corner-index.bottom-right {
+    display: none;
+  }
+
+  .card-face-body {
+    padding: 18px 18px !important;
+    gap: 4px;
+  }
+
+  .card-face-watermark {
+    font-size: 5.5rem;
+    bottom: 6px;
+    right: -4px;
+  }
+
+  .playing-card:not(.card-lifted) .card-desc,
+  .playing-card:not(.card-lifted) .card-metrics-pill,
+  .playing-card:not(.card-lifted) .card-divider {
+    display: none;
+  }
+
+  .playing-card.card-lifted .card-divider,
+  .playing-card.card-lifted .card-desc {
+    display: block;
+    animation: accordionReveal 0.25s ease;
+  }
+
+  .playing-card.card-lifted .card-metrics-pill {
+    display: flex;
+    animation: accordionReveal 0.25s ease;
+  }
+
+  /* Contact Desk Mobile Touch Polish */
+  .desk-contact-pill {
+    min-width: 0;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    flex-wrap: wrap;
+  }
+
+  .desk-contact-pill .pill-detail {
+    overflow-wrap: anywhere;
+    font-size: 0.82rem;
+  }
+
+  .btn-write-cta {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  .desk-input,
+  .desk-textarea {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  /* Footer Mobile Vertical Stack */
+  .footer {
+    padding: 36px 0 calc(28px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 18px;
+  }
+
+  .footer-links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .back-to-top {
+    bottom: max(18px, env(safe-area-inset-bottom, 18px));
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-role {
+    display: none;
+  }
+
+  .brand-badge {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .brand-name {
+    font-size: 0.9rem;
+  }
+
+  .mac-traffic-lights {
+    gap: 5px;
+  }
+
+  .mac-dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .airport-section {
+    padding: 48px 0 60px;
+  }
+
+  .airport-header-wrap {
+    padding: 12px 8px 6px;
+  }
+
+  .airport-transit-bar {
+    display: none;
+  }
+
+  .airport-stop-marker {
+    padding: 15px 15px;
+  }
+
+  .airport-glass-panel {
+    padding: 16px 15px;
+  }
+
+  .glass-panel-header {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .skills-marquee-track,
+  .skills-marquee-track.reverse {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-glass {
+    flex-basis: 100%;
+  }
+
+  .project-action-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

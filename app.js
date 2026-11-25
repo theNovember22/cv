@@ -452,22 +452,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const navMenu = document.getElementById("navMenu");
 
   if (mobileMenuBtn && navMenu) {
-    mobileMenuBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
+    function setMobileMenuState(open) {
+      navMenu.classList.toggle("open", open);
+      mobileMenuBtn.setAttribute("aria-expanded", open.toString());
       const icon = mobileMenuBtn.querySelector("i");
-      if (navMenu.classList.contains("open")) {
-        icon.className = "fa-solid fa-xmark";
-      } else {
-        icon.className = "fa-solid fa-bars";
+      if (icon) {
+        icon.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
       }
+    }
+
+    mobileMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setMobileMenuState(!navMenu.classList.contains("open"));
     });
 
     navMenu.querySelectorAll(".nav-link").forEach((link) => {
       link.addEventListener("click", () => {
-        navMenu.classList.remove("open");
-        const icon = mobileMenuBtn.querySelector("i");
-        if (icon) icon.className = "fa-solid fa-bars";
+        setMobileMenuState(false);
       });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (navMenu.classList.contains("open") && !e.target.closest("#navbar")) {
+        setMobileMenuState(false);
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("open")) {
+        setMobileMenuState(false);
+      }
     });
   }
 
@@ -540,15 +554,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const gateRatios = [0.05, 0.35, 0.65, 0.95];
     let ticking = false;
 
+    let mobileAccordionInitialized = false;
+
+    function syncMobileTerminalHints() {
+      airportTerminals.forEach((card) => {
+        if (!card) return;
+        const hintLabel = card.querySelector(".mobile-tap-hint span");
+        if (hintLabel) {
+          hintLabel.textContent = card.classList.contains("terminal-open") ? "Tap to collapse" : "Tap to inspect";
+        }
+      });
+    }
+
     function updateAirportJourney() {
       ticking = false;
 
-      // On tablet / mobile, runway SVG is hidden and terminals stack cleanly
+      // On tablet / mobile, runway SVG is hidden and career stops act as an interactive accordion timeline
       if (window.innerWidth <= 1024) {
-        airportTerminals.forEach((card) => {
-          if (card) card.classList.add("terminal-open");
-        });
+        if (!mobileAccordionInitialized) {
+          airportTerminals.forEach((card, idx) => {
+            if (card) card.classList.toggle("terminal-open", idx === 0);
+          });
+          mobileAccordionInitialized = true;
+          syncMobileTerminalHints();
+        }
         return;
+      }
+
+      if (mobileAccordionInitialized) {
+        airportTerminals.forEach((card) => {
+          if (card) card.classList.remove("terminal-open");
+        });
+        mobileAccordionInitialized = false;
       }
 
       if (!totalRunwayLength) {
@@ -642,14 +679,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.addEventListener("scroll", onAirportScroll, { passive: true });
+    window.addEventListener("resize", updateAirportJourney, { passive: true });
     updateAirportJourney();
 
-    // Click airport stop on mobile/tablet to toggle flyout
-    airportTerminals.forEach((card, idx) => {
+    // Click airport stop on mobile/tablet to toggle accordion panel
+    airportTerminals.forEach((card) => {
       if (!card) return;
-      card.addEventListener("click", () => {
-        if (window.innerWidth <= 1024) {
+      card.addEventListener("click", (e) => {
+        if (window.innerWidth <= 1024 && !e.target.closest("a")) {
           card.classList.toggle("terminal-open");
+          syncMobileTerminalHints();
         }
       });
     });
@@ -747,22 +786,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // 16. Playing Cards Mobile Tap Controller
   // ==========================================
   const playingCards = document.querySelectorAll(".playing-card");
-  if (window.matchMedia("(hover: none)").matches) {
-    playingCards.forEach((card) => {
-      card.addEventListener("click", () => {
+  const featuredNccCard = document.querySelector(".featured-ncc-card");
+
+  function syncPlayingCardsMobileDefault() {
+    if (window.innerWidth <= 768 && featuredNccCard && !document.querySelector(".playing-card.card-lifted")) {
+      featuredNccCard.classList.add("card-lifted");
+    } else if (window.innerWidth > 768 && !window.matchMedia("(hover: none)").matches) {
+      playingCards.forEach((c) => c.classList.remove("card-lifted"));
+    }
+  }
+
+  playingCards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      if (window.innerWidth <= 768 || window.matchMedia("(hover: none)").matches) {
         const isLifted = card.classList.contains("card-lifted");
         playingCards.forEach((c) => c.classList.remove("card-lifted"));
         if (!isLifted) {
           card.classList.add("card-lifted");
         }
-      });
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".playing-card")) {
-        playingCards.forEach((c) => c.classList.remove("card-lifted"));
       }
     });
-  }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".playing-card") && window.matchMedia("(hover: none)").matches && window.innerWidth > 768) {
+      playingCards.forEach((c) => c.classList.remove("card-lifted"));
+    }
+  });
+
+  window.addEventListener("resize", syncPlayingCardsMobileDefault, { passive: true });
+  syncPlayingCardsMobileDefault();
 
 });

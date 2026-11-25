@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Apple HIG Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=liquidglass2">
+  <link rel="stylesheet" href="styles.css?v=mobile1">
 </head>
 <body>
   <!-- Apple Subtle Ambient Glow Lights -->
@@ -54,6 +54,12 @@
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#achievements" class="nav-link">Honors</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="mobile-only-nav-item">
+          <a href="Battula_Bhargav_Resume.pdf" target="_blank" download class="nav-link nav-link-resume">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>Download Resume</span>
+          </a>
+        </li>
       </ul>
 
       <div class="nav-controls">
@@ -64,7 +70,7 @@
         <button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle Apple Color Scheme">
           <i class="fa-solid fa-sun" id="themeIcon"></i>
         </button>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle Menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="navMenu">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -991,7 +997,7 @@
           <span>Career Journey</span>
         </div>
         <h2 class="section-title">Work &amp; Leadership</h2>
-        <p class="section-subtitle">Scroll along the flight path to trace my career journey, or hover any milestone to learn more.</p>
+        <p class="section-subtitle"><span class="desktop-copy">Scroll along the flight path to trace my career journey, or hover any milestone to learn more.</span><span class="mobile-copy">Tap any career stop along the timeline to inspect details.</span></p>
       </div>
 
       <!-- Main Airport Stage (Curved Runway & 4 Career Stops) -->
@@ -1056,6 +1062,7 @@
                 <span><i class="fa-regular fa-calendar"></i> July 2022 – Oct 2023</span>
                 <span><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
               </div>
+              <div class="mobile-tap-hint"><span>Tap to collapse</span><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
             <!-- Floating Liquid-Glass Flyout Panel (Opens to Right) -->
@@ -1092,6 +1099,7 @@
                 <span><i class="fa-regular fa-calendar"></i> Aug 2024 – Present</span>
                 <span><i class="fa-solid fa-location-dot"></i> Goa, India</span>
               </div>
+              <div class="mobile-tap-hint"><span>Tap to inspect</span><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
             <!-- Floating Liquid-Glass Flyout Panel (Opens to Right) -->
@@ -1128,6 +1136,7 @@
                 <span><i class="fa-regular fa-calendar"></i> Aug 2024 – Present</span>
                 <span><i class="fa-solid fa-location-dot"></i> Goa, India</span>
               </div>
+              <div class="mobile-tap-hint"><span>Tap to inspect</span><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
             <!-- Floating Liquid-Glass Flyout Panel (Opens Downward) -->
@@ -1164,6 +1173,7 @@
                 <span><i class="fa-regular fa-calendar"></i> Jul – Aug 2024</span>
                 <span><i class="fa-solid fa-location-dot"></i> India</span>
               </div>
+              <div class="mobile-tap-hint"><span>Tap to inspect</span><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
             <!-- Floating Liquid-Glass Flyout Panel (Opens to Left) -->
@@ -1210,6 +1220,7 @@
         <div class="cards-table-surface">
           <!-- Ambient Table Lighting Vignette -->
           <div class="table-ambient-spotlight"></div>
+          <div class="mobile-cards-hint"><i class="fa-solid fa-hand-pointer"></i> Tap any card to expand details</div>
           
           <div class="cards-fan-spread" id="cardsFanSpread">
             
@@ -1524,6 +1535,6 @@
   </div>
 
   <!-- Vanilla JavaScript App Logic -->
-  <script src="app.js?v=liquidglass1"></script>
+  <script src="app.js?v=mobile1"></script>
 </body>
 </html>
