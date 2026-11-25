@@ -39,7 +39,7 @@ An ultra-sleek, cinematic developer portfolio for **Battula Bhargav** (M.Tech CS
 - **Authentic Stationery Aesthetic**: Designed as a personal developer letter desk:
   - Greeting: *"Dear future collaborator,"*
   - Message: *"I'm currently open to software engineering, AI/ML, and research opportunities. Let's build something useful."*
-  - Direct communication capsules: Email, GitHub (with subtle emerald identity accent), LinkedIn, Phone/WhatsApp, and downloadable Resume.
+  - Direct communication capsules: Email, GitHub (with subtle emerald identity accent), LinkedIn, and downloadable Resume.
 - **Initially Hidden Expandable Form**: Clicking **`WRITE TO BHARGAV →`** smoothly unfolds a direct compose slip (Name, Email, Subject, Message) directly on the desk canvas.
 
 ### 5. Liquid Glass & Dual Theme System
