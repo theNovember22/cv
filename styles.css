@@ -44,19 +44,19 @@
   --grad-github-emerald: linear-gradient(135deg, #064E3B 0%, #059669 45%, #30D158 100%);
   --shadow-github-glow: 0 4px 20px rgba(48, 209, 88, 0.35);
 
-  /* Surfaces & Apple Control Center Frosted Glass (Dark Mode) */
+  /* Surfaces & Apple macOS Liquid Glass (Dark Mode) */
   --bg-base: #000000;
   --bg-deep: #050507;
-  --bg-surface: rgba(20, 24, 32, 0.62);
-  --bg-surface-elevated: rgba(26, 32, 42, 0.72);
-  --bg-surface-glass: rgba(255, 255, 255, 0.06);
-  --bg-card: rgba(22, 26, 36, 0.60);
-  --bg-code: rgba(14, 18, 24, 0.75);
+  --bg-surface: rgba(24, 28, 38, 0.44);
+  --bg-surface-elevated: rgba(30, 35, 48, 0.54);
+  --bg-surface-glass: rgba(255, 255, 255, 0.08);
+  --bg-card: rgba(24, 28, 40, 0.40);
+  --bg-code: rgba(16, 20, 28, 0.56);
   
   /* Hairline Specular Borders */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glass: rgba(255, 255, 255, 0.16);
-  --border-active: rgba(10, 132, 255, 0.6);
+  --border-subtle: rgba(255, 255, 255, 0.10);
+  --border-glass: rgba(255, 255, 255, 0.22);
+  --border-active: rgba(10, 132, 255, 0.65);
   --border-glow: rgba(10, 132, 255, 0.3);
 
   /* Typography / Labels */
@@ -72,13 +72,13 @@
   --grad-sunset: linear-gradient(135deg, var(--apple-orange) 0%, var(--apple-pink) 100%);
   --grad-apple-glow: radial-gradient(circle at 50% 0%, rgba(10, 132, 255, 0.18), transparent 70%);
 
-  /* Liquid Glass Elevation Shadows & Filters (Apple Control Center Specular Depth) */
-  --shadow-sm: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 4px 14px rgba(0, 0, 0, 0.35);
-  --shadow-md: inset 0 1px 1px rgba(255, 255, 255, 0.22), 0 12px 34px rgba(0, 0, 0, 0.5);
-  --shadow-lg: inset 0 1px 1px rgba(255, 255, 255, 0.28), 0 24px 64px rgba(0, 0, 0, 0.7);
+  /* Liquid Glass Elevation Shadows & Filters (Apple macOS Specular Depth) */
+  --shadow-sm: inset 0 1px 1px rgba(255, 255, 255, 0.28), inset 0 -1px 1px rgba(255, 255, 255, 0.06), 0 6px 18px rgba(0, 0, 0, 0.32);
+  --shadow-md: inset 0 1px 1.5px rgba(255, 255, 255, 0.34), inset 0 -1px 1px rgba(255, 255, 255, 0.08), 0 14px 36px rgba(0, 0, 0, 0.45);
+  --shadow-lg: inset 0 1px 2px rgba(255, 255, 255, 0.40), inset 0 -1px 1px rgba(255, 255, 255, 0.08), 0 24px 64px rgba(0, 0, 0, 0.65);
   --shadow-glow: 0 0 40px rgba(10, 132, 255, 0.18);
-  --blur-glass: blur(36px) saturate(200%);
-  --blur-header: blur(36px) saturate(200%);
+  --blur-glass: blur(42px) saturate(210%);
+  --blur-header: blur(42px) saturate(210%);
 
   /* Radii */
   --radius-sm: 8px;
@@ -93,18 +93,18 @@
   --font-mono: "JetBrains Mono", "SF Mono", Menlo, Monaco, Consolas, monospace;
 }
 
-/* Light Theme (Apple Control Center Frosted Glass) */
+/* Light Theme (Apple macOS Frosted Liquid Glass) */
 body.light-theme {
   --bg-base: #F5F5F7;
   --bg-deep: #E8E8ED;
-  --bg-surface: rgba(255, 255, 255, 0.60);
-  --bg-surface-elevated: rgba(255, 255, 255, 0.72);
-  --bg-surface-glass: rgba(0, 0, 0, 0.03);
-  --bg-card: rgba(255, 255, 255, 0.58);
-  --bg-code: rgba(255, 255, 255, 0.65);
+  --bg-surface: rgba(255, 255, 255, 0.48);
+  --bg-surface-elevated: rgba(255, 255, 255, 0.62);
+  --bg-surface-glass: rgba(255, 255, 255, 0.35);
+  --bg-card: rgba(255, 255, 255, 0.44);
+  --bg-code: rgba(255, 255, 255, 0.54);
   
   --border-subtle: rgba(0, 0, 0, 0.06);
-  --border-glass: rgba(255, 255, 255, 0.75);
+  --border-glass: rgba(255, 255, 255, 0.85);
   --border-active: rgba(0, 113, 227, 0.6);
   --border-glow: rgba(0, 113, 227, 0.25);
 
@@ -119,9 +119,9 @@ body.light-theme {
   --apple-purple: #8928BA;
   --apple-mint: #047857;
 
-  --shadow-sm: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 4px 14px rgba(0, 0, 0, 0.05);
-  --shadow-md: inset 0 1px 1px rgba(255, 255, 255, 0.95), inset 0 0 0 1px rgba(255, 255, 255, 0.35), 0 10px 30px rgba(0, 0, 0, 0.07);
-  --shadow-lg: inset 0 1px 1px rgba(255, 255, 255, 1), 0 20px 50px rgba(0, 0, 0, 0.1);
+  --shadow-sm: inset 0 1.5px 2px rgba(255, 255, 255, 0.98), inset 0 -1px 1px rgba(255, 255, 255, 0.45), 0 6px 18px rgba(0, 0, 0, 0.05);
+  --shadow-md: inset 0 1.5px 2px rgba(255, 255, 255, 1), inset 0 -1px 1.5px rgba(255, 255, 255, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.35), 0 12px 32px rgba(0, 0, 0, 0.07);
+  --shadow-lg: inset 0 1.5px 2px rgba(255, 255, 255, 1), inset 0 -1px 1.5px rgba(255, 255, 255, 0.5), 0 22px 54px rgba(0, 0, 0, 0.10);
   --shadow-glow: 0 0 40px rgba(0, 113, 227, 0.12);
 
   --grad-primary: linear-gradient(135deg, #111113 0%, #3A3A3C 50%, #111113 100%);
@@ -654,21 +654,32 @@ body.light-theme .nav-link.active {
 .social-icon-btn.phone:hover { border-color: var(--apple-green); color: var(--apple-green); }
 
 /* ==========================================================================
-   macOS Interactive Code Card (Interactive Developer Component)
+   macOS Interactive Code Card (Apple macOS Liquid Glass)
    ========================================================================== */
 .code-window {
-  background: var(--bg-code);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.02) 55%, rgba(255, 255, 255, 0.06) 100%), rgba(16, 20, 30, 0.48);
+  backdrop-filter: blur(42px) saturate(210%) contrast(1.04);
+  -webkit-backdrop-filter: blur(42px) saturate(210%) contrast(1.04);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--border-glass);
-  box-shadow: var(--shadow-lg), 0 0 30px rgba(94, 92, 230, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.36),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.07),
+    0 24px 60px rgba(0, 0, 0, 0.58),
+    0 0 30px rgba(94, 92, 230, 0.14);
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 
 .code-window:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg), 0 0 45px rgba(10, 132, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.48),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.1),
+    0 28px 70px rgba(0, 0, 0, 0.65),
+    0 0 42px rgba(10, 132, 255, 0.20);
 }
 
 .code-window-header {
@@ -1109,21 +1120,23 @@ body.light-theme .nav-link.active {
 }
 
 .identity-metric-pod {
+  position: relative;
+  overflow: hidden;
   padding: 20px 18px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: var(--blur-glass);
-  -webkit-backdrop-filter: var(--blur-glass);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 10px 24px rgba(0, 0, 0, 0.35);
-  transition: all 0.3s ease;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.03) 60%, rgba(255, 255, 255, 0.07) 100%), rgba(22, 26, 38, 0.34);
+  backdrop-filter: blur(38px) saturate(210%);
+  -webkit-backdrop-filter: blur(38px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1.5px 1.5px rgba(255, 255, 255, 0.34), inset 0 -1px 1px rgba(255, 255, 255, 0.06), 0 10px 28px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .identity-metric-pod:hover {
   transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 16px 36px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.05) 60%, rgba(255, 255, 255, 0.1) 100%), rgba(28, 34, 48, 0.44);
+  border-color: rgba(255, 255, 255, 0.36);
+  box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.48), 0 18px 40px rgba(0, 0, 0, 0.5);
 }
 
 .identity-metric-pod .metric-val {
@@ -1179,18 +1192,24 @@ body.light-theme .nav-link.active {
 /* Ambient Subtle Runway Light */
 .airport-ambient-light {
   position: absolute;
-  top: 25%;
-  left: 10%;
-  width: 80%;
-  height: 50%;
-  background: radial-gradient(ellipse at 50% 50%, rgba(10, 132, 255, 0.05) 0%, rgba(48, 209, 88, 0.03) 40%, transparent 75%);
+  top: 18%;
+  left: 6%;
+  width: 88%;
+  height: 64%;
+  background:
+    radial-gradient(circle at 22% 45%, rgba(10, 132, 255, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 55% 35%, rgba(94, 92, 230, 0.14) 0%, transparent 48%),
+    radial-gradient(circle at 82% 62%, rgba(48, 209, 88, 0.16) 0%, transparent 45%);
   pointer-events: none;
   z-index: 1;
-  filter: blur(50px);
+  filter: blur(60px);
 }
 
 body.light-theme .airport-ambient-light {
-  background: radial-gradient(ellipse at 50% 50%, rgba(0, 113, 227, 0.04) 0%, rgba(4, 120, 87, 0.02) 40%, transparent 75%);
+  background:
+    radial-gradient(circle at 22% 45%, rgba(0, 113, 227, 0.13) 0%, transparent 45%),
+    radial-gradient(circle at 55% 35%, rgba(94, 92, 230, 0.10) 0%, transparent 48%),
+    radial-gradient(circle at 82% 62%, rgba(4, 120, 87, 0.12) 0%, transparent 45%);
 }
 
 /* Header & Minimal Transit Bar */
@@ -1508,53 +1527,63 @@ body.light-theme .aircraft-shape {
   top: 52%;
 }
 
-/* Sleek Compact Permanent Airport Stop Marker (Apple Control Center Glass Tile) */
+/* Sleek Compact Permanent Airport Stop Marker (Apple macOS Liquid Glass Tile) */
 .airport-stop-marker {
+  position: relative;
+  overflow: hidden;
   width: clamp(260px, 20.5vw, 305px);
-  padding: 16px 18px;
-  background: rgba(22, 26, 36, 0.60);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 18px;
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.22),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 12px 32px rgba(0, 0, 0, 0.45);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  padding: 18px 20px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.04) 55%, rgba(255, 255, 255, 0.08) 100%),
+    rgba(22, 26, 38, 0.36);
+  backdrop-filter: blur(42px) saturate(215%) contrast(1.04);
+  -webkit-backdrop-filter: blur(42px) saturate(215%) contrast(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.42),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 14px 36px rgba(0, 0, 0, 0.44);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   cursor: pointer;
 }
 
 .airport-stop-container:hover .airport-stop-marker,
 .airport-stop-container.terminal-open .airport-stop-marker {
-  transform: translateY(-3px);
-  background: rgba(28, 34, 46, 0.72);
-  border-color: rgba(10, 132, 255, 0.65);
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.32),
-    0 16px 40px rgba(0, 0, 0, 0.55), 
-    0 0 24px rgba(10, 132, 255, 0.22);
+  transform: translateY(-4px) scale(1.015);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.19) 0%, rgba(255, 255, 255, 0.06) 55%, rgba(255, 255, 255, 0.11) 100%),
+    rgba(26, 32, 46, 0.46);
+  border-color: rgba(100, 210, 255, 0.65);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.56),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.12),
+    0 20px 46px rgba(0, 0, 0, 0.54),
+    0 0 28px rgba(10, 132, 255, 0.24);
 }
 
 .airport-stop-container.active-dest .airport-stop-marker {
-  border-color: rgba(10, 132, 255, 0.55);
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.25),
-    0 14px 34px rgba(0, 0, 0, 0.48), 
-    0 0 20px rgba(10, 132, 255, 0.18);
+  border-color: rgba(100, 210, 255, 0.55);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.09),
+    0 16px 38px rgba(0, 0, 0, 0.48),
+    0 0 22px rgba(10, 132, 255, 0.20);
 }
 
 .airport-stop-container.latest-dest .airport-stop-marker {
-  border-color: rgba(48, 209, 88, 0.35);
+  border-color: rgba(48, 209, 88, 0.42);
 }
 
 .airport-stop-container.latest-dest:hover .airport-stop-marker,
 .airport-stop-container.latest-dest.active-dest .airport-stop-marker {
-  border-color: #30D158;
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.32),
-    0 16px 40px rgba(0, 0, 0, 0.55), 
-    0 0 24px rgba(48, 209, 88, 0.22);
+  border-color: rgba(52, 211, 153, 0.85);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.55),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.12),
+    0 20px 46px rgba(0, 0, 0, 0.54),
+    0 0 28px rgba(48, 209, 88, 0.26);
 }
 
 /* Stop Marker Internal Typography */
@@ -1680,17 +1709,20 @@ body.light-theme .aircraft-shape {
   visibility: hidden;
   transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s ease;
   z-index: 60;
-  background: rgba(18, 22, 30, 0.72);
-  backdrop-filter: blur(40px) saturate(200%);
-  -webkit-backdrop-filter: blur(40px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 20px;
-  padding: 18px 22px;
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.28),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 24px 60px rgba(0, 0, 0, 0.65),
-    0 0 30px rgba(10, 132, 255, 0.14);
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.04) 50%, rgba(255, 255, 255, 0.09) 100%),
+    rgba(18, 22, 34, 0.52);
+  backdrop-filter: blur(48px) saturate(220%) contrast(1.04);
+  -webkit-backdrop-filter: blur(48px) saturate(220%) contrast(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 22px;
+  padding: 20px 22px;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.48),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07),
+    0 26px 64px rgba(0, 0, 0, 0.62),
+    0 0 32px rgba(10, 132, 255, 0.16);
 }
 
 /* Directional Flyouts */
@@ -1858,39 +1890,42 @@ body.light-theme .aircraft-shape {
   color: #E5E5EA;
 }
 
-/* Light Theme Overrides for Airport Stops & Liquid-Glass Flyouts */
+/* Light Theme Overrides for Airport Stops & Liquid-Glass Flyouts (macOS Frost) */
 body.light-theme .airport-stop-marker {
-  background: rgba(255, 255, 255, 0.58);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.34) 55%, rgba(255, 255, 255, 0.56) 100%);
+  backdrop-filter: blur(42px) saturate(215%) brightness(1.04);
+  -webkit-backdrop-filter: blur(42px) saturate(215%) brightness(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.90);
+  box-shadow:
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 1.5px 0 rgba(255, 255, 255, 0.48),
     inset 0 0 0 1px rgba(255, 255, 255, 0.35),
-    0 8px 26px 0 rgba(0, 0, 0, 0.07),
+    0 12px 32px 0 rgba(0, 0, 0, 0.07),
     0 2px 6px 0 rgba(0, 0, 0, 0.03);
 }
 
 body.light-theme .airport-stop-container:hover .airport-stop-marker,
 body.light-theme .airport-stop-container.terminal-open .airport-stop-marker {
-  background: rgba(255, 255, 255, 0.72);
-  border-color: rgba(0, 113, 227, 0.6);
-  box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
-    0 14px 34px 0 rgba(0, 0, 0, 0.1),
-    0 0 20px 0 rgba(0, 113, 227, 0.18);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.48) 55%, rgba(255, 255, 255, 0.70) 100%);
+  border-color: rgba(0, 113, 227, 0.55);
+  box-shadow:
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 1.5px 0 rgba(255, 255, 255, 0.55),
+    0 18px 42px 0 rgba(0, 0, 0, 0.10),
+    0 0 24px 0 rgba(0, 113, 227, 0.18);
 }
 
 body.light-theme .airport-glass-panel {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(40px) saturate(200%);
-  -webkit-backdrop-filter: blur(40px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.46) 55%, rgba(255, 255, 255, 0.66) 100%);
+  backdrop-filter: blur(48px) saturate(220%) brightness(1.04);
+  -webkit-backdrop-filter: blur(48px) saturate(220%) brightness(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.94);
+  box-shadow:
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 1.5px 0 rgba(255, 255, 255, 0.52),
     inset 0 0 0 1px rgba(255, 255, 255, 0.4),
-    0 22px 55px 0 rgba(0, 0, 0, 0.11),
-    0 0 24px 0 rgba(0, 113, 227, 0.1);
+    0 24px 58px 0 rgba(0, 0, 0, 0.11),
+    0 0 26px 0 rgba(0, 113, 227, 0.10);
 }
 
 body.light-theme .terminal-org-name {
@@ -2017,23 +2052,26 @@ body.light-theme .terminal-chip {
   to { transform: translateX(0); }
 }
 
-/* Bespoke Liquid Glass Skill Card */
+/* Bespoke Apple macOS Liquid Glass Skill Card */
 .skill-box-card {
   width: 140px;
   height: 135px;
   padding: 16px 12px;
-  border-radius: var(--radius-md);
-  background: var(--bg-card);
-  backdrop-filter: var(--blur-glass);
-  -webkit-backdrop-filter: var(--blur-glass);
-  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.03) 55%, rgba(255, 255, 255, 0.07) 100%), rgba(22, 26, 38, 0.36);
+  backdrop-filter: blur(40px) saturate(210%);
+  -webkit-backdrop-filter: blur(40px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
   text-align: center;
-  box-shadow: var(--shadow-sm);
+  box-shadow:
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.36),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.06),
+    0 8px 22px rgba(0, 0, 0, 0.32);
   position: relative;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2056,9 +2094,12 @@ body.light-theme .terminal-chip {
 
 .skill-box-card:hover {
   transform: translateY(-8px) scale(1.05);
-  border-color: var(--border-active);
-  background: rgba(30, 30, 42, 0.85);
-  box-shadow: var(--shadow-md), 0 0 24px rgba(10, 132, 255, 0.35);
+  border-color: rgba(100, 210, 255, 0.65);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.05) 55%, rgba(255, 255, 255, 0.11) 100%), rgba(28, 34, 48, 0.48);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.52),
+    0 14px 32px rgba(0, 0, 0, 0.48),
+    0 0 24px rgba(10, 132, 255, 0.28);
 }
 
 .skill-box-card:hover::after {
@@ -2175,18 +2216,23 @@ body.light-theme .terminal-chip {
   #sticky-card-7 { top: 177px; }
 }
 
-/* Bespoke Project Code Card */
+/* Bespoke Project Code Card (Apple macOS Liquid Glass) */
 .abusaid-project-card {
   border-radius: var(--radius-lg);
-  background: var(--bg-code);
-  backdrop-filter: var(--blur-glass);
-  -webkit-backdrop-filter: var(--blur-glass);
-  border: 1px solid var(--border-glass);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.02) 55%, rgba(255, 255, 255, 0.06) 100%), rgba(16, 20, 30, 0.50);
+  backdrop-filter: blur(42px) saturate(210%) contrast(1.04);
+  -webkit-backdrop-filter: blur(42px) saturate(210%) contrast(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 25px rgba(10, 132, 255, 0.12);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.36),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.06),
+    0 -4px 18px rgba(0, 0, 0, 0.36),
+    0 14px 36px rgba(0, 0, 0, 0.48),
+    0 0 25px rgba(10, 132, 255, 0.12);
   position: relative;
   width: 100%;
 }
@@ -2493,20 +2539,21 @@ body.light-theme .tree-stem-node {
   justify-content: flex-start;
 }
 
-/* Organic Leaf Pod Silhouette */
+/* Organic Leaf Pod Silhouette (macOS Liquid Glass) */
 .yggdrasil-leaf-pod {
   position: relative;
   width: 100%;
   max-width: 440px;
   padding: 24px 28px;
   cursor: pointer;
-  background: rgba(16, 20, 18, 0.74);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 
-    0 14px 38px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.03) 55%, rgba(48, 209, 88, 0.06) 100%), rgba(16, 22, 20, 0.46);
+  backdrop-filter: blur(40px) saturate(205%);
+  -webkit-backdrop-filter: blur(40px) saturate(205%);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.46),
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.34),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.06),
     0 0 24px rgba(48, 209, 88, 0.08);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
   overflow: hidden;
@@ -2842,30 +2889,31 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
   --card-z: 1;
 }
 
-/* Physical Playing Card Base (Apple Control Center Frosted Glass) */
+/* Physical Playing Card Base (Apple macOS Liquid Glass) */
 .playing-card {
   position: absolute;
   bottom: 25px;
   width: clamp(230px, 19vw, 265px);
   height: 385px;
-  border-radius: 20px;
-  background: rgba(22, 26, 36, 0.75);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.35),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 14px 36px rgba(0, 0, 0, 0.5);
+  border-radius: 22px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.04) 55%, rgba(255, 255, 255, 0.08) 100%), rgba(22, 26, 40, 0.46);
+  backdrop-filter: blur(42px) saturate(215%) contrast(1.04);
+  -webkit-backdrop-filter: blur(42px) saturate(215%) contrast(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.44),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 14px 36px rgba(0, 0, 0, 0.48);
   cursor: pointer;
   transform-origin: 50% 120%;
   transform: translateX(var(--card-x)) translateY(var(--card-y)) rotate(var(--card-rot));
   z-index: var(--card-z);
   will-change: transform;
-  transition: 
-    transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1), 
-    box-shadow 350ms ease, 
-    border-color 250ms ease, 
+  transition:
+    transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 350ms ease,
+    border-color 250ms ease,
     background-color 250ms ease;
   user-select: none;
 }
@@ -2875,12 +2923,13 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
 .playing-card.card-lifted {
   transform: translateX(var(--card-x)) translateY(calc(var(--card-y) - 26px)) rotate(calc(var(--card-rot) * 0.2)) scale(1.04) !important;
   z-index: 50 !important;
-  border-color: rgba(10, 132, 255, 0.85);
-  background-color: rgba(28, 34, 48, 0.92);
-  box-shadow: 
-    inset 0 1px 2px rgba(255, 255, 255, 0.6),
-    0 26px 70px rgba(0, 0, 0, 0.75), 
-    0 0 28px rgba(10, 132, 255, 0.32);
+  border-color: rgba(100, 210, 255, 0.78);
+  background-color: rgba(28, 34, 52, 0.64);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.62),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.12),
+    0 26px 70px rgba(0, 0, 0, 0.72),
+    0 0 32px rgba(10, 132, 255, 0.30);
 }
 
 /* Featured NCC Card Special Accent */
@@ -3110,19 +3159,21 @@ body.light-theme .yggdrasil-leaf-pod:hover .leaf-vein-main {
   margin: 0 auto;
 }
 
-/* Personal Letter Surface Card */
+/* Personal Letter Surface Card (Apple macOS Liquid Glass) */
 .contact-letter-surface {
   position: relative;
+  overflow: hidden;
   border-radius: 32px;
   padding: 44px 48px;
-  background: rgba(22, 26, 36, 0.72);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.35),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 24px 70px rgba(0, 0, 0, 0.55);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.03) 55%, rgba(255, 255, 255, 0.07) 100%), rgba(20, 24, 36, 0.46);
+  backdrop-filter: blur(42px) saturate(215%) contrast(1.04);
+  -webkit-backdrop-filter: blur(42px) saturate(215%) contrast(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.42),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 70px rgba(0, 0, 0, 0.52);
 }
 
 /* Retro Airmail Accent Trim */
@@ -4642,17 +4693,18 @@ body.light-theme .social-icon-btn.email:hover {
   border-color: #7B1FA2 !important;
 }
 
-/* 4. Code Cards & Terminals in Light Mode */
+/* 4. Code Cards & Terminals in Light Mode (macOS Frosted Liquid Glass) */
 body.light-theme .code-window,
 body.light-theme .abusaid-project-card {
-  background: rgba(255, 255, 255, 0.62);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.40) 55%, rgba(255, 255, 255, 0.58) 100%);
+  backdrop-filter: blur(42px) saturate(215%) brightness(1.04);
+  -webkit-backdrop-filter: blur(42px) saturate(215%) brightness(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow:
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 1.5px 0 rgba(255, 255, 255, 0.48),
     inset 0 0 0 1px rgba(255, 255, 255, 0.35),
-    0 16px 40px 0 rgba(0, 0, 0, 0.08);
+    0 18px 44px 0 rgba(0, 0, 0, 0.08);
 }
 
 body.light-theme .code-window-header,
@@ -4868,14 +4920,22 @@ body.light-theme .identity-badge-pill i {
 }
 
 body.light-theme .identity-metric-pod {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.38) 60%, rgba(255, 255, 255, 0.56) 100%);
+  backdrop-filter: blur(38px) saturate(210%);
+  -webkit-backdrop-filter: blur(38px) saturate(210%);
+  border-color: rgba(255, 255, 255, 0.88);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 1),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.45),
+    0 10px 28px rgba(0, 0, 0, 0.06);
 }
 
 body.light-theme .identity-metric-pod:hover {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.52) 60%, rgba(255, 255, 255, 0.72) 100%);
+  border-color: rgba(0, 113, 227, 0.4);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 1),
+    0 16px 36px rgba(0, 0, 0, 0.09);
 }
 
 body.light-theme .identity-metric-pod .metric-val {
@@ -4893,22 +4953,23 @@ body.light-theme .skills-marquee-wrapper {
 }
 
 body.light-theme .skill-box-card {
-  background: rgba(255, 255, 255, 0.60);
-  backdrop-filter: blur(28px) saturate(200%);
-  -webkit-backdrop-filter: blur(28px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
-    0 6px 18px 0 rgba(0, 0, 0, 0.05);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.70) 0%, rgba(255, 255, 255, 0.34) 55%, rgba(255, 255, 255, 0.54) 100%);
+  backdrop-filter: blur(40px) saturate(210%);
+  -webkit-backdrop-filter: blur(40px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow:
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.45),
+    0 8px 22px 0 rgba(0, 0, 0, 0.06);
 }
 
 body.light-theme .skill-box-card:hover {
-  background: rgba(255, 255, 255, 0.76);
-  border-color: #0071E3;
-  box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
-    0 12px 32px 0 rgba(0, 0, 0, 0.1), 
-    0 0 20px 0 rgba(0, 113, 227, 0.2);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.50) 55%, rgba(255, 255, 255, 0.70) 100%);
+  border-color: rgba(0, 113, 227, 0.6);
+  box-shadow:
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 1),
+    0 14px 34px 0 rgba(0, 0, 0, 0.10),
+    0 0 22px 0 rgba(0, 113, 227, 0.18);
 }
 
 body.light-theme .skill-box-name {
@@ -5045,24 +5106,26 @@ body.light-theme .table-ambient-spotlight {
 }
 
 body.light-theme .playing-card {
-  background-color: rgba(255, 255, 255, 0.68);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.4),
-    0 12px 30px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0.38) 55%, rgba(255, 255, 255, 0.60) 100%);
+  backdrop-filter: blur(42px) saturate(215%) brightness(1.04);
+  -webkit-backdrop-filter: blur(42px) saturate(215%) brightness(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.90);
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 1),
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.38),
+    0 14px 34px rgba(0, 0, 0, 0.08);
 }
 
 body.light-theme .playing-card:hover,
 body.light-theme .playing-card.card-lifted {
-  background-color: rgba(255, 255, 255, 0.88);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.56) 55%, rgba(255, 255, 255, 0.78) 100%);
   border-color: rgba(0, 113, 227, 0.65);
-  box-shadow: 
-    inset 0 1px 1px #FFFFFF,
+  box-shadow:
+    inset 0 1.5px 2px #FFFFFF,
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.6),
     0 24px 60px rgba(0, 0, 0, 0.12),
-    0 0 25px rgba(0, 113, 227, 0.2);
+    0 0 26px rgba(0, 113, 227, 0.20);
 }
 
 body.light-theme .card-title {
@@ -5102,13 +5165,16 @@ body.light-theme .card-face-watermark {
   color: rgba(0, 0, 0, 0.04);
 }
 
-/* 11. Contact Personal Developer Desk in Light Mode */
+/* 11. Contact Personal Developer Desk in Light Mode (macOS Frosted Liquid Glass) */
 body.light-theme .contact-letter-surface {
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 
-    inset 0 1px 1px #FFFFFF,
-    0 20px 60px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.44) 55%, rgba(255, 255, 255, 0.64) 100%);
+  backdrop-filter: blur(42px) saturate(215%) brightness(1.04);
+  -webkit-backdrop-filter: blur(42px) saturate(215%) brightness(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    inset 0 1.5px 2px #FFFFFF,
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.5),
+    0 22px 60px rgba(0, 0, 0, 0.08);
 }
 
 body.light-theme .letter-postmark-tag {
@@ -5260,4 +5326,102 @@ body.light-theme .apple-toast {
   border: 1px solid rgba(255, 255, 255, 0.85);
   color: #111113;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95), 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================================================
+   Unified Apple macOS Liquid Glass Specular Glare & Refraction Layer
+   ========================================================================== */
+.airport-stop-marker > *,
+.airport-glass-panel > *,
+.identity-metric-pod > *,
+.code-window > *,
+.abusaid-project-card > *,
+.contact-letter-surface > * {
+  position: relative;
+  z-index: 1;
+}
+
+.airport-stop-marker::after,
+.airport-glass-panel::after,
+.code-window::after,
+.abusaid-project-card::after,
+.identity-metric-pod::after,
+.contact-letter-surface::after,
+.skill-box-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    circle 210px at var(--mx, 50%) var(--my, 15%),
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.08) 38%,
+    transparent 72%
+  );
+}
+
+.playing-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    circle 210px at var(--mx, 50%) var(--my, 15%),
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.08) 38%,
+    transparent 72%
+  );
+}
+
+.airport-stop-container:hover .airport-stop-marker::after,
+.airport-stop-container.terminal-open .airport-stop-marker::after,
+.airport-stop-container:hover .airport-glass-panel::after,
+.airport-stop-container.terminal-open .airport-glass-panel::after,
+.code-window:hover::after,
+.abusaid-project-card:hover::after,
+.identity-metric-pod:hover::after,
+.skill-box-card:hover::before,
+.playing-card:hover::after,
+.playing-card.card-lifted::after,
+.contact-letter-surface:hover::after {
+  opacity: 1;
+}
+
+body.light-theme .airport-stop-marker::after,
+body.light-theme .airport-glass-panel::after,
+body.light-theme .code-window::after,
+body.light-theme .abusaid-project-card::after,
+body.light-theme .identity-metric-pod::after,
+body.light-theme .playing-card::after,
+body.light-theme .contact-letter-surface::after,
+body.light-theme .skill-box-card::before {
+  background: radial-gradient(
+    circle 210px at var(--mx, 50%) var(--my, 15%),
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.35) 38%,
+    transparent 72%
+  );
+}
+
+.terminal-chip {
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+body.light-theme .terminal-chip {
+  background: rgba(255, 255, 255, 0.58);
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 1px 4px rgba(0, 0, 0, 0.04);
+  color: #1C1C1E;
 }

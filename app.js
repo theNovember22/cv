@@ -381,6 +381,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Interactive Apple macOS Liquid Glass Specular Glare Tracking
+  const glassSurfaces = document.querySelectorAll(
+    ".airport-stop-marker, .airport-glass-panel, .code-window, .abusaid-project-card, .identity-metric-pod, .skill-box-card, .playing-card, .contact-letter-surface"
+  );
+  glassSurfaces.forEach((surface) => {
+    surface.addEventListener("mousemove", (e) => {
+      const rect = surface.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      surface.style.setProperty("--mx", `${x.toFixed(1)}%`);
+      surface.style.setProperty("--my", `${y.toFixed(1)}%`);
+    });
+  });
+
   // ==========================================
   // 9. Scrollspy & Sticky Header Highlighting
   // ==========================================
